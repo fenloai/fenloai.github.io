@@ -4,140 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service 8: Generative AI Solutions</title>
+    <title>Generative AI Solutions - Vernpi AI</title>
+    <meta name="description"
+        content="Unleash infinite creativity. From marketing copy to photorealistic imagery, our Generative AI engines build what doesn't exist yet.">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            color: #333;
-            background: #fff;
-            overflow-x: hidden;
+        :root {
+            --accent-page: #e73c7e;
+            --accent-secondary: #23a6d5;
         }
 
-        /* Modern Navbar */
-        .navbar {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .btn-primary {
+            background: linear-gradient(45deg, var(--accent-page) 0%, var(--accent-secondary) 100%);
+            box-shadow: 0 0 20px rgba(231, 60, 126, 0.3);
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
+        .btn-primary:hover {
+            box-shadow: 0 0 40px rgba(231, 60, 126, 0.5);
         }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05em;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        /* Animated Hero Background */
-        header {
-            text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            color: white;
-            position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-            margin-bottom: 60px;
-        }
-
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .intro-text {
-            font-size: 1.5em;
-            max-width: 800px;
-            margin: 0 auto;
-            font-weight: 300;
-            opacity: 0.95;
-        }
-
-        /* Glassmorphism Cards */
+        /* Showcase Grid */
         .showcase-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-3xl);
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            transition: var(--transition-normal);
             position: relative;
             overflow: hidden;
         }
 
-        .glass-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px 0 rgba(31, 38, 135, 0.2);
-        }
-
-        /* Decorative blobs for cards */
         .glass-card::before {
             content: '';
             position: absolute;
@@ -145,10 +49,15 @@
             right: -50px;
             width: 100px;
             height: 100px;
-            background: linear-gradient(135deg, #e73c7e, #23a6d5);
+            background: linear-gradient(135deg, var(--accent-page), var(--accent-secondary));
             border-radius: 50%;
             opacity: 0.1;
             transition: transform 0.5s;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-page);
         }
 
         .glass-card:hover::before {
@@ -156,108 +65,155 @@
         }
 
         .glass-card h3 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            background: -webkit-linear-gradient(45deg, #e73c7e, #23a6d5);
+            font-size: 1.6rem;
+            margin-bottom: var(--space-sm);
+            background: linear-gradient(45deg, var(--accent-page), var(--accent-secondary));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .glass-card p {
-            font-size: 1.1em;
-            color: #555;
-            line-height: 1.7;
-        }
-
-        /* Creative Demo Section */
+        /* Creative Section */
         .creative-section {
             display: flex;
-            gap: 50px;
+            gap: var(--space-2xl);
             align-items: center;
-            margin-bottom: 100px;
-            background: #f8f9fa;
-            border-radius: 30px;
-            padding: 50px;
+            margin-bottom: var(--space-3xl);
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
         }
 
         .creative-text {
             flex: 1;
         }
 
+        .creative-text h2 {
+            background: linear-gradient(45deg, var(--accent-secondary), #23d5ab);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: var(--space-md);
+        }
+
+        .creative-text ul {
+            list-style: none;
+            padding: 0;
+            margin-top: var(--space-lg);
+        }
+
+        .creative-text li {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+        }
+
         .creative-visual {
             flex: 1;
-            position: relative;
-            height: 300px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
         }
 
         .prompt-box {
-            background: #f0f2f5;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            background: var(--bg-tertiary);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
             font-family: monospace;
-            color: #333;
             border-left: 4px solid #23d5ab;
         }
 
         .result-box {
-            background: linear-gradient(135deg, #fff, #f0f8ff);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px dashed #23a6d5;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(56, 189, 248, 0.05));
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            border: 1px dashed var(--accent-secondary);
             text-align: center;
-            color: #555;
             font-style: italic;
         }
 
-        /* CTA Section */
-        .cta-final {
-            text-align: center;
-            padding: 80px 20px;
-            position: relative;
+        /* Case Studies */
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-2xl);
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 20px 50px;
-            background: linear-gradient(45deg, #e73c7e, #23a6d5);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.3em;
-            transition: all 0.3s;
-            box-shadow: 0 10px 20px rgba(231, 60, 126, 0.3);
+        .case-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition-normal);
         }
 
-        .cta-button:hover {
-            transform: scale(1.05) rotate(-1deg);
-            box-shadow: 0 15px 30px rgba(231, 60, 126, 0.5);
+        .case-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .case-header {
+            height: 8px;
+        }
+
+        .case-header.pink {
+            background: linear-gradient(90deg, #ee7752, #e73c7e);
+        }
+
+        .case-header.blue {
+            background: linear-gradient(90deg, #23a6d5, #23d5ab);
+        }
+
+        .case-header.purple {
+            background: linear-gradient(90deg, #8e2de2, #4a00e0);
+        }
+
+        .case-content {
+            padding: var(--space-lg);
+        }
+
+        .case-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-xs);
+        }
+
+        .case-tag.pink {
+            color: #e73c7e;
+        }
+
+        .case-tag.blue {
+            color: #23a6d5;
+        }
+
+        .case-tag.purple {
+            color: #8e2de2;
+        }
+
+        .case-result {
+            margin-top: var(--space-md);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .nav-overlay:hover {
+            background: var(--accent-page);
         }
 
         @media (max-width: 768px) {
             .creative-section {
                 flex-direction: column;
             }
-
-            h1 {
-                font-size: 2.5em;
-            }
         }
     </style>
 </head>
 
 <body>
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">Vernpi AI</a>
@@ -268,32 +224,27 @@
         </div>
     </nav>
 
-    <header>
-        <div class="container">
-            <h1>Generative AI Solutions</h1>
-            <p class="intro-text">Unleash infinite creativity. From marketing copy to photorealistic imagery, our
-                Generative AI engines build what doesn't exist yet.</p>
-        </div>
-    </header>
+    <section class="page-header">
+        <h1>Generative AI Solutions</h1>
+        <p class="intro-text">Unleash infinite creativity. From marketing copy to photorealistic imagery, our Generative
+            AI engines build what doesn't exist yet.</p>
+    </section>
 
     <div class="container">
-
+        <!-- Showcase Grid -->
         <div class="showcase-grid">
-            <!-- Card 1 -->
             <div class="glass-card">
                 <h3>Content at Scale</h3>
                 <p>Write thousands of personalized emails, blog posts, and ad copies in minutes. Our LLMs capture your
                     brand voice perfectly, ensuring consistency across every channel.</p>
             </div>
 
-            <!-- Card 2 -->
             <div class="glass-card">
                 <h3>Visual Synthesis</h3>
                 <p>Need product photos in a different setting? Or unique illustrations for your website? Generate
                     high-fidelity assets on demand, bypassing expensive photo shoots.</p>
             </div>
 
-            <!-- Card 3 -->
             <div class="glass-card">
                 <h3>Custom Fine-Tuning</h3>
                 <p>We don't just use off-the-shelf models. We train private instances on <em>your</em> data, creating an
@@ -301,20 +252,16 @@
             </div>
         </div>
 
-        <!-- Creative Demo -->
+        <!-- Creative Demo Section -->
         <div class="creative-section">
             <div class="creative-text">
-                <h2
-                    style="font-size: 2.5em; margin-bottom: 20px; background: -webkit-linear-gradient(45deg, #23a6d5, #23d5ab); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-                    From Prompt to Reality</h2>
-                <p style="font-size: 1.1em; color: #666; margin-bottom: 20px;">Experience the power of semantic
-                    understanding. Simply describe your goal, and watch our engines construct the solution.</p>
-                <ul style="list-style: none; padding: 0; color: #555;">
-                    <li style="margin-bottom: 15px;">✨ <strong>Zero-Shot Generation:</strong> No examples needed.</li>
-                    <li style="margin-bottom: 15px;">🎨 <strong>Style Transfer:</strong> Adapt content to any tone or
-                        artistic style.</li>
-                    <li style="margin-bottom: 15px;">🔒 <strong>Enterprise Safe:</strong> Copyright-compliant and
-                        secure.</li>
+                <h2>From Prompt to Reality</h2>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">Experience the power of
+                    semantic understanding. Simply describe your goal, and watch our engines construct the solution.</p>
+                <ul>
+                    <li>✨ <strong>Zero-Shot Generation:</strong> No examples needed.</li>
+                    <li>🎨 <strong>Style Transfer:</strong> Adapt content to any tone or artistic style.</li>
+                    <li>🔒 <strong>Enterprise Safe:</strong> Copyright-compliant and secure.</li>
                 </ul>
             </div>
             <div class="creative-visual">
@@ -322,152 +269,86 @@
                     > Generate a marketing tagline for a futuristic coffee brand.
                 </div>
                 <div class="result-box">
-                    "Brewing Tomorrow, Today. <br>Sip the Future with Nebula Roast."
+                    "Brewing Tomorrow, Today.<br>Sip the Future with Nebula Roast."
                 </div>
-                <div style="text-align: center; margin-top: 20px; color: #23d5ab; font-size: 2em;">
+                <div style="text-align: center; margin-top: var(--space-md); font-size: 2rem;">
                     ☕ 🚀 ✨
                 </div>
             </div>
         </div>
 
-        <!-- Real-World Impact Section -->
-        <div style="margin-bottom: 100px;">
-            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 50px; color: #333;">Real-World Impact</h2>
+        <!-- Real-World Impact -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Real-World Impact</h2>
+            </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-
+            <div class="case-grid">
                 <!-- Case 1 -->
-                <div
-                    style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
-                    <div style="height: 10px; background: linear-gradient(90deg, #ee7752, #e73c7e);"></div>
-                    <div style="padding: 30px;">
-                        <h4
-                            style="margin: 0 0 10px 0; color: #e73c7e; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;">
-                            Marketing</h4>
-                        <h3 style="margin: 0 0 15px 0; font-size: 1.5em;">Global Campaign Localization</h3>
-                        <p style="color: #666; font-size: 0.95em;"><strong>Challenge:</strong> A fashion retailer needed
-                            to launch a campaign in 12 countries simultaneously.</p>
-                        <p style="color: #666; font-size: 0.95em;"><strong>Solution:</strong> We used GenAI to translate
-                            copy and adapt visual assets (backgrounds, models) to local cultures.</p>
-                        <div style="margin-top: 20px; font-weight: bold; color: #333;">🚀 12 Weeks → 4 Days</div>
+                <div class="case-card">
+                    <div class="case-header pink"></div>
+                    <div class="case-content">
+                        <div class="case-tag pink">Marketing</div>
+                        <h3>Global Campaign Localization</h3>
+                        <p><strong>Challenge:</strong> A fashion retailer needed to launch a campaign in 12 countries
+                            simultaneously.</p>
+                        <p><strong>Solution:</strong> We used GenAI to translate copy and adapt visual assets
+                            (backgrounds, models) to local cultures.</p>
+                        <div class="case-result">🚀 12 Weeks → 4 Days</div>
                     </div>
                 </div>
 
                 <!-- Case 2 -->
-                <div
-                    style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
-                    <div style="height: 10px; background: linear-gradient(90deg, #23a6d5, #23d5ab);"></div>
-                    <div style="padding: 30px;">
-                        <h4
-                            style="margin: 0 0 10px 0; color: #23a6d5; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;">
-                            Product Design</h4>
-                        <h3 style="margin: 0 0 15px 0; font-size: 1.5em;">Rapid Prototyping</h3>
-                        <p style="color: #666; font-size: 0.95em;"><strong>Challenge:</strong> An interior design firm
-                            wanted to show clients "after" photos instantly.</p>
-                        <p style="color: #666; font-size: 0.95em;"><strong>Solution:</strong> A custom Stable Diffusion
-                            model that overlays new furniture styles onto user-uploaded room photos.</p>
-                        <div style="margin-top: 20px; font-weight: bold; color: #333;">🎨 3x Conversion Rate</div>
+                <div class="case-card">
+                    <div class="case-header blue"></div>
+                    <div class="case-content">
+                        <div class="case-tag blue">Product Design</div>
+                        <h3>Rapid Prototyping</h3>
+                        <p><strong>Challenge:</strong> An interior design firm wanted to show clients "after" photos
+                            instantly.</p>
+                        <p><strong>Solution:</strong> A custom Stable Diffusion model that overlays new furniture styles
+                            onto user-uploaded room photos.</p>
+                        <div class="case-result">🎨 3x Conversion Rate</div>
                     </div>
                 </div>
 
                 <!-- Case 3 -->
-                <div
-                    style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
-                    <div style="height: 10px; background: linear-gradient(90deg, #8e2de2, #4a00e0);"></div>
-                    <div style="padding: 30px;">
-                        <h4
-                            style="margin: 0 0 10px 0; color: #8e2de2; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;">
-                            Engineering</h4>
-                        <h3 style="margin: 0 0 15px 0; font-size: 1.5em;">Legacy Migration</h3>
-                        <p style="color: #666; font-size: 0.95em;"><strong>Challenge:</strong> A bank needed to convert
-                            500k lines of COBOL to Python.</p>
-                        <p style="color: #666; font-size: 0.95em;"><strong>Solution:</strong> Fine-tuned CodeLlama to
-                            understand their specific legacy patterns and generate test-covered Python code.</p>
-                        <div style="margin-top: 20px; font-weight: bold; color: #333;">⚙️ 80% Automated</div>
+                <div class="case-card">
+                    <div class="case-header purple"></div>
+                    <div class="case-content">
+                        <div class="case-tag purple">Engineering</div>
+                        <h3>Legacy Migration</h3>
+                        <p><strong>Challenge:</strong> A bank needed to convert 500k lines of COBOL to Python.</p>
+                        <p><strong>Solution:</strong> Fine-tuned CodeLlama to understand their specific legacy patterns
+                            and generate test-covered Python code.</p>
+                        <div class="case-result">⚙️ 80% Automated</div>
                     </div>
                 </div>
-
             </div>
-        </div>
-
-        <section class="cta-final">
-            <h2 style="font-size: 2.5em; margin-bottom: 20px; color: #333;">Ready to Create?</h2>
-            <p style="color: #666; max-width: 600px; margin: 0 auto; margin-bottom: 40px;">The only limit is your
-                imagination. Let's build something extraordinary.</p>
-            <a href="#contact-genai" class="cta-button">Start Generating</a>
         </section>
-
-        <style>
-            .nav-overlay {
-                position: fixed;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 1000;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 50px;
-                height: 50px;
-                background: rgba(0, 0, 0, 0.1);
-                backdrop-filter: blur(5px);
-                border-radius: 50%;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(0, 0, 0, 0.1);
-                color: #333;
-            }
-
-            .nav-overlay:hover {
-                background: #e73c7e;
-                /* Pink accent */
-                color: white;
-                width: 140px;
-                border-radius: 25px;
-            }
-
-            .nav-overlay.prev {
-                left: 20px;
-            }
-
-            .nav-overlay.next {
-                right: 20px;
-            }
-
-            .nav-overlay span {
-                display: none;
-                margin-left: 10px;
-                font-weight: 600;
-                font-size: 0.9em;
-                white-space: nowrap;
-            }
-
-            .nav-overlay.prev span {
-                margin-left: 0;
-                margin-right: 10px;
-            }
-
-            .nav-overlay:hover span {
-                display: inline;
-            }
-
-            .nav-icon {
-                font-size: 1.2em;
-            }
-        </style>
-
-        <a href="service7.html" class="nav-overlay prev">
-            <span class="nav-icon">←</span>
-            <span>Prev Service</span>
-        </a>
-        <a href="service9.html" class="nav-overlay next">
-            <span>Next Service</span>
-            <span class="nav-icon">→</span>
-        </a>
-
-        <a id="contact-genai" style="display: none;"></a>
-
     </div>
 
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Create?</h2>
+        <p>The only limit is your imagination. Let's build something extraordinary.</p>
+        <a href="#contact-genai" class="btn btn-primary">Start Generating</a>
+    </section>
+
+    <!-- Floating Navigation -->
+    <a href="service7.html" class="nav-overlay prev">
+        <span class="nav-icon">←</span>
+        <span class="nav-text">Prev Service</span>
+    </a>
+    <a href="service9.html" class="nav-overlay next">
+        <span class="nav-text">Next Service</span>
+        <span class="nav-icon">→</span>
+    </a>
+
+    <footer>
+        <p>&copy; 2025 Vernpi AI. All rights reserved.</p>
+        <a href="mailto:hello@nexara.ai" class="email">hello@nexara.ai</a>
+    </footer>
 </body>
 
 </html>

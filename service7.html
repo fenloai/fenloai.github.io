@@ -4,176 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service 7: AI-Powered Business Analytics</title>
+    <title>AI-Powered Business Analytics - Vernpi AI</title>
+    <meta name="description"
+        content="Turn raw data into predictive insights. Forecasting, natural language querying, and anomaly detection.">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            color: #e0e0e0;
-            background: #0f172a;
-            /* Dark Slate Background */
+        :root {
+            --accent-page: #38bdf8;
         }
 
-        /* Modern Navbar (Dark Mode Variant) */
-        .navbar {
-            background: rgba(15, 23, 42, 0.95);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-page) 0%, #0ea5e9 100%);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
+        .btn-primary:hover {
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.5);
         }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: #38bdf8;
-            /* Sky Blue */
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05em;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        .nav-links a:hover {
-            color: #38bdf8;
-            background: rgba(56, 189, 248, 0.1);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        /* Hero Section */
-        header {
-            text-align: center;
-            padding: 100px 20px;
-            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Grid Background Effect */
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
-            pointer-events: none;
-        }
-
-        h1 {
-            color: white;
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            font-weight: 800;
-            text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
-            position: relative;
-        }
-
-        .intro-text {
-            font-size: 1.4em;
-            color: #94a3b8;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        /* Dashboard Cards */
+        /* Dashboard Grid */
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: -50px;
-            /* Overlap Hero */
-            margin-bottom: 80px;
-            position: relative;
-            z-index: 10;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-3xl);
         }
 
         .metric-card {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 16px;
-            padding: 30px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
             position: relative;
-            overflow: hidden;
+            transition: var(--transition-normal);
         }
 
         .metric-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            border-color: #38bdf8;
+            border-color: var(--accent-page);
         }
 
         .metric-icon {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
             display: inline-block;
             background: rgba(56, 189, 248, 0.1);
-            padding: 15px;
-            border-radius: 12px;
+            padding: var(--space-sm);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
         }
 
         .metric-card h3 {
-            color: white;
-            font-size: 1.5em;
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            margin-bottom: var(--space-sm);
         }
 
-        .metric-card p {
-            color: #94a3b8;
-            font-size: 1em;
-            line-height: 1.6;
-        }
-
-        /* Live Data Simulation */
+        /* Live Indicator */
         .live-indicator {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: var(--space-md);
+            right: var(--space-md);
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.8em;
+            font-size: 0.75rem;
             color: #4ade80;
-            /* Green */
-            font-weight: bold;
+            font-weight: var(--font-weight-bold);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -186,32 +82,12 @@
             animation: blink 1.5s infinite;
         }
 
-        @keyframes blink {
-            0% {
-                opacity: 1;
-                box-shadow: 0 0 10px #4ade80;
-            }
-
-            50% {
-                opacity: 0.3;
-            }
-
-            100% {
-                opacity: 1;
-                box-shadow: 0 0 10px #4ade80;
-            }
-        }
-
-        /* Feature List */
-        .features-section {
-            padding: 60px 0;
-        }
-
+        /* Feature Section */
         .feature-row {
             display: flex;
             align-items: center;
-            gap: 50px;
-            margin-bottom: 60px;
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
         }
 
         .feature-row:nth-child(even) {
@@ -222,29 +98,42 @@
             flex: 1;
         }
 
-        .feature-visual {
-            flex: 1;
-            background: #0f172a;
-            border: 1px solid #334155;
-            border-radius: 20px;
-            padding: 30px;
-            position: relative;
+        .feature-content h2 {
+            font-size: 2rem;
+            margin-bottom: var(--space-md);
         }
 
-        /* Mock Chart Bars */
+        .feature-content ul {
+            list-style: none;
+            padding: 0;
+            margin-top: var(--space-md);
+        }
+
+        .feature-content li {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .feature-visual {
+            flex: 1;
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+        }
+
         .chart-bar {
-            height: 10px;
-            background: #334155;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            position: relative;
+            height: 12px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-sm);
             overflow: hidden;
         }
 
         .chart-fill {
             height: 100%;
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
-            border-radius: 5px;
+            background: linear-gradient(90deg, var(--accent-page), #818cf8);
+            border-radius: var(--radius-sm);
             width: 0;
             animation: grow 2s ease-out forwards;
         }
@@ -255,32 +144,14 @@
             }
         }
 
-        /* CTA Section */
-        .cta-final {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-            border-top: 1px solid #334155;
-            margin-top: 40px;
+        .stat-highlight {
+            font-size: 3rem;
+            font-weight: var(--font-weight-extrabold);
+            color: var(--accent-page);
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 18px 45px;
-            background: linear-gradient(90deg, #38bdf8, #0ea5e9);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-top: 30px;
-            transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(56, 189, 248, 0.5);
+        .nav-overlay:hover {
+            background: var(--accent-page);
         }
 
         @media (max-width: 768px) {
@@ -289,21 +160,14 @@
             .feature-row:nth-child(even) {
                 flex-direction: column;
             }
-
-            h1 {
-                font-size: 2.5em;
-            }
-
-            .dashboard-grid {
-                margin-top: 0;
-            }
         }
     </style>
 </head>
 
 <body>
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">Vernpi AI</a>
@@ -314,16 +178,13 @@
         </div>
     </nav>
 
-    <header>
-        <div class="container">
-            <h1>AI-Powered Business Analytics</h1>
-            <p class="intro-text">Stop staring at spreadsheets. Start seeing the future. We turn raw data into
-                predictive insights that drive revenue.</p>
-        </div>
-    </header>
+    <section class="page-header">
+        <h1>AI-Powered Business Analytics</h1>
+        <p class="intro-text">Stop staring at spreadsheets. Start seeing the future. We turn raw data into predictive
+            insights that drive revenue.</p>
+    </section>
 
     <div class="container">
-
         <!-- Dashboard Grid -->
         <div class="dashboard-grid">
             <!-- Card 1 -->
@@ -361,23 +222,23 @@
         </div>
 
         <!-- Features Section -->
-        <div class="features-section">
-
+        <section class="section">
             <!-- Feature 1 -->
             <div class="feature-row">
                 <div class="feature-content">
-                    <h2 style="color: white; font-size: 2.5em; margin-bottom: 20px;">Automated Reporting</h2>
-                    <p style="color: #94a3b8; font-size: 1.1em; margin-bottom: 20px;">Save 20+ hours per week. We
+                    <h2>Automated Reporting</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">Save 20+ hours per week. We
                         automate the collection, cleaning, and visualization of your KPIs across Marketing, Sales, and
                         Finance.</p>
-                    <ul style="list-style: none; padding: 0; color: #cbd5e1;">
-                        <li style="margin-bottom: 10px;">✅ Real-time Dashboards</li>
-                        <li style="margin-bottom: 10px;">✅ PDF/Email Summaries</li>
-                        <li style="margin-bottom: 10px;">✅ Cross-Platform Integration</li>
+                    <ul>
+                        <li>✅ Real-time Dashboards</li>
+                        <li>✅ PDF/Email Summaries</li>
+                        <li>✅ Cross-Platform Integration</li>
                     </ul>
                 </div>
                 <div class="feature-visual">
-                    <div style="color: #94a3b8; margin-bottom: 15px; font-size: 0.9em;">Monthly Growth</div>
+                    <div style="color: var(--text-secondary); margin-bottom: var(--space-sm); font-size: 0.9rem;">
+                        Monthly Growth</div>
                     <div class="chart-bar">
                         <div class="chart-fill" style="--w: 40%;"></div>
                     </div>
@@ -399,99 +260,42 @@
             <!-- Feature 2 -->
             <div class="feature-row">
                 <div class="feature-content">
-                    <h2 style="color: white; font-size: 2.5em; margin-bottom: 20px;">Customer Lifetime Value (CLV)</h2>
-                    <p style="color: #94a3b8; font-size: 1.1em; margin-bottom: 20px;">Identify your VIPs. Our algorithms
-                        segment customers based on predicted future value, allowing you to target retention efforts
-                        where they matter most.</p>
+                    <h2>Customer Lifetime Value (CLV)</h2>
+                    <p style="color: var(--text-secondary);">Identify your VIPs. Our algorithms segment customers based
+                        on predicted future value, allowing you to target retention efforts where they matter most.</p>
                 </div>
-                <div class="feature-visual" style="display: flex; align-items: center; justify-content: center;">
+                <div class="feature-visual"
+                    style="display: flex; align-items: center; justify-content: center; padding: var(--space-2xl);">
                     <div style="text-align: center;">
-                        <div style="font-size: 3em; color: #38bdf8; font-weight: bold;">+35%</div>
-                        <div style="color: #94a3b8;">Retention Rate</div>
+                        <div class="stat-highlight">+35%</div>
+                        <div style="color: var(--text-secondary);">Retention Rate</div>
                     </div>
                 </div>
             </div>
-
-        </div>
-
+        </section>
     </div>
 
-    <section class="cta-final">
-        <h2 style="color: white; margin-bottom: 10px;">Unlock Your Data's Potential</h2>
-        <p style="color: #94a3b8; max-width: 600px; margin: 0 auto;">Join the data-driven revolution. Schedule a
-            consultation to see your own data in action.</p>
-        <a href="#contact-analytics" class="cta-button">Start Analyzing</a>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Unlock Your Data's Potential</h2>
+        <p>Join the data-driven revolution. Schedule a consultation to see your own data in action.</p>
+        <a href="#contact-analytics" class="btn btn-primary">Start Analyzing</a>
     </section>
 
-    <style>
-        .nav-overlay {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #94a3b8;
-            /* Light text for dark mode */
-        }
-
-        .nav-overlay:hover {
-            background: #38bdf8;
-            /* Sky blue accent */
-            color: #0f172a;
-            /* Dark text */
-            width: 140px;
-            border-radius: 25px;
-        }
-
-        .nav-overlay.prev {
-            left: 20px;
-        }
-
-        .nav-overlay.next {
-            right: 20px;
-        }
-
-        .nav-overlay span {
-            display: none;
-            margin-left: 10px;
-            font-weight: 600;
-            font-size: 0.9em;
-            white-space: nowrap;
-        }
-
-        .nav-overlay.prev span {
-            margin-left: 0;
-            margin-right: 10px;
-        }
-
-        .nav-overlay:hover span {
-            display: inline;
-        }
-
-        .nav-icon {
-            font-size: 1.2em;
-        }
-    </style>
-
+    <!-- Floating Navigation -->
     <a href="service6.html" class="nav-overlay prev">
         <span class="nav-icon">←</span>
-        <span>Prev Service</span>
+        <span class="nav-text">Prev Service</span>
     </a>
     <a href="service8.html" class="nav-overlay next">
-        <span>Next Service</span>
+        <span class="nav-text">Next Service</span>
         <span class="nav-icon">→</span>
     </a>
 
-    <a id="contact-analytics" style="display: none;"></a>
-    </div>
+    <footer>
+        <p>&copy; 2025 Vernpi AI. All rights reserved.</p>
+        <a href="mailto:hello@nexara.ai" class="email">hello@nexara.ai</a>
+    </footer>
 </body>
+
+</html>

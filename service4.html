@@ -4,194 +4,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service 4: Enterprise RAG & Knowledge Retrieval</title>
+    <title>Enterprise RAG & Knowledge Retrieval - Vernpi AI</title>
+    <meta name="description"
+        content="Chat with your data. Unlock the hidden value in your documents with secure, hallucination-free AI search.">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            color: #333;
-            background: #f5f7fa;
+        :root {
+            --accent-page: #a855f7;
         }
 
-        /* Modern Navbar */
-        .navbar {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-page) 0%, #7c3aed 100%);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
+        .btn-primary:hover {
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
         }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            letter-spacing: 0.5px;
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
         }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
+        .value-card {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            transition: var(--transition-normal);
         }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05em;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-page);
         }
 
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.1);
+        .value-card h3 {
+            color: var(--accent-page);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        h1 {
-            color: #4a148c;
-            /* Purple Dark */
-            font-size: 2.5em;
-            margin-bottom: 5px;
-        }
-
-        h2 {
-            color: #6a1b9a;
-            /* Purple */
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-
-        h3 {
-            color: #7b1fa2;
-            /* Lighter Purple */
-        }
-
-        .intro-text {
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            color: #555;
-        }
-
-        .value-prop ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .value-prop li {
-            background: #f3e5f5;
-            /* Light Purple for emphasis */
-            padding: 20px;
-            border-radius: 8px;
-            flex: 1;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .agenda-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-        }
-
-        .agenda-table th,
-        .agenda-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-
-        .agenda-table th {
-            background-color: #6a1b9a;
-            color: white;
-        }
-
-        .choice-table {
+        /* Comparison Table */
+        .comparison-table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
-            margin: 40px 0;
+            margin: var(--space-xl) 0;
+            background: var(--glass-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
         }
 
-        .choice-table th,
-        .choice-table td {
-            padding: 15px;
+        .comparison-table th,
+        .comparison-table td {
+            padding: var(--space-md);
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid var(--glass-border);
         }
 
-        .choice-table th {
-            background-color: #f3e5f5;
-            color: #4a148c;
-            border-top: 2px solid #4a148c;
+        .comparison-table th {
+            background: rgba(168, 85, 247, 0.1);
+            color: var(--accent-page);
+            font-weight: var(--font-weight-semibold);
+            border-top: 2px solid var(--accent-page);
         }
 
-        .choice-table td:nth-child(2),
-        .choice-table td:nth-child(3) {
-            border-left: 1px solid #eee;
+        .comparison-table td {
+            color: var(--text-secondary);
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #7b1fa2;
-            /* Purple CTA */
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #4a148c;
+        .comparison-table td:nth-child(2),
+        .comparison-table td:nth-child(3) {
+            border-left: 1px solid var(--glass-border);
         }
 
         .cta-cell {
             text-align: center;
+            padding: var(--space-lg) !important;
         }
 
-        @media (max-width: 768px) {
-            .value-prop ul {
-                flex-direction: column;
-            }
+        /* Roadmap Table */
+        .roadmap-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-lg) 0;
+        }
+
+        .roadmap-table th,
+        .roadmap-table td {
+            padding: var(--space-md);
+            text-align: left;
+            border: 1px solid var(--glass-border);
+        }
+
+        .roadmap-table th {
+            background: var(--accent-page);
+            color: var(--bg-primary);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .roadmap-table td {
+            color: var(--text-secondary);
+        }
+
+        .roadmap-table tr:nth-child(even) {
+            background: var(--glass-bg);
+        }
+
+        .nav-overlay:hover {
+            background: var(--accent-page);
         }
     </style>
 </head>
 
 <body>
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">Vernpi AI</a>
@@ -202,38 +134,44 @@
         </div>
     </nav>
 
-    <div class="container">
-        <header>
-            <h1>Enterprise RAG & Knowledge Retrieval</h1>
-            <p class="intro-text">Chat with your data. Unlock the hidden value in your documents with secure,
-                hallucination-free AI search.</p>
-        </header>
+    <section class="page-header">
+        <h1>Enterprise RAG & Knowledge Retrieval</h1>
+        <p class="intro-text">Chat with your data. Unlock the hidden value in your documents with secure,
+            hallucination-free AI search.</p>
+    </section>
 
-        <section class="value-prop">
-            <h2>Why RAG (Retrieval-Augmented Generation)?</h2>
-            <ul>
-                <li>
+    <div class="container">
+        <!-- Why RAG Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why RAG (Retrieval-Augmented Generation)?</h2>
+            </div>
+            <div class="value-grid">
+                <div class="value-card">
                     <h3>Instant Answers</h3>
                     <p>Stop wasting hours searching through Sharepoint or Drive. Get precise answers from your PDFs,
                         Docs, and SQL databases instantly.</p>
-                </li>
-                <li>
+                </div>
+                <div class="value-card">
                     <h3>Grounded Accuracy</h3>
                     <p>Eliminate hallucinations. Our RAG systems provide citations for every answer, ensuring you can
                         trust the output for critical decisions.</p>
-                </li>
-                <li>
+                </div>
+                <div class="value-card">
                     <h3>Enterprise Security</h3>
                     <p>Your data stays within your perimeter. We deploy local or private-cloud RAG pipelines that ensure
                         zero data leakage.</p>
-                </li>
-            </ul>
+                </div>
+            </div>
         </section>
 
-        <section class="options">
-            <h2>Use Case Capabilities</h2>
+        <!-- Use Case Capabilities -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Use Case Capabilities</h2>
+            </div>
 
-            <table class="choice-table">
+            <table class="comparison-table">
                 <thead>
                     <tr>
                         <th>Feature</th>
@@ -243,40 +181,44 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>**Data Sources**</td>
-                        <td>**Unstructured & Structured** (PDFs, Wikis, Slack, SQL, ERPs)</td>
-                        <td>**Curated Knowledge Base** (Help Center, Public Docs, Product Manuals)</td>
+                        <td><strong>Data Sources</strong></td>
+                        <td><strong>Unstructured & Structured</strong> (PDFs, Wikis, Slack, SQL, ERPs)</td>
+                        <td><strong>Curated Knowledge Base</strong> (Help Center, Public Docs, Product Manuals)</td>
                     </tr>
                     <tr>
-                        <td>**Accuracy Control**</td>
-                        <td>**Strict Citations** (Links to source page/document)</td>
-                        <td>**Brand Voice Tuned** (Polished, friendly summaries)</td>
+                        <td><strong>Accuracy Control</strong></td>
+                        <td><strong>Strict Citations</strong> (Links to source page/document)</td>
+                        <td><strong>Brand Voice Tuned</strong> (Polished, friendly summaries)</td>
                     </tr>
                     <tr>
-                        <td>**Access Control**</td>
-                        <td>**Role-Based (RBAC)** (Users only see what they have permission to)</td>
-                        <td>**Public / Tiered** (General access for all visitors)</td>
+                        <td><strong>Access Control</strong></td>
+                        <td><strong>Role-Based (RBAC)</strong> (Users only see what they have permission to)</td>
+                        <td><strong>Public / Tiered</strong> (General access for all visitors)</td>
                     </tr>
                     <tr>
-                        <td>**Latency**</td>
-                        <td>**Deep Reasoning** (Slower, more analytical)</td>
-                        <td>**Real-Time** (Optimized for speed and engagement)</td>
+                        <td><strong>Latency</strong></td>
+                        <td><strong>Deep Reasoning</strong> (Slower, more analytical)</td>
+                        <td><strong>Real-Time</strong> (Optimized for speed and engagement)</td>
                     </tr>
                     <tr>
                         <td class="cta-cell"></td>
-                        <td class="cta-cell"><a href="#contact-internal" class="cta-button">Build Internal Search</a>
-                        </td>
-                        <td class="cta-cell"><a href="#contact-external" class="cta-button">Enhance Customer Support</a>
-                        </td>
+                        <td class="cta-cell"><a href="#contact-internal" class="btn btn-secondary">Build Internal
+                                Search</a></td>
+                        <td class="cta-cell"><a href="#contact-external" class="btn btn-primary">Enhance Customer
+                                Support</a></td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <section class="agenda">
-            <h2>Implementation Roadmap</h2>
-            <p>We turn your raw data into an intelligent knowledge graph in 4 weeks.</p>
-            <table class="agenda-table">
+        <!-- Implementation Roadmap -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Implementation Roadmap</h2>
+                <p>We turn your raw data into an intelligent knowledge graph in 4 weeks.</p>
+            </div>
+
+            <table class="roadmap-table">
                 <thead>
                     <tr>
                         <th>Phase</th>
@@ -308,90 +250,33 @@
                 </tbody>
             </table>
         </section>
-
-        <section class="cta-final"
-            style="text-align: center; margin-top: 50px; padding: 30px; background: #f3e5f5; border-radius: 8px;">
-            <h2>Ready to Talk to Your Data?</h2>
-            <p style="font-size: 1.1em; color: #555;">Transform your information overload into actionable intelligence.
-            </p>
-            <div style="display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
-                <a href="#contact-internal" class="cta-button" style="background-color: #6a1b9a;">Start Pilot
-                    Project</a>
-                <a href="#contact-external" class="cta-button" style="background-color: #8e24aa;">Get a Demo</a>
-            </div>
-        </section>
-
-        <a id="contact-internal" style="display: none;"></a>
-        <style>
-            .nav-overlay {
-                position: fixed;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 1000;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 50px;
-                height: 50px;
-                background: rgba(0, 0, 0, 0.1);
-                backdrop-filter: blur(5px);
-                border-radius: 50%;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(0, 0, 0, 0.1);
-                color: #333;
-            }
-
-            .nav-overlay:hover {
-                background: #4a148c;
-                /* Purple accent */
-                color: white;
-                width: 140px;
-                border-radius: 25px;
-            }
-
-            .nav-overlay.prev {
-                left: 20px;
-            }
-
-            .nav-overlay.next {
-                right: 20px;
-            }
-
-            .nav-overlay span {
-                display: none;
-                margin-left: 10px;
-                font-weight: 600;
-                font-size: 0.9em;
-                white-space: nowrap;
-            }
-
-            .nav-overlay.prev span {
-                margin-left: 0;
-                margin-right: 10px;
-            }
-
-            .nav-overlay:hover span {
-                display: inline;
-            }
-
-            .nav-icon {
-                font-size: 1.2em;
-            }
-        </style>
-
-        <a href="service3.html" class="nav-overlay prev">
-            <span class="nav-icon">←</span>
-            <span>Prev Service</span>
-        </a>
-        <a href="service5.html" class="nav-overlay next">
-            <span>Next Service</span>
-            <span class="nav-icon">→</span>
-        </a>
-
-        <a id="contact-rag" style="display: none;"></a>
     </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section"
+        style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, transparent 100%);">
+        <h2>Ready to Talk to Your Data?</h2>
+        <p>Transform your information overload into actionable intelligence.</p>
+        <div style="display: flex; justify-content: center; gap: var(--space-lg); flex-wrap: wrap;">
+            <a href="#contact-internal" class="btn btn-primary">Start Pilot Project</a>
+            <a href="#contact-external" class="btn btn-secondary">Get a Demo</a>
+        </div>
+    </section>
+
+    <!-- Floating Navigation -->
+    <a href="service3.html" class="nav-overlay prev">
+        <span class="nav-icon">←</span>
+        <span class="nav-text">Prev Service</span>
+    </a>
+    <a href="service5.html" class="nav-overlay next">
+        <span class="nav-text">Next Service</span>
+        <span class="nav-icon">→</span>
+    </a>
+
+    <footer>
+        <p>&copy; 2025 Vernpi AI. All rights reserved.</p>
+        <a href="mailto:hello@nexara.ai" class="email">hello@nexara.ai</a>
+    </footer>
 </body>
 
 </html>
-```

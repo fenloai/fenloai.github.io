@@ -4,161 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service 9: AI Governance & Ethics</title>
+    <title>AI Governance & Ethics - Vernpi AI</title>
+    <meta name="description"
+        content="Deploy AI with confidence. We build the guardrails, audit the algorithms, and ensure your AI stack is compliant, ethical, and secure.">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            color: #333;
-            background: #f4f6f8;
+        :root {
+            --accent-page: #3b82f6;
+            --accent-gold: #fbbf24;
         }
 
-        /* Modern Navbar */
-        .navbar {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
+        .btn-primary:hover {
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.5);
+            background: #f59e0b;
         }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05em;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        /* Hero Section - Trust & Security Theme */
-        header {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(180deg, #0d47a1 0%, #1565c0 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 5px solid #ffd700;
-            /* Gold Border */
-        }
-
-        /* Shield Pattern Background */
-        header::after {
-            content: '🛡️';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20em;
-            opacity: 0.05;
-            pointer-events: none;
-        }
-
-        h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .intro-text {
-            font-size: 1.4em;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #e3f2fd;
-        }
-
-        /* Compliance Pillars */
-        .pillars-section {
+        /* Pillars Section */
+        .pillars-grid {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: -50px;
-            margin-bottom: 80px;
+            gap: var(--space-lg);
             flex-wrap: wrap;
+            margin-bottom: var(--space-3xl);
         }
 
         .pillar-card {
-            background: white;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-top: 4px solid var(--accent-page);
+            border-radius: var(--radius-lg);
             width: 300px;
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: var(--space-xl);
             text-align: center;
-            border-top: 5px solid #0d47a1;
-            transition: transform 0.3s;
+            transition: var(--transition-normal);
         }
 
         .pillar-card:hover {
             transform: translateY(-10px);
+            border-top-color: var(--accent-gold);
         }
 
         .pillar-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: #0d47a1;
+            font-size: 3rem;
+            margin-bottom: var(--space-md);
         }
 
         .pillar-card h3 {
-            color: #0d47a1;
-            margin-bottom: 15px;
+            color: var(--accent-page);
+            margin-bottom: var(--space-sm);
         }
 
-        /* Interactive Risk Scanner */
+        /* Scanner Section */
         .scanner-section {
-            background: white;
-            border-radius: 20px;
-            padding: 60px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            margin-bottom: 80px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
             display: flex;
-            gap: 50px;
+            gap: var(--space-2xl);
             align-items: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .scanner-text {
+            flex: 1;
+        }
+
+        .scanner-text h2 {
+            color: var(--accent-page);
+            margin-bottom: var(--space-md);
+        }
+
+        .scanner-text ul {
+            list-style: none;
+            padding: 0;
+            margin-top: var(--space-lg);
+        }
+
+        .scanner-text li {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
         }
 
         .scanner-visual {
             flex: 1;
-            background: #1a237e;
-            border-radius: 15px;
-            padding: 30px;
-            color: white;
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            color: #e0e0e0;
             font-family: monospace;
             position: relative;
             overflow: hidden;
@@ -170,8 +111,8 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: #00e676;
-            box-shadow: 0 0 10px #00e676;
+            background: #4ade80;
+            box-shadow: 0 0 10px #4ade80;
             animation: scan 3s linear infinite;
         }
 
@@ -188,68 +129,47 @@
         .check-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 15px;
+            margin-bottom: var(--space-sm);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 5px;
         }
 
         .status-pass {
-            color: #00e676;
+            color: #4ade80;
         }
 
         .status-warn {
-            color: #ffd700;
+            color: #fbbf24;
         }
 
         /* Frameworks Grid */
         .frameworks-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-2xl);
         }
 
         .framework-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
             text-align: center;
-            border: 1px solid #ddd;
-            font-weight: bold;
-            color: #555;
+            font-weight: var(--font-weight-semibold);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: var(--space-xs);
+            transition: var(--transition-normal);
         }
 
-        /* CTA Section */
-        .cta-final {
-            text-align: center;
-            padding: 80px 20px;
-            background: #0d47a1;
-            color: white;
-            border-radius: 20px;
-            margin-bottom: 60px;
+        .framework-card:hover {
+            border-color: var(--accent-page);
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #ffd700;
-            /* Gold */
-            color: #0d47a1;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-top: 25px;
-            transition: transform 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            background: #ffea00;
+        .nav-overlay:hover {
+            background: var(--accent-page);
         }
 
         @media (max-width: 768px) {
@@ -257,7 +177,7 @@
                 flex-direction: column;
             }
 
-            .pillars-section {
+            .pillars-grid {
                 flex-direction: column;
                 align-items: center;
             }
@@ -270,8 +190,9 @@
 </head>
 
 <body>
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">Vernpi AI</a>
@@ -282,18 +203,15 @@
         </div>
     </nav>
 
-    <header>
-        <div class="container">
-            <h1>AI Governance & Ethics</h1>
-            <p class="intro-text">Deploy AI with confidence. We build the guardrails, audit the algorithms, and ensure
-                your AI stack is compliant, ethical, and secure.</p>
-        </div>
-    </header>
+    <section class="page-header">
+        <h1>AI Governance & Ethics</h1>
+        <p class="intro-text">Deploy AI with confidence. We build the guardrails, audit the algorithms, and ensure your
+            AI stack is compliant, ethical, and secure.</p>
+    </section>
 
     <div class="container">
-
         <!-- Pillars -->
-        <div class="pillars-section">
+        <div class="pillars-grid">
             <div class="pillar-card">
                 <div class="pillar-icon">⚖️</div>
                 <h3>Regulatory Compliance</h3>
@@ -313,25 +231,23 @@
 
         <!-- Scanner Section -->
         <div class="scanner-section">
-            <div style="flex: 1;">
-                <h2 style="font-size: 2.5em; color: #0d47a1; margin-bottom: 20px;">The AI Health Check</h2>
-                <p style="font-size: 1.1em; color: #666; margin-bottom: 30px;">Don't wait for a lawsuit to audit your
-                    models. Our continuous monitoring suite scans your AI infrastructure in real-time for drift,
-                    toxicity, and hallucinations.</p>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 15px;">✅ <strong>Automated Red Teaming:</strong> We try to break your
-                        model so hackers can't.</li>
-                    <li style="margin-bottom: 15px;">✅ <strong>Explainability (XAI):</strong> Understand <em>why</em>
-                        the AI made that decision.</li>
-                    <li style="margin-bottom: 15px;">✅ <strong>Version Control:</strong> Full audit trails for every
-                        model update.</li>
+            <div class="scanner-text">
+                <h2>The AI Health Check</h2>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">Don't wait for a lawsuit to
+                    audit your models. Our continuous monitoring suite scans your AI infrastructure in real-time for
+                    drift, toxicity, and hallucinations.</p>
+                <ul>
+                    <li>✅ <strong>Automated Red Teaming:</strong> We try to break your model so hackers can't.</li>
+                    <li>✅ <strong>Explainability (XAI):</strong> Understand <em>why</em> the AI made that decision.</li>
+                    <li>✅ <strong>Version Control:</strong> Full audit trails for every model update.</li>
                 </ul>
             </div>
             <div class="scanner-visual">
                 <div class="scan-line"></div>
                 <div
-                    style="margin-bottom: 20px; font-weight: bold; border-bottom: 1px solid white; padding-bottom: 10px;">
-                    SYSTEM STATUS: ONLINE</div>
+                    style="margin-bottom: var(--space-md); font-weight: bold; border-bottom: 1px solid white; padding-bottom: var(--space-xs);">
+                    SYSTEM STATUS: ONLINE
+                </div>
 
                 <div class="check-item">
                     <span>Data Privacy</span>
@@ -354,7 +270,7 @@
                     <span class="status-pass">[< 1%]</span>
                 </div>
 
-                <div style="margin-top: 20px; color: #00e676; font-size: 0.9em;">
+                <div style="margin-top: var(--space-md); color: #4ade80; font-size: 0.9rem;">
                     > All Systems Operational...<br>
                     > Monitoring Active...
                 </div>
@@ -362,91 +278,42 @@
         </div>
 
         <!-- Frameworks -->
-        <h2 style="text-align: center; margin-bottom: 30px; color: #333;">Standards We Support</h2>
-        <div class="frameworks-grid">
-            <div class="framework-card">🇪🇺 EU AI Act</div>
-            <div class="framework-card">🔒 GDPR / CCPA</div>
-            <div class="framework-card">📝 NIST AI RMF</div>
-            <div class="framework-card">🏥 HIPAA (AI)</div>
-            <div class="framework-card">🛡️ ISO 42001</div>
-        </div>
-
-        <section class="cta-final">
-            <h2 style="margin-bottom: 20px;">Is Your AI Safe?</h2>
-            <p style="max-width: 600px; margin: 0 auto; margin-bottom: 30px; opacity: 0.9;">Get a comprehensive risk
-                assessment and build a governance framework that scales with your ambition.</p>
-            <a href="#contact-gov" class="cta-button">Schedule Risk Assessment</a>
+        <section class="section">
+            <div class="section-header">
+                <h2>Standards We Support</h2>
+            </div>
+            <div class="frameworks-grid">
+                <div class="framework-card">🇪🇺 EU AI Act</div>
+                <div class="framework-card">🔒 GDPR / CCPA</div>
+                <div class="framework-card">📝 NIST AI RMF</div>
+                <div class="framework-card">🏥 HIPAA (AI)</div>
+                <div class="framework-card">🛡️ ISO 42001</div>
+            </div>
         </section>
-
-        <a id="contact-gov" style="display: none;"></a>
-
-        <style>
-            .nav-overlay {
-                position: fixed;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 1000;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 50px;
-                height: 50px;
-                background: rgba(0, 0, 0, 0.1);
-                backdrop-filter: blur(5px);
-                border-radius: 50%;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(0, 0, 0, 0.1);
-                color: #333;
-            }
-
-            .nav-overlay:hover {
-                background: #0d47a1;
-                /* Blue accent */
-                color: white;
-                width: 140px;
-                border-radius: 25px;
-            }
-
-            .nav-overlay.prev {
-                left: 20px;
-            }
-
-            .nav-overlay.next {
-                right: 20px;
-            }
-
-            .nav-overlay span {
-                display: none;
-                margin-left: 10px;
-                font-weight: 600;
-                font-size: 0.9em;
-                white-space: nowrap;
-            }
-
-            .nav-overlay.prev span {
-                margin-left: 0;
-                margin-right: 10px;
-            }
-
-            .nav-overlay:hover span {
-                display: inline;
-            }
-
-            .nav-icon {
-                font-size: 1.2em;
-            }
-        </style>
-
-        <a href="service8.html" class="nav-overlay prev">
-            <span class="nav-icon">←</span>
-            <span>Prev Service</span>
-        </a>
-        <a href="service1.html" class="nav-overlay next">
-            <span>Next Service</span>
-            <span class="nav-icon">→</span>
-        </a>
-
     </div>
 
+    <!-- CTA Section -->
+    <section class="cta-section"
+        style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, transparent 100%);">
+        <h2>Is Your AI Safe?</h2>
+        <p>Get a comprehensive risk assessment and build a governance framework that scales with your ambition.</p>
+        <a href="#contact-gov" class="btn btn-primary">Schedule Risk Assessment</a>
+    </section>
+
+    <!-- Floating Navigation -->
+    <a href="service8.html" class="nav-overlay prev">
+        <span class="nav-icon">←</span>
+        <span class="nav-text">Prev Service</span>
+    </a>
+    <a href="service1.html" class="nav-overlay next">
+        <span class="nav-text">Next Service</span>
+        <span class="nav-icon">→</span>
+    </a>
+
+    <footer>
+        <p>&copy; 2025 Vernpi AI. All rights reserved.</p>
+        <a href="mailto:hello@nexara.ai" class="email">hello@nexara.ai</a>
+    </footer>
 </body>
+
+</html>
