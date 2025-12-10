@@ -127,7 +127,7 @@
         .hero p {
             font-size: 1.25em;
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto 3rem;
             font-weight: 300;
         }
@@ -149,8 +149,8 @@
             box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
         }
 
-        /* Value Grid */
-        .value-section {
+        /* Capabilities Grid */
+        .capabilities-section {
             max-width: 1200px;
             margin: 6rem auto;
             padding: 0 2rem;
@@ -166,13 +166,13 @@
             margin-bottom: 1rem;
         }
 
-        .value-grid {
+        .capabilities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
 
-        .value-card {
+        .capability-card {
             background: var(--bg-card);
             border: 1px solid rgba(255, 255, 255, 0.05);
             padding: 2.5rem;
@@ -182,13 +182,13 @@
             overflow: hidden;
         }
 
-        .value-card:hover {
+        .capability-card:hover {
             transform: translateY(-5px);
             border-color: rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
         }
 
-        .value-card::before {
+        .capability-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -201,7 +201,7 @@
             pointer-events: none;
         }
 
-        .value-card:hover::before {
+        .capability-card:hover::before {
             opacity: 1;
         }
 
@@ -217,16 +217,23 @@
             font-size: 1.5em;
         }
 
-        .value-card h3 {
+        .capability-card h3 {
             font-size: 1.25em;
             margin-bottom: 1rem;
             color: white;
         }
 
-        .value-card p {
+        .capability-card p {
             color: var(--text-muted);
             font-size: 0.95em;
             line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .capability-card .services-list {
+            font-size: 0.85em;
+            color: var(--accent-cyan);
+            font-style: italic;
         }
 
         /* Footer */
@@ -265,36 +272,64 @@
     </nav>
 
     <section class="hero">
-        <h1>Enterprise <br><span>AI Solutions.</span></h1>
-        <p>Transforming businesses with strategic intelligence and automated solutions. We deliver measurable results
-            through proven AI technologies.</p>
-        <a href="services.html" class="cta-button">View All Services</a>
+        <h1>AI Solutions <br><span>That Work.</span></h1>
+        <p>We build intelligent systems for real business problems.</p>
+        <a href="services.html" class="cta-button">Explore Services</a>
     </section>
 
-    <section class="value-section">
+    <section class="capabilities-section">
         <div class="section-header">
-            <h2>Key Offerings</h2>
-            <p style="color: var(--text-muted);">Tailored solutions for your business needs.</p>
+            <h2>What We Build</h2>
+            <p style="color: var(--text-muted);">Concrete solutions backed by proven technology.</p>
         </div>
 
-        <div class="value-grid">
-            <div class="value-card">
-                <div class="icon-box">🧭</div>
-                <h3>Strategic AI</h3>
-                <p>Executive briefings and governance frameworks to guide your AI adoption journey safely and
-                    effectively.</p>
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <div class="icon-box">💬</div>
+                <h3>Intelligent Conversations</h3>
+                <p>24/7 customer support bots, AI assistants, and enterprise chatbots that understand context and handle
+                    complex queries.</p>
+                <div class="services-list">→ Conversation Bots & Virtual Assistants</div>
             </div>
-            <div class="value-card">
-                <div class="icon-box">⚙️</div>
-                <h3>Custom Engineering</h3>
-                <p>Bespoke AI solutions, generative models, and specialized E-commerce support built for your specific
-                    requirements.</p>
+
+            <div class="capability-card">
+                <div class="icon-box">🔍</div>
+                <h3>Smart Search</h3>
+                <p>RAG systems, knowledge retrieval, and semantic search that turns your documents into an intelligent
+                    knowledge base.</p>
+                <div class="services-list">→ Enterprise RAG & Knowledge Retrieval</div>
             </div>
-            <div class="value-card">
+
+            <div class="capability-card">
                 <div class="icon-box">🤖</div>
-                <h3>Intelligent Automation</h3>
-                <p>Virtual assistants, process automation agents, and enterprise RAG systems to streamline operations
-                    and enhance productivity.</p>
+                <h3>Process Automation</h3>
+                <p>AI agents that automate workflows, connect systems, and handle complex multi-step tasks without human
+                    intervention.</p>
+                <div class="services-list">→ Intelligent Process Automation</div>
+            </div>
+
+            <div class="capability-card">
+                <div class="icon-box">⚙️</div>
+                <h3>Custom AI Models</h3>
+                <p>Bespoke solutions, fine-tuned models, and generative AI systems tailored to your specific
+                    requirements and data.</p>
+                <div class="services-list">→ Custom Solutions, Generative AI</div>
+            </div>
+
+            <div class="capability-card">
+                <div class="icon-box">📊</div>
+                <h3>Business Intelligence</h3>
+                <p>Predictive analytics, automated reporting, and natural language data querying to turn metrics into
+                    actionable insights.</p>
+                <div class="services-list">→ Business Analytics, E-Commerce Support</div>
+            </div>
+
+            <div class="capability-card">
+                <div class="icon-box">🎯</div>
+                <h3>Strategic Guidance</h3>
+                <p>Executive briefings, governance frameworks, and ethical AI deployment to ensure safe and compliant
+                    implementation.</p>
+                <div class="services-list">→ Executive Briefing, AI Governance</div>
             </div>
         </div>
     </section>
@@ -306,7 +341,7 @@
 
     <script>
         // Subtle hover effect for cards
-        document.querySelectorAll('.value-card').forEach(card => {
+        document.querySelectorAll('.capability-card').forEach(card => {
             card.onmousemove = e => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
