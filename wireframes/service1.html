@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service 1: Executive AI Briefing</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 */
+            --accent: #d4af37;
+            /* Metallic Gold */
+            --text-light: #f8fafc;
+            --text-dim: #94a3b8;
+            --card-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--text-light);
+            background-color: var(--primary);
+            overflow-x: hidden;
+        }
+
+        /* Premium Navbar */
+        .navbar {
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        header {
+            text-align: center;
+            padding: 140px 20px 100px;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 70%);
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5em;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro-text {
+            font-size: 1.4em;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-dim);
+            font-weight: 300;
+        }
+
+        /* The Reality Check */
+        .reality-check {
+            padding: 80px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-dim);
+        }
+
+        /* The Agenda Redesigned */
+        .agenda-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .module {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .module:last-child {
+            margin-bottom: 0;
+        }
+
+        .module-content {
+            width: 42%;
+            background: var(--card-bg);
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .module-content:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .module-time {
+            width: 42%;
+            text-align: right;
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            font-style: italic;
+        }
+
+        .module.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .module.reverse .module-time {
+            text-align: left;
+        }
+
+        .module-marker {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .module h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: white;
+        }
+
+        .module p {
+            margin: 0;
+            font-size: 0.95em;
+            color: var(--text-dim);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(to top, #000, var(--primary));
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 20px 50px;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            border: 1px solid var(--accent);
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .cta-sub {
+            display: block;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: var(--text-dim);
+        }
+
+        /* Navigation */
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 40px 20px;
+            max-width: 1000px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3em;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .module,
+            .module.reverse {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .module-content,
+            .module-time {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .timeline-line {
+                display: none;
+            }
+
+            .module-marker {
+                display: none;
+            }
+        }
+    </style>
+
+    <style>
+        /* Wireframe Overrides */
+        :root {
+            --bg-dark: #ffffff !important;
+            --bg-card: #ffffff !important;
+            --text-main: #000000 !important;
+            --text-muted: #666666 !important;
+            --accent-primary: #000000 !important;
+            --accent-secondary: #000000 !important;
+            --accent-cyan: #000000 !important;
+            --glow: transparent !important;
+        }
+
+        body {
+            background-color: white !important;
+            color: black !important;
+            font-family: 'Courier New', Courier, monospace !important;
+        }
+
+        * {
+            box-shadow: none !important;
+            text-shadow: none !important;
+            border-radius: 0 !important;
+        }
+
+        .bg-glow, .bg-glow::before, .bg-glow::after {
+            display: none !important;
+        }
+
+        .navbar {
+            background: white !important;
+            border-bottom: 2px solid black !important;
+            backdrop-filter: none !important;
+        }
+
+        .logo {
+            background: none !important;
+            -webkit-text-fill-color: black !important;
+            color: black !important;
+        }
+
+        .hero h1, .hero h1 span {
+            background: none !important;
+            -webkit-text-fill-color: black !important;
+            color: black !important;
+        }
+
+        .capability-card {
+            background: white !important;
+            border: 2px solid black !important;
+        }
+
+        .capability-card:hover {
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        
+        .cta-button {
+            background: white !important;
+            color: black !important;
+            border: 2px solid black !important;
+        }
+        
+        .icon-box {
+            background: #eee !important;
+            border: 1px solid black !important;
+        }
+        
+        img {
+            filter: grayscale(100%) contrast(1.2) !important;
+            border: 1px solid black !important;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Vernpi AI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Executive AI Briefing</h1>
+            <p class="intro-text">A private, 2-hour strategy session for leaders who refuse to let the biggest
+                technological shift in history happen <em>to</em> them.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="reality-check" style="text-align: center; padding: 60px 0;">
+            <p style="font-size: 1.3em; color: var(--text-dim); max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                AI is shifting the landscape of every industry. The goal of this session is not to sell you a product,
+                but to provide the <strong>clarity and context</strong> you need to navigate this shift. We help you
+                understand what is possible, what is hype, and where the genuine opportunities lie for your specific
+                business.
+            </p>
+        </section>
+
+        <section class="agenda-section">
+            <h2 class="section-title">The 2-Hour Deep Dive</h2>
+            <p style="text-align: center; color: var(--text-dim); margin-bottom: 60px;">An interactive educational
+                session designed to explore the scope of AI in your industry.</p>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <!-- Module 1 -->
+                <div class="module">
+                    <div class="module-time">Part I: The Landscape</div>
+                    <div class="module-marker"></div>
+                    <div class="module-content">
+                        <h3>Understanding the Core Concepts</h3>
+                        <p>We start by building a shared vocabulary. You'll gain a clear, non-technical understanding of
+                            Generative AI, Large Language Models (LLMs), and Autonomous Agents. We explain <em>how</em>
+                            they work so you can understand <em>what</em> they can do.</p>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="module reverse">
+                    <div class="module-time">Part II: Industry Scope</div>
+                    <div class="module-marker"></div>
+                    <div class="module-content">
+                        <h3>Market & Competitor Analysis</h3>
+                        <p>We look outward. How are other leaders in your sector leveraging AI? We discuss relevant use
+                            cases, emerging trends, and the "art of the possible" within your specific vertical.</p>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="module">
+                    <div class="module-time">Part III: Opportunity Exploration</div>
+                    <div class="module-marker"></div>
+                    <div class="module-content">
+                        <h3>Collaborative Brainstorming</h3>
+                        <p>We look inward. This is an open discussion about your current workflows and pain points. We
+                            explore where AI could potentially add value—whether it's automating repetitive tasks,
+                            enhancing customer support, or unlocking data insights.</p>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="module reverse">
+                    <div class="module-time">Part IV: Open Forum</div>
+                    <div class="module-marker"></div>
+                    <div class="module-content">
+                        <h3>Q&A and Discussion</h3>
+                        <p>No pitch, no pressure. We dedicate this time to answering your specific questions, addressing
+                            concerns about data privacy or ethics, and discussing what a sensible "next step" might look
+                            like if you choose to proceed.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="options-section"
+            style="padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 80px;">
+            <h2 class="section-title" style="font-size: 2.2em; margin-bottom: 50px;">Two Ways to Engage</h2>
+            <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
+
+                <!-- 30 Min Option -->
+                <div
+                    style="flex: 1; min-width: 300px; background: rgba(255,255,255,0.02); padding: 40px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05);">
+                    <h3 style="color: white; font-family: 'Playfair Display', serif; font-size: 1.8em; margin-top: 0;">
+                        The 30-Minute Intro</h3>
+                    <p
+                        style="color: var(--accent); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9em;">
+                        Quick & Focused</p>
+                    <p style="color: var(--text-dim); margin: 20px 0;">Perfect for a quick introduction. We'll briefly
+                        discuss your business and see if there's a potential fit for AI solutions.</p>
+                    <ul style="list-style: none; padding: 0; color: var(--text-dim); margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;">• Introduction & Context</li>
+                        <li style="margin-bottom: 10px;">• High-level Q&A</li>
+                        <li>• Fit Assessment</li>
+                    </ul>
+                    <a href="#book-30" class="cta-btn"
+                        style="width: 100%; text-align: center; box-sizing: border-box; font-size: 0.9em; padding: 15px;">Book
+                        30-Min Chat</a>
+                </div>
+
+                <!-- 2 Hour Option -->
+                <div
+                    style="flex: 1; min-width: 300px; background: rgba(255,255,255,0.04); padding: 40px; border-radius: 4px; border: 1px solid var(--accent);">
+                    <h3 style="color: white; font-family: 'Playfair Display', serif; font-size: 1.8em; margin-top: 0;">
+                        The 2-Hour Deep Dive</h3>
+                    <p
+                        style="color: var(--accent); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9em;">
+                        Comprehensive & Educational</p>
+                    <p style="color: var(--text-dim); margin: 20px 0;">A full educational session to deeply understand
+                        AI concepts and explore opportunities in your industry.</p>
+                    <ul style="list-style: none; padding: 0; color: var(--text-dim); margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;">• In-depth Education</li>
+                        <li style="margin-bottom: 10px;">• Industry Use Cases</li>
+                        <li>• Opportunity Discovery</li>
+                    </ul>
+                    <a href="#book-2hr" class="cta-btn"
+                        style="width: 100%; text-align: center; box-sizing: border-box; font-size: 0.9em; padding: 15px; background: var(--accent); color: var(--primary);">Book
+                        2-Hour Session</a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+    <style>
+        .nav-overlay {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-dim);
+        }
+
+        .nav-overlay:hover {
+            background: var(--accent);
+            color: var(--primary);
+            width: 140px;
+            border-radius: 25px;
+        }
+
+        .nav-overlay.prev {
+            left: 20px;
+        }
+
+        .nav-overlay.next {
+            right: 20px;
+        }
+
+        .nav-overlay span {
+            display: none;
+            margin-left: 10px;
+            font-weight: 600;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .nav-overlay.prev span {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+
+        .nav-overlay:hover span {
+            display: inline;
+        }
+
+        .nav-icon {
+            font-size: 1.2em;
+        }
+    </style>
+
+    <a href="service9.html" class="nav-overlay prev">
+        <span class="nav-icon">←</span>
+        <span>Prev Service</span>
+    </a>
+    <a href="service2.html" class="nav-overlay next">
+        <span>Next Service</span>
+        <span class="nav-icon">→</span>
+    </a>
+
+    <a id="book" style="display: none;"></a>
+
+</body>
+
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service 2: Custom AI Solution Development</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: #e0e0e0;
+            background: #0b0f19;
+            /* Deep Blueprint Blue */
+        }
+
+        /* Modern Navbar (Dark) */
+        .navbar {
+            background: rgba(11, 15, 25, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #00d4ff;
+            /* Cyan */
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05em;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section - Blueprint Theme */
+        header {
+            text-align: center;
+            padding: 120px 20px;
+            background:
+                linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            position: relative;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, #0b0f19 90%);
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .intro-text {
+            font-size: 1.5em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #94a3b8;
+            position: relative;
+            font-weight: 300;
+        }
+
+        /* Process Steps */
+        .process-section {
+            display: flex;
+            justify-content: space-between;
+            margin: 80px 0;
+            position: relative;
+        }
+
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(0, 212, 255, 0.2);
+            z-index: 0;
+            transform: translateY(-50%);
+        }
+
+        .process-step {
+            background: #0b0f19;
+            border: 2px solid #00d4ff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #00d4ff;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .process-step:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            background: #00d4ff;
+            color: #0b0f19;
+        }
+
+        .step-label {
+            position: absolute;
+            top: 80px;
+            width: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 0.9em;
+            color: #94a3b8;
+        }
+
+        /* Impact Cards (Creative Layout) */
+        .impact-section {
+            margin-bottom: 100px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .impact-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .impact-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #00d4ff;
+            transform: translateY(-5px);
+        }
+
+        .card-number {
+            font-size: 4em;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.05);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .impact-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .impact-card p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .impact-stat {
+            display: inline-block;
+            padding: 8px 15px;
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        /* Tech Stack Marquee (Simulated) */
+        .tech-stack {
+            text-align: center;
+            margin-bottom: 80px;
+            opacity: 0.7;
+            font-family: monospace;
+            color: #00d4ff;
+            letter-spacing: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        /* CTA Section */
+        .cta-final {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, rgba(0, 212, 255, 0.05) 0%, transparent 100%);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            margin-top: 60px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: transparent;
+            color: #00d4ff;
+            text-decoration: none;
+            border: 2px solid #00d4ff;
+            border-radius: 0;
+            /* Square corners for blueprint feel */
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 30px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #00d4ff;
+            transition: left 0.3s;
+            z-index: -1;
+        }
+
+        .cta-button:hover {
+            color: #0b0f19;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .process-section {
+                display: none;
+                /* Hide complex process visual on mobile */
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+
+    <style>
+        /* Wireframe Overrides */
+        :root {
+            --bg-dark: #ffffff !important;
+            --bg-card: #ffffff !important;
+            --text-main: #000000 !important;
+            --text-muted: #666666 !important;
+            --accent-primary: #000000 !important;
+            --accent-secondary: #000000 !important;
+            --accent-cyan: #000000 !important;
+            --glow: transparent !important;
+        }
+
+        body {
+            background-color: white !important;
+            color: black !important;
+            font-family: 'Courier New', Courier, monospace !important;
+        }
+
+        * {
+            box-shadow: none !important;
+            text-shadow: none !important;
+            border-radius: 0 !important;
+        }
+
+        .bg-glow, .bg-glow::before, .bg-glow::after {
+            display: none !important;
+        }
+
+        .navbar {
+            background: white !important;
+            border-bottom: 2px solid black !important;
+            backdrop-filter: none !important;
+        }
+
+        .logo {
+            background: none !important;
+            -webkit-text-fill-color: black !important;
+            color: black !important;
+        }
+
+        .hero h1, .hero h1 span {
+            background: none !important;
+            -webkit-text-fill-color: black !important;
+            color: black !important;
+        }
+
+        .capability-card {
+            background: white !important;
+            border: 2px solid black !important;
+        }
+
+        .capability-card:hover {
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        
+        .cta-button {
+            background: white !important;
+            color: black !important;
+            border: 2px solid black !important;
+        }
+        
+        .icon-box {
+            background: #eee !important;
+            border: 1px solid black !important;
+        }
+        
+        img {
+            filter: grayscale(100%) contrast(1.2) !important;
+            border: 1px solid black !important;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Vernpi AI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Custom AI Solution Development</h1>
+            <p class="intro-text">Off-the-shelf software doesn't solve unique problems. We engineer bespoke AI solutions
+                tailored to your specific infrastructure, data, and goals.</p>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Process Visual -->
+        <div class="process-section">
+            <div class="process-step">01<div class="step-label">Discovery</div>
+            </div>
+            <div class="process-step">02<div class="step-label">Prototype</div>
+            </div>
+            <div class="process-step">03<div class="step-label">Develop</div>
+            </div>
+            <div class="process-step">04<div class="step-label">Deploy</div>
+            </div>
+            <div class="process-step">05<div class="step-label">Evolve</div>
+            </div>
+        </div>
+
+        <!-- Tech Stack Decoration -->
+        <div class="tech-stack">
+            PYTORCH // TENSORFLOW // KUBERNETES // DOCKER // AWS // AZURE // FASTAPI // REACT
+        </div>
+
+        <!-- Scope of Innovation Section -->
+        <div style="margin-bottom: 100px;">
+            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 50px; color: white;">Scope of Innovation
+            </h2>
+            <p style="text-align: center; color: #94a3b8; max-width: 800px; margin: -30px auto 60px auto;">We don't just
+                train models; we build complete, production-grade AI ecosystems. Our engineering capabilities cover the
+                entire spectrum of modern intelligence.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+                <!-- Scope 1 -->
+                <div
+                    style="background: rgba(11, 15, 25, 0.8); border: 1px solid #00d4ff; padding: 30px; position: relative; transition: transform 0.3s;">
+                    <h3
+                        style="color: white; margin-top: 0; border-bottom: 1px solid rgba(0, 212, 255, 0.3); padding-bottom: 10px; display: inline-block;">
+                        End-to-End AI Platforms</h3>
+                    <p style="color: #94a3b8; font-size: 0.95em; margin-top: 15px;">Full-stack development of AI-native
+                        applications. From the React frontend to the Python backend and the vector database
+                        infrastructure, we build the entire vessel for your intelligence.</p>
+                </div>
+
+                <!-- Scope 2 -->
+                <div
+                    style="background: rgba(11, 15, 25, 0.8); border: 1px solid #00d4ff; padding: 30px; position: relative; transition: transform 0.3s;">
+                    <h3
+                        style="color: white; margin-top: 0; border-bottom: 1px solid rgba(0, 212, 255, 0.3); padding-bottom: 10px; display: inline-block;">
+                        Computer Vision Systems</h3>
+                    <p style="color: #94a3b8; font-size: 0.95em; margin-top: 15px;">Automated inspection, facial
+                        recognition, and object detection. We deploy optimized models (YOLO, ResNet) to edge devices or
+                        cloud servers for real-time visual processing.</p>
+                </div>
+
+                <!-- Scope 3 -->
+                <div
+                    style="background: rgba(11, 15, 25, 0.8); border: 1px solid #00d4ff; padding: 30px; position: relative; transition: transform 0.3s;">
+                    <h3
+                        style="color: white; margin-top: 0; border-bottom: 1px solid rgba(0, 212, 255, 0.3); padding-bottom: 10px; display: inline-block;">
+                        Predictive Analytics Engines</h3>
+                    <p style="color: #94a3b8; font-size: 0.95em; margin-top: 15px;">Turn historical data into future
+                        foresight. We engineer custom regression and classification models to forecast sales, demand,
+                        and risk with high precision.</p>
+                </div>
+
+                <!-- Scope 4 -->
+                <div
+                    style="background: rgba(11, 15, 25, 0.8); border: 1px solid #00d4ff; padding: 30px; position: relative; transition: transform 0.3s;">
+                    <h3
+                        style="color: white; margin-top: 0; border-bottom: 1px solid rgba(0, 212, 255, 0.3); padding-bottom: 10px; display: inline-block;">
+                        NLP & LLM Integration</h3>
+                    <p style="color: #94a3b8; font-size: 0.95em; margin-top: 15px;">Fine-tuning and RAG architectures.
+                        We adapt open-source LLMs (Llama 3, Mistral) to understand your specific domain language and
+                        internal documents.</p>
+                </div>
+
+                <!-- Scope 5 -->
+                <div
+                    style="background: rgba(11, 15, 25, 0.8); border: 1px solid #00d4ff; padding: 30px; position: relative; transition: transform 0.3s;">
+                    <h3
+                        style="color: white; margin-top: 0; border-bottom: 1px solid rgba(0, 212, 255, 0.3); padding-bottom: 10px; display: inline-block;">
+                        Edge AI & IoT Intelligence</h3>
+                    <p style="color: #94a3b8; font-size: 0.95em; margin-top: 15px;">Bring intelligence to the source. We
+                        optimize models (Quantization, Pruning) to run efficiently on low-power devices, sensors, and
+                        embedded systems.</p>
+                </div>
+
+                <!-- Scope 6 -->
+                <div
+                    style="background: rgba(11, 15, 25, 0.8); border: 1px solid #00d4ff; padding: 30px; position: relative; transition: transform 0.3s;">
+                    <h3
+                        style="color: white; margin-top: 0; border-bottom: 1px solid rgba(0, 212, 255, 0.3); padding-bottom: 10px; display: inline-block;">
+                        Reinforcement Learning</h3>
+                    <p style="color: #94a3b8; font-size: 0.95em; margin-top: 15px;">Autonomous decision-making systems.
+                        We build agents that learn optimal strategies for complex environments like robotics, logistics,
+                        and trading.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- How We Help Section -->
+        <div
+            style="margin-bottom: 80px; background: rgba(255,255,255,0.02); padding: 60px; border-radius: 20px; border: 1px dashed rgba(0, 212, 255, 0.3);">
+            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 50px; color: white;">Your Technical
+                Co-Founder</h2>
+
+            <div style="display: flex; flex-direction: column; gap: 40px;">
+
+                <div style="display: flex; gap: 30px; align-items: flex-start;">
+                    <div style="font-size: 2em; color: #00d4ff; font-weight: bold; min-width: 50px;">01</div>
+                    <div>
+                        <h3 style="color: white; margin: 0 0 10px 0;">We Translate "Business" to "Binary"</h3>
+                        <p style="color: #94a3b8;">You don't need to know the difference between a Transformer and a
+                            CNN. You explain the business problem ("We need to reduce waste"), and we architect the
+                            technical solution ("Computer Vision quality control system").</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 30px; align-items: flex-start;">
+                    <div style="font-size: 2em; color: #00d4ff; font-weight: bold; min-width: 50px;">02</div>
+                    <div>
+                        <h3 style="color: white; margin: 0 0 10px 0;">Infrastructure & MLOps</h3>
+                        <p style="color: #94a3b8;">A model is useless if it crashes. We handle the boring-but-critical
+                            stuff: scalable cloud infrastructure (AWS/Azure), CI/CD pipelines, and automated model
+                            retraining to ensure 99.9% uptime.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 30px; align-items: flex-start;">
+                    <div style="font-size: 2em; color: #00d4ff; font-weight: bold; min-width: 50px;">03</div>
+                    <div>
+                        <h3 style="color: white; margin: 0 0 10px 0;">Intellectual Property Transfer</h3>
+                        <p style="color: #94a3b8;">Unlike SaaS platforms that rent you intelligence, we build it for
+                            you. You own the code, the weights, and the data. We hand over the keys to a proprietary
+                            asset that adds value to your company valuation.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <section class="cta-final">
+            <h2 style="color: white; margin-bottom: 20px;">Have a Complex Problem?</h2>
+            <p style="color: #94a3b8; max-width: 600px; margin: 0 auto; margin-bottom: 30px;">If you can define it, we
+                can build the AI to solve it.</p>
+            <a href="#contact-custom" class="cta-button">Start The Blueprint</a>
+        </section>
+
+
+
+        <style>
+            .nav-overlay {
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(5px);
+                border-radius: 50%;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                color: #94a3b8;
+                /* Light text for dark mode */
+            }
+
+            .nav-overlay:hover {
+                background: #00d4ff;
+                /* Cyan accent */
+                color: #0b0f19;
+                /* Dark text */
+                width: 140px;
+                border-radius: 25px;
+            }
+
+            .nav-overlay.prev {
+                left: 20px;
+            }
+
+            .nav-overlay.next {
+                right: 20px;
+            }
+
+            .nav-overlay span {
+                display: none;
+                margin-left: 10px;
+                font-weight: 600;
+                font-size: 0.9em;
+                white-space: nowrap;
+            }
+
+            .nav-overlay.prev span {
+                margin-left: 0;
+                margin-right: 10px;
+            }
+
+            .nav-overlay:hover span {
+                display: inline;
+            }
+
+            .nav-icon {
+                font-size: 1.2em;
+            }
+        </style>
+
+        <a href="service1.html" class="nav-overlay prev">
+            <span class="nav-icon">←</span>
+            <span>Prev Service</span>
+        </a>
+        <a href="service3.html" class="nav-overlay next">
+            <span>Next Service</span>
+            <span class="nav-icon">→</span>
+        </a>
+
+        <a id="contact-custom" style="display: none;"></a>
+
+    </div>
+
+</body>
+
+</html>

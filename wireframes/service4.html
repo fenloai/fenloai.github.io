@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service 4: Enterprise RAG & Knowledge Retrieval</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        /* Modern Navbar */
+        .navbar {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05em;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        h1 {
+            color: #4a148c;
+            /* Purple Dark */
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: #6a1b9a;
+            /* Purple */
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #7b1fa2;
+            /* Lighter Purple */
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        .value-prop ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .value-prop li {
+            background: #f3e5f5;
+            /* Light Purple for emphasis */
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .agenda-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+
+        .agenda-table th,
+        .agenda-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .agenda-table th {
+            background-color: #6a1b9a;
+            color: white;
+        }
+
+        .choice-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 40px 0;
+        }
+
+        .choice-table th,
+        .choice-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .choice-table th {
+            background-color: #f3e5f5;
+            color: #4a148c;
+            border-top: 2px solid #4a148c;
+        }
+
+        .choice-table td:nth-child(2),
+        .choice-table td:nth-child(3) {
+            border-left: 1px solid #eee;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #7b1fa2;
+            /* Purple CTA */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #4a148c;
+        }
+
+        .cta-cell {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .value-prop ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <style>
+        /* Wireframe Overrides */
+        :root {
+            --bg-dark: #ffffff !important;
+            --bg-card: #ffffff !important;
+            --text-main: #000000 !important;
+            --text-muted: #666666 !important;
+            --accent-primary: #000000 !important;
+            --accent-secondary: #000000 !important;
+            --accent-cyan: #000000 !important;
+            --glow: transparent !important;
+        }
+
+        body {
+            background-color: white !important;
+            color: black !important;
+            font-family: 'Courier New', Courier, monospace !important;
+        }
+
+        * {
+            box-shadow: none !important;
+            text-shadow: none !important;
+            border-radius: 0 !important;
+        }
+
+        .bg-glow, .bg-glow::before, .bg-glow::after {
+            display: none !important;
+        }
+
+        .navbar {
+            background: white !important;
+            border-bottom: 2px solid black !important;
+            backdrop-filter: none !important;
+        }
+
+        .logo {
+            background: none !important;
+            -webkit-text-fill-color: black !important;
+            color: black !important;
+        }
+
+        .hero h1, .hero h1 span {
+            background: none !important;
+            -webkit-text-fill-color: black !important;
+            color: black !important;
+        }
+
+        .capability-card {
+            background: white !important;
+            border: 2px solid black !important;
+        }
+
+        .capability-card:hover {
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        
+        .cta-button {
+            background: white !important;
+            color: black !important;
+            border: 2px solid black !important;
+        }
+        
+        .icon-box {
+            background: #eee !important;
+            border: 1px solid black !important;
+        }
+        
+        img {
+            filter: grayscale(100%) contrast(1.2) !important;
+            border: 1px solid black !important;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Vernpi AI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Enterprise RAG & Knowledge Retrieval</h1>
+            <p class="intro-text">Chat with your data. Unlock the hidden value in your documents with secure,
+                hallucination-free AI search.</p>
+        </header>
+
+        <section class="value-prop">
+            <h2>Why RAG (Retrieval-Augmented Generation)?</h2>
+            <ul>
+                <li>
+                    <h3>Instant Answers</h3>
+                    <p>Stop wasting hours searching through Sharepoint or Drive. Get precise answers from your PDFs,
+                        Docs, and SQL databases instantly.</p>
+                </li>
+                <li>
+                    <h3>Grounded Accuracy</h3>
+                    <p>Eliminate hallucinations. Our RAG systems provide citations for every answer, ensuring you can
+                        trust the output for critical decisions.</p>
+                </li>
+                <li>
+                    <h3>Enterprise Security</h3>
+                    <p>Your data stays within your perimeter. We deploy local or private-cloud RAG pipelines that ensure
+                        zero data leakage.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="options">
+            <h2>Use Case Capabilities</h2>
+
+            <table class="choice-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Internal Knowledge Engine</th>
+                        <th>Customer-Facing RAG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>**Data Sources**</td>
+                        <td>**Unstructured & Structured** (PDFs, Wikis, Slack, SQL, ERPs)</td>
+                        <td>**Curated Knowledge Base** (Help Center, Public Docs, Product Manuals)</td>
+                    </tr>
+                    <tr>
+                        <td>**Accuracy Control**</td>
+                        <td>**Strict Citations** (Links to source page/document)</td>
+                        <td>**Brand Voice Tuned** (Polished, friendly summaries)</td>
+                    </tr>
+                    <tr>
+                        <td>**Access Control**</td>
+                        <td>**Role-Based (RBAC)** (Users only see what they have permission to)</td>
+                        <td>**Public / Tiered** (General access for all visitors)</td>
+                    </tr>
+                    <tr>
+                        <td>**Latency**</td>
+                        <td>**Deep Reasoning** (Slower, more analytical)</td>
+                        <td>**Real-Time** (Optimized for speed and engagement)</td>
+                    </tr>
+                    <tr>
+                        <td class="cta-cell"></td>
+                        <td class="cta-cell"><a href="#contact-internal" class="cta-button">Build Internal Search</a>
+                        </td>
+                        <td class="cta-cell"><a href="#contact-external" class="cta-button">Enhance Customer Support</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="agenda">
+            <h2>Implementation Roadmap</h2>
+            <p>We turn your raw data into an intelligent knowledge graph in 4 weeks.</p>
+            <table class="agenda-table">
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Activity</th>
+                        <th>Deliverable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. Data Audit & Security</td>
+                        <td>Map data sources, define access policies, and select embedding models.</td>
+                        <td>Data Governance Plan & Architecture Design.</td>
+                    </tr>
+                    <tr>
+                        <td>2. Ingestion Pipeline</td>
+                        <td>Connect connectors (Google Drive, Notion, etc.), chunk data, and vectorize.</td>
+                        <td>Live Vector Database (Pinecone/Weaviate/Chroma).</td>
+                    </tr>
+                    <tr>
+                        <td>3. Retrieval Tuning</td>
+                        <td>Optimize "Hybrid Search" (Keyword + Semantic) and re-ranking for relevance.</td>
+                        <td>Benchmarked Retrieval System (95%+ Recall).</td>
+                    </tr>
+                    <tr>
+                        <td>4. UI & Integration</td>
+                        <td>Deploy the Chat Interface or integrate into Slack/Teams/Web.</td>
+                        <td>Production RAG App & Admin Dashboard.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="cta-final"
+            style="text-align: center; margin-top: 50px; padding: 30px; background: #f3e5f5; border-radius: 8px;">
+            <h2>Ready to Talk to Your Data?</h2>
+            <p style="font-size: 1.1em; color: #555;">Transform your information overload into actionable intelligence.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
+                <a href="#contact-internal" class="cta-button" style="background-color: #6a1b9a;">Start Pilot
+                    Project</a>
+                <a href="#contact-external" class="cta-button" style="background-color: #8e24aa;">Get a Demo</a>
+            </div>
+        </section>
+
+        <a id="contact-internal" style="display: none;"></a>
+        <style>
+            .nav-overlay {
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                background: rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(5px);
+                border-radius: 50%;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                color: #333;
+            }
+
+            .nav-overlay:hover {
+                background: #4a148c;
+                /* Purple accent */
+                color: white;
+                width: 140px;
+                border-radius: 25px;
+            }
+
+            .nav-overlay.prev {
+                left: 20px;
+            }
+
+            .nav-overlay.next {
+                right: 20px;
+            }
+
+            .nav-overlay span {
+                display: none;
+                margin-left: 10px;
+                font-weight: 600;
+                font-size: 0.9em;
+                white-space: nowrap;
+            }
+
+            .nav-overlay.prev span {
+                margin-left: 0;
+                margin-right: 10px;
+            }
+
+            .nav-overlay:hover span {
+                display: inline;
+            }
+
+            .nav-icon {
+                font-size: 1.2em;
+            }
+        </style>
+
+        <a href="service3.html" class="nav-overlay prev">
+            <span class="nav-icon">←</span>
+            <span>Prev Service</span>
+        </a>
+        <a href="service5.html" class="nav-overlay next">
+            <span>Next Service</span>
+            <span class="nav-icon">→</span>
+        </a>
+
+        <a id="contact-rag" style="display: none;"></a>
+    </div>
+</body>
+
+</html>
+```

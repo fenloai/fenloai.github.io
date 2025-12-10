@@ -3,19 +3,31 @@
 ## [Page] Homepage (index.html)
 
 ### Hero Section
-**Headline:** Enterprise AI Solutions.
-**Subheadline:** Transforming businesses with strategic intelligence and automated solutions. We deliver measurable results through proven AI technologies.
-**CTA:** View All Services
+**Headline:** AI Solutions That Work.
+**Subheadline:** We build intelligent systems for real business problems.
+**CTA:** Explore Services
 
-### Key Offerings
-**1. Strategic AI**
-Executive briefings and governance frameworks to guide your AI adoption journey safely and effectively.
+### Capabilities Section
+**Title:** What We Build
+**Subtitle:** Concrete solutions backed by proven technology.
 
-**2. Custom Engineering**
-Bespoke AI solutions, generative models, and specialized E-commerce support built for your specific requirements.
+**1. Intelligent Conversations**
+24/7 customer support bots, AI assistants, and enterprise chatbots that understand context and handle complex queries.
 
-**3. Intelligent Automation**
-Virtual assistants, process automation agents, and enterprise RAG systems to streamline operations and enhance productivity.
+**2. Smart Search**
+RAG systems, knowledge retrieval, and semantic search that turns your documents into an intelligent knowledge base.
+
+**3. Process Automation**
+AI agents that automate workflows, connect systems, and handle complex multi-step tasks without human intervention.
+
+**4. Custom AI Models**
+Bespoke solutions, fine-tuned models, and generative AI systems tailored to your specific requirements and data.
+
+**5. Business Intelligence**
+Predictive analytics, automated reporting, and natural language data querying to turn metrics into actionable insights.
+
+**6. Strategic Guidance**
+Executive briefings, governance frameworks, and ethical AI deployment to ensure safe and compliant implementation.
 
 ---
 
