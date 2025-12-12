@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vernpi AI</title>
+    <meta name="description"
+        content="Get in touch with Vernpi AI. We are ready to help you transform your business with intelligent AI solutions.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Vernpi AI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1 class="gradient-text">Contact Us</h1>
+        <p class="intro-text">Ready to transform your business? Let's start a conversation.</p>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="glass-card mb-lg">
+                        <h3>Get in Touch</h3>
+                        <p class="mb-md">Have a question or want to discuss a project? Fill out the form or reach out to us directly.</p>
+                        
+                        <div class="contact-item mb-sm">
+                            <strong>Email:</strong> <a href="mailto:hello@nexara.ai" class="text-accent">hello@nexara.ai</a>
+                        </div>
+                        <div class="contact-item mb-sm">
+                            <strong>Location:</strong> San Francisco, CA
+                        </div>
+                        <div class="contact-item">
+                            <strong>Hours:</strong> Mon-Fri, 9am - 6pm PST
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <form class="glass-card contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Vernpi AI. All rights reserved.</p>
+        <a href="mailto:hello@nexara.ai" class="email">hello@nexara.ai</a>
+    </footer>
+
+    <script>
+        // Card hover effect
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body>
+
+</html>
