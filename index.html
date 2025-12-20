@@ -2,11 +2,22 @@
 <html lang="en">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MBJVZS7Z');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fenlo AI - AI Solutions for Small Business</title>
     <meta name="description"
-        content="Not sure if AI is right for your business? We'll tell you honestly. Free assessment, no pitch, no pressure.">
+        content="Not sure if AI is right for your business? We'll tell you honestly. Free assessment, no pitch, no pressure. AI consulting for small business.">
+    <meta name="keywords" content="AI consulting, small business AI, artificial intelligence for SMB, AI solutions, chatbots, business automation, AI implementation, machine learning consulting">
+    <meta name="author" content="Fenlo AI">
+    <meta name="robots" content="index, follow">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://fenloai.com/">
@@ -47,16 +58,97 @@
         "description": "AI solutions for small businesses. We help you determine if AI is right for your business with honest assessments and practical implementations.",
         "email": "contact@fenloai.com",
         "sameAs": [],
-        "service": {
-            "@type": "Service",
-            "name": "AI Consulting & Development",
-            "description": "Executive AI briefings, custom AI development, chatbots, document Q&A systems, workflow automation, and business intelligence."
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "contact@fenloai.com",
+            "availableLanguage": "English"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "AI Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Executive AI Briefing",
+                        "description": "Free 2-hour strategy session to demystify AI for your business"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom AI Development",
+                        "description": "Bespoke AI solutions tailored to your business needs"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Smart Chatbots",
+                        "description": "24/7 customer support automation"
+                    }
+                }
+            ]
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Fenlo AI",
+        "url": "https://fenloai.com",
+        "description": "AI Solutions for Small Business - Honest assessments, practical implementations",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Fenlo AI"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is AI right for my small business?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Not every business needs AI. We provide honest assessments to determine if AI solutions would benefit your specific situation. Book a free Executive AI Briefing to find out."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does AI implementation cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer fixed pricing with no surprises. Costs vary based on the solution - chatbots start from $2,000, custom solutions are quoted after discovery. Our Executive AI Briefing is free for qualified businesses."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does it take to implement AI solutions?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We deliver results in weeks, not months. Simple chatbots can be live in 1-2 weeks, while more complex solutions like Document Q&A systems take 2-3 weeks."
+                }
+            }
+        ]
     }
     </script>
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBJVZS7Z"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div class="bg-glow"></div>
     <div class="bg-grid"></div>
@@ -275,7 +367,7 @@
 
     <script>
         // Card hover effect with radial gradient
-        document.querySelectorAll('.glass-card').forEach(card => {
+        document.querySelectorAll('.glass-card, .service-card').forEach(card => {
             card.addEventListener('mousemove', e => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
@@ -309,6 +401,82 @@
                 });
             });
         }
+
+        // Scroll-triggered animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const animateOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Optional: unobserve after animation
+                    // animateOnScroll.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animation classes
+        document.querySelectorAll('.animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale').forEach(el => {
+            animateOnScroll.observe(el);
+        });
+
+        // Add animation classes to sections dynamically
+        document.querySelectorAll('.section').forEach((section, index) => {
+            section.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Smooth counter animation for statistics
+        function animateCounter(el) {
+            const target = parseInt(el.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += step;
+                if (current < target) {
+                    el.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    el.textContent = target;
+                }
+            };
+            updateCounter();
+        }
+
+        // Observe counters
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    entry.target.classList.add('counted');
+                    animateCounter(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('[data-target]').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Parallax effect for background elements (subtle)
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const bgGlow = document.querySelector('.bg-glow');
+                    if (bgGlow) {
+                        bgGlow.style.transform = `translateY(${scrolled * 0.1}px)`;
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
     </script>
 </body>
 
