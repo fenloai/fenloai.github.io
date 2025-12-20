@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" width="45" height="45">
+  <defs>
+    <style type="text/css">
+      .white-text {
+        fill: #ffffff;
+      }
+      .neon-green {
+        fill: #39FF14;
+      }
+    </style>
+  </defs>
+  <!-- Icon group - both squares grouped and translated to align with text -->
+  <g transform="translate(-12, -12)">
+    <!-- Back square (not rotated) -->
+    <rect x="20" y="20" width="28" height="28" class="neon-green"/>
+    
+    <!-- Front square (45° rotated) with thick stroke to create separation -->
+    <rect x="20" y="20" width="28" height="28" class="neon-green" 
+          transform="rotate(45 34 34)" 
+          stroke="black" 
+          stroke-width="3"/>
+  </g>
+  
+  
+</svg>

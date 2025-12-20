@@ -210,21 +210,18 @@ a {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: var(--font-weight-extrabold);
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #fff 0%, var(--text-secondary) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
     transition: var(--transition-normal);
 }
 
+.logo-img {
+    height: 32px;
+    width: auto;
+}
+
 .logo:hover {
-    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-light) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    opacity: 0.8;
 }
 
 .nav-links {
@@ -288,7 +285,8 @@ a {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001;
+    z-index: 1002;
+    position: relative;
 }
 
 .mobile-menu-toggle span {
@@ -322,7 +320,7 @@ a {
     height: 100vh;
     background: rgba(10, 10, 15, 0.98);
     backdrop-filter: blur(20px);
-    z-index: 999;
+    z-index: 1000;
     flex-direction: column;
     justify-content: center;
     align-items: center;
