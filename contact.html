@@ -12,6 +12,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Contact Us - Fenlo AI</title>
     <meta name="description"
         content="Get in touch with Fenlo AI. We are ready to help you transform your business with intelligent AI solutions.">
@@ -247,10 +251,57 @@
         const btnLoading = submitBtn.querySelector('.btn-loading');
         const formStatus = document.getElementById('form-status');
 
-        // Validation functions
+        // Rate limiting - prevent spam submissions
+        const RATE_LIMIT_KEY = 'formSubmitTimestamps';
+        const RATE_LIMIT_WINDOW = 60000; // 1 minute
+        const MAX_SUBMISSIONS = 3; // Max 3 submissions per minute
+
+        function isRateLimited() {
+            try {
+                const timestamps = JSON.parse(localStorage.getItem(RATE_LIMIT_KEY) || '[]');
+                const now = Date.now();
+                const recentSubmissions = timestamps.filter(t => now - t < RATE_LIMIT_WINDOW);
+                return recentSubmissions.length >= MAX_SUBMISSIONS;
+            } catch {
+                return false;
+            }
+        }
+
+        function recordSubmission() {
+            try {
+                const timestamps = JSON.parse(localStorage.getItem(RATE_LIMIT_KEY) || '[]');
+                const now = Date.now();
+                const recentSubmissions = timestamps.filter(t => now - t < RATE_LIMIT_WINDOW);
+                recentSubmissions.push(now);
+                localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(recentSubmissions));
+            } catch {
+                // Ignore storage errors
+            }
+        }
+
+        // Input sanitization to prevent XSS
+        function sanitizeInput(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // Validation functions - improved email regex
         function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
+            // RFC 5322 compliant email regex
+            const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+            return re.test(email) && email.length <= 254;
+        }
+
+        // Validate input length and content
+        function validateText(text, minLength, maxLength) {
+            const trimmed = text.trim();
+            if (trimmed.length < minLength || trimmed.length > maxLength) {
+                return false;
+            }
+            // Check for suspicious patterns (script tags, etc.)
+            const suspiciousPatterns = /<script|javascript:|data:|vbscript:|on\w+\s*=/i;
+            return !suspiciousPatterns.test(trimmed);
         }
 
         function showError(fieldId, message) {
@@ -279,10 +330,10 @@
             errorSpan.style.display = 'none';
         }
 
-        // Real-time validation
+        // Real-time validation with enhanced security checks
         document.getElementById('name').addEventListener('blur', function() {
-            if (this.value.trim().length < 2) {
-                showError('name', 'Please enter your name');
+            if (!validateText(this.value, 2, 100)) {
+                showError('name', 'Please enter a valid name (2-100 characters)');
             } else {
                 showValid('name');
             }
@@ -297,16 +348,16 @@
         });
 
         document.getElementById('subject').addEventListener('blur', function() {
-            if (this.value.trim().length < 2) {
-                showError('subject', 'Please enter a subject');
+            if (!validateText(this.value, 2, 200)) {
+                showError('subject', 'Please enter a valid subject (2-200 characters)');
             } else {
                 showValid('subject');
             }
         });
 
         document.getElementById('message').addEventListener('blur', function() {
-            if (this.value.trim().length < 10) {
-                showError('message', 'Please enter a message (at least 10 characters)');
+            if (!validateText(this.value, 10, 5000)) {
+                showError('message', 'Please enter a valid message (10-5000 characters)');
             } else {
                 showValid('message');
             }
@@ -316,15 +367,22 @@
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Validate all fields
+            // Check rate limiting first
+            if (isRateLimited()) {
+                formStatus.textContent = 'Too many submissions. Please wait a moment before trying again.';
+                formStatus.classList.add('error');
+                return;
+            }
+
+            // Validate all fields with enhanced security
             let isValid = true;
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const subject = document.getElementById('subject').value.trim();
             const message = document.getElementById('message').value.trim();
 
-            if (name.length < 2) {
-                showError('name', 'Please enter your name');
+            if (!validateText(name, 2, 100)) {
+                showError('name', 'Please enter a valid name (2-100 characters)');
                 isValid = false;
             } else {
                 showValid('name');
@@ -337,21 +395,24 @@
                 showValid('email');
             }
 
-            if (subject.length < 2) {
-                showError('subject', 'Please enter a subject');
+            if (!validateText(subject, 2, 200)) {
+                showError('subject', 'Please enter a valid subject (2-200 characters)');
                 isValid = false;
             } else {
                 showValid('subject');
             }
 
-            if (message.length < 10) {
-                showError('message', 'Please enter a message (at least 10 characters)');
+            if (!validateText(message, 10, 5000)) {
+                showError('message', 'Please enter a valid message (10-5000 characters)');
                 isValid = false;
             } else {
                 showValid('message');
             }
 
             if (!isValid) return;
+
+            // Record this submission for rate limiting
+            recordSubmission();
 
             // Show loading state
             btnText.style.display = 'none';
@@ -361,9 +422,16 @@
             formStatus.className = 'form-status';
 
             try {
+                // Create sanitized form data
+                const formData = new FormData();
+                formData.append('name', sanitizeInput(name));
+                formData.append('email', sanitizeInput(email));
+                formData.append('subject', sanitizeInput(subject));
+                formData.append('message', sanitizeInput(message));
+
                 const response = await fetch(form.action, {
                     method: 'POST',
-                    body: new FormData(form),
+                    body: formData,
                     headers: {
                         'Accept': 'application/json'
                     }
