@@ -4,119 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom AI Solution Development - Fenlo Tech</title>
+    <title>Custom AI Solution Development - Fenlo AI</title>
     <meta name="description"
         content="Bespoke AI engineering for your unique challenges. End-to-end AI platforms, computer vision, predictive analytics, and LLM integration.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fenloai.com/service2">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Preload Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fenloai.com/service2">
+    <meta property="og:title" content="Custom AI Solution Development - Fenlo AI">
+    <meta property="og:description" content="Bespoke AI engineering for your unique challenges. End-to-end AI platforms, computer vision, predictive analytics, and LLM integration.">
+    <meta property="og:image" content="https://fenloai.com/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://fenloai.com/service2">
+    <meta name="twitter:title" content="Custom AI Solution Development - Fenlo AI">
+    <meta name="twitter:description" content="Bespoke AI engineering for your unique challenges. End-to-end AI platforms, computer vision, predictive analytics, and LLM integration.">
+    <meta name="twitter:image" content="https://fenloai.com/og-image.png">
+
     <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --accent-page: #06b6d4;
-        }
-
-        .process-step {
-            border-color: var(--accent-page);
-            color: var(--accent-page);
-        }
-
-        .process-step:hover {
-            background: var(--accent-page);
-            color: var(--bg-primary);
-            box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
-        }
-
-        .scope-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--accent-page);
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-            transition: var(--transition-normal);
-        }
-
-        .scope-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .scope-card h3 {
-            color: var(--text-primary);
-            border-bottom: 1px solid rgba(6, 182, 212, 0.3);
-            padding-bottom: var(--space-xs);
-            margin-bottom: var(--space-sm);
-            display: inline-block;
-        }
-
-        .tech-stack {
-            text-align: center;
-            padding: var(--space-lg) 0;
-            opacity: 0.7;
-            font-family: monospace;
-            color: var(--accent-page);
-            letter-spacing: 5px;
-            font-size: 0.9rem;
-        }
-
-        .help-section {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px dashed rgba(6, 182, 212, 0.3);
-            border-radius: var(--radius-lg);
-            padding: var(--space-2xl);
-            margin: var(--space-2xl) 0;
-        }
-
-        .help-item {
-            display: flex;
-            gap: var(--space-lg);
-            align-items: flex-start;
-            margin-bottom: var(--space-xl);
-        }
-
-        .help-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .help-number {
-            font-size: 2rem;
-            color: var(--accent-page);
-            font-weight: var(--font-weight-bold);
-            min-width: 50px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-page) 0%, #0891b2 100%);
-            box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 40px rgba(6, 182, 212, 0.5);
-        }
-
-        .nav-overlay:hover {
-            background: var(--accent-page);
-        }
-    </style>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div class="bg-glow"></div>
     <div class="bg-grid"></div>
 
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">Fenlo Tech</a>
+            <a href="index.html" class="logo">Fenlo AI</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <div class="mobile-nav" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
     <section class="page-header">
         <h1>Custom AI & Automation Solutions</h1>
         <p class="intro-text">Have a specific problem that off-the-shelf tools can't solve? We build custom AI solutions tailored to your exact business needs — no generic one-size-fits-all.</p>
     </section>
 
+    <main id="main-content">
     <div class="container">
         <!-- When You Need Custom AI -->
         <section class="section">
@@ -256,12 +209,13 @@
             </div>
         </section>
     </div>
+    </main>
 
     <!-- CTA Section -->
     <section class="cta-section">
         <h2>Have a Problem in Mind?</h2>
         <p>Tell us what's slowing you down. We'll tell you if AI can fix it — and how.</p>
-        <a href="contact.html" class="btn btn-primary">Book a Free Discovery Call</a>
+        <a href="book-discovery.html?service=custom-ai-automation" class="btn btn-primary">Book a Free Discovery Call</a>
     </section>
 
     <!-- Floating Navigation -->
@@ -274,10 +228,36 @@
         <span class="nav-icon">→</span>
     </a>
 
-    <footer>
-        <p>&copy; 2025 Fenlo Tech. All rights reserved.</p>
-        <a href="mailto:hello@fenlo-tech.ai" class="email">hello@fenlo-tech.ai</a>
+    <footer role="contentinfo">
+        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isActive = mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isActive);
+                mobileNav.setAttribute('aria-hidden', !isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
+
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileNav.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>

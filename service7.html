@@ -4,180 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Intelligence & Automated Reporting - Fenlo Tech</title>
+    <title>Business Intelligence & Automated Reporting - Fenlo AI</title>
     <meta name="description"
         content="Stop guessing. Turn your messy spreadsheets into a clear dashboard that tells you exactly how your business is doing.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fenloai.com/service7">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Preload Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fenloai.com/service7">
+    <meta property="og:title" content="Business Intelligence & Automated Reporting - Fenlo AI">
+    <meta property="og:description" content="Stop guessing. Turn your messy spreadsheets into a clear dashboard that tells you exactly how your business is doing.">
+    <meta property="og:image" content="https://fenloai.com/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://fenloai.com/service7">
+    <meta name="twitter:title" content="Business Intelligence & Automated Reporting - Fenlo AI">
+    <meta name="twitter:description" content="Stop guessing. Turn your messy spreadsheets into a clear dashboard that tells you exactly how your business is doing.">
+    <meta name="twitter:image" content="https://fenloai.com/og-image.png">
+
     <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --accent-page: #38bdf8;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-page) 0%, #0ea5e9 100%);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 40px rgba(56, 189, 248, 0.5);
-        }
-
-        /* Dashboard Grid */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-lg);
-            margin-bottom: var(--space-3xl);
-        }
-
-        .metric-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-            position: relative;
-            transition: var(--transition-normal);
-        }
-
-        .metric-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-page);
-        }
-
-        .metric-icon {
-            font-size: 2.5rem;
-            display: inline-block;
-            background: rgba(56, 189, 248, 0.1);
-            padding: var(--space-sm);
-            border-radius: var(--radius-md);
-            margin-bottom: var(--space-md);
-        }
-
-        .metric-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: var(--space-sm);
-        }
-
-        /* Live Indicator */
-        .live-indicator {
-            position: absolute;
-            top: var(--space-md);
-            right: var(--space-md);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.75rem;
-            color: #4ade80;
-            font-weight: var(--font-weight-bold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .blink {
-            width: 8px;
-            height: 8px;
-            background: #4ade80;
-            border-radius: 50%;
-            animation: blink 1.5s infinite;
-        }
-
-        /* Feature Section */
-        .feature-row {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2xl);
-            margin-bottom: var(--space-2xl);
-        }
-
-        .feature-row:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .feature-content {
-            flex: 1;
-        }
-
-        .feature-content h2 {
-            font-size: 2rem;
-            margin-bottom: var(--space-md);
-        }
-
-        .feature-content ul {
-            list-style: none;
-            padding: 0;
-            margin-top: var(--space-md);
-        }
-
-        .feature-content li {
-            color: var(--text-secondary);
-            margin-bottom: var(--space-xs);
-        }
-
-        .feature-visual {
-            flex: 1;
-            background: var(--bg-secondary);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-        }
-
-        .chart-bar {
-            height: 12px;
-            background: var(--bg-tertiary);
-            border-radius: var(--radius-sm);
-            margin-bottom: var(--space-sm);
-            overflow: hidden;
-        }
-
-        .chart-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent-page), #818cf8);
-            border-radius: var(--radius-sm);
-            width: 0;
-            animation: grow 2s ease-out forwards;
-        }
-
-        @keyframes grow {
-            to {
-                width: var(--w);
-            }
-        }
-
-        .stat-highlight {
-            font-size: 3rem;
-            font-weight: var(--font-weight-extrabold);
-            color: var(--accent-page);
-        }
-
-        .nav-overlay:hover {
-            background: var(--accent-page);
-        }
-
-        @media (max-width: 768px) {
-
-            .feature-row,
-            .feature-row:nth-child(even) {
-                flex-direction: column;
-            }
-        }
-    </style>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div class="bg-glow"></div>
     <div class="bg-grid"></div>
 
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">Fenlo Tech</a>
+            <a href="index.html" class="logo">Fenlo AI</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <div class="mobile-nav" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
     <section class="page-header">
         <div class="badge">Live in 2-3 Weeks</div>
@@ -185,6 +70,7 @@
         <p class="intro-text">Stop guessing. Turn your messy spreadsheets into a clear dashboard that tells you exactly how your business is doing.</p>
     </section>
 
+    <main id="main-content">
     <div class="container">
         <!-- Problem / Solution -->
         <section class="section">
@@ -210,14 +96,14 @@
         <div class="dashboard-grid">
             <!-- Service 1: Conversational AI for Business Insights -->
             <div class="metric-card">
-                <div class="metric-icon">�</div>
+                <div class="metric-icon">💬</div>
                 <h3>Conversational Business Insights</h3>
                 <p>Ask plain‑English questions ("Why did sales drop last week?") and get instant, sourced answers from your data—no dashboards or technical skills required.</p>
             </div>
 
             <!-- Service 2: Automated Reports & Summaries -->
             <div class="metric-card">
-                <div class="metric-icon">�</div>
+                <div class="metric-icon">📊</div>
                 <h3>Automated Reports & Summaries</h3>
                 <p>Daily, weekly, or monthly reports written for you: what changed, why it matters, and suggested next steps—no manual spreadsheets or digging.</p>
             </div>
@@ -253,7 +139,7 @@
                             <div style="font-size: 0.9rem; color: var(--text-secondary);">User: <strong>"Why did sales drop yesterday?"</strong></div>
                         </div>
 
-                        <div style="background: linear-gradient(180deg, rgba(56,189,248,0.06), rgba(56,189,248,0.02)); border: 1px solid rgba(56,189,248,0.08); padding: 14px; border-radius: 10px;">
+                        <div style="background: linear-gradient(180deg, rgba(107,124,63,0.06), rgba(107,124,63,0.02)); border: 1px solid rgba(107,124,63,0.08); padding: 14px; border-radius: 10px;">
                             <div style="font-weight: 600; margin-bottom: 6px;">Fenlo AI</div>
                             <div style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 8px;">Sales dropped because online traffic was down 18% and one paid campaign paused at 14:00 — most affected product: Blue Denim Jacket.</div>
                             <div style="font-size: 0.85rem; color: var(--text-secondary);">Suggested actions: 1) Restart campaign, 2) Promote Denim Jacket with 10% discount.</div>
@@ -265,12 +151,13 @@
         </section>
 
     </div>
+    </main>
 
     <!-- CTA Section -->
     <section class="cta-section">
         <h2>Ready to See Your Business Clearly?</h2>
         <p>Stop guessing. Get a dashboard that shows exactly how your business is performing.</p>
-        <a href="contact.html" class="btn btn-primary">Book a Free Discovery Call</a>
+        <a href="book-discovery.html?service=business-intelligence" class="btn btn-primary">Book a Free Discovery Call</a>
     </section>
 
     <!-- Floating Navigation -->
@@ -283,10 +170,36 @@
         <span class="nav-icon">→</span>
     </a>
 
-    <footer>
-        <p>&copy; 2025 Fenlo Tech. All rights reserved.</p>
-        <a href="mailto:hello@fenlo-tech.ai" class="email">hello@fenlo-tech.ai</a>
+    <footer role="contentinfo">
+        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isActive = mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isActive);
+                mobileNav.setAttribute('aria-hidden', !isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
+
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileNav.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>

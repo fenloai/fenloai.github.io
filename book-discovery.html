@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Discovery Call - Fenlo AI</title>
+    <meta name="description"
+        content="Book a free discovery call with Fenlo AI. Let's discuss your business challenges and explore how AI can help.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fenloai.com/book-discovery">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Preload Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fenloai.com/book-discovery">
+    <meta property="og:title" content="Book a Discovery Call - Fenlo AI">
+    <meta property="og:description" content="Book a free discovery call with Fenlo AI. Let's discuss your business challenges and explore how AI can help.">
+    <meta property="og:image" content="https://fenloai.com/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://fenloai.com/book-discovery">
+    <meta name="twitter:title" content="Book a Discovery Call - Fenlo AI">
+    <meta name="twitter:description" content="Book a free discovery call with Fenlo AI. Let's discuss your business challenges and explore how AI can help.">
+    <meta name="twitter:image" content="https://fenloai.com/og-image.png">
+
+    <!-- Page-specific styles -->
+    <style>
+        .cal-embed-container {
+            min-height: 700px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cal-embed-container iframe {
+            border-radius: var(--radius-lg);
+        }
+
+        .booking-info {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .booking-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+    </style>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Fenlo AI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <section class="page-header">
+        <h1 class="gradient-text">Book a Discovery Call</h1>
+        <p class="intro-text">Let's discuss your business challenges and explore how AI can help.</p>
+    </section>
+
+    <main id="main-content">
+        <section class="section">
+            <div class="container">
+                <div class="booking-info">
+                    <p>Select a time and fill out the booking form. You'll receive a Google Meet link via email.</p>
+                </div>
+                <div class="cal-embed-container">
+                    <div id="cal-inline"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
+    </footer>
+
+    <!-- Cal.com embed script -->
+    <script type="text/javascript">
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", {origin:"https://cal.com"});
+
+        Cal("inline", {
+            elementOrSelector: "#cal-inline",
+            calLink: "fenloai/discovery-call",
+            layout: "month_view"
+        });
+
+        Cal("ui", {
+            styles: { branding: { brandColor: "#6b7c3f" } },
+            hideEventTypeDetails: false,
+            layout: "month_view"
+        });
+    </script>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isActive = mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isActive);
+                mobileNav.setAttribute('aria-hidden', !isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
+
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileNav.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

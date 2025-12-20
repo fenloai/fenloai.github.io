@@ -4,32 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Our Services - Fenlo Tech</title>
+    <title>Our Services - Fenlo AI</title>
     <meta name="description"
         content="Explore our comprehensive AI services: Executive briefings, custom AI development, chatbots, RAG systems, automation, analytics, and more.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fenloai.com/services">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Preload Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fenloai.com/services">
+    <meta property="og:title" content="Our Services - Fenlo AI">
+    <meta property="og:description" content="Explore our comprehensive AI services: Executive briefings, custom AI development, chatbots, RAG systems, automation, analytics, and more.">
+    <meta property="og:image" content="https://fenloai.com/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://fenloai.com/services">
+    <meta name="twitter:title" content="Our Services - Fenlo AI">
+    <meta name="twitter:description" content="Explore our comprehensive AI services: Executive briefings, custom AI development, chatbots, RAG systems, automation, analytics, and more.">
+    <meta name="twitter:image" content="https://fenloai.com/og-image.png">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div class="bg-glow"></div>
     <div class="bg-grid"></div>
 
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">Fenlo Tech</a>
+            <a href="index.html" class="logo">Fenlo AI</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <div class="mobile-nav" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
     <section class="page-header">
         <h1 class="gradient-text">Our AI Services</h1>
         <p class="intro-text">Transforming businesses with strategic intelligence and automated solutions.</p>
     </section>
 
+    <main id="main-content">
     <section class="section">
         <div class="container">
             <div class="grid grid-3">
@@ -100,10 +140,11 @@
             </div>
         </div>
     </section>
+    </main>
 
-    <footer>
-        <p>&copy; 2025 Fenlo Tech. All rights reserved.</p>
-        <a href="mailto:hello@fenlo-tech.ai" class="email">hello@fenlo-tech.ai</a>
+    <footer role="contentinfo">
+        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
 
     <script>
@@ -117,6 +158,30 @@
                 card.style.setProperty('--mouse-y', `${y}px`);
             });
         });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isActive = mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isActive);
+                mobileNav.setAttribute('aria-hidden', !isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
+
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileNav.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
     </script>
 </body>
 

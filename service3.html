@@ -4,146 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Smart Chatbots & Virtual Assistants - Fenlo Tech</title>
+    <title>Smart Chatbots & Virtual Assistants - Fenlo AI</title>
     <meta name="description"
         content="Automate support and delight customers 24/7. From FAQ bots to enterprise-grade virtual assistants.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fenloai.com/service3">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Preload Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fenloai.com/service3">
+    <meta property="og:title" content="Smart Chatbots & Virtual Assistants - Fenlo AI">
+    <meta property="og:description" content="Automate support and delight customers 24/7. From FAQ bots to enterprise-grade virtual assistants.">
+    <meta property="og:image" content="https://fenloai.com/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://fenloai.com/service3">
+    <meta name="twitter:title" content="Smart Chatbots & Virtual Assistants - Fenlo AI">
+    <meta name="twitter:description" content="Automate support and delight customers 24/7. From FAQ bots to enterprise-grade virtual assistants.">
+    <meta name="twitter:image" content="https://fenloai.com/og-image.png">
+
     <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --accent-page: #10b981;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-page) 0%, #059669 100%);
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 40px rgba(16, 185, 129, 0.5);
-        }
-
-        .value-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-lg);
-            margin: var(--space-xl) 0;
-        }
-
-        .value-card {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-            transition: var(--transition-normal);
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-page);
-        }
-
-        .value-card h3 {
-            color: var(--accent-page);
-        }
-
-        /* Feature Comparison Table */
-        .comparison-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin: var(--space-xl) 0;
-            background: var(--glass-bg);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            padding: var(--space-md);
-            text-align: left;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .comparison-table th {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--accent-page);
-            font-weight: var(--font-weight-semibold);
-            border-top: 2px solid var(--accent-page);
-        }
-
-        .comparison-table td {
-            color: var(--text-secondary);
-        }
-
-        .comparison-table td:nth-child(2),
-        .comparison-table td:nth-child(3) {
-            border-left: 1px solid var(--glass-border);
-        }
-
-        .cta-cell {
-            text-align: center;
-            padding: var(--space-lg) !important;
-        }
-
-        .cta-cell .btn {
-            margin: 0;
-        }
-
-        /* Lifecycle Table */
-        .lifecycle-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: var(--space-lg) 0;
-        }
-
-        .lifecycle-table th,
-        .lifecycle-table td {
-            padding: var(--space-md);
-            text-align: left;
-            border: 1px solid var(--glass-border);
-        }
-
-        .lifecycle-table th {
-            background: var(--accent-page);
-            color: var(--bg-primary);
-            font-weight: var(--font-weight-semibold);
-        }
-
-        .lifecycle-table td {
-            color: var(--text-secondary);
-        }
-
-        .lifecycle-table tr:nth-child(even) {
-            background: var(--glass-bg);
-        }
-
-        .nav-overlay:hover {
-            background: var(--accent-page);
-        }
-    </style>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div class="bg-glow"></div>
     <div class="bg-grid"></div>
 
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">Fenlo Tech</a>
+            <a href="index.html" class="logo">Fenlo AI</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <div class="mobile-nav" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
     <section class="page-header">
         <h1>Smart Chatbots & Virtual Assistants</h1>
         <p class="intro-text">Answer customer questions 24/7 — even while you sleep. Chatbots that handle the repetitive stuff so you can focus on growing your business.</p>
     </section>
 
+    <main id="main-content">
     <div class="container">
         <!-- What Problems It Solves -->
         <section class="section">
@@ -274,12 +200,13 @@
             </div>
         </section>
     </div>
+    </main>
 
     <!-- CTA Section -->
     <section class="cta-section">
         <h2>Ready to Automate Your Support?</h2>
         <p>Let a chatbot handle the repetitive questions while your team focuses on what matters.</p>
-        <a href="contact.html" class="btn btn-primary">Book a Free Discovery Call</a>
+        <a href="book-discovery.html?service=chatbots-virtual-assistants" class="btn btn-primary">Book a Free Discovery Call</a>
     </section>
 
     <!-- Floating Navigation -->
@@ -292,10 +219,36 @@
         <span class="nav-icon">→</span>
     </a>
 
-    <footer>
-        <p>&copy; 2025 Fenlo Tech. All rights reserved.</p>
-        <a href="mailto:hello@fenlo-tech.ai" class="email">hello@fenlo-tech.ai</a>
+    <footer role="contentinfo">
+        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isActive = mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isActive);
+                mobileNav.setAttribute('aria-hidden', !isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
+
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileNav.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>

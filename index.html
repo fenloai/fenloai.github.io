@@ -4,33 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fenlo Tech - AI Solutions for Small Business</title>
+    <title>Fenlo AI - AI Solutions for Small Business</title>
     <meta name="description"
         content="Not sure if AI is right for your business? We'll tell you honestly. Free assessment, no pitch, no pressure.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fenloai.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Preload Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fenloai.com/">
+    <meta property="og:title" content="Fenlo AI - AI Solutions for Small Business">
+    <meta property="og:description" content="Not sure if AI is right for your business? We'll tell you honestly. Free assessment, no pitch, no pressure.">
+    <meta property="og:image" content="https://fenloai.com/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://fenloai.com/">
+    <meta name="twitter:title" content="Fenlo AI - AI Solutions for Small Business">
+    <meta name="twitter:description" content="Not sure if AI is right for your business? We'll tell you honestly. Free assessment, no pitch, no pressure.">
+    <meta name="twitter:image" content="https://fenloai.com/og-image.png">
+
     <link rel="stylesheet" href="styles.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Fenlo AI",
+        "url": "https://fenloai.com",
+        "logo": "https://fenloai.com/favicon.svg",
+        "description": "AI solutions for small businesses. We help you determine if AI is right for your business with honest assessments and practical implementations.",
+        "email": "contact@fenloai.com",
+        "sameAs": [],
+        "service": {
+            "@type": "Service",
+            "name": "AI Consulting & Development",
+            "description": "Executive AI briefings, custom AI development, chatbots, document Q&A systems, workflow automation, and business intelligence."
+        }
+    }
+    </script>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div class="bg-glow"></div>
     <div class="bg-grid"></div>
 
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">Fenlo Tech</a>
+            <a href="index.html" class="logo">Fenlo AI</a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
+    <div class="mobile-nav" aria-hidden="true">
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
     <!-- Hero Section -->
+    <main id="main-content">
     <section class="hero">
         <h1 class="gradient-text-light">Not Sure If AI Is Right<br><span class="gradient-text">For Your Business?</span></h1>
         <p>Most small businesses don't need AI yet. Some do. Book a free Executive Briefing — we'll tell you honestly which one you are. No pitch, no pressure.</p>
         <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
-            <a href="service1.html" class="btn btn-primary">Get a Free AI Briefing</a>
+            <a href="apply-briefing.html" class="btn btn-primary">Get a Free AI Briefing</a>
         </div>
         <div style="display: flex; gap: 2rem; justify-content: center; margin-top: 2.5rem; flex-wrap: wrap; color: var(--text-secondary); font-size: 0.9rem;">
             <span>2-hour deep dive</span>
@@ -77,7 +136,7 @@
                 </ul>
                 <div style="text-align: center; margin-top: var(--space-lg);">
                     <p style="margin-bottom: var(--space-md);">Sound familiar?</p>
-                    <a href="service1.html" class="btn btn-primary">Book a Free Briefing</a>
+                    <a href="apply-briefing.html" class="btn btn-primary">Book a Free Briefing</a>
                 </div>
             </div>
         </div>
@@ -203,14 +262,15 @@
                 <p style="color: var(--text-secondary); margin: var(--space-md) 0; max-width: 600px; margin-left: auto; margin-right: auto;">
                     A free 2-hour Executive Briefing. No pitch. We'll demystify AI, explore opportunities specific to your business, and give you a clear roadmap — whether you work with us or not.
                 </p>
-                <a href="service1.html" class="btn btn-primary" style="display: inline-block; margin-top: var(--space-md);">Apply for Free Briefing</a>
+                <a href="apply-briefing.html" class="btn btn-primary" style="display: inline-block; margin-top: var(--space-md);">Apply for Free Briefing</a>
             </div>
         </div>
     </section>
+    </main>
 
-    <footer>
-        <p>&copy; 2025 Fenlo Tech. All rights reserved.</p>
-        <a href="mailto:hello@fenlo-tech.ai" class="email">hello@fenlo-tech.ai</a>
+    <footer role="contentinfo">
+        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
 
     <script>
@@ -224,6 +284,31 @@
                 card.style.setProperty('--mouse-y', `${y}px`);
             });
         });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isActive = mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isActive);
+                mobileNav.setAttribute('aria-hidden', !isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
+
+            // Close menu when clicking a link
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileNav.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
     </script>
 </body>
 

@@ -4,159 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Retail & E-Commerce AI - Fenlo Tech</title>
+    <title>Smart Retail & E-Commerce AI - Fenlo AI</title>
     <meta name="description"
         content="Turn browsers into buyers. Add the same AI tools Amazon uses to your Shopify or WooCommerce store.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fenloai.com/service6">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Preload Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fenloai.com/service6">
+    <meta property="og:title" content="Smart Retail & E-Commerce AI - Fenlo AI">
+    <meta property="og:description" content="Turn browsers into buyers. Add the same AI tools Amazon uses to your Shopify or WooCommerce store.">
+    <meta property="og:image" content="https://fenloai.com/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://fenloai.com/service6">
+    <meta name="twitter:title" content="Smart Retail & E-Commerce AI - Fenlo AI">
+    <meta name="twitter:description" content="Turn browsers into buyers. Add the same AI tools Amazon uses to your Shopify or WooCommerce store.">
+    <meta name="twitter:image" content="https://fenloai.com/og-image.png">
+
     <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --accent-page: #ec4899;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-page) 0%, #db2777 100%);
-            box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 40px rgba(236, 72, 153, 0.5);
-        }
-
-        /* Feature Cards */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-xl);
-            margin-bottom: var(--space-3xl);
-        }
-
-        .feature-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-xl);
-            transition: var(--transition-normal);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-page), #f97316);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-page);
-        }
-
-        .icon-wrapper {
-            width: 70px;
-            height: 70px;
-            background: rgba(236, 72, 153, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: var(--space-md);
-        }
-
-        .feature-card h3 {
-            color: var(--accent-page);
-            font-size: 1.4rem;
-            margin-bottom: var(--space-sm);
-        }
-
-        /* Demo Section */
-        .demo-section {
-            background: var(--bg-tertiary);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-2xl);
-            display: flex;
-            align-items: center;
-            gap: var(--space-2xl);
-            margin-bottom: var(--space-3xl);
-        }
-
-        .demo-text {
-            flex: 1;
-        }
-
-        .demo-text h2 {
-            margin-bottom: var(--space-md);
-        }
-
-        .demo-text ul {
-            list-style: none;
-            padding: 0;
-            margin-top: var(--space-lg);
-        }
-
-        .demo-text li {
-            margin-bottom: var(--space-sm);
-            color: var(--text-secondary);
-        }
-
-        .demo-visual {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.05);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--glass-border);
-        }
-
-        .chat-bubble {
-            background: var(--glass-bg);
-            color: var(--text-primary);
-            padding: var(--space-md);
-            border-radius: var(--radius-md) var(--radius-md) var(--radius-md) 4px;
-            margin-bottom: var(--space-md);
-            border: 1px solid var(--glass-border);
-        }
-
-        .chat-bubble.user {
-            background: var(--accent-page);
-            color: white;
-            border-radius: var(--radius-md) var(--radius-md) 4px var(--radius-md);
-            margin-left: 20%;
-            text-align: right;
-            border: none;
-        }
-
-        .nav-overlay:hover {
-            background: var(--accent-page);
-        }
-
-        @media (max-width: 768px) {
-            .demo-section {
-                flex-direction: column;
-            }
-        }
-    </style>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div class="bg-glow"></div>
     <div class="bg-grid"></div>
 
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">Fenlo Tech</a>
+            <a href="index.html" class="logo">Fenlo AI</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <div class="mobile-nav" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
     <section class="page-header">
         <div class="badge">For Online Store Owners</div>
@@ -164,6 +70,7 @@
         <p class="intro-text">AI tools that help customers find the right products, get instant answers, and make your store easier to manage.</p>
     </section>
 
+    <main id="main-content">
     <div class="container">
         <!-- Problem / Solution -->
         <section class="section">
@@ -189,42 +96,42 @@
         <!-- Feature Cards -->
         <div class="feature-grid">
             <!-- Service 1: Smart Product Search -->
-            <div class="feature-card">
-                <div class="icon-wrapper">�</div>
+            <div class="feature-card with-bar">
+                <div class="icon-wrapper">🔍</div>
                 <h3>Smart Product Search</h3>
-                <p>Search naturally — no exact keywords needed. Queries like "red dress for a summer wedding" return relevant, ranked items instantly (no more “0 results found”).</p>
+                <p>Search naturally — no exact keywords needed. Queries like "red dress for a summer wedding" return relevant, ranked items instantly (no more "0 results found").</p>
             </div>
 
             <!-- Service 2: Personalized Product Recommendations -->
-            <div class="feature-card">
+            <div class="feature-card with-bar">
                 <div class="icon-wrapper">✨</div>
                 <h3>Personalized Recommendations</h3>
                 <p>Real‑time "You may also like" and "Complete the look" suggestions based on browsing and purchase behaviour to increase AOV and repeat buys.</p>
             </div>
 
             <!-- Service 3: Automated Product Descriptions & SEO -->
-            <div class="feature-card">
-                <div class="icon-wrapper">�</div>
+            <div class="feature-card with-bar">
+                <div class="icon-wrapper">📝</div>
                 <h3>Automated Descriptions & SEO</h3>
                 <p>Auto-generate product titles, descriptions, and meta tags from your catalog to save time and improve search visibility with keyword-aware copy.</p>
             </div>
 
             <!-- Service 4: AI Customer Support & Order Help -->
-            <div class="feature-card">
+            <div class="feature-card with-bar">
                 <div class="icon-wrapper">💬</div>
                 <h3>AI Support & Order Help</h3>
                 <p>24/7 automated support that answers FAQs, checks order status, and triages issues — reducing support load and improving response times.</p>
             </div>
 
             <!-- Service 5: Automatic Image Tagging -->
-            <div class="feature-card">
+            <div class="feature-card with-bar">
                 <div class="icon-wrapper">🖼️</div>
                 <h3>Automatic Image Tagging</h3>
                 <p>Detect colors, patterns, and attributes from product images to auto-tag items and improve filtering and search accuracy.</p>
             </div>
 
             <!-- Service 6: AI Marketing Content -->
-            <div class="feature-card">
+            <div class="feature-card with-bar">
                 <div class="icon-wrapper">📣</div>
                 <h3>AI Marketing Content</h3>
                 <p>Generate product-focused emails, ads, and promotional copy tailored to your audience — campaign-ready content in minutes.</p>
@@ -235,7 +142,7 @@
         <div class="demo-section">
             <div class="demo-text">
                 <h2>See It In Action</h2>
-                <p style="color: var(--text-secondary);">See how Fenlo Tech handles a complex customer query in real-time, combining search, inventory knowledge, and personalized advice.</p>
+                <p style="color: var(--text-secondary);">See how Fenlo AI handles a complex customer query in real-time, combining search, inventory knowledge, and personalized advice.</p>
                 <ul>
                     <li>✅ <strong>Intent Recognition:</strong> Identifies "Summer Party" vibe.</li>
                     <li>✅ <strong>Inventory Match:</strong> Filters by size and stock.</li>
@@ -257,12 +164,13 @@
         </div>
 
     </div>
+    </main>
 
     <!-- CTA Section -->
     <section class="cta-section">
         <h2>Want to Make Your Store Smarter?</h2>
         <p>Add AI-powered search, product recommendations, and instant customer support to your online store.</p>
-        <a href="contact.html" class="btn btn-primary">Book a Free Discovery Call</a>
+        <a href="book-discovery.html?service=retail-ecommerce-ai" class="btn btn-primary">Book a Free Discovery Call</a>
     </section>
 
     <!-- Floating Navigation -->
@@ -275,10 +183,36 @@
         <span class="nav-icon">→</span>
     </a>
 
-    <footer>
-        <p>&copy; 2025 Fenlo Tech. All rights reserved.</p>
-        <a href="mailto:hello@fenlo-tech.ai" class="email">hello@fenlo-tech.ai</a>
+    <footer role="contentinfo">
+        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isActive = mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isActive);
+                mobileNav.setAttribute('aria-hidden', !isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
+
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileNav.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>
