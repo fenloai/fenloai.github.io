@@ -23,14 +23,7 @@
             box-shadow: 0 0 40px rgba(231, 60, 126, 0.5);
         }
 
-        /* Showcase Grid */
-        .showcase-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--space-xl);
-            margin-bottom: var(--space-3xl);
-        }
-
+        /* Glass Card Styling */
         .glass-card {
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
@@ -38,39 +31,16 @@
             border-radius: var(--radius-lg);
             padding: var(--space-xl);
             transition: var(--transition-normal);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, var(--accent-page), var(--accent-secondary));
-            border-radius: 50%;
-            opacity: 0.1;
-            transition: transform 0.5s;
         }
 
         .glass-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             border-color: var(--accent-page);
         }
 
-        .glass-card:hover::before {
-            transform: scale(1.5);
-        }
-
         .glass-card h3 {
-            font-size: 1.6rem;
+            color: var(--accent-page);
             margin-bottom: var(--space-sm);
-            background: linear-gradient(45deg, var(--accent-page), var(--accent-secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         /* Creative Section */
@@ -226,229 +196,122 @@
     </nav>
 
     <section class="page-header">
+        <div class="badge">For Business Owners & Marketers</div>
         <h1>Generative AI Solutions</h1>
-        <p class="intro-text">Create professional content in minutes, not days. Blog posts, social media, product descriptions, and visuals — without hiring an agency.</p>
+        <p class="intro-text">AI tools that write copy, create images, and produce marketing content — trained on your brand so everything sounds like you.</p>
     </section>
 
     <div class="container">
-        <!-- What You Get Section -->
-        <div class="showcase-grid">
-            <div class="glass-card">
-                <h3>📝 AI Writing Assistant</h3>
-                <p>Generate blog posts, email campaigns, product descriptions, and social media content. Trained on your brand voice so everything sounds authentically you.</p>
-                <div class="service-stats" style="margin-top: var(--space-md);">
-                    <span>⏱️ Setup: 1 week</span>
-                    <span>💰 From $1,500</span>
+        <!-- Problem / Solution -->
+        <section class="section">
+            <div class="grid grid-2">
+                <div>
+                    <h2 class="gradient-text">The Problem</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: var(--space-md);">Content creation never stops. Blog posts, emails, social media, product descriptions — there's always more to write.</p>
+                    <p style="color: var(--text-secondary);">You've tried ChatGPT, but it sounds generic. Hiring writers is expensive. And doing it yourself takes hours you don't have.</p>
+                </div>
+                <div>
+                    <h2 class="gradient-text">The Solution</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: var(--space-md);">AI content tools trained on your brand — so everything sounds like you wrote it.</p>
+                    <ul class="benefit-list">
+                        <li>✅ <strong>Brand-Trained AI:</strong> Learns your voice, tone, and style.</li>
+                        <li>✅ <strong>One-Click Content:</strong> Generate posts, emails, and descriptions fast.</li>
+                        <li>✅ <strong>Team Access:</strong> Everyone uses the same system.</li>
+                        <li>✅ <strong>Direct Publishing:</strong> Connect to WordPress, Mailchimp, Shopify.</li>
+                    </ul>
                 </div>
             </div>
+        </section>
 
-            <div class="glass-card">
-                <h3>🖼️ Product Image Generator</h3>
-                <p>Create professional product photos with custom backgrounds. Show your products in lifestyle settings without expensive photo shoots. Perfect for e-commerce.</p>
-                <div class="service-stats" style="margin-top: var(--space-md);">
-                    <span>⏱️ Setup: 1-2 weeks</span>
-                    <span>💰 From $2,500</span>
-                </div>
+        <!-- What You Can Create -->
+        <section class="section">
+            <div class="section-header">
+                <h2>What You Can Create</h2>
             </div>
 
-            <div class="glass-card">
-                <h3>📱 Social Media Autopilot</h3>
-                <p>Generate a month's worth of social posts in an hour. Includes captions, hashtags, and image suggestions. Schedule directly to Instagram, LinkedIn, and Facebook.</p>
-                <div class="service-stats" style="margin-top: var(--space-md);">
-                    <span>⏱️ Setup: 1 week</span>
-                    <span>💰 From $2,000</span>
+            <div class="grid grid-3">
+                <div class="glass-card">
+                    <h3>📝 AI Writing Assistant</h3>
+                    <p style="color: var(--text-secondary);">Generate blog posts, product descriptions, and website copy. Trained on your brand voice so everything sounds like you wrote it.</p>
+                </div>
+
+                <div class="glass-card">
+                    <h3>🖼️ Product Image Generator</h3>
+                    <p style="color: var(--text-secondary);">Create professional product photos with custom backgrounds — no expensive photo shoots required.</p>
+                </div>
+
+                <div class="glass-card">
+                    <h3>📱 Social Media Autopilot</h3>
+                    <p style="color: var(--text-secondary);">Generate a month's worth of social posts in an hour. Includes captions, hashtags, and image suggestions.</p>
+                </div>
+
+                <div class="glass-card">
+                    <h3>📧 Email Marketing Generator</h3>
+                    <p style="color: var(--text-secondary);">Create email sequences — welcome series, abandoned cart, promotions. Personalized subject lines included.</p>
+                </div>
+
+                <div class="glass-card">
+                    <h3>🎬 Video Script Writer</h3>
+                    <p style="color: var(--text-secondary);">Generate scripts for YouTube videos, ads, tutorials, and explainers. Hooks, CTAs, and pacing built in.</p>
+                </div>
+
+                <div class="glass-card">
+                    <h3>📊 Presentation Builder</h3>
+                    <p style="color: var(--text-secondary);">Create slide decks and pitch presentations from a brief. Outlines, talking points, and visual suggestions included.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="glass-card">
-                <h3>📧 Email Marketing Generator</h3>
-                <p>Create entire email sequences — welcome series, abandoned cart, promotions, newsletters. Personalized subject lines that boost open rates by 25%+.</p>
-                <div class="service-stats" style="margin-top: var(--space-md);">
-                    <span>⏱️ Setup: 1 week</span>
-                    <span>💰 From $1,800</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Why Us vs ChatGPT Section -->
-        <div class="creative-section">
-            <div class="creative-text">
+        <!-- Why Not ChatGPT -->
+        <section class="section">
+            <div class="section-header">
                 <h2>Why Not Just Use ChatGPT?</h2>
-                <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">Sure, you could pay $20/month for ChatGPT. But here's what you're missing:</p>
-                <ul>
-                    <li>❌ <strong>Generic outputs</strong> — ChatGPT doesn't know your brand voice, products, or customers</li>
-                    <li>❌ <strong>Manual work every time</strong> — Copy-paste prompts, fix formatting, repeat</li>
-                    <li>❌ <strong>No team access</strong> — One account, no shared templates, no consistency</li>
-                    <li>❌ <strong>No integration</strong> — Can't connect to your CMS, email tool, or social scheduler</li>
-                </ul>
+                <p>You could — but here's what you're missing.</p>
             </div>
-            <div class="creative-visual">
-                <h3 style="margin-bottom: var(--space-md); color: var(--text-primary);">Our Solution:</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">✅ <strong>Trained on YOUR brand</strong> — Voice, tone, style baked in</li>
-                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">✅ <strong>One-click workflows</strong> — "Generate this week's posts" done</li>
-                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">✅ <strong>Team-wide access</strong> — Everyone uses the same system</li>
-                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">✅ <strong>Direct integrations</strong> — Publish to WordPress, Mailchimp, Shopify</li>
-                    <li style="margin-bottom: var(--space-sm); color: var(--text-secondary);">✅ <strong>Custom templates</strong> — Product descriptions, emails, posts pre-built</li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- Team Benefits Section -->
+            <div class="grid grid-2">
+                <div class="glass-card" style="border-color: rgba(239, 68, 68, 0.3);">
+                    <h3 style="color: var(--text-primary);">❌ ChatGPT / Generic AI</h3>
+                    <ul class="benefit-list" style="color: var(--text-secondary);">
+                        <li>Generic output — sounds like everyone else</li>
+                        <li>Manual copy-paste every single time</li>
+                        <li>One account, one user — no team sharing</li>
+                        <li>No connection to your website or tools</li>
+                        <li>Your data trains their models</li>
+                    </ul>
+                </div>
+                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.3);">
+                    <h3 style="color: var(--text-primary);">✅ Our Solution</h3>
+                    <ul class="benefit-list" style="color: var(--text-secondary);">
+                        <li>Trained on YOUR brand — sounds like you</li>
+                        <li>One-click workflows for repeatable tasks</li>
+                        <li>Whole team access with shared templates</li>
+                        <li>Publishes directly to WordPress, Shopify, etc.</li>
+                        <li>Private instance — your data stays yours</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Built for Teams -->
         <section class="section">
             <div class="section-header">
                 <h2>Built for Teams, Not Individuals</h2>
-                <p>One AI system your whole company can use</p>
+                <p>One system your whole team can use — no per-seat pricing traps.</p>
             </div>
 
             <div class="grid grid-3">
                 <div class="glass-card">
-                    <h3>👥 Multi-User Access</h3>
-                    <ul class="benefit-list">
-                        <li>Marketing, sales, support — everyone can use it</li>
-                        <li>No sharing passwords or fighting over seats</li>
-                        <li>Usage tracking by team member</li>
-                    </ul>
+                    <h3>👥 Unlimited Users</h3>
+                    <p style="color: var(--text-secondary);">Marketing, sales, support — everyone can access it. No fighting over seats or paying per person.</p>
                 </div>
                 <div class="glass-card">
                     <h3>📋 Shared Templates</h3>
-                    <ul class="benefit-list">
-                        <li>Company-approved templates for consistency</li>
-                        <li>New hire? They're productive in minutes</li>
-                        <li>Update once, everyone gets the latest</li>
-                    </ul>
+                    <p style="color: var(--text-secondary);">Create once, use everywhere. New team members are productive from day one with approved templates.</p>
                 </div>
                 <div class="glass-card">
-                    <h3>🔒 Your Data Stays Yours</h3>
-                    <ul class="benefit-list">
-                        <li>Private instance — not training OpenAI's models</li>
-                        <li>Customer data never leaves your control</li>
-                        <li>Enterprise-grade security</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Real SMB Use Cases -->
-        <section class="section">
-            <div class="section-header">
-                <h2>What SMBs Are Creating</h2>
-            </div>
-
-            <div class="case-grid">
-                <!-- Case 1 -->
-                <div class="case-card">
-                    <div class="case-header pink"></div>
-                    <div class="case-content">
-                        <div class="case-tag pink">E-Commerce Store</div>
-                        <h3>Product Descriptions at Scale</h3>
-                        <p><strong>Problem:</strong> 200 products, each needs unique descriptions for SEO.</p>
-                        <p><strong>Solution:</strong> AI generates SEO-optimized descriptions from product specs.</p>
-                        <div class="case-result">📝 200 descriptions in 2 hours</div>
-                    </div>
-                </div>
-
-                <!-- Case 2 -->
-                <div class="case-card">
-                    <div class="case-header blue"></div>
-                    <div class="case-content">
-                        <div class="case-tag blue">Real Estate Agency</div>
-                        <h3>Property Listing Descriptions</h3>
-                        <p><strong>Problem:</strong> Writing compelling listings takes hours per property.</p>
-                        <p><strong>Solution:</strong> AI writes listings from bullet points + photos.</p>
-                        <div class="case-result">🏠 5 minutes per listing</div>
-                    </div>
-                </div>
-
-                <!-- Case 3 -->
-                <div class="case-card">
-                    <div class="case-header purple"></div>
-                    <div class="case-content">
-                        <div class="case-tag purple">Local Restaurant</div>
-                        <h3>Weekly Social Media Content</h3>
-                        <p><strong>Problem:</strong> No time to create consistent social posts.</p>
-                        <p><strong>Solution:</strong> AI generates a month of posts + captions in one session.</p>
-                        <div class="case-result">📱 4 weeks of content in 1 hour</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- More Use Cases -->
-        <section class="section">
-            <div class="section-header">
-                <h2>What Can You Create?</h2>
-                <p>Everything your business needs to communicate — faster.</p>
-            </div>
-
-            <div class="grid grid-3">
-                <div class="glass-card">
-                    <h3>✍️ Written Content</h3>
-                    <ul class="benefit-list">
-                        <li>Blog posts & articles</li>
-                        <li>Email newsletters & campaigns</li>
-                        <li>Product descriptions</li>
-                        <li>Website copy & landing pages</li>
-                        <li>Press releases</li>
-                        <li>Job postings</li>
-                    </ul>
-                </div>
-                <div class="glass-card">
-                    <h3>📱 Social Media</h3>
-                    <ul class="benefit-list">
-                        <li>Instagram & Facebook posts</li>
-                        <li>LinkedIn updates</li>
-                        <li>Twitter/X threads</li>
-                        <li>Hashtag suggestions</li>
-                        <li>Engagement reply drafts</li>
-                        <li>Content calendars</li>
-                    </ul>
-                </div>
-                <div class="glass-card">
-                    <h3>🖼️ Visual Content</h3>
-                    <ul class="benefit-list">
-                        <li>Product photos with backgrounds</li>
-                        <li>Social media graphics</li>
-                        <li>Ad creatives</li>
-                        <li>Logo variations</li>
-                        <li>Banner images</li>
-                        <li>Presentation visuals</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Benefits -->
-        <section class="section">
-            <div class="section-header">
-                <h2>Why SMBs Choose Us</h2>
-                <p>Create more without hiring more.</p>
-            </div>
-
-            <div class="grid grid-3">
-                <div class="glass-card">
-                    <h3>⚡ Save 10+ Hours/Week</h3>
-                    <ul class="benefit-list">
-                        <li>Blog that took 4 hours? <strong>15 minutes</strong></li>
-                        <li>Social posts for the month? <strong>1 hour</strong></li>
-                        <li>Product descriptions? <strong>Seconds each</strong></li>
-                    </ul>
-                </div>
-                <div class="glass-card">
-                    <h3>💰 Skip the Agency Fees</h3>
-                    <ul class="benefit-list">
-                        <li>Copywriters: $50-150/hour saved</li>
-                        <li>Photo shoots: $500-2000/shoot saved</li>
-                        <li>Social managers: $2-5k/month saved</li>
-                    </ul>
-                </div>
-                <div class="glass-card">
-                    <h3>📈 Consistent Quality</h3>
-                    <ul class="benefit-list">
-                        <li>Your brand voice, every time</li>
-                        <li>SEO-optimized automatically</li>
-                        <li>No writer's block, ever</li>
-                    </ul>
+                    <h3>📊 Usage Tracking</h3>
+                    <p style="color: var(--text-secondary);">See who's creating what. Monitor usage, track output quality, and identify training opportunities.</p>
                 </div>
             </div>
         </section>
@@ -457,9 +320,9 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <h2>Stop Staring at Blank Pages</h2>
-        <p>Let AI handle the first draft. You focus on running your business.</p>
-        <a href="contact.html" class="btn btn-primary">Get Started — Free Consultation</a>
+        <h2>Ready to Create Content at Scale?</h2>
+        <p>Let AI handle the first draft while you focus on running your business.</p>
+        <a href="contact.html" class="btn btn-primary">Book a Free Discovery Call</a>
     </section>
 
     <!-- Floating Navigation -->
