@@ -220,8 +220,23 @@ a {
     width: auto;
 }
 
-.logo:hover {
-    opacity: 0.8;
+/* Logo color swap on hover */
+.logo-white {
+    fill: #ffffff;
+    transition: fill 0.3s ease;
+}
+
+.logo-green {
+    fill: #39FF14;
+    transition: fill 0.3s ease;
+}
+
+.logo:hover .logo-white {
+    fill: #39FF14;
+}
+
+.logo:hover .logo-green {
+    fill: #ffffff;
 }
 
 .nav-links {

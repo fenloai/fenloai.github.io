@@ -3,9 +3,11 @@
     <style type="text/css">
       .white-text {
         fill: #ffffff;
+        transition: fill 0.3s ease;
       }
       .neon-green {
         fill: #39FF14;
+        transition: fill 0.3s ease;
       }
     </style>
   </defs>
