@@ -260,9 +260,26 @@
     </a>
 
     <footer role="contentinfo">
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
         <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
         <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookie-consent" role="dialog" aria-label="Cookie consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <p>We use cookies to analyze site traffic and improve your experience. By continuing to use our site, you consent to our use of cookies. <a href="privacy.html">Learn more</a></p>
+            </div>
+            <div class="cookie-consent-buttons">
+                <button class="btn btn-secondary" id="cookie-decline">Decline</button>
+                <button class="btn btn-primary" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Mobile menu toggle
@@ -288,6 +305,31 @@
                 });
             });
         }
+
+        // Cookie Consent Banner
+        (function() {
+            const consentBanner = document.getElementById('cookie-consent');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            const CONSENT_KEY = 'fenloai_cookie_consent';
+
+            const consent = localStorage.getItem(CONSENT_KEY);
+            if (!consent) {
+                setTimeout(() => {
+                    consentBanner.classList.add('visible');
+                }, 1000);
+            }
+
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem(CONSENT_KEY, 'accepted');
+                consentBanner.classList.remove('visible');
+            });
+
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem(CONSENT_KEY, 'declined');
+                consentBanner.classList.remove('visible');
+            });
+        })();
     </script>
 </body>
 
