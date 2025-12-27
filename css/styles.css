@@ -88,6 +88,137 @@
     --container-padding: 2rem;
 }
 
+/* ===== LIGHT THEME ===== */
+[data-theme="light"] {
+    /* Background Colors */
+    --bg-primary: #f8f9f5;
+    --bg-secondary: #f0f2eb;
+    --bg-tertiary: #e8ebe2;
+    --bg-card: rgba(255, 255, 255, 0.8);
+
+    /* Text Colors */
+    --text-primary: #1a1f16;
+    --text-secondary: #4a5240;
+    --text-muted: #6b7560;
+
+    /* Glass Effects */
+    --glass-border: rgba(107, 124, 63, 0.2);
+    --glass-border-hover: rgba(107, 124, 63, 0.4);
+    --glass-bg: rgba(107, 124, 63, 0.08);
+    --glass-bg-hover: rgba(107, 124, 63, 0.15);
+
+    /* Shadows */
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 10px 30px -10px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 20px 50px -15px rgba(0, 0, 0, 0.15);
+    --shadow-glow: 0 0 30px rgba(107, 124, 63, 0.2);
+}
+
+/* Light theme background adjustments */
+[data-theme="light"] .bg-glow {
+    background:
+        radial-gradient(circle at 15% 50%, rgba(107, 124, 63, 0.12), transparent 30%),
+        radial-gradient(circle at 85% 30%, rgba(143, 163, 85, 0.12), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(74, 90, 42, 0.08), transparent 30%);
+}
+
+[data-theme="light"] .bg-grid {
+    background-image:
+        linear-gradient(rgba(107, 124, 63, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(107, 124, 63, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+/* Light theme navbar */
+[data-theme="light"] .navbar {
+    background: rgba(248, 249, 245, 0.9);
+}
+
+[data-theme="light"] .mobile-nav {
+    background: rgba(248, 249, 245, 0.98);
+}
+
+/* Light theme logo colors */
+[data-theme="light"] .logo-white {
+    fill: #1a1f16;
+}
+
+[data-theme="light"] .logo:hover .logo-white {
+    fill: #39FF14;
+}
+
+[data-theme="light"] .logo:hover .logo-green {
+    fill: #1a1f16;
+}
+
+/* Light theme gradient text */
+[data-theme="light"] .gradient-text-light {
+    background: linear-gradient(135deg, #1a1f16 0%, #4a5240 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Light theme cards */
+[data-theme="light"] .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(107, 124, 63, 0.15);
+}
+
+[data-theme="light"] .glass-card:hover {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(107, 124, 63, 0.3);
+}
+
+/* Light theme footer */
+[data-theme="light"] footer {
+    background: rgba(240, 242, 235, 0.9);
+}
+
+/* ===== THEME TOGGLE ===== */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: var(--transition-normal);
+    margin-left: var(--space-sm);
+}
+
+.theme-toggle:hover {
+    color: var(--text-primary);
+    border-color: var(--glass-border-hover);
+    background: var(--glass-bg);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    transition: var(--transition-normal);
+}
+
+.theme-toggle .sun-icon {
+    display: none;
+}
+
+.theme-toggle .moon-icon {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle .sun-icon {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle .moon-icon {
+    display: none;
+}
+
 /* ===== BASE RESET ===== */
 *, *::before, *::after {
     margin: 0;
