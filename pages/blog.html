@@ -16,12 +16,15 @@
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Apply for Briefing - Fenlo AI</title>
+    <title>Blog - AI Insights for Small Business | Fenlo AI</title>
     <meta name="description"
-        content="Apply for a free Executive AI Briefing. A private strategy session to demystify AI for your business.">
+        content="Practical AI guides for small businesses. Learn about FAQ bots, document Q&A systems, AI agents, and how to implement AI solutions with real ROI.">
+    <meta name="keywords" content="AI blog, small business AI, FAQ bots, document Q&A, AI agents, AI implementation, business automation">
+    <meta name="author" content="Fenlo AI">
+    <meta name="robots" content="index, follow">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://fenloai.com/apply-briefing">
+    <link rel="canonical" href="https://fenloai.com/blog">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../assets/fenloai-icon.svg">
@@ -34,42 +37,65 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://fenloai.com/apply-briefing">
-    <meta property="og:title" content="Apply for Briefing - Fenlo AI">
-    <meta property="og:description" content="Apply for a free Executive AI Briefing. A private strategy session to demystify AI for your business.">
+    <meta property="og:url" content="https://fenloai.com/blog">
+    <meta property="og:title" content="Blog - AI Insights for Small Business | Fenlo AI">
+    <meta property="og:description" content="Practical AI guides for small businesses. Learn about FAQ bots, document Q&A systems, AI agents, and how to implement AI solutions with real ROI.">
     <meta property="og:image" content="https://fenloai.com/og-image.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://fenloai.com/apply-briefing">
-    <meta name="twitter:title" content="Apply for Briefing - Fenlo AI">
-    <meta name="twitter:description" content="Apply for a free Executive AI Briefing. A private strategy session to demystify AI for your business.">
+    <meta name="twitter:url" content="https://fenloai.com/blog">
+    <meta name="twitter:title" content="Blog - AI Insights for Small Business | Fenlo AI">
+    <meta name="twitter:description" content="Practical AI guides for small businesses. Learn about FAQ bots, document Q&A systems, AI agents, and how to implement AI solutions with real ROI.">
     <meta name="twitter:image" content="https://fenloai.com/og-image.png">
 
-    <!-- Page-specific styles -->
-    <style>
-        .cal-embed-container {
-            min-height: 600px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .cal-embed-container iframe {
-            border-radius: var(--radius-lg);
-        }
-
-        .booking-info {
-            text-align: center;
-            margin-bottom: var(--space-lg);
-        }
-
-        .booking-info p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-    </style>
-
     <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Fenlo AI Blog",
+        "description": "Practical AI guides and insights for small businesses",
+        "url": "https://fenloai.com/blog",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Fenlo AI",
+            "logo": "https://fenloai.com/assets/fenloai-icon.svg"
+        },
+        "blogPost": [
+            {
+                "@type": "BlogPosting",
+                "headline": "Stop Answering the Same Questions Over and Over: How FAQ Bots Can Free Up Your Team",
+                "url": "https://fenloai.com/pages/blog/faq-bots-complete-guide.html",
+                "description": "Learn how FAQ bots work, what they really cost, and whether one makes sense for your business."
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "The Small Business Guide to Document Q&A: Real ROI From Real Companies",
+                "url": "https://fenloai.com/pages/blog/document-qa-guide-sme-roi.html",
+                "description": "Learn how SMEs are cutting document search time by 91% with AI-powered Q&A systems."
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "The Small Business Guide to AI Agents: Real Results, Honest Expectations",
+                "url": "https://fenloai.com/pages/blog/ai-agents-guide-sme.html",
+                "description": "Learn what AI agents really are, see verified ROI from real companies, and find out if autonomous digital workers make sense for your business."
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fenloai.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://fenloai.com/blog"}
+        ]
+    }
+    </script>
 </head>
 
 <body>
@@ -108,7 +134,7 @@
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -122,26 +148,72 @@
     <div class="mobile-nav" aria-hidden="true">
         <a href="../index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="blog.html">Blog</a>
+        <a href="blog.html" class="active">Blog</a>
         <a href="contact.html">Contact</a>
     </div>
 
     <section class="page-header">
-        <h1 class="gradient-text">Apply for Briefing</h1>
-        <p class="intro-text">Book your free 2-hour Executive AI Briefing session.</p>
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Blog</span>
+        </nav>
+        <h1 class="gradient-text">AI Insights for Small Business</h1>
+        <p class="intro-text">Practical guides to help you understand AI, calculate ROI, and make informed decisions.</p>
     </section>
 
     <main id="main-content">
-        <section class="section">
-            <div class="container">
-                <div class="booking-info">
-                    <p>Select a time and fill out the booking form. You'll receive a Google Meet link via email.</p>
-                </div>
-                <div class="cal-embed-container">
-                    <div id="cal-inline"></div>
-                </div>
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-3">
+
+                <!-- Blog Post 1: FAQ Bots -->
+                <a href="blog/faq-bots-complete-guide.html" class="service-card animate-on-scroll stagger-1">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" /></svg>
+                    </div>
+                    <span class="service-tag">Customer Support</span>
+                    <h2>Stop Answering the Same Questions Over and Over</h2>
+                    <p>Tired of answering the same customer questions daily? Learn how FAQ bots work, what they really cost, and whether one makes sense for your business.</p>
+                    <div class="learn-more">Read Article <span class="arrow">→</span></div>
+                </a>
+
+                <!-- Blog Post 2: Document Q&A -->
+                <a href="blog/document-qa-guide-sme-roi.html" class="service-card animate-on-scroll stagger-2">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Zm3.75 11.625a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" /></svg>
+                    </div>
+                    <span class="service-tag">Document Intelligence</span>
+                    <h2>The Small Business Guide to Document Q&A</h2>
+                    <p>Learn how SMEs are cutting document search time by 91% with AI-powered Q&A systems. Real case studies, verified ROI data, and practical implementation tips.</p>
+                    <div class="learn-more">Read Article <span class="arrow">→</span></div>
+                </a>
+
+                <!-- Blog Post 3: AI Agents -->
+                <a href="blog/ai-agents-guide-sme.html" class="service-card animate-on-scroll stagger-3">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" /></svg>
+                    </div>
+                    <span class="service-tag">AI Agents</span>
+                    <h2>The Small Business Guide to AI Agents</h2>
+                    <p>Learn what AI agents really are, see verified ROI from real companies, and find out if autonomous digital workers make sense for your business size.</p>
+                    <div class="learn-more">Read Article <span class="arrow">→</span></div>
+                </a>
+
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Explore AI for Your Business?</h2>
+        <p>Book a free Executive AI Briefing. We'll help you understand what's possible and whether AI makes sense for your specific situation.</p>
+        <div class="cta-buttons">
+            <a href="apply-briefing.html" class="btn btn-primary">Get Your Free Briefing</a>
+            <a href="contact.html" class="btn btn-secondary">Talk to Our Team</a>
+        </div>
+    </section>
     </main>
 
     <footer role="contentinfo">
@@ -166,25 +238,36 @@
         </div>
     </div>
 
-    <!-- Cal.com embed script -->
-    <script type="text/javascript">
-        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", {origin:"https://cal.com"});
-
-        Cal("inline", {
-            elementOrSelector: "#cal-inline",
-            calLink: "fenloai/executive-ai-briefing",
-            layout: "month_view"
-        });
-
-        Cal("ui", {
-            styles: { branding: { brandColor: "#6b7c3f" } },
-            hideEventTypeDetails: false,
-            layout: "month_view"
-        });
-    </script>
-
     <script>
+        // Card hover effect
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
         // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileNav = document.querySelector('.mobile-nav');

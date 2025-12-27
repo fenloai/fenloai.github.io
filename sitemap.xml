@@ -2,96 +2,120 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://fenloai.com/</loc>
-        <lastmod>2025-01-01</lastmod>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/services</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/services.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/service1</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/services/service1.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/service2</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/services/service2.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/service3</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/services/service3.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/service4</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/services/service4.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/service5</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/services/service5.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/service6</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/services/service6.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/service7</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/services/service7.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/service8</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/services/service8.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/service9</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/services/service9.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/contact</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/blog.html</loc>
+        <lastmod>2025-12-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fenloai.com/pages/blog/faq-bots-complete-guide.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/apply-briefing</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/blog/document-qa-guide-sme-roi.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/book-discovery</loc>
-        <lastmod>2025-01-01</lastmod>
+        <loc>https://fenloai.com/pages/blog/ai-agents-guide-sme.html</loc>
+        <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/privacy</loc>
+        <loc>https://fenloai.com/pages/contact.html</loc>
+        <lastmod>2025-12-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fenloai.com/pages/apply-briefing.html</loc>
+        <lastmod>2025-12-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fenloai.com/pages/book-discovery.html</loc>
+        <lastmod>2025-12-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fenloai.com/pages/legal/privacy.html</loc>
         <lastmod>2025-12-22</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>https://fenloai.com/terms</loc>
+        <loc>https://fenloai.com/pages/legal/terms.html</loc>
         <lastmod>2025-12-22</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
