@@ -1,200 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MBJVZS7Z');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tired of answering the same customer questions daily? Learn how FAQ bots work, what they really cost, and whether one makes sense for your business.">
     <title>Stop Answering the Same Questions Over and Over: How FAQ Bots Can Free Up Your Team | Fenlo AI</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- SEO -->
+    <meta name="author" content="Fenlo AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://fenloai.com/pages/blog/faq-bots-complete-guide.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/fenloai-icon.svg">
+
+    <!-- Preload Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://fenloai.com/pages/blog/faq-bots-complete-guide.html">
+    <meta property="og:title" content="Stop Answering the Same Questions Over and Over: How FAQ Bots Can Free Up Your Team">
+    <meta property="og:description" content="Tired of answering the same customer questions daily? Learn how FAQ bots work, what they really cost, and whether one makes sense for your business.">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stop Answering the Same Questions Over and Over: How FAQ Bots Can Free Up Your Team">
+    <meta name="twitter:description" content="Tired of answering the same customer questions daily? Learn how FAQ bots work, what they really cost, and whether one makes sense for your business.">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../css/styles.css">
+
+    <!-- Blog-specific styles -->
     <style>
-        :root {
-            --primary-accent: #6b7c3f;
-            --primary-accent-light: #8a9c5a;
-            --primary-accent-dark: #556332;
-            --background: #fafafa;
-            --surface: #ffffff;
-            --text-primary: #1a1a1a;
-            --text-secondary: #4a4a4a;
-            --text-muted: #525252;
-            --border: #e5e5e5;
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
-            --hero-gradient: linear-gradient(135deg, #f8faf5 0%, #f0f4e8 50%, #e8efe0 100%);
-            --card-gradient: linear-gradient(135deg, #ffffff 0%, #fafbf7 100%);
-            --cta-gradient: linear-gradient(135deg, #f0f4e8 0%, #e8efe0 100%);
-        }
-
-        [data-theme="dark"] {
-            --background: #121212;
-            --surface: #1e1e1e;
-            --text-primary: #f0f0f0;
-            --text-secondary: #b0b0b0;
-            --text-muted: #888888;
-            --border: #333333;
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
-            --hero-gradient: linear-gradient(135deg, #1a1d16 0%, #1e211a 50%, #22251e 100%);
-            --card-gradient: linear-gradient(135deg, #1e1e1e 0%, #252520 100%);
-            --cta-gradient: linear-gradient(135deg, #1e211a 0%, #22251e 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--background);
-            color: var(--text-primary);
-            line-height: 1.7;
-            font-size: 17px;
-        }
-
-        /* Header */
-        header {
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--primary-accent);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--text-primary);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover {
-            color: var(--primary-accent);
-        }
-
-        /* Reading Progress Indicator */
+        /* Reading Progress Bar */
         .reading-progress {
             position: fixed;
             top: 0;
             left: 0;
             width: 0%;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
             z-index: 9999;
             transition: width 0.1s ease-out;
         }
 
-        /* Dark Mode Toggle */
-        .theme-toggle {
-            background: transparent;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s ease, border-color 0.2s ease;
-        }
-
-        .theme-toggle:hover {
-            background: var(--background);
-            border-color: var(--primary-accent);
-        }
-
-        .theme-toggle svg {
-            width: 20px;
-            height: 20px;
-            color: var(--text-secondary);
-        }
-
-        .theme-toggle .sun-icon { display: none; }
-        .theme-toggle .moon-icon { display: block; }
-
-        [data-theme="dark"] .theme-toggle .sun-icon { display: block; }
-        [data-theme="dark"] .theme-toggle .moon-icon { display: none; }
-
-        /* Hero Section */
-        .hero {
-            background: var(--hero-gradient);
-            padding: 4rem 2rem 5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(107, 124, 63, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(107, 124, 63, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            max-width: 760px;
+        /* Blog Hero */
+        .blog-hero {
+            padding: var(--space-2xl) var(--container-padding) var(--space-xl);
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
         }
 
         .article-meta {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-md);
             font-size: 0.9rem;
             color: var(--text-muted);
         }
 
         .category-tag {
-            background: linear-gradient(135deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             color: white;
             padding: 0.35rem 1rem;
             border-radius: 20px;
@@ -215,12 +101,11 @@
             opacity: 0.6;
         }
 
-        h1 {
-            font-size: 2.75rem;
+        .blog-hero h1 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
             font-weight: 700;
             line-height: 1.15;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-md);
             letter-spacing: -0.5px;
         }
 
@@ -228,23 +113,21 @@
             font-size: 1.2rem;
             color: var(--text-secondary);
             line-height: 1.8;
-            max-width: 640px;
         }
 
-        /* Author Byline */
         .author-byline {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(107, 124, 63, 0.15);
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--glass-border);
         }
 
         .author-avatar {
             width: 44px;
             height: 44px;
-            background: linear-gradient(135deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -276,55 +159,32 @@
             color: var(--text-muted);
         }
 
-        /* Hero Illustration */
-        .hero-illustration {
-            position: absolute;
-            right: -5%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 280px;
-            height: 280px;
-            opacity: 0.12;
-            z-index: 0;
-        }
-
-        .hero-illustration svg {
-            width: 100%;
-            height: 100%;
-            fill: var(--primary-accent-dark);
-        }
-
-        @media (max-width: 1100px) {
-            .hero-illustration {
-                display: none;
-            }
-        }
-
         /* Article Container */
         .article-container {
             max-width: 760px;
             margin: 0 auto;
-            padding: 3rem 2rem 5rem;
+            padding: 0 var(--container-padding) var(--space-3xl);
         }
 
-        /* Content Styles */
+        /* Article Content */
         .article-content h2 {
             font-size: 1.6rem;
             font-weight: 600;
-            margin: 3rem 0 1.25rem;
+            margin: var(--space-xl) 0 var(--space-md);
             color: var(--text-primary);
         }
 
         .article-content h3 {
             font-size: 1.25rem;
             font-weight: 600;
-            margin: 2rem 0 1rem;
+            margin: var(--space-lg) 0 var(--space-sm);
             color: var(--text-primary);
         }
 
         .article-content p {
-            margin-bottom: 1.25rem;
+            margin-bottom: var(--space-md);
             color: var(--text-secondary);
+            line-height: 1.8;
         }
 
         .article-content strong {
@@ -334,222 +194,88 @@
 
         .article-content ul,
         .article-content ol {
-            margin: 1.25rem 0;
+            margin: var(--space-md) 0;
             padding-left: 1.5rem;
         }
 
         .article-content li {
             margin-bottom: 0.75rem;
             color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         .article-content a {
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
         }
 
         .article-content a:hover {
-            border-bottom-color: var(--primary-accent);
+            border-bottom-color: var(--accent-primary-light);
         }
 
-        /* Callout Box */
-        .callout {
-            background: linear-gradient(135deg, #fffef9 0%, #fdfcf5 100%);
-            border: 1px solid rgba(180, 160, 100, 0.2);
-            border-left: 4px solid #b4a064;
-            border-radius: 12px;
-            padding: 1.5rem 1.75rem;
-            margin: 2rem 0;
-            box-shadow: 0 4px 16px rgba(180, 160, 100, 0.08);
+        /* Table of Contents */
+        .toc {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-xl);
         }
 
-        .callout p {
-            margin: 0;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .callout strong {
-            color: #8a7a3a;
-        }
-
-        /* Key Insight Box */
-        .key-insight {
-            background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(107, 124, 63, 0.05));
-            border: 1px solid rgba(107, 124, 63, 0.15);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2.5rem 0;
-            position: relative;
-        }
-
-        .key-insight::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236b7c3f' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-            border-radius: 16px;
-            pointer-events: none;
-        }
-
-        .key-insight-title {
+        .toc-title {
             font-weight: 700;
-            color: var(--primary-accent-dark);
-            margin-bottom: 0.75rem;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1rem;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            position: relative;
         }
 
-        .key-insight-title::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--primary-accent);
-            border-radius: 50%;
+        .toc-title svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent-primary-light);
         }
 
-        .key-insight p {
+        .toc-list {
+            list-style: none;
+            padding: 0;
             margin: 0;
-            color: var(--text-primary);
-            position: relative;
-            font-size: 1.02rem;
-            line-height: 1.7;
         }
 
-        /* Stats Card */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-            margin: 2.5rem 0;
+        .toc-list li {
+            margin-bottom: 0.6rem;
         }
 
-        .stat-card {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.15);
-            border-radius: 16px;
-            padding: 1.75rem;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(107, 124, 63, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-accent-light), var(--primary-accent));
-        }
-
-        .stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(107, 124, 63, 0.15);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            line-height: 1.1;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-            font-weight: 500;
-        }
-
-        /* Checklist */
-        .checklist {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.12);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin: 2.5rem 0;
-            box-shadow: 0 8px 32px rgba(107, 124, 63, 0.08);
-        }
-
-        .checklist-title {
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 1.75rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .checklist-title::before {
-            content: '';
-            width: 4px;
-            height: 24px;
-            background: linear-gradient(180deg, var(--primary-accent), var(--primary-accent-light));
-            border-radius: 2px;
-        }
-
-        .checklist-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.25rem;
-            padding-bottom: 1.25rem;
-            border-bottom: 1px dashed rgba(107, 124, 63, 0.2);
-        }
-
-        .checklist-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .checklist-number {
-            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
-            color: white;
-            width: 32px;
-            height: 32px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            font-weight: 700;
-            flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(107, 124, 63, 0.25);
-        }
-
-        .checklist-content h4 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 0.35rem;
-            color: var(--text-primary);
-        }
-
-        .checklist-content p {
+        .toc-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
             font-size: 0.95rem;
-            margin: 0;
-            color: var(--text-muted);
-            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .toc-list a::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent-primary-light);
+        }
+
+        .toc-list a:hover::before {
+            transform: scale(1.3);
         }
 
         /* Flow Diagram */
@@ -558,24 +284,23 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            margin: 2rem 0;
+            margin: var(--space-lg) 0;
             flex-wrap: wrap;
         }
 
         .flow-step {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.2);
-            border-radius: 12px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
             padding: 1rem 1.25rem;
             text-align: center;
             min-width: 120px;
-            box-shadow: 0 4px 12px rgba(107, 124, 63, 0.08);
         }
 
         .flow-step-icon {
             width: 36px;
             height: 36px;
-            background: linear-gradient(135deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -586,7 +311,7 @@
         .flow-step-icon svg {
             width: 20px;
             height: 20px;
-            color: white;
+            stroke: white;
         }
 
         .flow-step-label {
@@ -602,9 +327,7 @@
         }
 
         .flow-arrow {
-            color: var(--primary-accent);
-            font-size: 1.5rem;
-            font-weight: 300;
+            color: var(--accent-primary-light);
         }
 
         .flow-arrow svg {
@@ -624,32 +347,31 @@
         /* Comparison Table */
         .comparison-table {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.25rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
         }
 
         .comparison-card {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.15);
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 16px rgba(107, 124, 63, 0.06);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
         }
 
         .comparison-card-header {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin-bottom: 1rem;
+            margin-bottom: var(--space-sm);
             padding-bottom: 0.75rem;
-            border-bottom: 1px dashed rgba(107, 124, 63, 0.2);
+            border-bottom: 1px dashed var(--glass-border);
         }
 
         .comparison-card-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -660,7 +382,7 @@
         .comparison-card-icon svg {
             width: 22px;
             height: 22px;
-            color: white;
+            stroke: white;
         }
 
         .comparison-card-title {
@@ -684,15 +406,14 @@
         }
 
         .comparison-card li::before {
-            content: '•';
+            content: '';
             position: absolute;
             left: 0;
-            color: var(--primary-accent);
-            font-weight: 700;
-        }
-
-        .comparison-card li:last-child {
-            margin-bottom: 0;
+            top: 0.5em;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-primary-light);
+            border-radius: 50%;
         }
 
         @media (max-width: 600px) {
@@ -701,39 +422,216 @@
             }
         }
 
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-normal);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--glass-border-hover);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Key Insight Box */
+        .key-insight {
+            background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(107, 124, 63, 0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            position: relative;
+        }
+
+        .key-insight-title {
+            font-weight: 700;
+            color: var(--accent-primary-light);
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .key-insight-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary-light);
+            border-radius: 50%;
+        }
+
+        .key-insight p {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        /* Callout Box */
+        .callout {
+            background: linear-gradient(135deg, rgba(184, 160, 74, 0.1), rgba(184, 160, 74, 0.05));
+            border: 1px solid rgba(184, 160, 74, 0.2);
+            border-left: 4px solid var(--accent-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .callout p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: var(--accent-secondary-light);
+        }
+
+        /* Checklist */
+        .checklist {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin: var(--space-lg) 0;
+        }
+
+        .checklist-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .checklist-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 2px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .checklist-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .checklist-number {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .checklist-content h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .checklist-content p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
         /* CTA Section */
         .cta-section {
-            background: var(--cta-gradient);
-            border-radius: 24px;
-            padding: 3.5rem 2.5rem;
-            margin: 4rem 0 3rem;
+            background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(143, 163, 85, 0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(107, 124, 63, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
         .cta-section h2 {
             margin-top: 0;
-            margin-bottom: 1rem;
-            position: relative;
+            margin-bottom: var(--space-sm);
             font-size: 1.75rem;
         }
 
         .cta-section p {
             max-width: 520px;
-            margin: 0 auto 2rem;
-            position: relative;
+            margin: 0 auto var(--space-lg);
             font-size: 1.05rem;
         }
 
@@ -741,16 +639,15 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             color: white;
-            padding: 1.1rem 2.25rem;
-            border-radius: 12px;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-full);
             text-decoration: none;
             font-weight: 600;
             font-size: 1.05rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             box-shadow: 0 8px 24px rgba(107, 124, 63, 0.3);
-            position: relative;
         }
 
         .cta-button:hover {
@@ -770,13 +667,12 @@
 
         /* Mid-article CTA */
         .mid-cta {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.15);
-            border-radius: 16px;
-            padding: 2rem 2.5rem;
-            margin: 3rem 0;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
             text-align: center;
-            box-shadow: 0 4px 16px rgba(107, 124, 63, 0.06);
             position: relative;
         }
 
@@ -788,11 +684,8 @@
             transform: translateX(-50%);
             width: 24px;
             height: 24px;
-            background: var(--primary-accent);
+            background: var(--accent-primary);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .mid-cta p {
@@ -802,43 +695,93 @@
             font-size: 1.05rem;
         }
 
+        /* Social Share */
+        .social-share {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: var(--space-xl) 0;
+            padding: var(--space-md);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+        }
+
+        .social-share-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .social-share-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .social-share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: var(--bg-primary);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-share-btn:hover {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .social-share-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
         /* Related Articles */
         .related-articles {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
+            margin-top: var(--space-xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--glass-border);
         }
 
         .related-articles h2 {
             font-size: 1.25rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-md);
         }
 
         .related-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
+            gap: var(--space-md);
         }
 
         .related-card {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.12);
-            border-radius: 12px;
-            padding: 1.25rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
             text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .related-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(107, 124, 63, 0.12);
+            border-color: var(--glass-border-hover);
+            box-shadow: var(--shadow-md);
         }
 
         .related-card-tag {
             display: inline-block;
             font-size: 0.7rem;
             font-weight: 600;
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 0.5rem;
@@ -864,65 +807,16 @@
             }
         }
 
-        /* Social Sharing */
-        .social-share {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin: 3rem 0;
-            padding: 1.5rem;
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.12);
-            border-radius: 12px;
-        }
-
-        .social-share-label {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-primary);
-        }
-
-        .social-share-buttons {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .social-share-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            background: var(--background);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .social-share-btn:hover {
-            background: var(--primary-accent);
-            border-color: var(--primary-accent);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .social-share-btn svg {
-            width: 18px;
-            height: 18px;
-        }
-
         /* References */
         .references {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--glass-border);
         }
 
         .references h2 {
             font-size: 1.25rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-md);
         }
 
         .reference-list {
@@ -942,22 +836,8 @@
             content: attr(data-ref);
             position: absolute;
             left: 0;
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
             font-weight: 600;
-        }
-
-        .reference-list li:target {
-            background: rgba(107, 124, 63, 0.1);
-            border-radius: 6px;
-            padding: 0.5rem;
-            margin-left: -0.5rem;
-            padding-left: 2.5rem;
-            animation: highlight-fade 2s ease-out;
-        }
-
-        @keyframes highlight-fade {
-            0% { background: rgba(107, 124, 63, 0.25); }
-            100% { background: rgba(107, 124, 63, 0.1); }
         }
 
         .reference-list a {
@@ -966,20 +846,15 @@
         }
 
         .reference-list a:hover {
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
         }
 
         /* Superscript citations */
         sup {
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
             font-weight: 600;
             font-size: 0.75em;
             cursor: pointer;
-            transition: color 0.2s ease;
-        }
-
-        sup:hover {
-            color: var(--primary-accent-dark);
         }
 
         .ref-link {
@@ -987,12 +862,6 @@
             color: inherit;
         }
 
-        .ref-link:hover sup {
-            color: var(--primary-accent-dark);
-            text-decoration: underline;
-        }
-
-        /* Reference tooltips */
         .ref-tooltip {
             position: relative;
             display: inline;
@@ -1005,19 +874,19 @@
             bottom: 125%;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--text-primary);
-            color: white;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
             padding: 0.6rem 0.9rem;
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             font-size: 0.8rem;
             font-weight: 400;
-            white-space: nowrap;
             max-width: 280px;
             white-space: normal;
             text-align: left;
             line-height: 1.4;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-lg);
             transition: opacity 0.2s ease, visibility 0.2s ease;
         }
 
@@ -1028,7 +897,7 @@
             left: 50%;
             transform: translateX(-50%);
             border: 6px solid transparent;
-            border-top-color: var(--text-primary);
+            border-top-color: var(--bg-tertiary);
         }
 
         .ref-tooltip:hover .tooltip-text {
@@ -1036,25 +905,18 @@
             opacity: 1;
         }
 
-        @media (max-width: 768px) {
-            .ref-tooltip .tooltip-text {
-                max-width: 200px;
-                font-size: 0.75rem;
-            }
-        }
-
-        /* Skip to content link */
+        /* Skip to content */
         .skip-link {
             position: absolute;
             top: -40px;
             left: 0;
-            background: var(--primary-accent);
+            background: var(--accent-primary);
             color: white;
             padding: 0.5rem 1rem;
             z-index: 1000;
             text-decoration: none;
             font-weight: 500;
-            border-radius: 0 0 8px 0;
+            border-radius: 0 0 var(--radius-sm) 0;
             transition: top 0.3s ease;
         }
 
@@ -1062,249 +924,110 @@
             top: 0;
         }
 
-        /* Table of Contents */
-        .toc {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.12);
-            border-radius: 16px;
-            padding: 1.75rem 2rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 4px 16px rgba(107, 124, 63, 0.06);
-        }
-
-        .toc-title {
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .toc-title svg {
-            width: 18px;
-            height: 18px;
-            color: var(--primary-accent);
-        }
-
-        .toc-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .toc-list li {
-            margin-bottom: 0.6rem;
-        }
-
-        .toc-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .toc-list a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.2s ease, transform 0.2s ease;
-        }
-
-        .toc-list a::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--primary-accent-light);
-            border-radius: 50%;
-            flex-shrink: 0;
-            transition: transform 0.2s ease;
-        }
-
-        .toc-list a:hover {
-            color: var(--primary-accent);
-        }
-
-        .toc-list a:hover::before {
-            transform: scale(1.3);
-            background: var(--primary-accent);
-        }
-
-        /* Divider */
-        hr {
-            border: none;
-            height: 1px;
-            background: var(--border);
-            margin: 2.5rem 0;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-accent);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .copyright {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            h1 {
+            .blog-hero h1 {
                 font-size: 1.85rem;
-            }
-
-            .hero {
-                padding: 2.5rem 1.25rem 3rem;
             }
 
             .article-intro {
                 font-size: 1.05rem;
             }
 
-            .article-container {
-                padding: 2rem 1.25rem 3rem;
-            }
-
-            .header-content {
-                padding: 1rem;
-            }
-
-            nav {
-                gap: 0.75rem;
-            }
-
-            nav a {
-                margin-left: 0;
-                font-size: 0.85rem;
-            }
-
-            .theme-toggle {
-                padding: 0.4rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .stat-card {
-                padding: 1.25rem;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
             .checklist {
-                padding: 1.75rem;
-            }
-
-            .key-insight {
-                padding: 1.5rem;
+                padding: var(--space-md);
             }
 
             .cta-section {
-                padding: 2.5rem 1.5rem;
-                border-radius: 16px;
+                padding: var(--space-lg);
             }
 
             .cta-section h2 {
                 font-size: 1.4rem;
             }
 
-            .mid-cta {
-                padding: 1.5rem;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-links a {
-                margin: 0 0.75rem;
+            .publish-date {
+                display: none;
             }
         }
     </style>
 </head>
+
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBJVZS7Z"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div class="reading-progress" id="reading-progress"></div>
     <a href="#main-content" class="skip-link">Skip to content</a>
-    <header>
-        <div class="header-content">
-            <a href="../../index.html" class="logo">Fenlo <span>AI</span></a>
-            <nav>
-                <a href="../services.html">Services</a>
-                <a href="../blog.html">Blog</a>
-                <a href="../contact.html">Contact</a>
-                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                </button>
-            </nav>
-        </div>
-    </header>
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
 
-    <section class="hero">
-        <!-- Hero Illustration -->
-        <div class="hero-illustration" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L1 23l6.71-1.97C9.02 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.4 0-2.74-.35-3.92-.97l-.28-.16-2.9.85.85-2.9-.16-.28A7.96 7.96 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.25-5.53c-.23-.12-1.36-.67-1.57-.75-.21-.08-.36-.12-.51.12-.15.23-.59.75-.73.9-.13.16-.27.18-.5.06-.23-.12-.97-.36-1.85-1.14-.68-.61-1.14-1.36-1.28-1.59-.13-.23-.01-.36.1-.47.1-.1.23-.27.35-.4.12-.13.15-.23.23-.38.08-.15.04-.28-.02-.4-.06-.12-.51-1.23-.7-1.68-.18-.44-.37-.38-.51-.39-.13-.01-.28-.01-.43-.01-.15 0-.4.06-.61.28-.21.23-.8.78-.8 1.9 0 1.12.82 2.21.93 2.36.12.15 1.61 2.46 3.9 3.45.55.24.97.38 1.3.49.55.17 1.05.15 1.44.09.44-.07 1.36-.56 1.55-1.09.19-.54.19-.99.13-1.09-.05-.1-.21-.15-.44-.27z"/>
-            </svg>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo" aria-label="Fenlo AI Home">
+                <svg class="logo-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 80" width="250" height="80">
+                    <g class="logo-icon" transform="translate(0, 5)">
+                        <rect x="20" y="20" width="28" height="28" class="logo-green"/>
+                        <rect x="20" y="20" width="28" height="28" class="logo-green" transform="rotate(45 34 34)" stroke="#0a0a0f" stroke-width="3"/>
+                    </g>
+                    <g transform="translate(70, 0)">
+                        <g class="logo-white">
+                            <path d="M4.45 57.25L4.45 36.65L0 36.65L0 31.75L4.45 31.75L4.45 28Q4.45 24.60 6.38 22.67Q8.30 20.75 11.70 20.75L18.50 20.75L18.50 25.65L12.75 25.65Q11.60 25.65 10.90 26.35Q10.20 27.05 10.20 28.25L10.20 31.75L17.45 31.75L17.45 36.65L10.20 36.65L10.20 57.25L4.45 57.25Z"/>
+                            <path d="M33.80 57.25Q29.50 57.25 26.27 55.63Q23.05 54 21.25 51.13Q19.45 48.25 19.45 44.50Q19.45 40.55 21.05 37.55Q22.65 34.55 25.45 32.85Q28.25 31.15 31.90 31.15Q36 31.15 38.65 32.90Q41.30 34.65 42.58 37.60Q43.85 40.55 43.85 44.20Q43.85 44.70 43.80 45.35Q43.75 46 43.65 46.35L25.55 46.35Q25.85 48.35 27 49.67Q28.15 51 29.90 51.67Q31.65 52.35 33.80 52.35L40.65 52.35L40.65 57.25L33.80 57.25M25.50 42.45L38.10 42.45Q38.05 41.50 37.83 40.55Q37.60 39.60 37.13 38.75Q36.65 37.90 35.92 37.27Q35.20 36.65 34.20 36.27Q33.20 35.90 31.90 35.90Q30.40 35.90 29.25 36.47Q28.10 37.05 27.30 37.97Q26.50 38.90 26.07 40.08Q25.65 41.25 25.50 42.45Z"/>
+                            <path d="M49.20 57.25L49.20 42.55Q49.20 39.25 50.70 36.67Q52.20 34.10 54.95 32.63Q57.70 31.15 61.40 31.15Q65.10 31.15 67.83 32.63Q70.55 34.10 72.05 36.67Q73.55 39.25 73.55 42.55L73.55 57.25L67.85 57.25L67.85 42.60Q67.85 40.65 66.95 39.17Q66.05 37.70 64.58 36.88Q63.10 36.05 61.35 36.05Q59.65 36.05 58.17 36.88Q56.70 37.70 55.83 39.17Q54.95 40.65 54.95 42.60L54.95 57.25L49.20 57.25Z"/>
+                            <path d="M80.45 57.25L80.45 20.75L86.20 20.75L86.20 57.25L80.45 57.25Z"/>
+                            <path d="M105.25 57.85Q101.30 57.85 98.25 56.08Q95.20 54.30 93.43 51.27Q91.65 48.25 91.65 44.50Q91.65 40.75 93.43 37.72Q95.20 34.70 98.25 32.92Q101.30 31.15 105.25 31.15Q109.15 31.15 112.20 32.92Q115.25 34.70 117.03 37.70Q118.80 40.70 118.80 44.50Q118.80 48.25 117.03 51.27Q115.25 54.30 112.20 56.08Q109.15 57.85 105.25 57.85M105.25 52.95Q107.60 52.95 109.35 51.83Q111.10 50.70 112.05 48.80Q113 46.90 113 44.50Q113 42.15 112.05 40.22Q111.10 38.30 109.35 37.17Q107.60 36.05 105.25 36.05Q102.85 36.05 101.13 37.17Q99.40 38.30 98.43 40.20Q97.45 42.10 97.45 44.50Q97.45 46.85 98.43 48.77Q99.40 50.70 101.13 51.83Q102.85 52.95 105.25 52.95Z"/>
+                        </g>
+                        <g class="logo-green">
+                            <path d="M134.60 57.85Q130.95 57.85 128.30 56.05Q125.65 54.25 124.23 51.23Q122.80 48.20 122.80 44.55Q122.80 40.75 124.43 37.72Q126.05 34.70 129.08 32.92Q132.10 31.15 136.30 31.15Q140.45 31.15 143.38 32.92Q146.30 34.70 147.88 37.72Q149.45 40.75 149.45 44.45L149.45 57.25L143.70 57.25L143.70 52.50L143.60 52.50Q142.85 53.90 141.65 55.13Q140.45 56.35 138.70 57.10Q136.95 57.85 134.60 57.85M136.15 52.95Q138.40 52.95 140.08 51.83Q141.75 50.70 142.68 48.77Q143.60 46.85 143.60 44.45Q143.60 42.05 142.70 40.17Q141.80 38.30 140.15 37.17Q138.50 36.05 136.20 36.05Q133.80 36.05 132.10 37.17Q130.40 38.30 129.50 40.20Q128.60 42.10 128.60 44.50Q128.60 46.85 129.50 48.77Q130.40 50.70 132.08 51.83Q133.75 52.95 136.15 52.95Z"/>
+                            <path d="M156.35 57.25L156.35 31.75L162.10 31.75L162.10 57.25L156.35 57.25M159.20 28.20Q157.70 28.20 156.60 27.10Q155.50 26 155.50 24.50Q155.50 23 156.60 21.90Q157.70 20.80 159.20 20.80Q160.75 20.80 161.83 21.90Q162.90 23 162.90 24.50Q162.90 26 161.83 27.10Q160.75 28.20 159.20 28.20Z"/>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <div class="hero-content">
-            <div class="article-meta">
-                <span class="category-tag">Smart Chatbots</span>
-                <span class="reading-time" aria-label="Estimated reading time: 8 minutes">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    8 min read
-                </span>
-            </div>
-            <h1>Stop Answering the Same Questions Over and Over: How FAQ Bots Can Free Up Your Team</h1>
-            <p class="article-intro">Tired of answering the same customer questions daily? Learn how FAQ bots work, what they really cost, and whether one makes sense for your business.</p>
+    </nav>
 
-            <div class="author-byline">
-                <div class="author-avatar">FA</div>
-                <div class="author-info">
-                    <span class="author-name">Fenlo AI Team</span>
-                    <span class="author-role">AI Solutions Experts</span>
-                </div>
-                <span class="publish-date">December 2025</span>
+    <div class="mobile-nav" aria-hidden="true">
+        <a href="../../index.html">Home</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
+    </div>
+
+    <section class="blog-hero">
+        <div class="article-meta">
+            <span class="category-tag">Smart Chatbots</span>
+            <span class="reading-time" aria-label="Estimated reading time: 8 minutes">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                8 min read
+            </span>
+        </div>
+        <h1>Stop Answering the Same Questions Over and Over: How FAQ Bots Can Free Up Your Team</h1>
+        <p class="article-intro">Tired of answering the same customer questions daily? Learn how FAQ bots work, what they really cost, and whether one makes sense for your business.</p>
+
+        <div class="author-byline">
+            <div class="author-avatar">FA</div>
+            <div class="author-info">
+                <span class="author-name">Fenlo AI Team</span>
+                <span class="author-role">AI Solutions Experts</span>
             </div>
+            <span class="publish-date">December 2025</span>
         </div>
     </section>
 
@@ -1432,7 +1155,7 @@
 
             <div class="key-insight">
                 <div class="key-insight-title">Key Insight</div>
-                <p>Research shows that about 92% of support tickets in small retail stores are routine inquiries — order tracking, product questions, returns, and shipping.<span class="ref-tooltip"><a href="#ref-1" class="ref-link"><sup>1</sup></a><span class="tooltip-text">AddWebSolution: AI Chatbots Small Stores</span></span> That's a lot of repetitive work that could be automated.</p>
+                <p>Research shows that about 92% of support tickets in small retail stores are routine inquiries - order tracking, product questions, returns, and shipping.<span class="ref-tooltip"><a href="#ref-1" class="ref-link"><sup>1</sup></a><span class="tooltip-text">AddWebSolution: AI Chatbots Small Stores</span></span> That's a lot of repetitive work that could be automated.</p>
             </div>
 
             <h2 id="real-benefits">The Real Benefits (With Actual Numbers)</h2>
@@ -1462,19 +1185,19 @@
 
             <p>Businesses typically see around a 30% reduction in support costs after deploying chatbots.<a href="#ref-2" class="ref-link"><sup>2</sup></a> For larger companies, that can mean freeing up the equivalent of several full-time support roles.</p>
 
-            <p>For small businesses, the impact is proportionally similar — many report redirecting hundreds of hours annually from repetitive inquiries to higher-value work. That's real capacity that can go toward growth instead of answering the same questions over and over.</p>
+            <p>For small businesses, the impact is proportionally similar - many report redirecting hundreds of hours annually from repetitive inquiries to higher-value work. That's real capacity that can go toward growth instead of answering the same questions over and over.</p>
 
             <h3>Massive Ticket Deflection</h3>
 
             <p>FAQ bots can handle 60-80% of routine inquiries without any human involvement.<a href="#ref-3" class="ref-link"><sup>3</sup></a> One online retailer's bot fully handled 85% of incoming questions on its own.<a href="#ref-4" class="ref-link"><sup>4</sup></a></p>
 
-            <p>When bots "deflect" these simple tickets, your support team faces far fewer low-level questions. That's not about replacing people — it's about letting them do more meaningful work.</p>
+            <p>When bots "deflect" these simple tickets, your support team faces far fewer low-level questions. That's not about replacing people - it's about letting them do more meaningful work.</p>
 
             <h3>Faster, 24/7 Service</h3>
 
             <p>Unlike your team, bots don't sleep. They deliver instant answers at 3 AM on a Sunday. And customers notice: 64% say 24/7 availability is the top benefit of chatbots.<a href="#ref-3" class="ref-link"><sup>3</sup></a></p>
 
-            <p>The speed difference is dramatic. Klarna's chatbot resolves queries in under 2 minutes, compared to their previous 11-minute average with human agents.<a href="#ref-5" class="ref-link"><sup>5</sup></a> That's not just faster — it's a completely different customer experience.</p>
+            <p>The speed difference is dramatic. Klarna's chatbot resolves queries in under 2 minutes, compared to their previous 11-minute average with human agents.<a href="#ref-5" class="ref-link"><sup>5</sup></a> That's not just faster - it's a completely different customer experience.</p>
 
             <h3>Higher Customer Satisfaction</h3>
 
@@ -1486,7 +1209,7 @@
 
             <p>Here's what often gets overlooked: when bots handle the repetitive stuff, your human agents can actually do their best work. One company reported 75% higher efficiency after implementing chatbots,<a href="#ref-7" class="ref-link"><sup>7</sup></a> because staff spent less time on FAQs and more time solving real problems.</p>
 
-            <p>Industry data shows 77% of agents now handle more complicated workloads than a year ago<a href="#ref-5" class="ref-link"><sup>5</sup></a> — largely because bots are handling the simple stuff.</p>
+            <p>Industry data shows 77% of agents now handle more complicated workloads than a year ago<a href="#ref-5" class="ref-link"><sup>5</sup></a> - largely because bots are handling the simple stuff.</p>
 
             <h2 id="real-results">Real Businesses, Real Results</h2>
 
@@ -1523,7 +1246,7 @@
             </div>
 
             <div class="mid-cta">
-                <p>Want to explore what these numbers might look like for your business? Fenlo AI offers a free discovery call to assess your specific situation — no strings attached.</p>
+                <p>Want to explore what these numbers might look like for your business? Fenlo AI offers a free discovery call to assess your specific situation - no strings attached.</p>
             </div>
 
             <h2 id="costs">What FAQ Bots Actually Cost</h2>
@@ -1543,10 +1266,10 @@
             <p>Your costs will vary based on:</p>
 
             <ul>
-                <li><strong>Complexity of your FAQs</strong> — 20 questions is simpler than 200</li>
-                <li><strong>Number of channels</strong> — Website only, or also WhatsApp, Facebook, email?</li>
-                <li><strong>Integration needs</strong> — Does it need to connect to your order system or CRM?</li>
-                <li><strong>Custom training</strong> — How much work to set up your knowledge base?</li>
+                <li><strong>Complexity of your FAQs</strong> - 20 questions is simpler than 200</li>
+                <li><strong>Number of channels</strong> - Website only, or also WhatsApp, Facebook, email?</li>
+                <li><strong>Integration needs</strong> - Does it need to connect to your order system or CRM?</li>
+                <li><strong>Custom training</strong> - How much work to set up your knowledge base?</li>
             </ul>
 
             <h3>Timeline to See Returns</h3>
@@ -1562,7 +1285,7 @@
                 <p>Here's something most chatbot vendors won't tell you: 44% of organizations experienced negative consequences from chatbot implementation.<a href="#ref-5" class="ref-link"><sup>5</sup></a> The primary cause? Rushing implementation without proper planning.</p>
             </div>
 
-            <p>A poorly implemented bot can frustrate customers more than no bot at all. This isn't about whether FAQ bots work — they do. It's about whether they're implemented thoughtfully.</p>
+            <p>A poorly implemented bot can frustrate customers more than no bot at all. This isn't about whether FAQ bots work - they do. It's about whether they're implemented thoughtfully.</p>
 
             <h2 id="is-ready">Is Your Business Actually Ready for an FAQ Bot?</h2>
 
@@ -1571,28 +1294,28 @@
             <h3>An FAQ Bot Probably Makes Sense If:</h3>
 
             <ul>
-                <li><strong>You're answering the same 10-20 questions repeatedly</strong> — This is the clearest signal</li>
-                <li><strong>Your team spends more than 2 hours daily on routine inquiries</strong> — That's time you could get back</li>
-                <li><strong>You're missing inquiries outside business hours</strong> — Customers are waiting, or worse, leaving</li>
-                <li><strong>Customer wait times are hurting satisfaction</strong> — People expect faster responses now</li>
-                <li><strong>You're growing but can't afford proportional hiring</strong> — Bots can help you scale without matching headcount</li>
+                <li><strong>You're answering the same 10-20 questions repeatedly</strong> - This is the clearest signal</li>
+                <li><strong>Your team spends more than 2 hours daily on routine inquiries</strong> - That's time you could get back</li>
+                <li><strong>You're missing inquiries outside business hours</strong> - Customers are waiting, or worse, leaving</li>
+                <li><strong>Customer wait times are hurting satisfaction</strong> - People expect faster responses now</li>
+                <li><strong>You're growing but can't afford proportional hiring</strong> - Bots can help you scale without matching headcount</li>
             </ul>
 
-            <p>For context, 75% of small and medium businesses are now experimenting with chatbots.<a href="#ref-5" class="ref-link"><sup>5</sup></a> You wouldn't be an early adopter — you'd be catching up.</p>
+            <p>For context, 75% of small and medium businesses are now experimenting with chatbots.<a href="#ref-5" class="ref-link"><sup>5</sup></a> You wouldn't be an early adopter - you'd be catching up.</p>
 
             <h3>An FAQ Bot Might NOT Be Right If:</h3>
 
             <ul>
-                <li><strong>You have very few customer inquiries</strong> — Under 20 per week? The ROI probably isn't there yet</li>
-                <li><strong>Most of your inquiries are complex, unique situations</strong> — Bots excel at routine questions, not nuanced problems</li>
-                <li><strong>You haven't documented your common questions and answers yet</strong> — The bot needs a knowledge base to draw from</li>
-                <li><strong>Your business processes aren't stable</strong> — Automation amplifies whatever you feed it, including chaos</li>
-                <li><strong>You're looking for "set it and forget it"</strong> — Good bots need ongoing tuning and maintenance</li>
+                <li><strong>You have very few customer inquiries</strong> - Under 20 per week? The ROI probably isn't there yet</li>
+                <li><strong>Most of your inquiries are complex, unique situations</strong> - Bots excel at routine questions, not nuanced problems</li>
+                <li><strong>You haven't documented your common questions and answers yet</strong> - The bot needs a knowledge base to draw from</li>
+                <li><strong>Your business processes aren't stable</strong> - Automation amplifies whatever you feed it, including chaos</li>
+                <li><strong>You're looking for "set it and forget it"</strong> - Good bots need ongoing tuning and maintenance</li>
             </ul>
 
             <h3>The Most Important Point</h3>
 
-            <p>Automation amplifies existing processes — both good and bad. If your support is already disorganized, a bot will just be disorganized faster. If you don't have clear answers to common questions, the bot won't magically create them.</p>
+            <p>Automation amplifies existing processes - both good and bad. If your support is already disorganized, a bot will just be disorganized faster. If you don't have clear answers to common questions, the bot won't magically create them.</p>
 
             <p><strong>Fix your foundations first. Then automate.</strong></p>
 
@@ -1645,14 +1368,14 @@
             </div>
 
             <div class="callout">
-                <p><strong>Quick win:</strong> Even just documenting your FAQs can improve your human agents' efficiency immediately. You'll have better answers ready, faster — with or without a bot.</p>
+                <p><strong>Quick win:</strong> Even just documenting your FAQs can improve your human agents' efficiency immediately. You'll have better answers ready, faster - with or without a bot.</p>
             </div>
 
             <h2 id="bottom-line">The Bottom Line</h2>
 
             <p>FAQ bots aren't magic, and they're not right for everyone. But for businesses drowning in repetitive customer questions, they can be genuinely transformative.</p>
 
-            <p>The evidence is clear: well-implemented bots handle 60-80% of routine queries, reduce support costs by around 30%, and give customers the instant, 24/7 service they increasingly expect. The technology is accessible — we're talking $2,000-5,000 to get started, not enterprise-level budgets.</p>
+            <p>The evidence is clear: well-implemented bots handle 60-80% of routine queries, reduce support costs by around 30%, and give customers the instant, 24/7 service they increasingly expect. The technology is accessible - we're talking $2,000-5,000 to get started, not enterprise-level budgets.</p>
 
             <p>But success depends on having solid foundations: documented FAQs, stable processes, and realistic expectations. Rush the implementation, and you'll join the 44% who had negative experiences.</p>
 
@@ -1695,15 +1418,15 @@
             <div class="related-articles">
                 <h2>Related Articles</h2>
                 <div class="related-grid">
-                    <a href="../blog.html" class="related-card">
-                        <span class="related-card-tag">AI Automation</span>
-                        <h3 class="related-card-title">How AI is Transforming Small Business Operations</h3>
-                        <p class="related-card-excerpt">Discover practical ways AI can streamline your daily operations without breaking the bank.</p>
+                    <a href="document-qa-guide-sme-roi.html" class="related-card">
+                        <span class="related-card-tag">Document AI</span>
+                        <h3 class="related-card-title">The Small Business Guide to Document Q&A</h3>
+                        <p class="related-card-excerpt">How companies are cutting document search time by 91% with AI-powered Q&A systems.</p>
                     </a>
-                    <a href="../blog.html" class="related-card">
-                        <span class="related-card-tag">Customer Service</span>
-                        <h3 class="related-card-title">Building a Knowledge Base Your Bot Can Actually Use</h3>
-                        <p class="related-card-excerpt">The foundation of any good FAQ bot is well-organized, accurate information. Here's how to build one.</p>
+                    <a href="ai-agents-guide-sme.html" class="related-card">
+                        <span class="related-card-tag">AI Automation</span>
+                        <h3 class="related-card-title">The Small Business Guide to AI Agents</h3>
+                        <p class="related-card-excerpt">Real results, honest expectations - what AI agents actually mean for businesses your size.</p>
                     </a>
                 </div>
             </div>
@@ -1718,7 +1441,7 @@
                     <li id="ref-5" data-ref="[5]">Sobot. "AI Customer Service Case Studies Driving Change in 2025." <a href="https://www.sobot.io/article/ai-customer-service-case-studies-2025-support-satisfaction-cost" target="_blank" rel="noopener">sobot.io</a></li>
                     <li id="ref-6" data-ref="[6]">ResearchGate. "Evaluating the Impact of AI-Driven Chatbots on Customer Satisfaction and Retention." <a href="https://www.researchgate.net/publication/390564642_Evaluating_the_Impact_of_AI-Driven_Chatbots_on_Customer_Satisfaction_and_Retention" target="_blank" rel="noopener">researchgate.net</a></li>
                     <li id="ref-7" data-ref="[7]">Intercom. "How an Automated Chatbot Improves Customer Service." <a href="https://www.intercom.com/learning-center/automated-chatbot" target="_blank" rel="noopener">intercom.com</a></li>
-                    <li id="ref-8" data-ref="[8]">MDPI. "Implementing AI Chatbots in Customer Service Optimization—A Case Study in Micro-Enterprise." <a href="https://www.mdpi.com/2078-2489/16/12/1078" target="_blank" rel="noopener">mdpi.com</a></li>
+                    <li id="ref-8" data-ref="[8]">MDPI. "Implementing AI Chatbots in Customer Service Optimization - A Case Study in Micro-Enterprise." <a href="https://www.mdpi.com/2078-2489/16/12/1078" target="_blank" rel="noopener">mdpi.com</a></li>
                     <li id="ref-9" data-ref="[9]">Master of Code. "Best Chatbot Statistics 2025." <a href="https://masterofcode.com/blog/chatbot-statistics" target="_blank" rel="noopener">masterofcode.com</a></li>
                     <li id="ref-10" data-ref="[10]">AgentiveAIQ. "Why Support Tickets Are High and How AI Can Fix It." <a href="https://agentiveaiq.com/blog/why-support-tickets-are-so-high-how-ai-can-fix-it" target="_blank" rel="noopener">agentiveaiq.com</a></li>
                 </ol>
@@ -1726,46 +1449,52 @@
         </div>
     </article>
 
-    <footer>
-        <div class="footer-content">
-            <span class="copyright">© 2025 Fenlo AI. All rights reserved.</span>
-            <div class="footer-links">
-                <a href="../legal/privacy.html">Privacy</a>
-                <a href="../legal/terms.html">Terms</a>
-                <a href="mailto:contact@fenloai.com">Contact</a>
-            </div>
+    <footer role="contentinfo">
+        <div class="footer-links">
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/terms.html">Terms of Service</a>
         </div>
+        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookie-consent" role="dialog" aria-label="Cookie consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <p>We use cookies to analyze site traffic and improve your experience. By continuing to use our site, you consent to our use of cookies. <a href="../legal/privacy.html">Learn more</a></p>
+            </div>
+            <div class="cookie-consent-buttons">
+                <button class="btn btn-secondary" id="cookie-decline">Decline</button>
+                <button class="btn btn-primary" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Dark mode toggle
-        const themeToggle = document.querySelector('.theme-toggle');
-        const html = document.documentElement;
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
 
-        // Check for saved theme preference or system preference
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isActive = mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isActive);
+                mobileNav.setAttribute('aria-hidden', !isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
 
-        if (savedTheme) {
-            html.setAttribute('data-theme', savedTheme);
-        } else if (systemPrefersDark) {
-            html.setAttribute('data-theme', 'dark');
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileNav.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            });
         }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-
-        // Listen for system theme changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-                html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-            }
-        });
 
         // Reading progress indicator
         const progressBar = document.getElementById('reading-progress');
@@ -1778,7 +1507,6 @@
             const windowHeight = window.innerHeight;
             const scrollY = window.scrollY;
 
-            // Calculate progress (0-100%)
             const start = articleTop - windowHeight;
             const end = articleTop + articleHeight - windowHeight;
             const progress = Math.min(Math.max((scrollY - start) / (end - start) * 100, 0), 100);
@@ -1788,6 +1516,32 @@
 
         window.addEventListener('scroll', updateProgress);
         updateProgress();
+
+        // Cookie Consent Banner
+        (function() {
+            const consentBanner = document.getElementById('cookie-consent');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            const CONSENT_KEY = 'fenloai_cookie_consent';
+
+            const consent = localStorage.getItem(CONSENT_KEY);
+            if (!consent) {
+                setTimeout(() => {
+                    consentBanner.classList.add('visible');
+                }, 1000);
+            }
+
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem(CONSENT_KEY, 'accepted');
+                consentBanner.classList.remove('visible');
+            });
+
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem(CONSENT_KEY, 'declined');
+                consentBanner.classList.remove('visible');
+            });
+        })();
     </script>
 </body>
+
 </html>

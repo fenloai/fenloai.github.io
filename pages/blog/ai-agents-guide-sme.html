@@ -1,196 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MBJVZS7Z');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn what AI agents really are, see verified ROI from real companies, and find out if autonomous digital workers make sense for your business size.">
     <title>The Small Business Guide to AI Agents: Real Results, Honest Expectations | Fenlo AI</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- SEO -->
+    <meta name="author" content="Fenlo AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://fenloai.com/pages/blog/ai-agents-guide-sme.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/fenloai-icon.svg">
+
+    <!-- Preload Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://fenloai.com/pages/blog/ai-agents-guide-sme.html">
+    <meta property="og:title" content="The Small Business Guide to AI Agents: Real Results, Honest Expectations">
+    <meta property="og:description" content="Learn what AI agents really are, see verified ROI from real companies, and find out if autonomous digital workers make sense for your business size.">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Small Business Guide to AI Agents: Real Results, Honest Expectations">
+    <meta name="twitter:description" content="Learn what AI agents really are, see verified ROI from real companies, and find out if autonomous digital workers make sense for your business size.">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../css/styles.css">
+
+    <!-- Blog-specific styles -->
     <style>
-        :root {
-            --primary-accent: #6b7c3f;
-            --primary-accent-light: #8a9c5a;
-            --primary-accent-dark: #556332;
-            --background: #fafafa;
-            --surface: #ffffff;
-            --text-primary: #1a1a1a;
-            --text-secondary: #4a4a4a;
-            --text-muted: #525252;
-            --border: #e5e5e5;
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
-            --hero-gradient: linear-gradient(135deg, #f8faf5 0%, #f0f4e8 50%, #e8efe0 100%);
-            --card-gradient: linear-gradient(135deg, #ffffff 0%, #fafbf7 100%);
-            --cta-gradient: linear-gradient(135deg, #f0f4e8 0%, #e8efe0 100%);
-        }
-
-        [data-theme="dark"] {
-            --background: #121212;
-            --surface: #1e1e1e;
-            --text-primary: #f0f0f0;
-            --text-secondary: #b0b0b0;
-            --text-muted: #888888;
-            --border: #333333;
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
-            --hero-gradient: linear-gradient(135deg, #1a1d16 0%, #1e211a 50%, #22251e 100%);
-            --card-gradient: linear-gradient(135deg, #1e1e1e 0%, #252520 100%);
-            --cta-gradient: linear-gradient(135deg, #1e211a 0%, #22251e 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--background);
-            color: var(--text-primary);
-            line-height: 1.7;
-            font-size: 17px;
-        }
-
-        header {
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--primary-accent);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--text-primary);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover {
-            color: var(--primary-accent);
-        }
-
+        /* Reading Progress Bar */
         .reading-progress {
             position: fixed;
             top: 0;
             left: 0;
             width: 0%;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
             z-index: 9999;
             transition: width 0.1s ease-out;
         }
 
-        .theme-toggle {
-            background: transparent;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s ease, border-color 0.2s ease;
-        }
-
-        .theme-toggle:hover {
-            background: var(--background);
-            border-color: var(--primary-accent);
-        }
-
-        .theme-toggle svg {
-            width: 20px;
-            height: 20px;
-            color: var(--text-secondary);
-        }
-
-        .theme-toggle .sun-icon { display: none; }
-        .theme-toggle .moon-icon { display: block; }
-
-        [data-theme="dark"] .theme-toggle .sun-icon { display: block; }
-        [data-theme="dark"] .theme-toggle .moon-icon { display: none; }
-
-        .hero {
-            background: var(--hero-gradient);
-            padding: 4rem 2rem 5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(107, 124, 63, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(107, 124, 63, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            max-width: 760px;
+        /* Blog Hero */
+        .blog-hero {
+            padding: var(--space-2xl) var(--container-padding) var(--space-xl);
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
         }
 
         .article-meta {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-md);
             font-size: 0.9rem;
             color: var(--text-muted);
         }
 
         .category-tag {
-            background: linear-gradient(135deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             color: white;
             padding: 0.35rem 1rem;
             border-radius: 20px;
@@ -211,12 +101,11 @@
             opacity: 0.6;
         }
 
-        h1 {
-            font-size: 2.75rem;
+        .blog-hero h1 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
             font-weight: 700;
             line-height: 1.15;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-md);
             letter-spacing: -0.5px;
         }
 
@@ -224,22 +113,21 @@
             font-size: 1.2rem;
             color: var(--text-secondary);
             line-height: 1.8;
-            max-width: 640px;
         }
 
         .author-byline {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(107, 124, 63, 0.15);
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--glass-border);
         }
 
         .author-avatar {
             width: 44px;
             height: 44px;
-            background: linear-gradient(135deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -271,52 +159,32 @@
             color: var(--text-muted);
         }
 
-        .hero-illustration {
-            position: absolute;
-            right: -5%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 280px;
-            height: 280px;
-            opacity: 0.12;
-            z-index: 0;
-        }
-
-        .hero-illustration svg {
-            width: 100%;
-            height: 100%;
-            fill: var(--primary-accent-dark);
-        }
-
-        @media (max-width: 1100px) {
-            .hero-illustration {
-                display: none;
-            }
-        }
-
+        /* Article Container */
         .article-container {
             max-width: 760px;
             margin: 0 auto;
-            padding: 3rem 2rem 5rem;
+            padding: 0 var(--container-padding) var(--space-3xl);
         }
 
+        /* Article Content */
         .article-content h2 {
             font-size: 1.6rem;
             font-weight: 600;
-            margin: 3rem 0 1.25rem;
+            margin: var(--space-xl) 0 var(--space-md);
             color: var(--text-primary);
         }
 
         .article-content h3 {
             font-size: 1.25rem;
             font-weight: 600;
-            margin: 2rem 0 1rem;
+            margin: var(--space-lg) 0 var(--space-sm);
             color: var(--text-primary);
         }
 
         .article-content p {
-            margin-bottom: 1.25rem;
+            margin-bottom: var(--space-md);
             color: var(--text-secondary);
+            line-height: 1.8;
         }
 
         .article-content strong {
@@ -326,137 +194,185 @@
 
         .article-content ul,
         .article-content ol {
-            margin: 1.25rem 0;
+            margin: var(--space-md) 0;
             padding-left: 1.5rem;
         }
 
         .article-content li {
             margin-bottom: 0.75rem;
             color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         .article-content a {
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
         }
 
         .article-content a:hover {
-            border-bottom-color: var(--primary-accent);
+            border-bottom-color: var(--accent-primary-light);
         }
 
-        .callout {
-            background: linear-gradient(135deg, #fffef9 0%, #fdfcf5 100%);
-            border: 1px solid rgba(180, 160, 100, 0.2);
-            border-left: 4px solid #b4a064;
-            border-radius: 12px;
-            padding: 1.5rem 1.75rem;
-            margin: 2rem 0;
-            box-shadow: 0 4px 16px rgba(180, 160, 100, 0.08);
+        /* Table of Contents */
+        .toc {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-xl);
         }
 
-        [data-theme="dark"] .callout {
-            background: linear-gradient(135deg, #2a2820 0%, #252318 100%);
-            border-color: rgba(180, 160, 100, 0.3);
-        }
-
-        .callout p {
-            margin: 0;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .callout strong {
-            color: #8a7a3a;
-        }
-
-        [data-theme="dark"] .callout strong {
-            color: #c4b060;
-        }
-
-        .callout ul {
-            margin: 0.75rem 0 0 0;
-            padding-left: 1.25rem;
-        }
-
-        .callout li {
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-        }
-
-        .key-insight {
-            background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(107, 124, 63, 0.05));
-            border: 1px solid rgba(107, 124, 63, 0.15);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2.5rem 0;
-            position: relative;
-        }
-
-        .key-insight::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236b7c3f' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-            border-radius: 16px;
-            pointer-events: none;
-        }
-
-        .key-insight-title {
+        .toc-title {
             font-weight: 700;
-            color: var(--primary-accent-dark);
-            margin-bottom: 0.75rem;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1rem;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+
+        .toc-title svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent-primary-light);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.6rem;
+        }
+
+        .toc-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .toc-list a::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent-primary-light);
+        }
+
+        .toc-list a:hover::before {
+            transform: scale(1.3);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .comparison-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+        }
+
+        .comparison-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: var(--space-sm);
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .comparison-card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .comparison-card-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: white;
+        }
+
+        .comparison-card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .comparison-card li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
             position: relative;
         }
 
-        [data-theme="dark"] .key-insight-title {
-            color: var(--primary-accent-light);
-        }
-
-        .key-insight-title::before {
+        .comparison-card li::before {
             content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--primary-accent);
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-primary-light);
             border-radius: 50%;
         }
 
-        .key-insight p {
-            margin: 0;
-            color: var(--text-primary);
-            position: relative;
-            font-size: 1.02rem;
-            line-height: 1.7;
+        @media (max-width: 768px) {
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
         }
 
+        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-            margin: 2.5rem 0;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
         }
 
         .stat-card {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.15);
-            border-radius: 16px;
-            padding: 1.75rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
             text-align: center;
-            box-shadow: 0 4px 20px rgba(107, 124, 63, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
+            transition: var(--transition-normal);
         }
 
         .stat-card::before {
@@ -466,18 +382,19 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
         }
 
         .stat-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(107, 124, 63, 0.15);
+            border-color: var(--glass-border-hover);
+            box-shadow: var(--shadow-glow);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -499,19 +416,95 @@
             opacity: 0.8;
         }
 
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Key Insight Box */
+        .key-insight {
+            background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(107, 124, 63, 0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            position: relative;
+        }
+
+        .key-insight-title {
+            font-weight: 700;
+            color: var(--accent-primary-light);
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .key-insight-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary-light);
+            border-radius: 50%;
+        }
+
+        .key-insight p {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        /* Callout Box */
+        .callout {
+            background: linear-gradient(135deg, rgba(184, 160, 74, 0.1), rgba(184, 160, 74, 0.05));
+            border: 1px solid rgba(184, 160, 74, 0.2);
+            border-left: 4px solid var(--accent-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .callout p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: var(--accent-secondary-light);
+        }
+
+        .callout ul {
+            margin: 0.75rem 0 0 0;
+            padding-left: 1.25rem;
+        }
+
+        .callout li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Checklist */
         .checklist {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.12);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin: 2.5rem 0;
-            box-shadow: 0 8px 32px rgba(107, 124, 63, 0.08);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin: var(--space-lg) 0;
         }
 
         .checklist-title {
             font-weight: 700;
             font-size: 1.2rem;
-            margin-bottom: 1.75rem;
+            margin-bottom: var(--space-md);
             color: var(--text-primary);
             display: flex;
             align-items: center;
@@ -522,7 +515,7 @@
             content: '';
             width: 4px;
             height: 24px;
-            background: linear-gradient(180deg, var(--primary-accent), var(--primary-accent-light));
+            background: linear-gradient(180deg, var(--accent-primary), var(--accent-primary-light));
             border-radius: 2px;
         }
 
@@ -530,9 +523,9 @@
             display: flex;
             align-items: flex-start;
             gap: 1rem;
-            margin-bottom: 1.25rem;
-            padding-bottom: 1.25rem;
-            border-bottom: 1px dashed rgba(107, 124, 63, 0.2);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px dashed var(--glass-border);
         }
 
         .checklist-item:last-child {
@@ -542,7 +535,7 @@
         }
 
         .checklist-number {
-            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             color: white;
             width: 32px;
             height: 32px;
@@ -553,7 +546,6 @@
             font-size: 0.9rem;
             font-weight: 700;
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(107, 124, 63, 0.25);
         }
 
         .checklist-content h4 {
@@ -570,117 +562,27 @@
             line-height: 1.6;
         }
 
-        .comparison-table {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .comparison-card {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.15);
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 16px rgba(107, 124, 63, 0.06);
-        }
-
-        .comparison-card-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px dashed rgba(107, 124, 63, 0.2);
-        }
-
-        .comparison-card-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary-accent-light), var(--primary-accent));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .comparison-card-icon svg {
-            width: 22px;
-            height: 22px;
-            color: white;
-        }
-
-        .comparison-card-title {
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--text-primary);
-        }
-
-        .comparison-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .comparison-card li {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            padding-left: 1.25rem;
-            position: relative;
-        }
-
-        .comparison-card li::before {
-            content: '\2022';
-            position: absolute;
-            left: 0;
-            color: var(--primary-accent);
-            font-weight: 700;
-        }
-
-        .comparison-card li:last-child {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            .comparison-table {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        /* CTA Section */
         .cta-section {
-            background: var(--cta-gradient);
-            border-radius: 24px;
-            padding: 3.5rem 2.5rem;
-            margin: 4rem 0 3rem;
+            background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(143, 163, 85, 0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(107, 124, 63, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
         .cta-section h2 {
             margin-top: 0;
-            margin-bottom: 1rem;
-            position: relative;
+            margin-bottom: var(--space-sm);
             font-size: 1.75rem;
         }
 
         .cta-section p {
             max-width: 520px;
-            margin: 0 auto 2rem;
-            position: relative;
+            margin: 0 auto var(--space-lg);
             font-size: 1.05rem;
         }
 
@@ -688,16 +590,15 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             color: white;
-            padding: 1.1rem 2.25rem;
-            border-radius: 12px;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-full);
             text-decoration: none;
             font-weight: 600;
             font-size: 1.05rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             box-shadow: 0 8px 24px rgba(107, 124, 63, 0.3);
-            position: relative;
         }
 
         .cta-button:hover {
@@ -715,14 +616,14 @@
             transform: translateX(4px);
         }
 
+        /* Mid-article CTA */
         .mid-cta {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.15);
-            border-radius: 16px;
-            padding: 2rem 2.5rem;
-            margin: 3rem 0;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
             text-align: center;
-            box-shadow: 0 4px 16px rgba(107, 124, 63, 0.06);
             position: relative;
         }
 
@@ -734,7 +635,7 @@
             transform: translateX(-50%);
             width: 24px;
             height: 24px;
-            background: var(--primary-accent);
+            background: var(--accent-primary);
             border-radius: 50%;
         }
 
@@ -745,42 +646,93 @@
             font-size: 1.05rem;
         }
 
+        /* Social Share */
+        .social-share {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: var(--space-xl) 0;
+            padding: var(--space-md);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+        }
+
+        .social-share-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .social-share-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .social-share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: var(--bg-primary);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-share-btn:hover {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .social-share-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Related Articles */
         .related-articles {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
+            margin-top: var(--space-xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--glass-border);
         }
 
         .related-articles h2 {
             font-size: 1.25rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-md);
         }
 
         .related-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
+            gap: var(--space-md);
         }
 
         .related-card {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.12);
-            border-radius: 12px;
-            padding: 1.25rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
             text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .related-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(107, 124, 63, 0.12);
+            border-color: var(--glass-border-hover);
+            box-shadow: var(--shadow-md);
         }
 
         .related-card-tag {
             display: inline-block;
             font-size: 0.7rem;
             font-weight: 600;
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 0.5rem;
@@ -806,63 +758,16 @@
             }
         }
 
-        .social-share {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin: 3rem 0;
-            padding: 1.5rem;
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.12);
-            border-radius: 12px;
-        }
-
-        .social-share-label {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-primary);
-        }
-
-        .social-share-buttons {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .social-share-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            background: var(--background);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .social-share-btn:hover {
-            background: var(--primary-accent);
-            border-color: var(--primary-accent);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .social-share-btn svg {
-            width: 18px;
-            height: 18px;
-        }
-
+        /* References */
         .references {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--glass-border);
         }
 
         .references h2 {
             font-size: 1.25rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-md);
         }
 
         .reference-list {
@@ -882,22 +787,8 @@
             content: attr(data-ref);
             position: absolute;
             left: 0;
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
             font-weight: 600;
-        }
-
-        .reference-list li:target {
-            background: rgba(107, 124, 63, 0.1);
-            border-radius: 6px;
-            padding: 0.5rem;
-            margin-left: -0.5rem;
-            padding-left: 2.5rem;
-            animation: highlight-fade 2s ease-out;
-        }
-
-        @keyframes highlight-fade {
-            0% { background: rgba(107, 124, 63, 0.25); }
-            100% { background: rgba(107, 124, 63, 0.1); }
         }
 
         .reference-list a {
@@ -906,19 +797,15 @@
         }
 
         .reference-list a:hover {
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
         }
 
+        /* Superscript citations */
         sup {
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
             font-weight: 600;
             font-size: 0.75em;
             cursor: pointer;
-            transition: color 0.2s ease;
-        }
-
-        sup:hover {
-            color: var(--primary-accent-dark);
         }
 
         .ref-link {
@@ -938,19 +825,19 @@
             bottom: 125%;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--text-primary);
-            color: white;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
             padding: 0.6rem 0.9rem;
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             font-size: 0.8rem;
             font-weight: 400;
-            white-space: nowrap;
             max-width: 280px;
             white-space: normal;
             text-align: left;
             line-height: 1.4;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-lg);
             transition: opacity 0.2s ease, visibility 0.2s ease;
         }
 
@@ -961,7 +848,7 @@
             left: 50%;
             transform: translateX(-50%);
             border: 6px solid transparent;
-            border-top-color: var(--text-primary);
+            border-top-color: var(--bg-tertiary);
         }
 
         .ref-tooltip:hover .tooltip-text {
@@ -969,17 +856,18 @@
             opacity: 1;
         }
 
+        /* Skip to content */
         .skip-link {
             position: absolute;
             top: -40px;
             left: 0;
-            background: var(--primary-accent);
+            background: var(--accent-primary);
             color: white;
             padding: 0.5rem 1rem;
             z-index: 1000;
             text-decoration: none;
             font-weight: 500;
-            border-radius: 0 0 8px 0;
+            border-radius: 0 0 var(--radius-sm) 0;
             transition: top 0.3s ease;
         }
 
@@ -987,240 +875,110 @@
             top: 0;
         }
 
-        .toc {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.12);
-            border-radius: 16px;
-            padding: 1.75rem 2rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 4px 16px rgba(107, 124, 63, 0.06);
-        }
-
-        .toc-title {
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .toc-title svg {
-            width: 18px;
-            height: 18px;
-            color: var(--primary-accent);
-        }
-
-        .toc-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .toc-list li {
-            margin-bottom: 0.6rem;
-        }
-
-        .toc-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .toc-list a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.2s ease;
-        }
-
-        .toc-list a::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--primary-accent-light);
-            border-radius: 50%;
-            flex-shrink: 0;
-            transition: transform 0.2s ease;
-        }
-
-        .toc-list a:hover {
-            color: var(--primary-accent);
-        }
-
-        .toc-list a:hover::before {
-            transform: scale(1.3);
-            background: var(--primary-accent);
-        }
-
-        footer {
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-accent);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .copyright {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            h1 {
+            .blog-hero h1 {
                 font-size: 1.85rem;
-            }
-
-            .hero {
-                padding: 2.5rem 1.25rem 3rem;
             }
 
             .article-intro {
                 font-size: 1.05rem;
             }
 
-            .article-container {
-                padding: 2rem 1.25rem 3rem;
-            }
-
-            .header-content {
-                padding: 1rem;
-            }
-
-            nav {
-                gap: 0.75rem;
-            }
-
-            nav a {
-                margin-left: 0;
-                font-size: 0.85rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .stat-card {
-                padding: 1.25rem;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
             .checklist {
-                padding: 1.75rem;
-            }
-
-            .key-insight {
-                padding: 1.5rem;
+                padding: var(--space-md);
             }
 
             .cta-section {
-                padding: 2.5rem 1.5rem;
-                border-radius: 16px;
+                padding: var(--space-lg);
             }
 
             .cta-section h2 {
                 font-size: 1.4rem;
             }
 
-            .mid-cta {
-                padding: 1.5rem;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-links a {
-                margin: 0 0.75rem;
-            }
-
-            .ref-tooltip .tooltip-text {
-                max-width: 200px;
-                font-size: 0.75rem;
+            .publish-date {
+                display: none;
             }
         }
     </style>
 </head>
+
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBJVZS7Z"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div class="reading-progress" id="reading-progress"></div>
     <a href="#main-content" class="skip-link">Skip to content</a>
-    <header>
-        <div class="header-content">
-            <a href="../../index.html" class="logo">Fenlo <span>AI</span></a>
-            <nav>
-                <a href="../services.html">Services</a>
-                <a href="../blog.html">Blog</a>
-                <a href="../contact.html">Contact</a>
-                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                </button>
-            </nav>
-        </div>
-    </header>
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
 
-    <section class="hero">
-        <div class="hero-illustration" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1"/>
-                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1" fill="none"/>
-            </svg>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo" aria-label="Fenlo AI Home">
+                <svg class="logo-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 80" width="250" height="80">
+                    <g class="logo-icon" transform="translate(0, 5)">
+                        <rect x="20" y="20" width="28" height="28" class="logo-green"/>
+                        <rect x="20" y="20" width="28" height="28" class="logo-green" transform="rotate(45 34 34)" stroke="#0a0a0f" stroke-width="3"/>
+                    </g>
+                    <g transform="translate(70, 0)">
+                        <g class="logo-white">
+                            <path d="M4.45 57.25L4.45 36.65L0 36.65L0 31.75L4.45 31.75L4.45 28Q4.45 24.60 6.38 22.67Q8.30 20.75 11.70 20.75L18.50 20.75L18.50 25.65L12.75 25.65Q11.60 25.65 10.90 26.35Q10.20 27.05 10.20 28.25L10.20 31.75L17.45 31.75L17.45 36.65L10.20 36.65L10.20 57.25L4.45 57.25Z"/>
+                            <path d="M33.80 57.25Q29.50 57.25 26.27 55.63Q23.05 54 21.25 51.13Q19.45 48.25 19.45 44.50Q19.45 40.55 21.05 37.55Q22.65 34.55 25.45 32.85Q28.25 31.15 31.90 31.15Q36 31.15 38.65 32.90Q41.30 34.65 42.58 37.60Q43.85 40.55 43.85 44.20Q43.85 44.70 43.80 45.35Q43.75 46 43.65 46.35L25.55 46.35Q25.85 48.35 27 49.67Q28.15 51 29.90 51.67Q31.65 52.35 33.80 52.35L40.65 52.35L40.65 57.25L33.80 57.25M25.50 42.45L38.10 42.45Q38.05 41.50 37.83 40.55Q37.60 39.60 37.13 38.75Q36.65 37.90 35.92 37.27Q35.20 36.65 34.20 36.27Q33.20 35.90 31.90 35.90Q30.40 35.90 29.25 36.47Q28.10 37.05 27.30 37.97Q26.50 38.90 26.07 40.08Q25.65 41.25 25.50 42.45Z"/>
+                            <path d="M49.20 57.25L49.20 42.55Q49.20 39.25 50.70 36.67Q52.20 34.10 54.95 32.63Q57.70 31.15 61.40 31.15Q65.10 31.15 67.83 32.63Q70.55 34.10 72.05 36.67Q73.55 39.25 73.55 42.55L73.55 57.25L67.85 57.25L67.85 42.60Q67.85 40.65 66.95 39.17Q66.05 37.70 64.58 36.88Q63.10 36.05 61.35 36.05Q59.65 36.05 58.17 36.88Q56.70 37.70 55.83 39.17Q54.95 40.65 54.95 42.60L54.95 57.25L49.20 57.25Z"/>
+                            <path d="M80.45 57.25L80.45 20.75L86.20 20.75L86.20 57.25L80.45 57.25Z"/>
+                            <path d="M105.25 57.85Q101.30 57.85 98.25 56.08Q95.20 54.30 93.43 51.27Q91.65 48.25 91.65 44.50Q91.65 40.75 93.43 37.72Q95.20 34.70 98.25 32.92Q101.30 31.15 105.25 31.15Q109.15 31.15 112.20 32.92Q115.25 34.70 117.03 37.70Q118.80 40.70 118.80 44.50Q118.80 48.25 117.03 51.27Q115.25 54.30 112.20 56.08Q109.15 57.85 105.25 57.85M105.25 52.95Q107.60 52.95 109.35 51.83Q111.10 50.70 112.05 48.80Q113 46.90 113 44.50Q113 42.15 112.05 40.22Q111.10 38.30 109.35 37.17Q107.60 36.05 105.25 36.05Q102.85 36.05 101.13 37.17Q99.40 38.30 98.43 40.20Q97.45 42.10 97.45 44.50Q97.45 46.85 98.43 48.77Q99.40 50.70 101.13 51.83Q102.85 52.95 105.25 52.95Z"/>
+                        </g>
+                        <g class="logo-green">
+                            <path d="M134.60 57.85Q130.95 57.85 128.30 56.05Q125.65 54.25 124.23 51.23Q122.80 48.20 122.80 44.55Q122.80 40.75 124.43 37.72Q126.05 34.70 129.08 32.92Q132.10 31.15 136.30 31.15Q140.45 31.15 143.38 32.92Q146.30 34.70 147.88 37.72Q149.45 40.75 149.45 44.45L149.45 57.25L143.70 57.25L143.70 52.50L143.60 52.50Q142.85 53.90 141.65 55.13Q140.45 56.35 138.70 57.10Q136.95 57.85 134.60 57.85M136.15 52.95Q138.40 52.95 140.08 51.83Q141.75 50.70 142.68 48.77Q143.60 46.85 143.60 44.45Q143.60 42.05 142.70 40.17Q141.80 38.30 140.15 37.17Q138.50 36.05 136.20 36.05Q133.80 36.05 132.10 37.17Q130.40 38.30 129.50 40.20Q128.60 42.10 128.60 44.50Q128.60 46.85 129.50 48.77Q130.40 50.70 132.08 51.83Q133.75 52.95 136.15 52.95Z"/>
+                            <path d="M156.35 57.25L156.35 31.75L162.10 31.75L162.10 57.25L156.35 57.25M159.20 28.20Q157.70 28.20 156.60 27.10Q155.50 26 155.50 24.50Q155.50 23 156.60 21.90Q157.70 20.80 159.20 20.80Q160.75 20.80 161.83 21.90Q162.90 23 162.90 24.50Q162.90 26 161.83 27.10Q160.75 28.20 159.20 28.20Z"/>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <div class="hero-content">
-            <div class="article-meta">
-                <span class="category-tag">AI Automation</span>
-                <span class="reading-time" aria-label="Estimated reading time: 12 minutes">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    12 min read
-                </span>
-            </div>
-            <h1>The Small Business Guide to AI Agents: Real Results, Honest Expectations</h1>
-            <p class="article-intro">AI agents are everywhere in the headlines. But what do they actually mean for a business your size? A practical look at what works, what doesn't, and how to tell the difference.</p>
+    </nav>
 
-            <div class="author-byline">
-                <div class="author-avatar">FA</div>
-                <div class="author-info">
-                    <span class="author-name">Fenlo AI Team</span>
-                    <span class="author-role">AI Solutions Experts</span>
-                </div>
-                <span class="publish-date">December 2024</span>
+    <div class="mobile-nav" aria-hidden="true">
+        <a href="../../index.html">Home</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
+    </div>
+
+    <section class="blog-hero">
+        <div class="article-meta">
+            <span class="category-tag">AI Automation</span>
+            <span class="reading-time" aria-label="Estimated reading time: 12 minutes">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                12 min read
+            </span>
+        </div>
+        <h1>The Small Business Guide to AI Agents: Real Results, Honest Expectations</h1>
+        <p class="article-intro">AI agents are everywhere in the headlines. But what do they actually mean for a business your size? A practical look at what works, what doesn't, and how to tell the difference.</p>
+
+        <div class="author-byline">
+            <div class="author-avatar">FA</div>
+            <div class="author-info">
+                <span class="author-name">Fenlo AI Team</span>
+                <span class="author-role">AI Solutions Experts</span>
             </div>
+            <span class="publish-date">December 2025</span>
         </div>
     </section>
 
@@ -1245,9 +1003,9 @@
                 </ol>
             </nav>
 
-            <p>"AI agents," "autonomous workforce," "digital workers" — the terms are everywhere. Every week brings another headline about companies replacing entire departments with AI. If you're running a small or medium-sized business, it's hard to know what to make of it all.</p>
+            <p>"AI agents," "autonomous workforce," "digital workers" - the terms are everywhere. Every week brings another headline about companies replacing entire departments with AI. If you're running a small or medium-sized business, it's hard to know what to make of it all.</p>
 
-            <p>Here's the thing: most coverage focuses on enterprise giants with million-dollar AI budgets, or futuristic scenarios that feel disconnected from day-to-day business reality. The real question for most business owners isn't "Is AI impressive?" — it's "Does this actually make sense for a company my size?"</p>
+            <p>Here's the thing: most coverage focuses on enterprise giants with million-dollar AI budgets, or futuristic scenarios that feel disconnected from day-to-day business reality. The real question for most business owners isn't "Is AI impressive?" - it's "Does this actually make sense for a company my size?"</p>
 
             <p>Let's cut through the hype with real numbers, verified case studies, and an honest assessment of when AI agents work and when they don't.</p>
 
@@ -1308,7 +1066,7 @@
                 </div>
             </div>
 
-            <p>Think of it this way: a chatbot answers "What's your return policy?" An RPA bot clicks through the same five screens every time. An AI agent can research a topic, compile findings from multiple sources, draft a summary, and flag anything that needs human review — all from a single instruction.</p>
+            <p>Think of it this way: a chatbot answers "What's your return policy?" An RPA bot clicks through the same five screens every time. An AI agent can research a topic, compile findings from multiple sources, draft a summary, and flag anything that needs human review - all from a single instruction.</p>
 
             <p>What "autonomous" actually means here: the agent can make decisions within boundaries you set. It doesn't mean unsupervised chaos. Good implementations always include human checkpoints for important decisions.</p>
 
@@ -1342,14 +1100,14 @@
             <p>Those numbers sound great. But here's the context that often gets left out:</p>
 
             <ul>
-                <li><strong>Only 11%</strong> of organizations are actively using agentic AI in production — most are still experimenting<span class="ref-tooltip"><a href="#ref-1" class="ref-link"><sup>1</sup></a><span class="tooltip-text">Deloitte Tech Trends 2025</span></span></li>
+                <li><strong>Only 11%</strong> of organizations are actively using agentic AI in production - most are still experimenting<span class="ref-tooltip"><a href="#ref-1" class="ref-link"><sup>1</sup></a><span class="tooltip-text">Deloitte Tech Trends 2025</span></span></li>
                 <li><strong>Over 40%</strong> of agentic AI projects are predicted to be canceled by 2027<span class="ref-tooltip"><a href="#ref-2" class="ref-link"><sup>2</sup></a><span class="tooltip-text">Gartner Newsroom</span></span></li>
                 <li>Most adoption is still concentrated in large enterprises with dedicated AI teams</li>
             </ul>
 
             <div class="key-insight">
                 <div class="key-insight-title">Key Insight</div>
-                <p>Here's the honest truth: 74% of executives report achieving ROI within the first year. But Gartner also predicts over 40% of agentic AI projects will be canceled by 2027 due to unclear business value or inadequate foundations. The technology works — when implemented thoughtfully.</p>
+                <p>Here's the honest truth: 74% of executives report achieving ROI within the first year. But Gartner also predicts over 40% of agentic AI projects will be canceled by 2027 due to unclear business value or inadequate foundations. The technology works - when implemented thoughtfully.</p>
             </div>
 
             <h2 id="case-studies">Case Studies: What Real Companies Have Done</h2>
@@ -1357,7 +1115,7 @@
             <p>Let's look at verified results, starting with large-scale examples that demonstrate what's possible, then translating to SME reality.</p>
 
             <h3>Klarna (Customer Service)</h3>
-            <p>Klarna's AI assistant handled <strong>2.3 million customer conversations in its first month</strong> — two-thirds of all customer service chats. Key results:<span class="ref-tooltip"><a href="#ref-3" class="ref-link"><sup>3</sup></a><span class="tooltip-text">Klarna Press Release</span></span></p>
+            <p>Klarna's AI assistant handled <strong>2.3 million customer conversations in its first month</strong> - two-thirds of all customer service chats. Key results:<span class="ref-tooltip"><a href="#ref-3" class="ref-link"><sup>3</sup></a><span class="tooltip-text">Klarna Press Release</span></span></p>
             <ul>
                 <li>Equivalent work of <strong>700 full-time agents</strong></li>
                 <li>Resolution time dropped from 11 minutes to <strong>2 minutes</strong></li>
@@ -1380,7 +1138,7 @@
             <ul>
                 <li><strong>Bancolombia</strong> saved <strong>127,000+ hours</strong> in branches and achieved <strong>1,300% ROI</strong> in the first year<span class="ref-tooltip"><a href="#ref-5" class="ref-link"><sup>5</sup></a><span class="tooltip-text">Automation Anywhere Case Study</span></span></li>
                 <li><strong>Investment managers at Quilter</strong> save <strong>45 minutes per meeting</strong> on note-taking, across ~100 meetings monthly</li>
-                <li><strong>An EdTech SME</strong> automated new hire onboarding from a single form — contract generation, account creation, meeting scheduling — saving <strong>2-3 hours per new hire</strong><span class="ref-tooltip"><a href="#ref-6" class="ref-link"><sup>6</sup></a><span class="tooltip-text">ActivDev SME Case Studies</span></span></li>
+                <li><strong>An EdTech SME</strong> automated new hire onboarding from a single form - contract generation, account creation, meeting scheduling - saving <strong>2-3 hours per new hire</strong><span class="ref-tooltip"><a href="#ref-6" class="ref-link"><sup>6</sup></a><span class="tooltip-text">ActivDev SME Case Studies</span></span></li>
             </ul>
 
             <h2 id="use-cases">Where AI Agents Actually Help SMEs</h2>
@@ -1440,12 +1198,12 @@
             </div>
 
             <div class="mid-cta">
-                <p>Wondering which of these might apply to your business? Book a discovery call to walk through your specific workflows and identify where agents might — or might not — make sense.</p>
+                <p>Wondering which of these might apply to your business? Book a discovery call to walk through your specific workflows and identify where agents might - or might not - make sense.</p>
             </div>
 
             <h2 id="when-not-to-use">When AI Agents Are NOT the Right Choice</h2>
 
-            <p>Here's where we differ from most AI vendors: we'll tell you when this isn't the right solution. Automation amplifies what you already have — good or bad.</p>
+            <p>Here's where we differ from most AI vendors: we'll tell you when this isn't the right solution. Automation amplifies what you already have - good or bad.</p>
 
             <div class="callout">
                 <p><strong>Skip AI agents if:</strong></p>
@@ -1487,11 +1245,11 @@
 
             <h3>Common Failure Reasons</h3>
             <ol>
-                <li><strong>Unclear business value</strong> — No defined success metrics from the start</li>
-                <li><strong>Poor data quality</strong> — Garbage in, garbage out applies here too</li>
-                <li><strong>Unrealistic expectations</strong> — Expecting fully autonomous operation immediately</li>
-                <li><strong>Inadequate oversight</strong> — Not building in human checkpoints</li>
-                <li><strong>Legacy system conflicts</strong> — Old systems can't support modern AI integration</li>
+                <li><strong>Unclear business value</strong> - No defined success metrics from the start</li>
+                <li><strong>Poor data quality</strong> - Garbage in, garbage out applies here too</li>
+                <li><strong>Unrealistic expectations</strong> - Expecting fully autonomous operation immediately</li>
+                <li><strong>Inadequate oversight</strong> - Not building in human checkpoints</li>
+                <li><strong>Legacy system conflicts</strong> - Old systems can't support modern AI integration</li>
             </ol>
 
             <h3>What Actually Works</h3>
@@ -1575,11 +1333,11 @@
                 <li>Starting small and scaling based on results</li>
             </ul>
 
-            <p>For SMEs with the right foundations, the time and cost savings can be substantial. For those without, there might be groundwork to do first — and that's okay. Knowing when you're not ready is just as valuable as knowing when you are.</p>
+            <p>For SMEs with the right foundations, the time and cost savings can be substantial. For those without, there might be groundwork to do first - and that's okay. Knowing when you're not ready is just as valuable as knowing when you are.</p>
 
             <div class="cta-section">
                 <h2>Curious If AI Agents Could Work for Your Business?</h2>
-                <p>Book a discovery call to walk through your workflows and challenges. We'll give you an honest assessment of where automation makes sense — and where it doesn't. No pressure, no obligation.</p>
+                <p>Book a discovery call to walk through your workflows and challenges. We'll give you an honest assessment of where automation makes sense - and where it doesn't. No pressure, no obligation.</p>
                 <a href="../book-discovery.html" class="cta-button">
                     Book Your Discovery Call
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1614,13 +1372,13 @@
                 <div class="related-grid">
                     <a href="document-qa-guide-sme-roi.html" class="related-card">
                         <span class="related-card-tag">Document AI</span>
-                        <h3 class="related-card-title">The Small Business Guide to Document Q&A: Real ROI From Real Companies</h3>
+                        <h3 class="related-card-title">The Small Business Guide to Document Q&A</h3>
                         <p class="related-card-excerpt">How companies are cutting document search time by 91% with AI-powered Q&A systems.</p>
                     </a>
-                    <a href="../blog.html" class="related-card">
-                        <span class="related-card-tag">AI Strategy</span>
-                        <h3 class="related-card-title">When Your Business Doesn't Need AI (Yet)</h3>
-                        <p class="related-card-excerpt">An honest look at the prerequisites for successful AI implementation.</p>
+                    <a href="faq-bots-complete-guide.html" class="related-card">
+                        <span class="related-card-tag">Smart Chatbots</span>
+                        <h3 class="related-card-title">Stop Answering the Same Questions Over and Over</h3>
+                        <p class="related-card-excerpt">Learn how FAQ bots work, what they really cost, and whether one makes sense for your business.</p>
                     </a>
                 </div>
             </div>
@@ -1645,43 +1403,54 @@
         </div>
     </article>
 
-    <footer>
-        <div class="footer-content">
-            <span class="copyright">&copy; 2025 Fenlo AI. All rights reserved.</span>
-            <div class="footer-links">
-                <a href="../legal/privacy.html">Privacy</a>
-                <a href="../legal/terms.html">Terms</a>
-                <a href="mailto:contact@fenloai.com">Contact</a>
-            </div>
+    <footer role="contentinfo">
+        <div class="footer-links">
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/terms.html">Terms of Service</a>
         </div>
+        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookie-consent" role="dialog" aria-label="Cookie consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <p>We use cookies to analyze site traffic and improve your experience. By continuing to use our site, you consent to our use of cookies. <a href="../legal/privacy.html">Learn more</a></p>
+            </div>
+            <div class="cookie-consent-buttons">
+                <button class="btn btn-secondary" id="cookie-decline">Decline</button>
+                <button class="btn btn-primary" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        const themeToggle = document.querySelector('.theme-toggle');
-        const html = document.documentElement;
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
 
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isActive = mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isActive);
+                mobileNav.setAttribute('aria-hidden', !isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
 
-        if (savedTheme) {
-            html.setAttribute('data-theme', savedTheme);
-        } else if (systemPrefersDark) {
-            html.setAttribute('data-theme', 'dark');
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileNav.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            });
         }
 
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-                html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-            }
-        });
-
+        // Reading progress indicator
         const progressBar = document.getElementById('reading-progress');
         const article = document.getElementById('main-content');
 
@@ -1701,6 +1470,32 @@
 
         window.addEventListener('scroll', updateProgress);
         updateProgress();
+
+        // Cookie Consent Banner
+        (function() {
+            const consentBanner = document.getElementById('cookie-consent');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            const CONSENT_KEY = 'fenloai_cookie_consent';
+
+            const consent = localStorage.getItem(CONSENT_KEY);
+            if (!consent) {
+                setTimeout(() => {
+                    consentBanner.classList.add('visible');
+                }, 1000);
+            }
+
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem(CONSENT_KEY, 'accepted');
+                consentBanner.classList.remove('visible');
+            });
+
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem(CONSENT_KEY, 'declined');
+                consentBanner.classList.remove('visible');
+            });
+        })();
     </script>
 </body>
+
 </html>

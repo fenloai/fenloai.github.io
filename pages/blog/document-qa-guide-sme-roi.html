@@ -1,200 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MBJVZS7Z');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn how SMEs are cutting document search time by 91% with AI-powered Q&A systems. Real case studies, verified ROI data, and practical implementation tips.">
     <title>The Small Business Guide to Document Q&A: Real ROI From Real Companies | Fenlo AI</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- SEO -->
+    <meta name="author" content="Fenlo AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://fenloai.com/pages/blog/document-qa-guide-sme-roi.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/fenloai-icon.svg">
+
+    <!-- Preload Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://fenloai.com/pages/blog/document-qa-guide-sme-roi.html">
+    <meta property="og:title" content="The Small Business Guide to Document Q&A: Real ROI From Real Companies">
+    <meta property="og:description" content="Learn how SMEs are cutting document search time by 91% with AI-powered Q&A systems. Real case studies, verified ROI data, and practical implementation tips.">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Small Business Guide to Document Q&A: Real ROI From Real Companies">
+    <meta name="twitter:description" content="Learn how SMEs are cutting document search time by 91% with AI-powered Q&A systems. Real case studies, verified ROI data, and practical implementation tips.">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../css/styles.css">
+
+    <!-- Blog-specific styles -->
     <style>
-        :root {
-            --primary-accent: #6b7c3f;
-            --primary-accent-light: #8a9c5a;
-            --primary-accent-dark: #556332;
-            --background: #fafafa;
-            --surface: #ffffff;
-            --text-primary: #1a1a1a;
-            --text-secondary: #4a4a4a;
-            --text-muted: #525252;
-            --border: #e5e5e5;
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
-            --hero-gradient: linear-gradient(135deg, #f8faf5 0%, #f0f4e8 50%, #e8efe0 100%);
-            --card-gradient: linear-gradient(135deg, #ffffff 0%, #fafbf7 100%);
-            --cta-gradient: linear-gradient(135deg, #f0f4e8 0%, #e8efe0 100%);
-        }
-
-        [data-theme="dark"] {
-            --background: #121212;
-            --surface: #1e1e1e;
-            --text-primary: #f0f0f0;
-            --text-secondary: #b0b0b0;
-            --text-muted: #888888;
-            --border: #333333;
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
-            --hero-gradient: linear-gradient(135deg, #1a1d16 0%, #1e211a 50%, #22251e 100%);
-            --card-gradient: linear-gradient(135deg, #1e1e1e 0%, #252520 100%);
-            --cta-gradient: linear-gradient(135deg, #1e211a 0%, #22251e 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--background);
-            color: var(--text-primary);
-            line-height: 1.7;
-            font-size: 17px;
-        }
-
-        /* Header */
-        header {
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--primary-accent);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--text-primary);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover {
-            color: var(--primary-accent);
-        }
-
-        /* Reading Progress Indicator */
+        /* Reading Progress Bar */
         .reading-progress {
             position: fixed;
             top: 0;
             left: 0;
             width: 0%;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
             z-index: 9999;
             transition: width 0.1s ease-out;
         }
 
-        /* Dark Mode Toggle */
-        .theme-toggle {
-            background: transparent;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s ease, border-color 0.2s ease;
-        }
-
-        .theme-toggle:hover {
-            background: var(--background);
-            border-color: var(--primary-accent);
-        }
-
-        .theme-toggle svg {
-            width: 20px;
-            height: 20px;
-            color: var(--text-secondary);
-        }
-
-        .theme-toggle .sun-icon { display: none; }
-        .theme-toggle .moon-icon { display: block; }
-
-        [data-theme="dark"] .theme-toggle .sun-icon { display: block; }
-        [data-theme="dark"] .theme-toggle .moon-icon { display: none; }
-
-        /* Hero Section */
-        .hero {
-            background: var(--hero-gradient);
-            padding: 4rem 2rem 5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(107, 124, 63, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(107, 124, 63, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            max-width: 760px;
+        /* Blog Hero */
+        .blog-hero {
+            padding: var(--space-2xl) var(--container-padding) var(--space-xl);
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
         }
 
         .article-meta {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-md);
             font-size: 0.9rem;
             color: var(--text-muted);
         }
 
         .category-tag {
-            background: linear-gradient(135deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             color: white;
             padding: 0.35rem 1rem;
             border-radius: 20px;
@@ -215,12 +101,11 @@
             opacity: 0.6;
         }
 
-        h1 {
-            font-size: 2.75rem;
+        .blog-hero h1 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
             font-weight: 700;
             line-height: 1.15;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-md);
             letter-spacing: -0.5px;
         }
 
@@ -228,23 +113,21 @@
             font-size: 1.2rem;
             color: var(--text-secondary);
             line-height: 1.8;
-            max-width: 640px;
         }
 
-        /* Author Byline */
         .author-byline {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(107, 124, 63, 0.15);
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--glass-border);
         }
 
         .author-avatar {
             width: 44px;
             height: 44px;
-            background: linear-gradient(135deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -276,55 +159,32 @@
             color: var(--text-muted);
         }
 
-        /* Hero Illustration */
-        .hero-illustration {
-            position: absolute;
-            right: -5%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 280px;
-            height: 280px;
-            opacity: 0.12;
-            z-index: 0;
-        }
-
-        .hero-illustration svg {
-            width: 100%;
-            height: 100%;
-            fill: var(--primary-accent-dark);
-        }
-
-        @media (max-width: 1100px) {
-            .hero-illustration {
-                display: none;
-            }
-        }
-
         /* Article Container */
         .article-container {
             max-width: 760px;
             margin: 0 auto;
-            padding: 3rem 2rem 5rem;
+            padding: 0 var(--container-padding) var(--space-3xl);
         }
 
-        /* Content Styles */
+        /* Article Content */
         .article-content h2 {
             font-size: 1.6rem;
             font-weight: 600;
-            margin: 3rem 0 1.25rem;
+            margin: var(--space-xl) 0 var(--space-md);
             color: var(--text-primary);
         }
 
         .article-content h3 {
             font-size: 1.25rem;
             font-weight: 600;
-            margin: 2rem 0 1rem;
+            margin: var(--space-lg) 0 var(--space-sm);
             color: var(--text-primary);
         }
 
         .article-content p {
-            margin-bottom: 1.25rem;
+            margin-bottom: var(--space-md);
             color: var(--text-secondary);
+            line-height: 1.8;
         }
 
         .article-content strong {
@@ -334,140 +194,173 @@
 
         .article-content ul,
         .article-content ol {
-            margin: 1.25rem 0;
+            margin: var(--space-md) 0;
             padding-left: 1.5rem;
         }
 
         .article-content li {
             margin-bottom: 0.75rem;
             color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         .article-content a {
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s ease;
         }
 
         .article-content a:hover {
-            border-bottom-color: var(--primary-accent);
+            border-bottom-color: var(--accent-primary-light);
         }
 
-        /* Callout Box */
-        .callout {
-            background: linear-gradient(135deg, #fffef9 0%, #fdfcf5 100%);
-            border: 1px solid rgba(180, 160, 100, 0.2);
-            border-left: 4px solid #b4a064;
-            border-radius: 12px;
-            padding: 1.5rem 1.75rem;
-            margin: 2rem 0;
-            box-shadow: 0 4px 16px rgba(180, 160, 100, 0.08);
+        /* Table of Contents */
+        .toc {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-xl);
         }
 
-        [data-theme="dark"] .callout {
-            background: linear-gradient(135deg, #2a2820 0%, #252318 100%);
-            border-color: rgba(180, 160, 100, 0.3);
-        }
-
-        .callout p {
-            margin: 0;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .callout strong {
-            color: #8a7a3a;
-        }
-
-        [data-theme="dark"] .callout strong {
-            color: #c4b060;
-        }
-
-        .callout ul {
-            margin: 0.75rem 0 0 0;
-            padding-left: 1.25rem;
-        }
-
-        .callout li {
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-        }
-
-        /* Key Insight Box */
-        .key-insight {
-            background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(107, 124, 63, 0.05));
-            border: 1px solid rgba(107, 124, 63, 0.15);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2.5rem 0;
-            position: relative;
-        }
-
-        .key-insight::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236b7c3f' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-            border-radius: 16px;
-            pointer-events: none;
-        }
-
-        .key-insight-title {
+        .toc-title {
             font-weight: 700;
-            color: var(--primary-accent-dark);
-            margin-bottom: 0.75rem;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1rem;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            position: relative;
         }
 
-        [data-theme="dark"] .key-insight-title {
-            color: var(--primary-accent-light);
+        .toc-title svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent-primary-light);
         }
 
-        .key-insight-title::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--primary-accent);
-            border-radius: 50%;
-        }
-
-        .key-insight p {
+        .toc-list {
+            list-style: none;
+            padding: 0;
             margin: 0;
-            color: var(--text-primary);
-            position: relative;
-            font-size: 1.02rem;
-            line-height: 1.7;
         }
 
-        /* Stats Card */
+        .toc-list li {
+            margin-bottom: 0.6rem;
+        }
+
+        .toc-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .toc-list a::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent-primary-light);
+        }
+
+        .toc-list a:hover::before {
+            transform: scale(1.3);
+        }
+
+        /* Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: var(--space-lg) 0;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.25rem;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .flow-step-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+        }
+
+        .flow-step-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+        }
+
+        .flow-step-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .flow-step-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .flow-arrow {
+            color: var(--accent-primary-light);
+        }
+
+        .flow-arrow svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .flow-diagram {
+                flex-direction: column;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-            margin: 2.5rem 0;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
         }
 
         .stat-card {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.15);
-            border-radius: 16px;
-            padding: 1.75rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
             text-align: center;
-            box-shadow: 0 4px 20px rgba(107, 124, 63, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
+            transition: var(--transition-normal);
         }
 
         .stat-card::before {
@@ -477,18 +370,19 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary-accent-light), var(--primary-accent));
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
         }
 
         .stat-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(107, 124, 63, 0.15);
+            border-color: var(--glass-border-hover);
+            box-shadow: var(--shadow-glow);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -510,20 +404,95 @@
             opacity: 0.8;
         }
 
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Key Insight Box */
+        .key-insight {
+            background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(107, 124, 63, 0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            position: relative;
+        }
+
+        .key-insight-title {
+            font-weight: 700;
+            color: var(--accent-primary-light);
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .key-insight-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary-light);
+            border-radius: 50%;
+        }
+
+        .key-insight p {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        /* Callout Box */
+        .callout {
+            background: linear-gradient(135deg, rgba(184, 160, 74, 0.1), rgba(184, 160, 74, 0.05));
+            border: 1px solid rgba(184, 160, 74, 0.2);
+            border-left: 4px solid var(--accent-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .callout p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: var(--accent-secondary-light);
+        }
+
+        .callout ul {
+            margin: 0.75rem 0 0 0;
+            padding-left: 1.25rem;
+        }
+
+        .callout li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
         /* Checklist */
         .checklist {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.12);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin: 2.5rem 0;
-            box-shadow: 0 8px 32px rgba(107, 124, 63, 0.08);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin: var(--space-lg) 0;
         }
 
         .checklist-title {
             font-weight: 700;
             font-size: 1.2rem;
-            margin-bottom: 1.75rem;
+            margin-bottom: var(--space-md);
             color: var(--text-primary);
             display: flex;
             align-items: center;
@@ -534,7 +503,7 @@
             content: '';
             width: 4px;
             height: 24px;
-            background: linear-gradient(180deg, var(--primary-accent), var(--primary-accent-light));
+            background: linear-gradient(180deg, var(--accent-primary), var(--accent-primary-light));
             border-radius: 2px;
         }
 
@@ -542,9 +511,9 @@
             display: flex;
             align-items: flex-start;
             gap: 1rem;
-            margin-bottom: 1.25rem;
-            padding-bottom: 1.25rem;
-            border-bottom: 1px dashed rgba(107, 124, 63, 0.2);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px dashed var(--glass-border);
         }
 
         .checklist-item:last-child {
@@ -554,7 +523,7 @@
         }
 
         .checklist-number {
-            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             color: white;
             width: 32px;
             height: 32px;
@@ -565,7 +534,6 @@
             font-size: 0.9rem;
             font-weight: 700;
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(107, 124, 63, 0.25);
         }
 
         .checklist-content h4 {
@@ -582,108 +550,27 @@
             line-height: 1.6;
         }
 
-        /* Flow Diagram */
-        .flow-diagram {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .flow-step {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.2);
-            border-radius: 12px;
-            padding: 1rem 1.25rem;
-            text-align: center;
-            min-width: 120px;
-            box-shadow: 0 4px 12px rgba(107, 124, 63, 0.08);
-        }
-
-        .flow-step-icon {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, var(--primary-accent-light), var(--primary-accent));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 0.5rem;
-        }
-
-        .flow-step-icon svg {
-            width: 20px;
-            height: 20px;
-            color: white;
-        }
-
-        .flow-step-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .flow-step-desc {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-        }
-
-        .flow-arrow {
-            color: var(--primary-accent);
-            font-size: 1.5rem;
-            font-weight: 300;
-        }
-
-        .flow-arrow svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        @media (max-width: 600px) {
-            .flow-diagram {
-                flex-direction: column;
-            }
-            .flow-arrow {
-                transform: rotate(90deg);
-            }
-        }
-
         /* CTA Section */
         .cta-section {
-            background: var(--cta-gradient);
-            border-radius: 24px;
-            padding: 3.5rem 2.5rem;
-            margin: 4rem 0 3rem;
+            background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(143, 163, 85, 0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(107, 124, 63, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
         .cta-section h2 {
             margin-top: 0;
-            margin-bottom: 1rem;
-            position: relative;
+            margin-bottom: var(--space-sm);
             font-size: 1.75rem;
         }
 
         .cta-section p {
             max-width: 520px;
-            margin: 0 auto 2rem;
-            position: relative;
+            margin: 0 auto var(--space-lg);
             font-size: 1.05rem;
         }
 
@@ -691,16 +578,15 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: linear-gradient(135deg, var(--primary-accent), var(--primary-accent-dark));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
             color: white;
-            padding: 1.1rem 2.25rem;
-            border-radius: 12px;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-full);
             text-decoration: none;
             font-weight: 600;
             font-size: 1.05rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             box-shadow: 0 8px 24px rgba(107, 124, 63, 0.3);
-            position: relative;
         }
 
         .cta-button:hover {
@@ -720,13 +606,12 @@
 
         /* Mid-article CTA */
         .mid-cta {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.15);
-            border-radius: 16px;
-            padding: 2rem 2.5rem;
-            margin: 3rem 0;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
             text-align: center;
-            box-shadow: 0 4px 16px rgba(107, 124, 63, 0.06);
             position: relative;
         }
 
@@ -738,11 +623,8 @@
             transform: translateX(-50%);
             width: 24px;
             height: 24px;
-            background: var(--primary-accent);
+            background: var(--accent-primary);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .mid-cta p {
@@ -752,43 +634,93 @@
             font-size: 1.05rem;
         }
 
+        /* Social Share */
+        .social-share {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: var(--space-xl) 0;
+            padding: var(--space-md);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+        }
+
+        .social-share-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .social-share-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .social-share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: var(--bg-primary);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-share-btn:hover {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .social-share-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
         /* Related Articles */
         .related-articles {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
+            margin-top: var(--space-xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--glass-border);
         }
 
         .related-articles h2 {
             font-size: 1.25rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-md);
         }
 
         .related-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
+            gap: var(--space-md);
         }
 
         .related-card {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.12);
-            border-radius: 12px;
-            padding: 1.25rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
             text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .related-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(107, 124, 63, 0.12);
+            border-color: var(--glass-border-hover);
+            box-shadow: var(--shadow-md);
         }
 
         .related-card-tag {
             display: inline-block;
             font-size: 0.7rem;
             font-weight: 600;
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 0.5rem;
@@ -814,65 +746,16 @@
             }
         }
 
-        /* Social Sharing */
-        .social-share {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin: 3rem 0;
-            padding: 1.5rem;
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.12);
-            border-radius: 12px;
-        }
-
-        .social-share-label {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-primary);
-        }
-
-        .social-share-buttons {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .social-share-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            background: var(--background);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .social-share-btn:hover {
-            background: var(--primary-accent);
-            border-color: var(--primary-accent);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .social-share-btn svg {
-            width: 18px;
-            height: 18px;
-        }
-
         /* References */
         .references {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--glass-border);
         }
 
         .references h2 {
             font-size: 1.25rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-md);
         }
 
         .reference-list {
@@ -892,22 +775,8 @@
             content: attr(data-ref);
             position: absolute;
             left: 0;
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
             font-weight: 600;
-        }
-
-        .reference-list li:target {
-            background: rgba(107, 124, 63, 0.1);
-            border-radius: 6px;
-            padding: 0.5rem;
-            margin-left: -0.5rem;
-            padding-left: 2.5rem;
-            animation: highlight-fade 2s ease-out;
-        }
-
-        @keyframes highlight-fade {
-            0% { background: rgba(107, 124, 63, 0.25); }
-            100% { background: rgba(107, 124, 63, 0.1); }
         }
 
         .reference-list a {
@@ -916,20 +785,15 @@
         }
 
         .reference-list a:hover {
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
         }
 
         /* Superscript citations */
         sup {
-            color: var(--primary-accent);
+            color: var(--accent-primary-light);
             font-weight: 600;
             font-size: 0.75em;
             cursor: pointer;
-            transition: color 0.2s ease;
-        }
-
-        sup:hover {
-            color: var(--primary-accent-dark);
         }
 
         .ref-link {
@@ -937,12 +801,6 @@
             color: inherit;
         }
 
-        .ref-link:hover sup {
-            color: var(--primary-accent-dark);
-            text-decoration: underline;
-        }
-
-        /* Reference tooltips */
         .ref-tooltip {
             position: relative;
             display: inline;
@@ -955,19 +813,19 @@
             bottom: 125%;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--text-primary);
-            color: white;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
             padding: 0.6rem 0.9rem;
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             font-size: 0.8rem;
             font-weight: 400;
-            white-space: nowrap;
             max-width: 280px;
             white-space: normal;
             text-align: left;
             line-height: 1.4;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-lg);
             transition: opacity 0.2s ease, visibility 0.2s ease;
         }
 
@@ -978,7 +836,7 @@
             left: 50%;
             transform: translateX(-50%);
             border: 6px solid transparent;
-            border-top-color: var(--text-primary);
+            border-top-color: var(--bg-tertiary);
         }
 
         .ref-tooltip:hover .tooltip-text {
@@ -986,25 +844,18 @@
             opacity: 1;
         }
 
-        @media (max-width: 768px) {
-            .ref-tooltip .tooltip-text {
-                max-width: 200px;
-                font-size: 0.75rem;
-            }
-        }
-
-        /* Skip to content link */
+        /* Skip to content */
         .skip-link {
             position: absolute;
             top: -40px;
             left: 0;
-            background: var(--primary-accent);
+            background: var(--accent-primary);
             color: white;
             padding: 0.5rem 1rem;
             z-index: 1000;
             text-decoration: none;
             font-weight: 500;
-            border-radius: 0 0 8px 0;
+            border-radius: 0 0 var(--radius-sm) 0;
             transition: top 0.3s ease;
         }
 
@@ -1012,248 +863,110 @@
             top: 0;
         }
 
-        /* Table of Contents */
-        .toc {
-            background: var(--card-gradient);
-            border: 1px solid rgba(107, 124, 63, 0.12);
-            border-radius: 16px;
-            padding: 1.75rem 2rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 4px 16px rgba(107, 124, 63, 0.06);
-        }
-
-        .toc-title {
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .toc-title svg {
-            width: 18px;
-            height: 18px;
-            color: var(--primary-accent);
-        }
-
-        .toc-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .toc-list li {
-            margin-bottom: 0.6rem;
-        }
-
-        .toc-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .toc-list a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.2s ease, transform 0.2s ease;
-        }
-
-        .toc-list a::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--primary-accent-light);
-            border-radius: 50%;
-            flex-shrink: 0;
-            transition: transform 0.2s ease;
-        }
-
-        .toc-list a:hover {
-            color: var(--primary-accent);
-        }
-
-        .toc-list a:hover::before {
-            transform: scale(1.3);
-            background: var(--primary-accent);
-        }
-
-        /* Divider */
-        hr {
-            border: none;
-            height: 1px;
-            background: var(--border);
-            margin: 2.5rem 0;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-accent);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .copyright {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            h1 {
+            .blog-hero h1 {
                 font-size: 1.85rem;
-            }
-
-            .hero {
-                padding: 2.5rem 1.25rem 3rem;
             }
 
             .article-intro {
                 font-size: 1.05rem;
             }
 
-            .article-container {
-                padding: 2rem 1.25rem 3rem;
-            }
-
-            .header-content {
-                padding: 1rem;
-            }
-
-            nav {
-                gap: 0.75rem;
-            }
-
-            nav a {
-                margin-left: 0;
-                font-size: 0.85rem;
-            }
-
-            .theme-toggle {
-                padding: 0.4rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .stat-card {
-                padding: 1.25rem;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
             .checklist {
-                padding: 1.75rem;
-            }
-
-            .key-insight {
-                padding: 1.5rem;
+                padding: var(--space-md);
             }
 
             .cta-section {
-                padding: 2.5rem 1.5rem;
-                border-radius: 16px;
+                padding: var(--space-lg);
             }
 
             .cta-section h2 {
                 font-size: 1.4rem;
             }
 
-            .mid-cta {
-                padding: 1.5rem;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-links a {
-                margin: 0 0.75rem;
+            .publish-date {
+                display: none;
             }
         }
     </style>
 </head>
+
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBJVZS7Z"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div class="reading-progress" id="reading-progress"></div>
     <a href="#main-content" class="skip-link">Skip to content</a>
-    <header>
-        <div class="header-content">
-            <a href="../../index.html" class="logo">Fenlo <span>AI</span></a>
-            <nav>
-                <a href="../services.html">Services</a>
-                <a href="../blog.html">Blog</a>
-                <a href="../contact.html">Contact</a>
-                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                </button>
-            </nav>
-        </div>
-    </header>
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
 
-    <section class="hero">
-        <div class="hero-illustration" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6zm2-6h8v2H8v-2zm0-3h8v2H8v-2zm0 6h5v2H8v-2z"/>
-            </svg>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo" aria-label="Fenlo AI Home">
+                <svg class="logo-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 80" width="250" height="80">
+                    <g class="logo-icon" transform="translate(0, 5)">
+                        <rect x="20" y="20" width="28" height="28" class="logo-green"/>
+                        <rect x="20" y="20" width="28" height="28" class="logo-green" transform="rotate(45 34 34)" stroke="#0a0a0f" stroke-width="3"/>
+                    </g>
+                    <g transform="translate(70, 0)">
+                        <g class="logo-white">
+                            <path d="M4.45 57.25L4.45 36.65L0 36.65L0 31.75L4.45 31.75L4.45 28Q4.45 24.60 6.38 22.67Q8.30 20.75 11.70 20.75L18.50 20.75L18.50 25.65L12.75 25.65Q11.60 25.65 10.90 26.35Q10.20 27.05 10.20 28.25L10.20 31.75L17.45 31.75L17.45 36.65L10.20 36.65L10.20 57.25L4.45 57.25Z"/>
+                            <path d="M33.80 57.25Q29.50 57.25 26.27 55.63Q23.05 54 21.25 51.13Q19.45 48.25 19.45 44.50Q19.45 40.55 21.05 37.55Q22.65 34.55 25.45 32.85Q28.25 31.15 31.90 31.15Q36 31.15 38.65 32.90Q41.30 34.65 42.58 37.60Q43.85 40.55 43.85 44.20Q43.85 44.70 43.80 45.35Q43.75 46 43.65 46.35L25.55 46.35Q25.85 48.35 27 49.67Q28.15 51 29.90 51.67Q31.65 52.35 33.80 52.35L40.65 52.35L40.65 57.25L33.80 57.25M25.50 42.45L38.10 42.45Q38.05 41.50 37.83 40.55Q37.60 39.60 37.13 38.75Q36.65 37.90 35.92 37.27Q35.20 36.65 34.20 36.27Q33.20 35.90 31.90 35.90Q30.40 35.90 29.25 36.47Q28.10 37.05 27.30 37.97Q26.50 38.90 26.07 40.08Q25.65 41.25 25.50 42.45Z"/>
+                            <path d="M49.20 57.25L49.20 42.55Q49.20 39.25 50.70 36.67Q52.20 34.10 54.95 32.63Q57.70 31.15 61.40 31.15Q65.10 31.15 67.83 32.63Q70.55 34.10 72.05 36.67Q73.55 39.25 73.55 42.55L73.55 57.25L67.85 57.25L67.85 42.60Q67.85 40.65 66.95 39.17Q66.05 37.70 64.58 36.88Q63.10 36.05 61.35 36.05Q59.65 36.05 58.17 36.88Q56.70 37.70 55.83 39.17Q54.95 40.65 54.95 42.60L54.95 57.25L49.20 57.25Z"/>
+                            <path d="M80.45 57.25L80.45 20.75L86.20 20.75L86.20 57.25L80.45 57.25Z"/>
+                            <path d="M105.25 57.85Q101.30 57.85 98.25 56.08Q95.20 54.30 93.43 51.27Q91.65 48.25 91.65 44.50Q91.65 40.75 93.43 37.72Q95.20 34.70 98.25 32.92Q101.30 31.15 105.25 31.15Q109.15 31.15 112.20 32.92Q115.25 34.70 117.03 37.70Q118.80 40.70 118.80 44.50Q118.80 48.25 117.03 51.27Q115.25 54.30 112.20 56.08Q109.15 57.85 105.25 57.85M105.25 52.95Q107.60 52.95 109.35 51.83Q111.10 50.70 112.05 48.80Q113 46.90 113 44.50Q113 42.15 112.05 40.22Q111.10 38.30 109.35 37.17Q107.60 36.05 105.25 36.05Q102.85 36.05 101.13 37.17Q99.40 38.30 98.43 40.20Q97.45 42.10 97.45 44.50Q97.45 46.85 98.43 48.77Q99.40 50.70 101.13 51.83Q102.85 52.95 105.25 52.95Z"/>
+                        </g>
+                        <g class="logo-green">
+                            <path d="M134.60 57.85Q130.95 57.85 128.30 56.05Q125.65 54.25 124.23 51.23Q122.80 48.20 122.80 44.55Q122.80 40.75 124.43 37.72Q126.05 34.70 129.08 32.92Q132.10 31.15 136.30 31.15Q140.45 31.15 143.38 32.92Q146.30 34.70 147.88 37.72Q149.45 40.75 149.45 44.45L149.45 57.25L143.70 57.25L143.70 52.50L143.60 52.50Q142.85 53.90 141.65 55.13Q140.45 56.35 138.70 57.10Q136.95 57.85 134.60 57.85M136.15 52.95Q138.40 52.95 140.08 51.83Q141.75 50.70 142.68 48.77Q143.60 46.85 143.60 44.45Q143.60 42.05 142.70 40.17Q141.80 38.30 140.15 37.17Q138.50 36.05 136.20 36.05Q133.80 36.05 132.10 37.17Q130.40 38.30 129.50 40.20Q128.60 42.10 128.60 44.50Q128.60 46.85 129.50 48.77Q130.40 50.70 132.08 51.83Q133.75 52.95 136.15 52.95Z"/>
+                            <path d="M156.35 57.25L156.35 31.75L162.10 31.75L162.10 57.25L156.35 57.25M159.20 28.20Q157.70 28.20 156.60 27.10Q155.50 26 155.50 24.50Q155.50 23 156.60 21.90Q157.70 20.80 159.20 20.80Q160.75 20.80 161.83 21.90Q162.90 23 162.90 24.50Q162.90 26 161.83 27.10Q160.75 28.20 159.20 28.20Z"/>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <div class="hero-content">
-            <div class="article-meta">
-                <span class="category-tag">Document AI</span>
-                <span class="reading-time" aria-label="Estimated reading time: 11 minutes">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    11 min read
-                </span>
-            </div>
-            <h1>The Small Business Guide to Document Q&A: Real ROI From Real Companies</h1>
-            <p class="article-intro">How companies are cutting document search time by 91% and seeing returns within months. A practical look at what actually works, backed by verified case studies.</p>
+    </nav>
 
-            <div class="author-byline">
-                <div class="author-avatar">FA</div>
-                <div class="author-info">
-                    <span class="author-name">Fenlo AI Team</span>
-                    <span class="author-role">AI Solutions Experts</span>
-                </div>
-                <span class="publish-date">December 2024</span>
+    <div class="mobile-nav" aria-hidden="true">
+        <a href="../../index.html">Home</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
+    </div>
+
+    <section class="blog-hero">
+        <div class="article-meta">
+            <span class="category-tag">Document AI</span>
+            <span class="reading-time" aria-label="Estimated reading time: 11 minutes">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                11 min read
+            </span>
+        </div>
+        <h1>The Small Business Guide to Document Q&A: Real ROI From Real Companies</h1>
+        <p class="article-intro">How companies are cutting document search time by 91% and seeing returns within months. A practical look at what actually works, backed by verified case studies.</p>
+
+        <div class="author-byline">
+            <div class="author-avatar">FA</div>
+            <div class="author-info">
+                <span class="author-name">Fenlo AI Team</span>
+                <span class="author-role">AI Solutions Experts</span>
             </div>
+            <span class="publish-date">December 2025</span>
         </div>
     </section>
 
@@ -1292,7 +1005,7 @@
             <p>This isn't the same as basic document search. Traditional search tools match keywords. Document Q&A systems understand meaning. Ask about "refund policies" and they'll find content about "return procedures" or "money-back guarantees" even if those exact words weren't in your query.</p>
 
             <!-- Flow Diagram -->
-            <div class="flow-diagram">
+            <div class="flow-diagram" role="img" aria-label="Document Q&A workflow: Ask question, AI processes, Answer with source">
                 <div class="flow-step">
                     <div class="flow-step-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1398,158 +1111,142 @@
 
             <p>Here's where we see the clearest benefits for small and medium businesses:</p>
 
-            <div class="checklist">
-                <div class="checklist-title">Practical Use Cases</div>
+            <h3>Internal Knowledge Management</h3>
 
-                <div class="checklist-item">
-                    <span class="checklist-number">1</span>
-                    <div class="checklist-content">
-                        <h4>HR and Employee Self-Service</h4>
-                        <p>"What's the PTO policy?" "How do I submit an expense report?" Case studies show 80% of routine HR questions can become self-service, dramatically reducing the load on office managers.<span class="ref-tooltip"><a href="#ref-8" class="ref-link"><sup>8</sup></a><span class="tooltip-text">NetTech: AI Knowledge Bases for Small Business</span></span></p>
-                    </div>
-                </div>
+            <p>When employees can instantly find answers in your policies, procedures, and historical documents, you stop losing time to "does anyone know where..." conversations. This is especially valuable for:</p>
 
-                <div class="checklist-item">
-                    <span class="checklist-number">2</span>
-                    <div class="checklist-content">
-                        <h4>Customer Support</h4>
-                        <p>Agents can instantly pull policy clauses, product specifications, or troubleshooting steps. One IT services team saw a 35% decrease in support tickets after implementation.<span class="ref-tooltip"><a href="#ref-8" class="ref-link"><sup>8</sup></a><span class="tooltip-text">NetTech: AI Knowledge Bases for Small Business</span></span></p>
-                    </div>
-                </div>
-
-                <div class="checklist-item">
-                    <span class="checklist-number">3</span>
-                    <div class="checklist-content">
-                        <h4>Compliance and Audits</h4>
-                        <p>Need to find all contracts mentioning data retention over 5 years? Or locate specific regulatory language? Document Q&A makes it "easy to pinpoint information for audits or legal reviews, helping reduce risk."<span class="ref-tooltip"><a href="#ref-1" class="ref-link"><sup>1</sup></a><span class="tooltip-text">ShareFile: Document Question Answering</span></span></p>
-                    </div>
-                </div>
-
-                <div class="checklist-item">
-                    <span class="checklist-number">4</span>
-                    <div class="checklist-content">
-                        <h4>Onboarding New Staff</h4>
-                        <p>New hires spend less time asking veterans "where do I find X?" The answers are available instantly. This reduces the "expert bottleneck" that slows down growing teams.</p>
-                    </div>
-                </div>
-
-                <div class="checklist-item">
-                    <span class="checklist-number">5</span>
-                    <div class="checklist-content">
-                        <h4>Sales and Proposals</h4>
-                        <p>Quickly find past proposals, case studies, and pricing precedents. Your sales team spends more time selling and less time searching.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mid-article CTA -->
-            <div class="mid-cta">
-                <p>Wondering if your documents are a good fit for this kind of system? We're happy to take a look. Book a discovery call for an honest assessment of whether this makes sense for your situation.</p>
-            </div>
-
-            <!-- Section 4: When NOT to Use -->
-            <h2 id="when-not-to-use">When Document Q&A Might NOT Be Right for You</h2>
-
-            <p>Here's where we differ from most AI vendors: we'll tell you when this isn't the right solution. Automation amplifies what you already have. If your foundation isn't solid, AI won't fix that.</p>
-
-            <div class="callout">
-                <p><strong>Skip document Q&A if:</strong></p>
-                <ul>
-                    <li>You have very few documents (under ~50 key documents that people regularly reference)</li>
-                    <li>Your documents are already well-organized and easily searchable</li>
-                    <li>Most questions require human judgment, not information retrieval</li>
-                    <li>Your team is very small (1-3 people who already know where everything is)</li>
-                    <li>Your documents are severely outdated or poorly maintained</li>
-                </ul>
-            </div>
-
-            <div class="key-insight">
-                <div class="key-insight-title">Honest Assessment</div>
-                <p>We've told clients "no" when document Q&A wasn't the right fit. If your documents are a mess, you might need organization before AI. The technology works best when it's amplifying already-decent knowledge management, not replacing it entirely.</p>
-            </div>
-
-            <p><strong>Consider document Q&A if:</strong></p>
             <ul>
-                <li>The same questions get asked repeatedly across your team</li>
-                <li>New employees take months to "learn where everything is"</li>
-                <li>Audits or compliance reviews require quick document searches</li>
-                <li>Staff regularly complain about finding information</li>
-                <li>You're scaling and can't keep relying on people's memory</li>
-                <li>Key knowledge lives in the heads of a few people who might leave</li>
+                <li><strong>Employee onboarding</strong> - New hires can self-serve answers instead of constantly asking colleagues</li>
+                <li><strong>Policy questions</strong> - HR and compliance queries get answered without escalation</li>
+                <li><strong>Process documentation</strong> - Staff can find SOPs without interrupting senior team members</li>
             </ul>
 
-            <!-- Section 5: Implementation -->
-            <h2 id="implementation">What Implementation Actually Looks Like</h2>
+            <h3>Customer Support</h3>
 
-            <p>One of the biggest concerns we hear from small business owners: "How disruptive is this going to be?" Here's a realistic timeline:</p>
+            <p>Support agents can find answers in product documentation, past tickets, and knowledge bases without putting customers on hold. One study found customer service teams spend an average of <strong>10 minutes per query searching internal systems</strong>.<span class="ref-tooltip"><a href="#ref-8" class="ref-link"><sup>8</sup></a><span class="tooltip-text">Insider Intelligence: Customer Service AI</span></span></p>
+
+            <h3>Legal and Compliance</h3>
+
+            <p>Contract review, regulatory compliance checking, and policy verification all benefit from being able to ask natural language questions across document collections. The JPMorgan example above shows the extreme end of this.</p>
+
+            <h3>Sales and Account Management</h3>
+
+            <p>Sales teams can quickly reference past proposals, contract terms, and client history during calls instead of awkward pauses while they "just pull up that file."</p>
+
+            <div class="mid-cta">
+                <p>Want to know if Document Q&A would help your specific situation? Fenlo AI offers free assessments to help you understand the potential impact for your business.</p>
+            </div>
+
+            <!-- Section 4: When Not to Use -->
+            <h2 id="when-not-to-use">When It Might NOT Be Right for You</h2>
+
+            <p>Here's the honest part: document Q&A isn't magic, and it's not right for every business.</p>
+
+            <h3>You Probably Don't Need This If:</h3>
+
+            <ul>
+                <li><strong>Your team is small and communication is easy</strong> - With 3-5 people, just asking each other might be faster than setting up any system</li>
+                <li><strong>Your documents change constantly</strong> - If your key docs are updated daily, maintaining the AI's knowledge base becomes its own job</li>
+                <li><strong>You don't actually have that many documents</strong> - If everything fits in one well-organized folder, you might not have a search problem</li>
+                <li><strong>Your documents are mostly images or scanned PDFs</strong> - These require OCR preprocessing, adding complexity and cost</li>
+            </ul>
+
+            <h3>Realistic Expectations</h3>
+
+            <p>Even well-implemented systems have limitations:</p>
+
+            <ul>
+                <li><strong>Accuracy isn't 100%</strong> - Expect 85-95% accuracy for well-defined queries. Complex or ambiguous questions may need human follow-up</li>
+                <li><strong>Setup takes time</strong> - Plan for 2-4 weeks of document preparation and initial training, depending on volume</li>
+                <li><strong>Maintenance is ongoing</strong> - Someone needs to add new documents and occasionally retrain the system</li>
+            </ul>
+
+            <div class="callout">
+                <p><strong>Reality check:</strong> The 91% faster retrieval stat comes from a well-planned enterprise implementation with clean, organized documents. Your results will vary based on your document quality and how well the system is configured for your specific use cases.</p>
+            </div>
+
+            <!-- Section 5: Implementation -->
+            <h2 id="implementation">What Implementation Looks Like</h2>
+
+            <p>If you're considering document Q&A for your business, here's what the process typically involves:</p>
 
             <div class="checklist">
-                <div class="checklist-title">Implementation Steps</div>
+                <div class="checklist-title">Implementation Checklist</div>
 
                 <div class="checklist-item">
                     <span class="checklist-number">1</span>
                     <div class="checklist-content">
                         <h4>Document Audit</h4>
-                        <p>What documents exist? Where are they stored? Which ones are frequently referenced? This typically takes 1-2 days of discovery work.</p>
+                        <p>Identify which documents your team actually searches most. Focus on high-frequency use cases first rather than trying to index everything.</p>
                     </div>
                 </div>
 
                 <div class="checklist-item">
                     <span class="checklist-number">2</span>
                     <div class="checklist-content">
-                        <h4>Content Preparation</h4>
-                        <p>Ensure documents are in readable formats and flag severely outdated content. Time varies based on current state, but often minimal for most SMEs.</p>
+                        <h4>Document Preparation</h4>
+                        <p>Clean up your documents. Remove duplicates, update outdated versions, and ensure text is machine-readable (not just scanned images).</p>
                     </div>
                 </div>
 
                 <div class="checklist-item">
                     <span class="checklist-number">3</span>
                     <div class="checklist-content">
-                        <h4>System Setup</h4>
-                        <p>Connect document sources, configure the AI for your domain and terminology. Usually takes 1-2 weeks.</p>
+                        <h4>System Configuration</h4>
+                        <p>Set up the Q&A system with your documents and configure it for your specific question types and terminology.</p>
                     </div>
                 </div>
 
                 <div class="checklist-item">
                     <span class="checklist-number">4</span>
                     <div class="checklist-content">
-                        <h4>Testing and Refinement</h4>
-                        <p>Test with real questions from your team. Fine-tune responses based on what works and what doesn't. About 1 week.</p>
+                        <h4>Testing and Tuning</h4>
+                        <p>Test with real questions from your team. Identify gaps and adjust the system based on what doesn't work well.</p>
                     </div>
                 </div>
 
                 <div class="checklist-item">
                     <span class="checklist-number">5</span>
                     <div class="checklist-content">
-                        <h4>Team Rollout</h4>
-                        <p>Brief training (usually minimal since the interface is conversational) and gather feedback to iterate.</p>
+                        <h4>User Training</h4>
+                        <p>Brief your team on how to use it effectively. Most systems work best with specific, well-formed questions.</p>
                     </div>
                 </div>
             </div>
 
-            <p><strong>Realistic timeline:</strong> 2-4 weeks for most SME deployments. This isn't a multi-month enterprise IT project.</p>
+            <h3>Typical Costs for SMEs</h3>
+
+            <ul>
+                <li><strong>Setup costs:</strong> $3,000-8,000 depending on document volume and complexity</li>
+                <li><strong>Monthly costs:</strong> $100-300/month for hosting and AI API usage</li>
+                <li><strong>Timeline:</strong> 2-4 weeks from start to deployment</li>
+            </ul>
+
+            <p>These are rough estimates. Simpler implementations with fewer documents cost less; complex ones with integrations cost more.</p>
 
             <!-- Section 6: Bottom Line -->
             <h2 id="bottom-line">The Bottom Line</h2>
 
-            <p>Document Q&A isn't magic. It's a practical tool that works well for specific situations. For SMEs drowning in documents and repeated questions, the time savings alone often justify the investment within months.</p>
+            <p>Document Q&A technology has matured enough that SMEs can genuinely benefit from it. The case studies show real improvements - 91% faster retrieval, 80% automation of common lookups, significant productivity gains.</p>
 
-            <p>The evidence is clear:</p>
+            <p>But like any technology, it's not universally applicable. It works best when you have:</p>
+
             <ul>
-                <li><strong>Time savings are real</strong>: 91% faster retrieval, 40% faster task completion</li>
-                <li><strong>Error reduction matters</strong>: AI finds the exact text, reducing interpretation mistakes</li>
-                <li><strong>Employees actually use it</strong>: High satisfaction scores (8.25/10) and continued adoption after trials</li>
-                <li><strong>Knowledge becomes resilient</strong>: Less dependence on specific people who "know where everything is"</li>
+                <li>A meaningful collection of documents that people regularly search</li>
+                <li>Staff time being consumed by finding information</li>
+                <li>Documents that are primarily text-based and reasonably organized</li>
+                <li>Clear, answerable questions that come up repeatedly</li>
             </ul>
 
-            <p>The question isn't whether the technology works. It's whether your specific situation is a good fit. If information retrieval is a hidden tax on your team's time, it's worth exploring.</p>
+            <p>If that describes your situation, the ROI can be genuinely compelling. If not, you might be better served by simply reorganizing your folder structure or investing in better traditional search.</p>
 
-            <!-- Main CTA Section -->
+            <p>The technology has democratized - you don't need enterprise budgets anymore. But "available" doesn't mean "right for everyone." Make sure you're solving an actual problem before buying a solution.</p>
+
             <div class="cta-section">
-                <h2>Curious If Your Documents Could Work With Q&A?</h2>
-                <p>Book a discovery call to walk through your situation. We'll look at your document types, common questions, and give you an honest assessment of whether this makes sense for your business. No pressure, no obligation.</p>
+                <h2>Not Sure If Document Q&A Fits Your Business?</h2>
+                <p>We help SMEs figure out whether AI document solutions make sense for their specific situation. Book a free consultation to discuss your document challenges and get honest advice on whether this technology would actually help.</p>
                 <a href="../book-discovery.html" class="cta-button">
-                    Book Your Discovery Call
+                    Book Your Free Consultation
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -1560,17 +1257,17 @@
             <div class="social-share">
                 <span class="social-share-label">Share this article:</span>
                 <div class="social-share-buttons">
-                    <a href="https://twitter.com/intent/tweet?url=https://fenloai.com/blog/document-qa-guide-sme-roi.html&text=The%20Small%20Business%20Guide%20to%20Document%20Q%26A%3A%20Real%20ROI%20From%20Real%20Companies" target="_blank" rel="noopener" class="social-share-btn" aria-label="Share on Twitter">
+                    <a href="https://twitter.com/intent/tweet?url=https://fenloai.com/blog/document-qa-guide-sme-roi&text=The%20Small%20Business%20Guide%20to%20Document%20Q%26A%3A%20Real%20ROI%20From%20Real%20Companies" target="_blank" rel="noopener" class="social-share-btn" aria-label="Share on Twitter">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                     </a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://fenloai.com/blog/document-qa-guide-sme-roi.html" target="_blank" rel="noopener" class="social-share-btn" aria-label="Share on LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://fenloai.com/blog/document-qa-guide-sme-roi" target="_blank" rel="noopener" class="social-share-btn" aria-label="Share on LinkedIn">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                     </a>
-                    <a href="mailto:?subject=The%20Small%20Business%20Guide%20to%20Document%20Q%26A&body=Check%20out%20this%20article%3A%20https://fenloai.com/blog/document-qa-guide-sme-roi.html" class="social-share-btn" aria-label="Share via Email">
+                    <a href="mailto:?subject=Interesting%20article%20about%20Document%20Q%26A&body=Check%20out%20this%20article%3A%20https://fenloai.com/blog/document-qa-guide-sme-roi" class="social-share-btn" aria-label="Share via Email">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
@@ -1582,76 +1279,81 @@
             <div class="related-articles">
                 <h2>Related Articles</h2>
                 <div class="related-grid">
-                    <a href="../blog.html" class="related-card">
+                    <a href="faq-bots-complete-guide.html" class="related-card">
                         <span class="related-card-tag">Smart Chatbots</span>
-                        <h3 class="related-card-title">FAQ Bots for Small Business: What Actually Works</h3>
-                        <p class="related-card-excerpt">A practical guide to implementing customer service automation without the enterprise complexity.</p>
+                        <h3 class="related-card-title">Stop Answering the Same Questions Over and Over</h3>
+                        <p class="related-card-excerpt">Learn how FAQ bots work, what they really cost, and whether one makes sense for your business.</p>
                     </a>
-                    <a href="../blog.html" class="related-card">
-                        <span class="related-card-tag">AI Strategy</span>
-                        <h3 class="related-card-title">When Your Business Doesn't Need AI (Yet)</h3>
-                        <p class="related-card-excerpt">An honest look at the prerequisites for successful AI implementation.</p>
+                    <a href="ai-agents-guide-sme.html" class="related-card">
+                        <span class="related-card-tag">AI Automation</span>
+                        <h3 class="related-card-title">The Small Business Guide to AI Agents</h3>
+                        <p class="related-card-excerpt">Real results, honest expectations - what AI agents actually mean for businesses your size.</p>
                     </a>
                 </div>
             </div>
 
-            <!-- References -->
             <div class="references">
                 <h2>References</h2>
                 <ol class="reference-list">
-                    <li id="ref-1" data-ref="[1]">ShareFile. "Document Question Answering: Unlocking Instant Insights with AI." <a href="https://www.sharefile.com/resource/blogs/document-question-answering-unlocking-instant-insights-ai" target="_blank" rel="noopener">sharefile.com</a></li>
-                    <li id="ref-2" data-ref="[2]">WNS. "Gen AI Virtual SME Revolutionizes F&A Knowledge Management." 2025 AI Breakthrough Award Winner. <a href="https://www.wns.com/perspectives/case-studies/gen-ai-powered-virtual-sme-transforms-f-a-knowledge-management-for-a-traveltech-leader" target="_blank" rel="noopener">wns.com</a></li>
-                    <li id="ref-3" data-ref="[3]">IBM. "Knowledge Orchestrator Case Study." <a href="https://www.ibm.com/case-studies/knowledge-orchestrator" target="_blank" rel="noopener">ibm.com</a></li>
-                    <li id="ref-4" data-ref="[4]">Motius. "Transforming Knowledge Access: A Document Q&A Case Study." <a href="https://www.motius.com/case-studies/revolutionizing-knowledge-access-a-successful-document-q-a-case-study" target="_blank" rel="noopener">motius.com</a></li>
-                    <li id="ref-5" data-ref="[5]">MIT News. "Study finds ChatGPT boosts worker productivity for some writing tasks." Massachusetts Institute of Technology, July 2023. <a href="https://news.mit.edu/2023/study-finds-chatgpt-boosts-worker-productivity-writing-0714" target="_blank" rel="noopener">news.mit.edu</a></li>
-                    <li id="ref-6" data-ref="[6]">Microsoft InsideTrack. "Generating great results: Administering search at Microsoft." <a href="https://www.microsoft.com/insidetrack/blog/generating-great-results-administering-search-at-microsoft/" target="_blank" rel="noopener">microsoft.com</a></li>
-                    <li id="ref-7" data-ref="[7]">Harvard Business School Digital Initiative. "JP Morgan COIN: A Bank's Side Project Spells Disruption for the Legal Industry." <a href="https://d3.harvard.edu/platform-rctom/submission/jp-morgan-coin-a-banks-side-project-spells-disruption-for-the-legal-industry/" target="_blank" rel="noopener">d3.harvard.edu</a></li>
-                    <li id="ref-8" data-ref="[8]">NetTech Consultants. "AI-Powered Knowledge Bases for Small Business." <a href="https://nettechconsultants.com/blog/ai-powered-knowledge-bases-for-small-business/" target="_blank" rel="noopener">nettechconsultants.com</a></li>
+                    <li id="ref-1" data-ref="[1]">ShareFile. "Document Question Answering: How It Works and Why It Matters." <a href="https://www.sharefile.com/resource/blog/document-question-answering" target="_blank" rel="noopener">sharefile.com</a></li>
+                    <li id="ref-2" data-ref="[2]">WNS. "Gen AI-Powered Virtual SME for Enhanced Efficiency in Finance and Accounting." <a href="https://www.wns.com/capabilities/artificial-intelligence/case-studies/gen-ai-powered-virtual-sme-for-enhanced-efficiency-in-finance-and-accounting" target="_blank" rel="noopener">wns.com</a></li>
+                    <li id="ref-3" data-ref="[3]">IBM. "Knowledge Orchestrator Case Study." <a href="https://knowledge-orchestrator.com/case-study" target="_blank" rel="noopener">knowledge-orchestrator.com</a></li>
+                    <li id="ref-4" data-ref="[4]">Motius. "Document Q&A: How AI Transforms Knowledge Management." <a href="https://www.motius.de/ai-insights/document-qa-how-ai-transforms-knowledge-management" target="_blank" rel="noopener">motius.de</a></li>
+                    <li id="ref-5" data-ref="[5]">MIT News. "Study Finds ChatGPT Boosts Worker Productivity for Some Writing Tasks." <a href="https://news.mit.edu/2023/study-finds-chatgpt-boosts-worker-productivity-writing-0714" target="_blank" rel="noopener">news.mit.edu</a></li>
+                    <li id="ref-6" data-ref="[6]">Microsoft InsideTrack. "Using AI to Support Microsoft Enterprise Search." <a href="https://www.microsoft.com/insidetrack/blog/using-ai-to-support-microsoft-enterprise-search/" target="_blank" rel="noopener">microsoft.com</a></li>
+                    <li id="ref-7" data-ref="[7]">Harvard. "JP Morgan's COIN Program." <a href="https://d3.harvard.edu/platform-rctom/submission/jpmorgans-coin-program/" target="_blank" rel="noopener">d3.harvard.edu</a></li>
+                    <li id="ref-8" data-ref="[8]">Insider Intelligence. "AI in Customer Service: Applications and Benefits." <a href="https://www.insiderintelligence.com/insights/ai-customer-service/" target="_blank" rel="noopener">insiderintelligence.com</a></li>
                 </ol>
             </div>
         </div>
     </article>
 
-    <footer>
-        <div class="footer-content">
-            <span class="copyright">&copy; 2025 Fenlo AI. All rights reserved.</span>
-            <div class="footer-links">
-                <a href="../legal/privacy.html">Privacy</a>
-                <a href="../legal/terms.html">Terms</a>
-                <a href="mailto:contact@fenloai.com">Contact</a>
-            </div>
+    <footer role="contentinfo">
+        <div class="footer-links">
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/terms.html">Terms of Service</a>
         </div>
+        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookie-consent" role="dialog" aria-label="Cookie consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <p>We use cookies to analyze site traffic and improve your experience. By continuing to use our site, you consent to our use of cookies. <a href="../legal/privacy.html">Learn more</a></p>
+            </div>
+            <div class="cookie-consent-buttons">
+                <button class="btn btn-secondary" id="cookie-decline">Decline</button>
+                <button class="btn btn-primary" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Dark mode toggle
-        const themeToggle = document.querySelector('.theme-toggle');
-        const html = document.documentElement;
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
 
-        // Check for saved theme preference or system preference
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isActive = mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isActive);
+                mobileNav.setAttribute('aria-hidden', !isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
 
-        if (savedTheme) {
-            html.setAttribute('data-theme', savedTheme);
-        } else if (systemPrefersDark) {
-            html.setAttribute('data-theme', 'dark');
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileNav.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            });
         }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-
-        // Listen for system theme changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-                html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-            }
-        });
 
         // Reading progress indicator
         const progressBar = document.getElementById('reading-progress');
@@ -1664,7 +1366,6 @@
             const windowHeight = window.innerHeight;
             const scrollY = window.scrollY;
 
-            // Calculate progress (0-100%)
             const start = articleTop - windowHeight;
             const end = articleTop + articleHeight - windowHeight;
             const progress = Math.min(Math.max((scrollY - start) / (end - start) * 100, 0), 100);
@@ -1674,6 +1375,32 @@
 
         window.addEventListener('scroll', updateProgress);
         updateProgress();
+
+        // Cookie Consent Banner
+        (function() {
+            const consentBanner = document.getElementById('cookie-consent');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            const CONSENT_KEY = 'fenloai_cookie_consent';
+
+            const consent = localStorage.getItem(CONSENT_KEY);
+            if (!consent) {
+                setTimeout(() => {
+                    consentBanner.classList.add('visible');
+                }, 1000);
+            }
+
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem(CONSENT_KEY, 'accepted');
+                consentBanner.classList.remove('visible');
+            });
+
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem(CONSENT_KEY, 'declined');
+                consentBanner.classList.remove('visible');
+            });
+        })();
     </script>
 </body>
+
 </html>
