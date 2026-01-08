@@ -11,8 +11,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn production-tested patterns for context engineering in AI agents. Real cost analysis, working code examples, and metrics frameworks that go beyond tutorials.">
-    <title>Context Engineering for AI Agents: Managing the Finite Resource That Determines Success | Fenlo AI</title>
+    <meta name="description" content="A practical guide to MCP - the protocol unifying how AI agents connect to tools. Includes working code examples, security best practices, and comparison with alternatives.">
+    <title>MCP (Model Context Protocol): The Universal Standard for AI Tool Integration | Fenlo AI</title>
 
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -23,10 +23,10 @@
     <!-- SEO -->
     <meta name="author" content="Fenlo AI">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://fenloai.com/pages/blog/context-engineering/">
+    <link rel="canonical" href="https://fenloai.com/pages/blog/mcp-protocol-guide.html">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../../assets/fenloai-icon.svg">
+    <link rel="icon" type="image/svg+xml" href="../../assets/fenloai-icon.svg">
 
     <!-- Preload Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,17 +35,17 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://fenloai.com/pages/blog/context-engineering.html">
-    <meta property="og:title" content="Context Engineering for AI Agents: Managing the Finite Resource That Determines Success">
-    <meta property="og:description" content="Learn production-tested patterns for context engineering in AI agents. Real cost analysis, working code examples, and metrics frameworks that go beyond tutorials.">
+    <meta property="og:url" content="https://fenloai.com/pages/blog/mcp-protocol-guide.html">
+    <meta property="og:title" content="MCP (Model Context Protocol): The Universal Standard for AI Tool Integration">
+    <meta property="og:description" content="A practical guide to MCP - the protocol unifying how AI agents connect to tools. Includes working code examples, security best practices, and comparison with alternatives.">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Context Engineering for AI Agents: Managing the Finite Resource That Determines Success">
-    <meta name="twitter:description" content="Learn production-tested patterns for context engineering in AI agents. Real cost analysis, working code examples, and metrics frameworks that go beyond tutorials.">
+    <meta name="twitter:title" content="MCP (Model Context Protocol): The Universal Standard for AI Tool Integration">
+    <meta name="twitter:description" content="A practical guide to MCP - the protocol unifying how AI agents connect to tools. Includes working code examples, security best practices, and comparison with alternatives.">
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="../../../css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 
     <!-- Blog-specific styles -->
     <style>
@@ -634,7 +634,7 @@
 
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="../../../index.html" class="logo" aria-label="Fenlo AI Home">
+            <a href="../../index.html" class="logo" aria-label="Fenlo AI Home">
                 <svg class="logo-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 80" width="250" height="80">
                     <g class="logo-icon" transform="translate(0, 5)">
                         <rect x="20" y="20" width="28" height="28" class="logo-green"></rect>
@@ -656,10 +656,10 @@
                 </svg>
             </a>
             <ul class="nav-links">
-                <li><a href="../../../index.html">Home</a></li>
-                <li><a href="../../services.html">Services</a></li>
-                <li><a href="../../blog.html" class="active">Blog</a></li>
-                <li><a href="../../contact.html">Contact</a></li>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+                <li><a href="../contact.html">Contact</a></li>
             </ul>
             <button class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark theme">
                 <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -678,24 +678,24 @@
     </nav>
 
     <div class="mobile-nav" aria-hidden="true">
-        <a href="../../../index.html">Home</a>
-        <a href="../../services.html">Services</a>
-        <a href="../../blog.html" class="active">Blog</a>
-        <a href="../../contact.html">Contact</a>
+        <a href="../../index.html">Home</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
     </div>
 
     <section class="blog-hero">
         <div class="article-meta">
-            <span class="category-tag">AI Engineering</span>
-            <span class="reading-time" aria-label="Estimated reading time: 18 minutes">
+            <span class="category-tag">AI Integration</span>
+            <span class="reading-time" aria-label="Estimated reading time: 22 minutes">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                18 min read
+                22 min read
             </span>
         </div>
-        <h1>Context Engineering for AI Agents: Managing the Finite Resource That Determines Success</h1>
-        <p class="article-intro">Learn production-tested patterns for context engineering in AI agents. Real cost analysis, working code examples, and metrics frameworks that go beyond tutorials.</p>
+        <h1>MCP (Model Context Protocol): The Universal Standard for AI Tool Integration</h1>
+        <p class="article-intro">A practical guide to MCP - the protocol unifying how AI agents connect to tools. Includes working code examples, security best practices, and comparison with alternatives.</p>
 
         <div class="author-byline">
             <div class="author-avatar">FA</div>
@@ -718,388 +718,426 @@
                     In This Article
                 </div>
                 <ol class="toc-list">
-                    <li><a href="#understanding-context">Understanding Context as a Resource</a></li>
-                    <li><a href="#context-patterns">Context Engineering Patterns</a></li>
-                    <li><a href="#production-challenges">Production Challenges and Solutions</a></li>
-                    <li><a href="#measuring-effectiveness">Measuring Context Effectiveness</a></li>
-                    <li><a href="#implementation-guide">Implementation Guide</a></li>
+                    <li><a href="#understanding-mcp">Understanding MCP</a></li>
+                    <li><a href="#core-concepts">MCP Core Concepts</a></li>
+                    <li><a href="#implementation">Implementation Guide</a></li>
+                    <li><a href="#production">Production Considerations</a></li>
+                    <li><a href="#alternatives">MCP vs. Alternatives</a></li>
                     <li><a href="#conclusion">Conclusion</a></li>
                 </ol>
             </nav>
 
-            <p>Your agent isn't failing because of the model. It's failing because of context.</p>
+            <p>There's a new standard every AI engineer needs to know, and if you're building agent systems in 2026, you're probably already using it--whether you realize it or not.</p>
 
-            <p>This isn't speculation. Recent analysis from production AI systems reveals that 73% of agent failures trace back to poor context engineering--not model limitations, not prompt wording, not insufficient training data. The context window, that finite space where your agent's entire understanding lives, is where most projects silently break.</p>
+            <p>The Model Context Protocol (MCP) has rapidly become the de facto standard for connecting AI applications to external tools, data sources, and systems. Launched by Anthropic in November 2024, MCP has achieved something rare in the fragmented AI landscape: genuine cross-vendor adoption. OpenAI integrated MCP across its products in March 2025. Google DeepMind followed in April. By December 2025, Anthropic donated MCP to the Linux Foundation's Agentic AI Foundation, establishing it as a vendor-neutral open standard.</p>
 
-            <p>Andrej Karpathy crystallized this reality when he described LLMs as "a new kind of operating system," with the context window functioning as RAM--the model's working memory. Just like a computer with insufficient RAM starts thrashing, an agent with poorly managed context starts hallucinating, forgetting instructions, and producing inconsistent outputs.</p>
+            <p>The numbers tell the story: over 97 million monthly SDK downloads across Python and TypeScript, more than 16,000 MCP servers indexed in unofficial registries, and adoption by every major AI platform. MCP has been called "the USB-C of AI"--a universal connector that lets any AI application talk to any tool using a standardized interface.</p>
 
-            <p>Anthropic's engineering team puts it directly: "Context is a critical but finite resource." They continue: "Given that LLMs are constrained by a finite attention budget, good context engineering means finding the smallest possible set of high-signal tokens that maximize the likelihood of some desired outcome."</p>
+            <p>This guide covers what MCP is, how it works, and how to implement it in production. We'll provide working code examples, compare MCP to alternatives like OpenAI Function Calling and LangChain Tools, and address the security considerations that matter for enterprise deployment.</p>
 
-            <p>This shift--from prompt engineering to context engineering--represents the maturation of our field. Building production AI agents is no longer about crafting the perfect prompt. It's about designing dynamic systems that curate, prioritize, and manage the right information at the right time.</p>
+            <h2 id="understanding-mcp">Understanding MCP</h2>
 
-            <p>In this guide, we'll cover the four battle-tested patterns for context engineering, provide real cost analysis with current pricing, show working code examples, and give you a metrics framework to measure context effectiveness. This is what production teams actually implement--not what tutorials suggest you might try.</p>
+            <p>Before MCP, connecting AI applications to external tools was a mess. Every framework had its own format. Every vendor had proprietary integrations. Building an agent that worked with multiple tools meant maintaining multiple integration patterns--and if you wanted to switch LLM providers, you'd rewrite your tool layer.</p>
 
-            <h2 id="understanding-context">Understanding Context as a Resource</h2>
+            <h3>The Fragmentation Problem</h3>
 
-            <p>Before optimizing context, we need to understand what we're actually managing. Context in an agent system isn't a single thing--it's a complex allocation problem across multiple competing demands.</p>
+            <p>Consider what tool integration looked like before MCP:</p>
 
-            <h3>The Four Types of Context</h3>
+            <p><strong>OpenAI Function Calling</strong>: Define tools using OpenAI's JSON Schema format. Works great with GPT models. Doesn't work with Claude, Gemini, or open-source models without adaptation.</p>
 
-            <p>Every agent juggles four distinct types of context, each competing for the same finite token budget:</p>
+            <p><strong>LangChain Tools</strong>: Define tools using LangChain's abstraction. Works across models through LangChain, but you're locked into the LangChain ecosystem. Different tool formats for different chain types.</p>
 
-            <p><strong>Conversation Context</strong>: The history of user interactions. In a customer service agent, this might include the user's initial question, clarifications, and your agent's previous responses. This grows linearly with conversation length, which is why long conversations degrade.</p>
+            <p><strong>Custom integrations</strong>: Every significant tool (databases, APIs, file systems) required custom integration code. That integration code lived in your application, making it non-reusable.</p>
 
-            <p><strong>System Context</strong>: Your agent's instructions, persona, and behavioral guidelines. This is relatively stable but often underestimated. A comprehensive system prompt can easily consume 2,000-4,000 tokens before the conversation even begins.</p>
+            <p>The maintenance burden was substantial. Change your LLM provider? Rewrite your tools. Want to share a tool integration with another team? Copy-paste the code and hope the abstractions match.</p>
 
-            <p><strong>Tool Context</strong>: Function definitions, tool descriptions, and the results of tool calls. If your agent has access to 20 tools, their schemas alone might consume 3,000+ tokens. Every tool call result adds more.</p>
+            <h3>The MCP Solution</h3>
 
-            <p><strong>Retrieved Context</strong>: Information pulled from RAG systems, memory stores, or external knowledge bases. This is the most variable--a single retrieval might return 500 tokens or 5,000.</p>
+            <p>MCP takes inspiration from the Language Server Protocol (LSP), which standardized how code editors integrate with programming language tooling. Before LSP, every editor needed custom plugins for every language. After LSP, a single language server works with any editor that supports the protocol.</p>
 
-            <h3>The Context Budget Mental Model</h3>
+            <p>MCP applies the same principle to AI tools. An MCP server exposes capabilities--tools, resources, prompts--through a standardized protocol. Any MCP client can connect to any MCP server. The same database integration works with Claude, GPT, Gemini, or any future model that supports MCP.</p>
 
-            <p>Think of your context window as a budget, not a container. Every token you add has a cost--both literal (API pricing) and functional (attention dilution). The question isn't "does this fit?" but "is this worth its cost?"</p>
+            <p>The protocol operates on JSON-RPC 2.0 with support for multiple transports (STDIO for local servers, HTTP/SSE for remote). The November 2025 specification added asynchronous operations, statelessness options, and official extensions for common patterns.</p>
 
-            <p>Here's what that cost looks like in real numbers:</p>
+            <h3>Architecture Overview</h3>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Model</th>
-                        <th>Input (per 1M tokens)</th>
-                        <th>Output (per 1M tokens)</th>
-                        <th>100K Context Cost</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Claude Opus 4.5</td>
-                        <td>$5.00</td>
-                        <td>$25.00</td>
-                        <td>$0.50 input</td>
-                    </tr>
-                    <tr>
-                        <td>Claude Sonnet 4</td>
-                        <td>$3.00</td>
-                        <td>$15.00</td>
-                        <td>$0.30 input</td>
-                    </tr>
-                    <tr>
-                        <td>Claude Haiku 4.5</td>
-                        <td>$1.00</td>
-                        <td>$5.00</td>
-                        <td>$0.10 input</td>
-                    </tr>
-                    <tr>
-                        <td>GPT-4o</td>
-                        <td>$5.00</td>
-                        <td>$20.00</td>
-                        <td>$0.50 input</td>
-                    </tr>
-                    <tr>
-                        <td>GPT-4o mini</td>
-                        <td>$0.60</td>
-                        <td>$2.40</td>
-                        <td>$0.06 input</td>
-                    </tr>
-                    <tr>
-                        <td>DeepSeek-V3</td>
-                        <td>$0.28</td>
-                        <td>$1.10</td>
-                        <td>$0.03 input</td>
-                    </tr>
-                </tbody>
-            </table>
+            <pre><code>+-------------------------------------------------------------+
+|                      MCP Host                                |
+|  (Claude Desktop, VS Code, Custom Application)               |
+|                                                              |
+|  +-----------+  +-----------+  +-----------+                |
+|  | MCP Client|  | MCP Client|  | MCP Client|                |
+|  +-----+-----+  +-----+-----+  +-----+-----+                |
++--------|--------------|--------------|-----------------------+
+         |              |              |
+    JSON-RPC 2.0   JSON-RPC 2.0   JSON-RPC 2.0
+         |              |              |
+         v              v              v
+  +----------+   +----------+   +----------+
+  |MCP Server|   |MCP Server|   |MCP Server|
+  |(Database)|   |(Files)   |   |(API)     |
+  +----------+   +----------+   +----------+</code></pre>
 
-            <p><em>Pricing as of January 2026. Cache hits typically reduce input costs by 90%.</em></p>
+            <p>An MCP <strong>host</strong> (like Claude Desktop or a custom application) runs one or more MCP <strong>clients</strong>. Each client connects to an MCP <strong>server</strong> that exposes specific capabilities. The host orchestrates which servers to connect to; the clients handle the protocol communication; the servers expose the actual functionality.</p>
 
-            <p>A single conversation that accumulates 100,000 tokens of context costs between $0.03 and $0.50 per turn on input alone. At scale--say, 10,000 daily conversations--poor context management can mean the difference between $300 and $5,000 in daily API costs.</p>
+            <h2 id="core-concepts">MCP Core Concepts</h2>
 
-            <h3>Context Rot: The Hidden Performance Killer</h3>
+            <p>MCP operates on three core primitives: <strong>Resources</strong>, <strong>Tools</strong>, and <strong>Prompts</strong>. Understanding when to use each is fundamental to effective MCP implementation.</p>
 
-            <p>Here's the counterintuitive finding that tutorials don't mention: larger context windows don't automatically mean better performance. Research from Chroma's technical report on "Context Rot" demonstrates that LLM performance degrades significantly as input length increases--even on simple tasks.</p>
+            <h3>Primitive 1: Tools</h3>
 
-            <p>Their experiments across 18 state-of-the-art models, including GPT-4.1, Claude 4, and Gemini 2.5, revealed:</p>
+            <p>Tools are executable functions that perform actions. The AI model decides when and how to call them based on the user's request and the tool's description.</p>
 
+            <p><strong>Characteristics</strong>:</p>
             <ul>
-                <li><strong>20-50% accuracy drops</strong> on needle-in-haystack retrieval tasks when moving from 10K to 100K tokens</li>
-                <li><strong>Non-uniform degradation</strong>: Performance doesn't decrease smoothly--models often hit sudden accuracy cliffs</li>
-                <li><strong>"Lost in the middle" effect</strong>: Information placed in the middle of long contexts is retrieved less reliably than information at the beginning or end</li>
+                <li>Model-controlled: The AI chooses when to invoke</li>
+                <li>Action-oriented: Perform computations, make API calls, modify state</li>
+                <li>Schema-defined: JSON Schema specifies inputs and outputs</li>
             </ul>
 
-            <p>The implication is clear: blindly stuffing more context into your prompts isn't a strategy. It's a liability.</p>
+            <p><strong>Use cases</strong>: Database queries, API calls, file operations, calculations, any action the AI should be able to take.</p>
 
-            <h2 id="context-patterns">Context Engineering Patterns</h2>
+            <pre><code>from mcp.server.fastmcp import FastMCP
 
-            <p>After years of production deployments, four patterns have emerged as essential for effective context engineering. Each addresses a specific challenge in managing context as a finite resource.</p>
+mcp = FastMCP("demo-server")
 
-            <h3>Pattern 1: Context Compression</h3>
-
-            <p>Compression reduces context size while preserving essential information. The goal is maintaining signal while reducing tokens.</p>
-
-            <p><strong>When to use</strong>: Long-running conversations, extensive tool outputs, accumulated history.</p>
-
-            <p><strong>When to avoid</strong>: When exact wording matters (legal documents, code review, precise quotes).</p>
-
-            <p>The most practical implementation combines a buffer for recent messages with summarization for older history:</p>
-
-            <pre><code>from langchain.memory import ConversationSummaryBufferMemory
-from langchain_anthropic import ChatAnthropic
-
-def create_compressed_memory(max_recent_tokens: int = 4000):
+@mcp.tool()
+def calculate_loan_payment(
+    principal: float,
+    annual_rate: float,
+    years: int
+) -&gt; dict:
     """
-    Production pattern: Keep recent messages verbatim,
-    summarize older messages to preserve context without token bloat.
+    Calculate monthly payment for a fixed-rate loan.
+
+    Args:
+        principal: Loan amount in dollars
+        annual_rate: Annual interest rate as decimal (e.g., 0.05 for 5%)
+        years: Loan term in years
+
+    Returns:
+        Monthly payment amount and total interest paid
     """
-    llm = ChatAnthropic(
-        model="claude-sonnet-4-20250514",
-        max_tokens=500  # Limit summary length
-    )
+    monthly_rate = annual_rate / 12
+    num_payments = years * 12
 
-    memory = ConversationSummaryBufferMemory(
-        llm=llm,
-        max_token_limit=max_recent_tokens,
-        return_messages=True,
-        human_prefix="User",
-        ai_prefix="Assistant"
-    )
+    if monthly_rate == 0:
+        monthly_payment = principal / num_payments
+    else:
+        monthly_payment = principal * (
+            monthly_rate * (1 + monthly_rate) ** num_payments
+        ) / ((1 + monthly_rate) ** num_payments - 1)
 
-    return memory
+    total_paid = monthly_payment * num_payments
+    total_interest = total_paid - principal
 
-# Usage in production
-memory = create_compressed_memory(max_recent_tokens=4000)
+    return {
+        "monthly_payment": round(monthly_payment, 2),
+        "total_interest": round(total_interest, 2),
+        "total_paid": round(total_paid, 2)
+    }</code></pre>
 
-# After many turns, older messages are summarized automatically
-# Recent messages remain verbatim for accuracy
-# Total context stays bounded regardless of conversation length</code></pre>
+            <p>The <code>@mcp.tool()</code> decorator registers this function as an MCP tool. The docstring becomes the tool description that the AI uses to understand when to call it. Type hints define the schema.</p>
 
-            <p><strong>Production tip</strong>: Use a cheaper, faster model for summarization. Summarizing with Haiku at $1/million tokens instead of Opus at $5/million tokens reduces compression overhead by 80% with minimal quality loss.</p>
+            <h3>Primitive 2: Resources</h3>
 
-            <h3>Pattern 2: Context Prioritization</h3>
+            <p>Resources provide read-only access to data. Unlike tools (which the AI calls), resources are consumed by the application to provide context.</p>
 
-            <p>Not all context is equally valuable. Prioritization ensures the most relevant information gets included when space is limited.</p>
+            <p><strong>Characteristics</strong>:</p>
+            <ul>
+                <li>Application-controlled: The host application decides what resources to include</li>
+                <li>Read-only: Provide data, don't modify state</li>
+                <li>URI-identified: Each resource has a unique URI</li>
+            </ul>
 
-            <p><strong>When to use</strong>: Multi-turn conversations, multiple retrieved documents, competing context sources.</p>
+            <p><strong>Use cases</strong>: File contents, database records, configuration data, any information the AI should have access to without explicitly requesting it.</p>
 
-            <p>The key insight is that context value is dynamic--what's relevant changes based on the current query. A robust priority system scores context items on multiple dimensions:</p>
+            <pre><code>@mcp.resource("file://config/{filename}")
+def get_config_file(filename: str) -&gt; str:
+    """
+    Provides access to configuration files.
 
-            <pre><code>from dataclasses import dataclass, field
-from typing import List, Optional
-from heapq import heappush, heappop
-import time
+    The application can attach these resources to give
+    the AI context about system configuration.
+    """
+    config_path = Path("./config") / filename
 
-@dataclass
-class ContextItem:
-    content: str
-    source: str  # "conversation", "tool", "retrieval", "system"
-    token_count: int
-    created_at: float = field(default_factory=time.time)
-    relevance_score: float = 0.5  # 0-1, updated per query
-    importance: float = 0.5  # Static importance weight
+    if not config_path.exists():
+        raise FileNotFoundError(f"Config file {filename} not found")
 
-    @property
-    def recency_score(self) -> float:
-        """Decay score based on age. Recent items score higher."""
-        age_minutes = (time.time() - self.created_at) / 60
-        return max(0.1, 1.0 - (age_minutes / 60))  # Decay over 1 hour
+    if not config_path.suffix in [".json", ".yaml", ".toml"]:
+        raise ValueError("Only config files (.json, .yaml, .toml) allowed")
 
-    @property
-    def priority(self) -> float:
-        """Combined priority score for budget allocation."""
-        return (
-            self.relevance_score * 0.5 +
-            self.recency_score * 0.3 +
-            self.importance * 0.2
-        )</code></pre>
+    return config_path.read_text()</code></pre>
 
-            <p><strong>Production tip</strong>: Track which context items are excluded and why. This data reveals patterns--if conversation history is consistently dropped, your system prompt might be too long. If retrieved documents are excluded, your retrieval is returning too much.</p>
+            <p>Resources use URI templates to identify what data they provide. The application decides which resources to attach based on context--the AI doesn't request resources directly.</p>
 
-            <h3>Pattern 3: Context Externalization</h3>
+            <h3>Primitive 3: Prompts</h3>
 
-            <p>Externalization moves information outside the context window while keeping it accessible. This is the architectural foundation of RAG systems, but the pattern extends beyond document retrieval.</p>
+            <p>Prompts are reusable templates for AI interactions. They're user-driven, typically exposed through slash commands or menu options.</p>
 
-            <p><strong>When to use</strong>: Information that's occasionally needed but not required every turn, historical data, reference material.</p>
+            <p><strong>Characteristics</strong>:</p>
+            <ul>
+                <li>User-controlled: The user explicitly invokes prompts</li>
+                <li>Templated: Accept arguments to customize the interaction</li>
+                <li>Workflow-oriented: Define structured interaction patterns</li>
+            </ul>
 
-            <p>The decision framework for externalization:</p>
+            <p><strong>Use cases</strong>: Code review workflows, analysis templates, structured Q&A patterns, any repeatable interaction the user initiates.</p>
+
+            <pre><code>@mcp.prompt()
+def code_review(
+    language: str,
+    focus_areas: str = "security,performance,readability"
+) -&gt; str:
+    """
+    Structured code review prompt.
+
+    User invokes with: /code-review python security,performance
+    """
+    areas = [area.strip() for area in focus_areas.split(",")]
+
+    focus_instructions = "\n".join([
+        f"- {area.upper()}: Analyze for {area} issues"
+        for area in areas
+    ])
+
+    return f"""You are reviewing {language} code.
+
+Focus your review on these areas:
+{focus_instructions}
+
+For each issue found:
+1. Identify the location (file, line if possible)
+2. Describe the issue clearly
+3. Explain the potential impact
+4. Suggest a specific fix
+
+Format your response as a structured review with sections for each focus area.
+Start with a summary of critical issues, then provide detailed analysis."""</code></pre>
+
+            <p>Prompts are powerful for standardizing workflows. Instead of users trying to craft the right prompt each time, they invoke a predefined template that ensures consistent, thorough analysis.</p>
+
+            <h3>How Primitives Work Together</h3>
+
+            <p>The three primitives form a complete interaction model:</p>
+
+            <ol>
+                <li><strong>User initiates</strong> with a Prompt (e.g., <code>/code-review</code>)</li>
+                <li><strong>Application provides context</strong> with Resources (attaches relevant source files)</li>
+                <li><strong>AI takes action</strong> with Tools (calls linting tools, queries documentation)</li>
+            </ol>
+
+            <h2 id="implementation">Implementation Guide</h2>
+
+            <p>Let's build a complete MCP server with all three primitives. We'll create a customer support assistant server that provides customer data, support tools, and interaction templates.</p>
+
+            <h3>Step 1: Project Setup</h3>
+
+            <p><strong>Python Setup</strong> (Python 3.10+ required):</p>
+
+            <pre><code># Create project directory
+mkdir customer-support-mcp && cd customer-support-mcp
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install mcp[cli] httpx python-dotenv</code></pre>
+
+            <p><strong>Project Structure</strong>:</p>
+
+            <pre><code>customer-support-mcp/
+├── server.py           # Main MCP server
+├── config.json         # Claude Desktop config
+├── requirements.txt    # Dependencies
+└── .env               # Environment variables (not committed)</code></pre>
+
+            <h3>Step 2: Configure Claude Desktop</h3>
+
+            <p>Create the configuration file for Claude Desktop to connect to your server:</p>
+
+            <pre><code>// For macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
+// For Windows: %APPDATA%\Claude\claude_desktop_config.json
+
+{
+  "mcpServers": {
+    "customer-support": {
+      "command": "python",
+      "args": ["/absolute/path/to/customer-support-mcp/server.py"],
+      "env": {
+        "PYTHONPATH": "/absolute/path/to/customer-support-mcp"
+      }
+    }
+  }
+}</code></pre>
+
+            <h3>Step 3: Test Your Server</h3>
+
+            <p>Test locally before connecting to Claude Desktop:</p>
+
+            <pre><code># Run the server directly to check for errors
+python server.py
+
+# Use MCP inspector for interactive testing
+mcp dev server.py</code></pre>
+
+            <p>The MCP inspector provides a web interface to test tools, view resources, and execute prompts without needing a full AI client.</p>
+
+            <h2 id="production">Production Considerations</h2>
+
+            <p>Deploying MCP servers in production requires careful attention to security, authentication, and operational concerns. The ecosystem is young, and security practices are still maturing.</p>
+
+            <h3>Security Challenges</h3>
+
+            <p>Research from security firms reveals concerning patterns in the MCP ecosystem:</p>
+
+            <ul>
+                <li><strong>88% of MCP servers require credentials</strong>, but <strong>53% rely on insecure static secrets</strong> like long-lived API keys</li>
+                <li><strong>No authentication by default</strong>: The MCP protocol doesn't mandate authentication--it's left to implementers</li>
+                <li><strong>Prompt injection risks</strong>: Attackers can craft inputs that manipulate tool behavior</li>
+                <li><strong>Tool shadowing</strong>: Malicious servers can impersonate trusted tools</li>
+            </ul>
+
+            <p>These aren't theoretical concerns. In production, an MCP server with database access and weak authentication is a significant attack surface.</p>
+
+            <h3>Authentication Best Practices</h3>
+
+            <p><strong>Never use static API keys in production</strong>. They're difficult to rotate, impossible to audit per-request, and if leaked, provide unlimited access.</p>
+
+            <p>Instead, implement OAuth 2.0 / OIDC for secure authentication with token-based access, proper audit logging, and the ability to revoke access when needed.</p>
+
+            <h3>Rate Limiting</h3>
+
+            <p>Without rate limiting, AI agents can unintentionally overwhelm MCP servers. Implement request throttling to prevent abuse and ensure fair resource allocation across clients.</p>
+
+            <h3>API Gateway Pattern</h3>
+
+            <p>For enterprise deployments, front your MCP servers with an API gateway. This pattern provides:</p>
+            <ul>
+                <li>Centralized authentication (integrate with enterprise IdP)</li>
+                <li>Consistent rate limiting across all servers</li>
+                <li>Request/response logging for audit</li>
+                <li>DDoS protection</li>
+                <li>SSL termination</li>
+            </ul>
+
+            <h3>Input Validation</h3>
+
+            <p>Every tool input should be validated. Never trust data coming from the AI. Use validation libraries like Pydantic to ensure all inputs meet expected formats and constraints before processing.</p>
+
+            <h2 id="alternatives">MCP vs. Alternatives</h2>
+
+            <p>Understanding when to use MCP versus alternatives helps you make the right architectural choices.</p>
 
             <table>
                 <thead>
                     <tr>
-                        <th>Keep In Context</th>
-                        <th>Externalize</th>
+                        <th>Aspect</th>
+                        <th>OpenAI Function Calling</th>
+                        <th>LangChain Tools</th>
+                        <th>MCP</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Current task instructions</td>
-                        <td>Historical task results</td>
+                        <td><strong>Scope</strong></td>
+                        <td>Single provider</td>
+                        <td>Single framework</td>
+                        <td>Universal protocol</td>
                     </tr>
                     <tr>
-                        <td>Active conversation (last 5-10 turns)</td>
-                        <td>Older conversation history</td>
+                        <td><strong>Portability</strong></td>
+                        <td>OpenAI only</td>
+                        <td>LangChain ecosystem</td>
+                        <td>Any MCP client</td>
                     </tr>
                     <tr>
-                        <td>Tool definitions for likely actions</td>
-                        <td>Tool definitions for rare actions</td>
+                        <td><strong>Reusability</strong></td>
+                        <td>Per-application</td>
+                        <td>Within LangChain</td>
+                        <td>Across applications</td>
                     </tr>
                     <tr>
-                        <td>Critical user preferences</td>
-                        <td>General user profile data</td>
+                        <td><strong>Complexity</strong></td>
+                        <td>Low</td>
+                        <td>Medium</td>
+                        <td>Medium-High</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Production features</strong></td>
+                        <td>Basic</td>
+                        <td>Good (with LangSmith)</td>
+                        <td>Developing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Community</strong></td>
+                        <td>Large</td>
+                        <td>Very large</td>
+                        <td>Growing rapidly</td>
                     </tr>
                 </tbody>
             </table>
 
-            <h3>Pattern 4: Context Segmentation</h3>
+            <h3>When to Use Each</h3>
 
-            <p>Segmentation breaks complex tasks into context-bounded subtasks, each handled by a specialized agent with a clean context window. This prevents context accumulation from degrading performance.</p>
+            <p><strong>Use OpenAI Function Calling when</strong>:</p>
+            <ul>
+                <li>You're building a simple, single-model application</li>
+                <li>You're only using OpenAI models</li>
+                <li>You need the fastest path to working tools</li>
+                <li>Production concerns are minimal (internal tools, prototypes)</li>
+            </ul>
 
-            <p><strong>When to use</strong>: Multi-step workflows, tasks requiring different expertise, long-running agents.</p>
+            <p><strong>Use LangChain Tools when</strong>:</p>
+            <ul>
+                <li>You need complex orchestration (chains, memory, agents)</li>
+                <li>You want access to LangChain's extensive integration library</li>
+                <li>You're using LangSmith for observability</li>
+                <li>You're willing to work within the LangChain ecosystem</li>
+            </ul>
 
-            <p>The key challenge is transferring relevant context between segments without transferring everything.</p>
+            <p><strong>Use MCP when</strong>:</p>
+            <ul>
+                <li>You need tools that work across multiple AI providers</li>
+                <li>You're building tools that should be reusable across applications</li>
+                <li>You want vendor-neutral infrastructure</li>
+                <li>You're building for enterprise with multiple AI consumers</li>
+                <li>You need the standardization that MCP provides</li>
+            </ul>
 
-            <p><strong>Production tip</strong>: Each segment should be able to complete its task with minimal context from previous segments. If a segment needs extensive context from earlier segments, you've drawn the boundaries wrong.</p>
+            <h3>MCP + LangChain Integration</h3>
 
-            <h2 id="production-challenges">Production Challenges and Solutions</h2>
-
-            <p>Theory is clean; production is messy. Here are the challenges that emerge when context engineering meets real users.</p>
-
-            <h3>Challenge 1: Context Drift in Long Conversations</h3>
-
-            <p><strong>The problem</strong>: Over extended conversations, early context gets summarized or dropped, causing the agent to forget important information established at the start.</p>
-
-            <p><strong>The solution</strong>: Implement periodic context anchoring. Every N turns, explicitly refresh critical information.</p>
-
-            <h3>Challenge 2: Tool Result Explosion</h3>
-
-            <p><strong>The problem</strong>: A single tool call might return 10,000 tokens of results (think database queries, API responses, file contents). This crowds out everything else.</p>
-
-            <p><strong>The solution</strong>: Implement tool result policies. Define maximum token budgets per tool and compression strategies.</p>
-
-            <h3>Challenge 3: Position-Dependent Performance</h3>
-
-            <p><strong>The problem</strong>: The "lost in the middle" effect means critical information buried in the middle of context is often missed.</p>
-
-            <p><strong>The solution</strong>: Use position-aware context assembly. Place the most important information at the start and end.</p>
-
-            <h3>Challenge 4: Cost Explosion at Scale</h3>
-
-            <p><strong>The problem</strong>: Context costs grow linearly with conversation length. A 50-turn conversation with full history costs 10x more than a 5-turn conversation.</p>
-
-            <p><strong>The solution</strong>: Implement tiered context strategies based on query complexity.</p>
-
-            <h2 id="measuring-effectiveness">Measuring Context Effectiveness</h2>
-
-            <p>What gets measured gets managed. For context engineering, the right metrics reveal optimization opportunities that intuition misses.</p>
-
-            <h3>Core Metrics</h3>
-
-            <p><strong>Context Utilization Rate</strong>: What percentage of your context budget is actually used? Too low suggests over-conservative limits; too high suggests no headroom for complex queries.</p>
-
-            <pre><code>utilization = tokens_used / context_window_size
-# Target: 60-80% for most applications</code></pre>
-
-            <p><strong>Relevant Context Ratio</strong>: What percentage of included context is actually used in the response? This requires analyzing model attention patterns or response citations.</p>
-
-            <pre><code>relevant_ratio = tokens_referenced_in_response / total_context_tokens
-# Target: >40% for well-optimized systems</code></pre>
-
-            <p><strong>Cost per Successful Completion</strong>: The true efficiency metric. Measures total token cost for successfully completed tasks, excluding failures.</p>
-
-            <pre><code>cost_per_success = total_token_cost / successful_completions</code></pre>
-
-            <p><strong>Context-Related Failure Rate</strong>: What percentage of failures trace to context issues (truncation, missing information, outdated context)?</p>
-
-            <h2 id="implementation-guide">Implementation Guide</h2>
-
-            <p>Here's a practical path from "context problems everywhere" to "context engineering implemented."</p>
-
-            <h3>Step 1: Audit Current Context Usage</h3>
-
-            <p>Before optimizing, understand your baseline:</p>
-
-            <ol>
-                <li>Log complete context payloads for 100+ representative conversations</li>
-                <li>Calculate average context size at each conversation turn</li>
-                <li>Identify the largest context consumers (usually tool results or retrieved documents)</li>
-                <li>Track where conversations fail and correlate with context state</li>
-            </ol>
-
-            <h3>Step 2: Implement Context Budgeting</h3>
-
-            <p>Add the <code>ContextBudget</code> class (from Pattern 2) to your agent:</p>
-
-            <ol>
-                <li>Set initial budget based on model limits (leave 20% headroom)</li>
-                <li>Reserve tokens for system prompts (measure these precisely)</li>
-                <li>Allocate remaining budget across context types</li>
-                <li>Log utilization metrics from day one</li>
-            </ol>
-
-            <h3>Step 3: Add Compression Layer</h3>
-
-            <p>Start with conversation compression:</p>
-
-            <ol>
-                <li>Implement <code>ConversationSummaryBufferMemory</code> or equivalent</li>
-                <li>Set buffer size based on your average useful history length</li>
-                <li>Monitor for cases where compression loses critical information</li>
-                <li>Tune compression aggressiveness based on observed issues</li>
-            </ol>
-
-            <h3>Step 4: Build Context Observability</h3>
-
-            <p>You can't improve what you can't see:</p>
-
-            <ol>
-                <li>Implement the <code>ContextObserver</code> pattern</li>
-                <li>Create dashboards for utilization, exclusion rates, and costs</li>
-                <li>Set alerts for anomalies (sudden utilization spikes, high exclusion rates)</li>
-                <li>Review weekly to identify optimization opportunities</li>
-            </ol>
-
-            <h3>Step 5: Iterate Based on Metrics</h3>
-
-            <p>Context engineering is ongoing:</p>
-
-            <ol>
-                <li>Run A/B tests on strategy changes</li>
-                <li>Analyze failure cases for context-related root causes</li>
-                <li>Adjust budgets and priorities based on production data</li>
-                <li>Document what works for your specific use case</li>
-            </ol>
-
-            <h3>Common Implementation Mistakes</h3>
-
-            <p><strong>Mistake 1</strong>: Setting context limits too conservatively. If you're only using 40% of available context, you're leaving capability on the table.</p>
-
-            <p><strong>Mistake 2</strong>: Treating all context types equally. Tool results and retrieved documents should have different budgets than conversation history.</p>
-
-            <p><strong>Mistake 3</strong>: Compressing too aggressively. If users frequently say "I already told you that," your compression is losing critical information.</p>
-
-            <p><strong>Mistake 4</strong>: Ignoring position effects. Don't bury critical instructions in the middle of long contexts.</p>
-
-            <p><strong>Mistake 5</strong>: Not measuring. Without metrics, context engineering becomes guesswork.</p>
+            <p>MCP isn't replacing LangChain--they work together. LangChain added MCP support in early 2025, giving you the best of both worlds: MCP's standardization and portability with LangChain's orchestration and ecosystem.</p>
 
             <h2 id="conclusion">Conclusion</h2>
 
-            <p>The shift from prompt engineering to context engineering represents a fundamental maturation in how we build AI agents. Context isn't an afterthought or an infrastructure detail--it's the primary determinant of whether your agent succeeds or fails in production.</p>
-
-            <p>The four patterns--compression, prioritization, externalization, and segmentation--provide a framework for managing context as the finite resource it is. Combined with proper metrics and observability, these patterns transform context from a source of mysterious failures into a well-understood, optimizable system.</p>
+            <p>MCP represents a significant maturation in how we build AI agent systems. Instead of fragmented, vendor-specific integrations, we now have a universal protocol that lets tools work across any AI application.</p>
 
             <div class="key-insight">
-                <div class="key-insight-title">Your Monday morning action items</div>
-                <p><strong>1. Measure:</strong> Add logging to capture your current context sizes and utilization rates<br>
-                <strong>2. Analyze:</strong> Review 10 failed conversations and check for context-related causes<br>
-                <strong>3. Budget:</strong> Implement basic context budgeting with your model's limits<br>
-                <strong>4. Compress:</strong> Add conversation summarization for histories over 10 turns<br>
-                <strong>5. Track:</strong> Set up a dashboard for context metrics</p>
+                <div class="key-insight-title">Key Concepts to Remember</div>
+                <p>
+                    <strong>Tools</strong> are model-controlled actions (the AI decides when to call them)<br><br>
+                    <strong>Resources</strong> are application-controlled context (you decide what to provide)<br><br>
+                    <strong>Prompts</strong> are user-controlled templates (users invoke them explicitly)
+                </p>
             </div>
 
-            <p>Context engineering isn't a one-time implementation--it's an ongoing discipline. But the payoff is substantial: agents that maintain coherence over long conversations, costs that scale predictably, and failures that trace to understandable causes rather than mysterious model behavior.</p>
+            <p>For production deployment:</p>
+            <ul>
+                <li>Never use static API keys--implement OAuth 2.0</li>
+                <li>Add rate limiting to prevent runaway agents</li>
+                <li>Validate all inputs--never trust data from the AI</li>
+                <li>Consider an API gateway for enterprise deployments</li>
+            </ul>
+
+            <p>MCP is still evolving. The November 2025 specification added significant features, and the donation to the Linux Foundation ensures continued development as a vendor-neutral standard. If you're building agent systems, now is the time to adopt MCP as your tool integration layer.</p>
 
             <div class="cta-section">
-                <h2>Need Help with Context Engineering?</h2>
-                <p>FenloAI specializes in building production AI agents with robust context engineering. If you're struggling with agents that degrade over long conversations, context costs that spiral at scale, or mysterious failures that resist debugging, let's talk about your specific challenges.</p>
-                <a href="../../contact.html" class="cta-button">
+                <h2>Need Help with MCP Integration?</h2>
+                <p>FenloAI helps organizations build production-ready AI agent systems with MCP integration. If you're looking to standardize your tool layer or need help implementing secure MCP servers, let's discuss your architecture.</p>
+                <a href="../contact.html" class="cta-button">
                     Get in Touch
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -1111,17 +1149,17 @@ class ContextItem:
             <div class="social-share">
                 <span class="social-share-label">Share this article:</span>
                 <div class="social-share-buttons">
-                    <a href="https://twitter.com/intent/tweet?url=https://fenloai.com/blog/context-engineering&text=Context%20Engineering%20for%20AI%20Agents%3A%20Managing%20the%20Finite%20Resource%20That%20Determines%20Success" target="_blank" rel="noopener" class="social-share-btn" aria-label="Share on Twitter">
+                    <a href="https://twitter.com/intent/tweet?url=https://fenloai.com/blog/mcp-protocol-guide&text=MCP%20(Model%20Context%20Protocol)%3A%20The%20Universal%20Standard%20for%20AI%20Tool%20Integration" target="_blank" rel="noopener" class="social-share-btn" aria-label="Share on Twitter">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                         </svg>
                     </a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://fenloai.com/blog/context-engineering" target="_blank" rel="noopener" class="social-share-btn" aria-label="Share on LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://fenloai.com/blog/mcp-protocol-guide" target="_blank" rel="noopener" class="social-share-btn" aria-label="Share on LinkedIn">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
                         </svg>
                     </a>
-                    <a href="mailto:?subject=Interesting%20article%20about%20Context%20Engineering&body=Check%20out%20this%20article%3A%20https://fenloai.com/blog/context-engineering" class="social-share-btn" aria-label="Share via Email">
+                    <a href="mailto:?subject=Guide%20to%20MCP%20Protocol&body=Check%20out%20this%20article%3A%20https://fenloai.com/blog/mcp-protocol-guide" class="social-share-btn" aria-label="Share via Email">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
@@ -1133,27 +1171,28 @@ class ContextItem:
             <div class="related-articles">
                 <h2>Related Articles</h2>
                 <div class="related-grid">
-                    <a href="mcp-protocol-guide.html" class="related-card">
-                        <span class="related-card-tag">AI Integration</span>
-                        <h3 class="related-card-title">MCP (Model Context Protocol): The Universal Standard for AI Tool Integration</h3>
-                        <p class="related-card-excerpt">A practical guide to MCP - the protocol unifying how AI agents connect to tools.</p>
+                    <a href="context-engineering.html" class="related-card">
+                        <span class="related-card-tag">AI Engineering</span>
+                        <h3 class="related-card-title">Context Engineering for AI Agents: Managing the Finite Resource</h3>
+                        <p class="related-card-excerpt">Production-tested patterns for context engineering in AI agents.</p>
                     </a>
-                    <a href="escaping-pilot-purgatory.html" class="related-card">
+                    <a href="agents-vs-automation.html" class="related-card">
                         <span class="related-card-tag">AI Strategy</span>
-                        <h3 class="related-card-title">Escaping Pilot Purgatory: Why 95% of AI Projects Fail to Scale</h3>
-                        <p class="related-card-excerpt">Learn why most AI pilots never reach production and the proven framework for scaling.</p>
+                        <h3 class="related-card-title">AI Agents vs. Traditional Automation: A Decision Framework</h3>
+                        <p class="related-card-excerpt">When to use RPA, AI-enhanced automation, or autonomous agents.</p>
                     </a>
                 </div>
             </div>
 
             <div class="references">
-                <h2>References</h2>
+                <h2>References and Further Reading</h2>
                 <ol class="reference-list">
-                    <li data-ref="[1]">Anthropic Engineering. "Effective Context Engineering for AI Agents." <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener">anthropic.com</a></li>
-                    <li data-ref="[2]">Chroma Research. "Context Rot - How Increasing Input Tokens Impacts LLM Performance." <a href="https://research.trychroma.com/context-rot" target="_blank" rel="noopener">research.trychroma.com</a></li>
-                    <li data-ref="[3]">LangChain. "Context Engineering for Agents." <a href="https://blog.langchain.com/context-engineering-for-agents/" target="_blank" rel="noopener">blog.langchain.com</a></li>
-                    <li data-ref="[4]">LangGraph Documentation. "Context Engineering." <a href="https://docs.langchain.com/oss/python/langchain/context-engineering" target="_blank" rel="noopener">docs.langchain.com</a></li>
-                    <li data-ref="[5]">MongoDB. "Powering Long-Term Memory for Agents with LangGraph." <a href="https://www.mongodb.com/company/blog/product-release-announcements/powering-long-term-memory-for-agents-langgraph" target="_blank" rel="noopener">mongodb.com</a></li>
+                    <li data-ref="[1]">MCP Official Specification (November 2025). <a href="https://modelcontextprotocol.io/specification/2025-11-25" target="_blank" rel="noopener">modelcontextprotocol.io</a></li>
+                    <li data-ref="[2]">Anthropic. "Introducing the Model Context Protocol." <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">anthropic.com</a></li>
+                    <li data-ref="[3]">MCP GitHub Repository. <a href="https://github.com/modelcontextprotocol/modelcontextprotocol" target="_blank" rel="noopener">github.com</a></li>
+                    <li data-ref="[4]">Microsoft. "MCP for Beginners." <a href="https://github.com/microsoft/mcp-for-beginners" target="_blank" rel="noopener">github.com</a></li>
+                    <li data-ref="[5]">MCP Security Best Practices. <a href="https://modelcontextprotocol.io/specification/draft/basic/security_best_practices" target="_blank" rel="noopener">modelcontextprotocol.io</a></li>
+                    <li data-ref="[6]">Latent Space. "Why MCP Won." <a href="https://www.latent.space/p/why-mcp-won" target="_blank" rel="noopener">latent.space</a></li>
                 </ol>
             </div>
         </div>
