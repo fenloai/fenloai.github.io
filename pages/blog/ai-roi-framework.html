@@ -397,26 +397,24 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
-            color: white;
+            background: #5a6a35;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
             padding: 1rem 2rem;
-            border-radius: var(--radius-full);
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(107, 124, 63, 0.3);
+            font-weight: 700;
+            font-size: 16px;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(107, 124, 63, 0.4);
+            background: #4a5a2a;
         }
 
         .cta-button svg {
             width: 20px;
             height: 20px;
-            transition: transform 0.3s ease;
+            stroke: #ffffff !important;
         }
 
         .cta-button:hover svg {
@@ -596,6 +594,292 @@
             top: 0;
         }
 
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Comparison Cards */
+        .comparison-table {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .comparison-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+        }
+
+        .comparison-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: var(--space-sm);
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .comparison-card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .comparison-card-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: white;
+        }
+
+        .comparison-card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .comparison-card li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .comparison-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-primary-light);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Callout Box */
+        .callout {
+            background: linear-gradient(135deg, rgba(184, 160, 74, 0.1), rgba(184, 160, 74, 0.05));
+            border: 1px solid rgba(184, 160, 74, 0.2);
+            border-left: 4px solid var(--accent-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .callout p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: var(--accent-secondary-light);
+        }
+
+        /* Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: var(--space-lg) 0;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.25rem;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .flow-step-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+        }
+
+        .flow-step-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+        }
+
+        .flow-step-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .flow-step-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .flow-arrow {
+            color: var(--accent-primary-light);
+        }
+
+        .flow-arrow svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .flow-diagram {
+                flex-direction: column;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* Visual Checklist */
+        .visual-checklist {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin: var(--space-lg) 0;
+        }
+
+        .visual-checklist-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .visual-checklist-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 2px;
+        }
+
+        .visual-checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .visual-checklist-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .checklist-number {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .checklist-content h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .checklist-content p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .blog-hero h1 {
@@ -687,11 +971,11 @@
     <section class="blog-hero">
         <div class="article-meta">
             <span class="category-tag">AI Strategy</span>
-            <span class="reading-time" aria-label="Estimated reading time: 22 minutes">
+            <span class="reading-time" aria-label="Estimated reading time: 14 minutes">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                22 min read
+                14 min read
             </span>
         </div>
         <h1>The AI ROI Framework: How to Measure What Actually Matters</h1>
@@ -727,95 +1011,207 @@
                 </ol>
             </nav>
 
-            <p>Seventy-seven percent of enterprises can't measure their AI ROI. This isn't a capability gap--it's a measurement crisis.</p>
+            <div class="key-insight">
+                <div class="key-insight-title">The Measurement Crisis</div>
+                <p>77% of enterprises can't measure their AI ROI. This isn't a capability gap--it's a measurement crisis.</p>
+            </div>
 
-            <p>According to Gartner's 2025 AI in Finance Survey, 71% of finance leaders struggle to measure AI's ROI. The gap between AI investment and measurable returns has become so pronounced that S&P Global reports 42% of companies abandoned most of their AI initiatives in 2025--up sharply from just 17% the year before. The most common reason cited: unclear business value.</p>
+            <!-- Key Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">71%</span>
+                    <span class="stat-label">Finance leaders struggle to measure AI ROI</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">AI projects fail to deliver measurable ROI</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">42%</span>
+                    <span class="stat-label">Companies abandoned most AI initiatives in 2025</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">$30-40B</span>
+                    <span class="stat-label">Enterprise AI investment with unclear returns</span>
+                </div>
+            </div>
 
-            <p>MIT's NANDA initiative delivered an even starker finding: 95% of enterprise AI projects fail to deliver measurable return on investment. Despite $30-40 billion in enterprise AI investment, the vast majority of organizations are seeing zero demonstrable return.</p>
+            <p>The problem isn't that AI doesn't create value—numerous case studies demonstrate substantial returns. The real issue is that most organizations apply the wrong measurement framework, or no framework at all. They track vanity metrics like "models deployed" instead of business outcomes, underestimate costs by 40-60%, and expect quarterly payback from investments that mature over years.</p>
 
-            <p>The problem isn't that AI doesn't create value. It's that most organizations use the wrong measurement framework--or no framework at all.</p>
+            <p>This guide presents a four-layer framework for measuring AI ROI that captures the full value picture—from hard efficiency gains that finance can verify, to strategic capabilities that position the organization for the future.</p>
 
             <h2 id="why-traditional-fails">Why Traditional ROI Fails for AI</h2>
 
-            <p>Before building a better framework, we need to understand why standard ROI calculation falls short for AI investments.</p>
+            <p>Before building a better framework, we need to understand why standard ROI calculation systematically fails for AI investments. These aren't edge cases—they're structural issues that affect virtually every AI initiative.</p>
 
-            <h3>Problem 1: Long and Variable Time Horizons</h3>
-
-            <p>Traditional ROI expects investment at T0 and payback by T1, ideally within a quarter or fiscal year. AI investments don't work this way.</p>
-
-            <p>According to research from PWC and enterprise surveys, most organizations achieve satisfactory AI ROI within 2-4 years, not 2-4 quarters. More than eight in ten enterprise executives believe it could take between three and ten years to generate meaningful payback.</p>
-
-            <h3>Problem 2: Indirect and Distributed Benefits</h3>
-
-            <p>AI often improves quality, speed, and experience--benefits that don't appear directly on the P&L. Each benefit is real, but none maps cleanly to a single line item.</p>
-
-            <h3>Problem 3: Attribution Complexity</h3>
-
-            <p>AI is rarely deployed in isolation. Isolating AI's specific contribution is genuinely difficult without deliberate experimental design.</p>
-
-            <h3>Problem 4: Hidden Costs and Cost Underestimation</h3>
-
-            <p>According to Deloitte, organizations typically underestimate AI implementation costs by 40-60%. Data preparation, integration, maintenance, and infrastructure costs are often forgotten.</p>
-
-            <h3>Problem 5: Activity vs. Outcome Trap</h3>
-
-            <p>Many organizations measure AI activity instead of AI impact--tracking "models deployed" and "API calls" instead of "revenue influenced" and "cost reduction."</p>
+            <!-- Five Problems Visual Checklist -->
+            <div class="visual-checklist">
+                <div class="visual-checklist-title">5 Reasons Traditional ROI Fails for AI</div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">1</span>
+                    <div class="checklist-content">
+                        <h4>Long Time Horizons</h4>
+                        <p>AI ROI typically takes 2-4 years, not quarters. 80%+ of executives expect 3-10 years for meaningful payback.</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">2</span>
+                    <div class="checklist-content">
+                        <h4>Indirect Benefits</h4>
+                        <p>Quality, speed, and experience improvements don't map to single P&L line items.</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">3</span>
+                    <div class="checklist-content">
+                        <h4>Attribution Complexity</h4>
+                        <p>AI rarely works in isolation. Isolating its specific contribution requires deliberate experimental design.</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">4</span>
+                    <div class="checklist-content">
+                        <h4>Hidden Costs</h4>
+                        <p>Organizations underestimate AI costs by 40-60%. Data prep, integration, maintenance often forgotten.</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">5</span>
+                    <div class="checklist-content">
+                        <h4>Activity vs. Outcome Trap</h4>
+                        <p>Tracking "models deployed" instead of "revenue influenced" or "cost reduction."</p>
+                    </div>
+                </div>
+            </div>
 
             <h2 id="four-layer-model">The Four-Layer Framework</h2>
 
-            <p>To measure AI value comprehensively, we need a framework that captures multiple dimensions of value creation across different time horizons.</p>
+            <p>The solution isn't to abandon ROI measurement—it's to expand what you measure. AI creates value across multiple dimensions, each with different time horizons and confidence levels. A complete framework captures all four layers:</p>
 
-            <h3>Layer 1: Efficiency Value (Hard ROI)</h3>
+            <p><strong>Layer 1 (Efficiency)</strong> provides the hard numbers finance teams need—time savings, cost reduction, throughput improvement. These are measurable within months. <strong>Layer 2 (Quality)</strong> captures improvements in outcomes—customer satisfaction, accuracy, consistency—that take longer to demonstrate but often represent larger value. <strong>Layer 3 (Strategic)</strong> accounts for new capabilities, reduced risks, and competitive positioning. <strong>Layer 4 (Learning)</strong> recognizes the organizational capabilities you're building—AI maturity, data assets, talent development.</p>
 
-            <p>This is the most tangible and measurable layer--direct cost savings and productivity improvements that show up in financial statements.</p>
+            <!-- Four Layers Flow Diagram -->
+            <div class="flow-diagram" role="img" aria-label="Four layers: Efficiency, Quality, Strategic, Learning">
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Layer 1</div>
+                    <div class="flow-step-desc">Efficiency</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Layer 2</div>
+                    <div class="flow-step-desc">Quality</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Layer 3</div>
+                    <div class="flow-step-desc">Strategic</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Layer 4</div>
+                    <div class="flow-step-desc">Learning</div>
+                </div>
+            </div>
 
-            <p><strong>Metrics to track</strong>:</p>
-            <ul>
-                <li>Time savings: Hours saved x Fully loaded hourly cost</li>
-                <li>Error reduction: Error rate reduction x Cost per error</li>
-                <li>Throughput increase: Additional units x Value per unit</li>
-                <li>Cost per transaction: (Old cost - New cost) x Volume</li>
-                <li>Headcount avoidance: FTEs avoided x Fully loaded cost</li>
-            </ul>
-
-            <h3>Layer 2: Quality Value (Soft ROI)</h3>
-
-            <p>Quality improvements are real value, but they're one step removed from financial statements. The connection is indirect but demonstrable.</p>
-
-            <p><strong>Metrics to track</strong>:</p>
-            <ul>
-                <li>Customer satisfaction (CSAT/NPS) - correlates with retention</li>
-                <li>First-contact resolution - reduces escalation costs</li>
-                <li>Accuracy/precision - reduces rework</li>
-                <li>Consistency - reduces quality control costs</li>
-                <li>Employee satisfaction - reduces turnover costs</li>
-            </ul>
-
-            <h3>Layer 3: Strategic Value (Future ROI)</h3>
-
-            <p>Strategic value captures capabilities and positions that create future optionality. This is harder to quantify but essential for investment decisions.</p>
-
-            <p><strong>Metrics to track</strong>:</p>
-            <ul>
-                <li>New capabilities enabled</li>
-                <li>Competitive advantage built</li>
-                <li>Risk reduction achieved</li>
-                <li>Speed to market improvements</li>
-                <li>Scalability enabled</li>
-            </ul>
-
-            <h3>Layer 4: Learning Value (Option Value)</h3>
-
-            <p>The least tangible but potentially most important layer: what you learn and build through AI investment that creates future opportunities.</p>
-
-            <p><strong>Metrics to track</strong>:</p>
-            <ul>
-                <li>AI organizational maturity</li>
-                <li>Data asset quality</li>
-                <li>Talent development</li>
-                <li>Process understanding</li>
-                <li>Vendor/tool knowledge</li>
-            </ul>
+            <!-- Four Layers Cards -->
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #27ae60, #1e8449);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Layer 1: Efficiency (Hard ROI)</span>
+                    </div>
+                    <ul>
+                        <li>Time savings × hourly cost</li>
+                        <li>Error reduction × cost per error</li>
+                        <li>Throughput increase × value per unit</li>
+                        <li>Headcount avoidance</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Layer 2: Quality (Soft ROI)</span>
+                    </div>
+                    <ul>
+                        <li>CSAT/NPS → retention</li>
+                        <li>First-contact resolution</li>
+                        <li>Accuracy → less rework</li>
+                        <li>Employee satisfaction</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Layer 3: Strategic (Future ROI)</span>
+                    </div>
+                    <ul>
+                        <li>New capabilities enabled</li>
+                        <li>Competitive advantage</li>
+                        <li>Risk reduction</li>
+                        <li>Speed to market</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e67e22, #d35400);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Layer 4: Learning (Option Value)</span>
+                    </div>
+                    <ul>
+                        <li>AI org maturity</li>
+                        <li>Data asset quality</li>
+                        <li>Talent development</li>
+                        <li>Process understanding</li>
+                    </ul>
+                </div>
+            </div>
 
             <div class="key-insight">
                 <div class="key-insight-title">Comprehensive ROI Calculation</div>
@@ -830,96 +1226,105 @@
 
             <h2 id="implementation">Measurement Implementation</h2>
 
-            <h3>Step 1: Baseline Establishment</h3>
+            <p>Having the right framework is only half the battle. Here's a 4-step implementation guide:</p>
 
-            <p><strong>Before any AI deployment, measure current state for at least 4-6 weeks.</strong> Without a solid baseline, you cannot prove the pilot succeeded.</p>
+            <!-- Implementation Steps -->
+            <div class="visual-checklist">
+                <div class="visual-checklist-title">4-Step Implementation Process</div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">1</span>
+                    <div class="checklist-content">
+                        <h4>Baseline Establishment</h4>
+                        <p>Measure current state for 4-6 weeks <strong>before</strong> any AI deployment. Without a baseline, you can't prove improvement.</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">2</span>
+                    <div class="checklist-content">
+                        <h4>Metric Selection</h4>
+                        <p>Select 5-7 metrics that connect to outcomes, are measurable, attributable, actionable, and cover multiple layers.</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">3</span>
+                    <div class="checklist-content">
+                        <h4>Tracking Infrastructure</h4>
+                        <p>Log all AI interactions • Tag AI vs human transactions • Integrate with business systems • Build reporting dashboards.</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">4</span>
+                    <div class="checklist-content">
+                        <h4>Analysis & Attribution</h4>
+                        <p>Use A/B tests (high reliability), phased rollouts (medium-high), or before/after comparisons (medium).</p>
+                    </div>
+                </div>
+            </div>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Specific Metrics</th>
-                        <th>Measurement Method</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Volume</td>
-                        <td>Transactions, cases, interactions</td>
-                        <td>System logs, manual tracking</td>
-                    </tr>
-                    <tr>
-                        <td>Time</td>
-                        <td>Processing time, cycle time</td>
-                        <td>Time studies, timestamps</td>
-                    </tr>
-                    <tr>
-                        <td>Quality</td>
-                        <td>Error rates, accuracy, CSAT</td>
-                        <td>Sampling, surveys, QA</td>
-                    </tr>
-                    <tr>
-                        <td>Cost</td>
-                        <td>Cost per transaction, FTE allocation</td>
-                        <td>Time allocation, cost accounting</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Baseline Categories -->
+            <h3>What to Baseline</h3>
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Volume</span>
+                    </div>
+                    <ul>
+                        <li>Transactions, cases, interactions</li>
+                        <li><strong>Method:</strong> System logs, manual tracking</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #27ae60, #1e8449);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Time</span>
+                    </div>
+                    <ul>
+                        <li>Processing time, cycle time</li>
+                        <li><strong>Method:</strong> Time studies, timestamps</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Quality</span>
+                    </div>
+                    <ul>
+                        <li>Error rates, accuracy, CSAT</li>
+                        <li><strong>Method:</strong> Sampling, surveys, QA</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e67e22, #d35400);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Cost</span>
+                    </div>
+                    <ul>
+                        <li>Cost per transaction, FTE allocation</li>
+                        <li><strong>Method:</strong> Time allocation, cost accounting</li>
+                    </ul>
+                </div>
+            </div>
 
-            <h3>Step 2: Metric Selection</h3>
-
-            <p>Select 5-7 metrics that:</p>
-            <ol>
-                <li>Connect to business outcomes</li>
-                <li>Are actually measurable</li>
-                <li>Are attributable to AI</li>
-                <li>Are actionable</li>
-                <li>Cover multiple layers</li>
-            </ol>
-
-            <h3>Step 3: Tracking Infrastructure</h3>
-
-            <p><strong>Minimum requirements</strong>:</p>
-            <ul>
-                <li><strong>Logging</strong>: Every AI interaction logged with timestamp, input, output, and context</li>
-                <li><strong>Tagging</strong>: Ability to distinguish AI-handled vs. human-handled transactions</li>
-                <li><strong>Integration</strong>: Connection between AI systems and business outcome systems</li>
-                <li><strong>Reporting</strong>: Dashboard or reporting mechanism for regular review</li>
-            </ul>
-
-            <h3>Step 4: Analysis and Attribution</h3>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Method</th>
-                        <th>When to Use</th>
-                        <th>Reliability</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>A/B testing</td>
-                        <td>Can randomly assign</td>
-                        <td>High</td>
-                    </tr>
-                    <tr>
-                        <td>Before/after</td>
-                        <td>No control possible</td>
-                        <td>Medium (confounders)</td>
-                    </tr>
-                    <tr>
-                        <td>Phased rollout</td>
-                        <td>Gradual deployment</td>
-                        <td>Medium-High</td>
-                    </tr>
-                    <tr>
-                        <td>Matched comparison</td>
-                        <td>Similar groups available</td>
-                        <td>Medium</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="callout">
+                <p><strong>Critical:</strong> Without a solid baseline, you cannot prove the pilot succeeded. This is where most organizations fail—eager to deploy, they skip measurement setup.</p>
+            </div>
 
             <h2 id="benchmarks">Industry Benchmarks</h2>
 
@@ -997,29 +1402,71 @@
 
             <h2 id="pitfalls">Common Pitfalls</h2>
 
-            <h3>Pitfall 1: Measuring Activity, Not Outcomes</h3>
+            <p>Even with the right framework and infrastructure, organizations commonly make measurement mistakes. Here are six pitfalls and their fixes:</p>
 
-            <p><strong>The fix</strong>: Start with the business outcome you want to improve. Work backward to the AI activity that drives it.</p>
+            <!-- Pitfalls Visual Grid -->
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Measuring Activity</span>
+                    </div>
+                    <ul>
+                        <li>Tracking "models deployed" not outcomes</li>
+                        <li><strong>Fix:</strong> Start with business outcome, work backward to AI activity</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Short-Term Expectations</span>
+                    </div>
+                    <ul>
+                        <li>Expecting quarterly payback</li>
+                        <li><strong>Fix:</strong> Point solutions: 6-12mo • Platforms: 18-36mo • Transformation: 3-5yr</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Ignoring TCO</span>
+                    </div>
+                    <ul>
+                        <li>40-60% cost underestimation typical</li>
+                        <li><strong>Fix:</strong> Include implementation, operations, contingency</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Cherry-Picking Data</span>
+                    </div>
+                    <ul>
+                        <li>Selecting favorable timeframes</li>
+                        <li><strong>Fix:</strong> Report cumulative, include investment period, acknowledge variance</li>
+                    </ul>
+                </div>
+            </div>
 
-            <h3>Pitfall 2: Expecting Short-Term Payback</h3>
-
-            <p><strong>The fix</strong>: Match measurement timeframe to investment type. Point solutions: 6-12 months. Platforms: 18-36 months. Transformation: 3-5 years.</p>
-
-            <h3>Pitfall 3: Ignoring Total Cost of Ownership</h3>
-
-            <p><strong>The fix</strong>: Build a complete TCO model including implementation, ongoing operations, and contingency (40-60% cost underestimation is typical).</p>
-
-            <h3>Pitfall 4: Cherry-Picking Timeframes</h3>
-
-            <p><strong>The fix</strong>: Report cumulative metrics consistently, include investment period in all ROI calculations, and acknowledge variance.</p>
-
-            <h3>Pitfall 5: Not Accounting for AI Failures</h3>
-
-            <p><strong>The fix</strong>: Include all transactions in your calculation--successes, errors requiring rework, and escalations to humans.</p>
-
-            <h3>Pitfall 6: Treating AI as a One-Time Project</h3>
-
-            <p><strong>The fix</strong>: Plan for ongoing value creation. Models degrade, data changes, usage evolves. Track over years, not months.</p>
+            <div class="callout">
+                <p><strong>More pitfalls:</strong> Not accounting for AI failures (include errors, rework, escalations) • Treating AI as one-time (plan for ongoing: models degrade, data changes, usage evolves)</p>
+            </div>
 
             <h2 id="conclusion">Conclusion</h2>
 

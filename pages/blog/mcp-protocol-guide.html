@@ -397,26 +397,24 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
-            color: white;
+            background: #5a6a35;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
             padding: 1rem 2rem;
-            border-radius: var(--radius-full);
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(107, 124, 63, 0.3);
+            font-weight: 700;
+            font-size: 16px;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(107, 124, 63, 0.4);
+            background: #4a5a2a;
         }
 
         .cta-button svg {
             width: 20px;
             height: 20px;
-            transition: transform 0.3s ease;
+            stroke: #ffffff !important;
         }
 
         .cta-button:hover svg {
@@ -596,6 +594,391 @@
             top: 0;
         }
 
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Comparison Cards */
+        .comparison-table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .comparison-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+        }
+
+        .comparison-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: var(--space-sm);
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .comparison-card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .comparison-card-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: white;
+        }
+
+        .comparison-card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .comparison-card li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .comparison-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-primary-light);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Callout Box */
+        .callout {
+            background: linear-gradient(135deg, rgba(184, 160, 74, 0.1), rgba(184, 160, 74, 0.05));
+            border: 1px solid rgba(184, 160, 74, 0.2);
+            border-left: 4px solid var(--accent-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .callout p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: var(--accent-secondary-light);
+        }
+
+        /* Code Blocks with Syntax Highlighting */
+        .article-content pre {
+            background: #1e1e2e;
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            overflow-x: auto;
+            margin: var(--space-md) 0;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .article-content pre::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            background: rgba(107, 124, 63, 0.3);
+            color: var(--accent-primary-light);
+            border-radius: 0 var(--radius-md) 0 var(--radius-sm);
+            letter-spacing: 0.5px;
+        }
+
+        .article-content pre code {
+            background: transparent;
+            padding: 0;
+            color: #cdd6f4;
+        }
+
+        /* Syntax highlighting colors */
+        .code-keyword { color: #cba6f7; }
+        .code-string { color: #a6e3a1; }
+        .code-comment { color: #6c7086; font-style: italic; }
+        .code-function { color: #89b4fa; }
+        .code-class { color: #f9e2af; }
+        .code-number { color: #fab387; }
+        .code-decorator { color: #f38ba8; }
+
+        /* Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: var(--space-lg) 0;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.25rem;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .flow-step-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+        }
+
+        .flow-step-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+        }
+
+        .flow-step-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .flow-arrow {
+            color: var(--accent-primary-light);
+        }
+
+        .flow-arrow svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .flow-diagram {
+                flex-direction: column;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* Visual Checklist */
+        .visual-checklist {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .visual-checklist-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--accent-primary-light);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .visual-checklist-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+        }
+
+        .visual-checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: var(--space-sm) 0;
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .visual-checklist-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .checklist-number {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .checklist-content h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .checklist-content p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Architecture diagram replacement */
+        .architecture-visual {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+            padding: var(--space-lg);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+        }
+
+        .arch-layer {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .arch-label {
+            min-width: 80px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+
+        .arch-boxes {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .arch-box {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .arch-box.secondary {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .arch-box.tertiary {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        }
+
+        .arch-connector {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            padding: 0.25rem 0;
+        }
+
+        .arch-connector svg {
+            width: 20px;
+            height: 20px;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .blog-hero h1 {
@@ -687,11 +1070,11 @@
     <section class="blog-hero">
         <div class="article-meta">
             <span class="category-tag">AI Integration</span>
-            <span class="reading-time" aria-label="Estimated reading time: 22 minutes">
+            <span class="reading-time" aria-label="Estimated reading time: 12 minutes">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                22 min read
+                12 min read
             </span>
         </div>
         <h1>MCP (Model Context Protocol): The Universal Standard for AI Tool Integration</h1>
@@ -727,412 +1110,392 @@
                 </ol>
             </nav>
 
-            <p>There's a new standard every AI engineer needs to know, and if you're building agent systems in 2026, you're probably already using it--whether you realize it or not.</p>
+            <div class="key-insight">
+                <div class="key-insight-title">The USB-C of AI</div>
+                <p>MCP is a universal connector that lets any AI application talk to any tool using a standardized interface.</p>
+            </div>
 
-            <p>The Model Context Protocol (MCP) has rapidly become the de facto standard for connecting AI applications to external tools, data sources, and systems. Launched by Anthropic in November 2024, MCP has achieved something rare in the fragmented AI landscape: genuine cross-vendor adoption. OpenAI integrated MCP across its products in March 2025. Google DeepMind followed in April. By December 2025, Anthropic donated MCP to the Linux Foundation's Agentic AI Foundation, establishing it as a vendor-neutral open standard.</p>
+            <p>If you've built AI applications that need to interact with external tools—databases, APIs, file systems—you've likely experienced the integration headache. Every AI platform has its own way of defining tools, and every time you switch providers or add a new capability, you're rewriting integration code.</p>
 
-            <p>The numbers tell the story: over 97 million monthly SDK downloads across Python and TypeScript, more than 16,000 MCP servers indexed in unofficial registries, and adoption by every major AI platform. MCP has been called "the USB-C of AI"--a universal connector that lets any AI application talk to any tool using a standardized interface.</p>
+            <p><strong>Model Context Protocol (MCP)</strong> solves this by providing a single, vendor-neutral standard for how AI models connect to external systems. Think of it as the USB-C of the AI world: one protocol that works everywhere, regardless of whether you're using Claude, GPT, Gemini, or a custom model.</p>
 
-            <p>This guide covers what MCP is, how it works, and how to implement it in production. We'll provide working code examples, compare MCP to alternatives like OpenAI Function Calling and LangChain Tools, and address the security considerations that matter for enterprise deployment.</p>
+            <!-- MCP Adoption Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">97M+</span>
+                    <span class="stat-label">Monthly Downloads</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">16K+</span>
+                    <span class="stat-label">MCP Servers</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Major Platform Adoption</span>
+                </div>
+            </div>
+
+            <p>Launched by Anthropic in November 2024, MCP has since been adopted by OpenAI, Google DeepMind, and was donated to the Linux Foundation to ensure vendor-neutral governance. In this guide, we'll cover what MCP is, how the protocol works, how to implement your own MCP servers, and critical security considerations for production deployments.</p>
 
             <h2 id="understanding-mcp">Understanding MCP</h2>
 
-            <p>Before MCP, connecting AI applications to external tools was a mess. Every framework had its own format. Every vendor had proprietary integrations. Building an agent that worked with multiple tools meant maintaining multiple integration patterns--and if you wanted to switch LLM providers, you'd rewrite your tool layer.</p>
-
             <h3>The Fragmentation Problem</h3>
 
-            <p>Consider what tool integration looked like before MCP:</p>
+            <p>Before MCP, every AI platform had its own proprietary way of defining and calling tools. If you built a database integration for OpenAI's function calling, it wouldn't work with Claude. If you created a LangChain tool, it was locked to that ecosystem. This created a fragmented landscape where developers had to maintain multiple implementations of the same functionality.</p>
 
-            <p><strong>OpenAI Function Calling</strong>: Define tools using OpenAI's JSON Schema format. Works great with GPT models. Doesn't work with Claude, Gemini, or open-source models without adaptation.</p>
+            <!-- Pre-MCP Fragmentation Grid -->
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #10a37f, #1a7f5a);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">OpenAI Functions</span>
+                    </div>
+                    <ul>
+                        <li>JSON Schema format</li>
+                        <li>Works great with GPT</li>
+                        <li>Doesn't work with Claude/Gemini</li>
+                        <li>Single vendor lock-in</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">LangChain Tools</span>
+                    </div>
+                    <ul>
+                        <li>Framework abstraction</li>
+                        <li>Works across models via LC</li>
+                        <li>Locked into ecosystem</li>
+                        <li>Different formats per chain</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Custom Integrations</span>
+                    </div>
+                    <ul>
+                        <li>Per-application code</li>
+                        <li>Non-reusable</li>
+                        <li>High maintenance burden</li>
+                        <li>Copy-paste sharing</li>
+                    </ul>
+                </div>
+            </div>
 
-            <p><strong>LangChain Tools</strong>: Define tools using LangChain's abstraction. Works across models through LangChain, but you're locked into the LangChain ecosystem. Different tool formats for different chain types.</p>
-
-            <p><strong>Custom integrations</strong>: Every significant tool (databases, APIs, file systems) required custom integration code. That integration code lived in your application, making it non-reusable.</p>
-
-            <p>The maintenance burden was substantial. Change your LLM provider? Rewrite your tools. Want to share a tool integration with another team? Copy-paste the code and hope the abstractions match.</p>
+            <div class="callout">
+                <p><strong>The pain:</strong> Change LLM provider? Rewrite tools. Share integration with another team? Copy-paste and pray.</p>
+            </div>
 
             <h3>The MCP Solution</h3>
 
-            <p>MCP takes inspiration from the Language Server Protocol (LSP), which standardized how code editors integrate with programming language tooling. Before LSP, every editor needed custom plugins for every language. After LSP, a single language server works with any editor that supports the protocol.</p>
+            <p>MCP takes inspiration from the <strong>Language Server Protocol (LSP)</strong>, which revolutionized code editors by providing a universal way for editors to communicate with language-specific tooling. Just as LSP meant you could use the same TypeScript language server in VS Code, Vim, or Emacs, MCP means you can use the same tool server with Claude, GPT, Gemini, or any MCP-compatible client.</p>
 
-            <p>MCP applies the same principle to AI tools. An MCP server exposes capabilities--tools, resources, prompts--through a standardized protocol. Any MCP client can connect to any MCP server. The same database integration works with Claude, GPT, Gemini, or any future model that supports MCP.</p>
+            <p>The architecture is straightforward: <strong>Host</strong> applications (like Claude Desktop or VS Code) create <strong>Clients</strong> that communicate with <strong>Servers</strong> over JSON-RPC 2.0. Servers expose capabilities—tools, resources, and prompts—that any compatible host can discover and use.</p>
 
-            <p>The protocol operates on JSON-RPC 2.0 with support for multiple transports (STDIO for local servers, HTTP/SSE for remote). The November 2025 specification added asynchronous operations, statelessness options, and official extensions for common patterns.</p>
+            <!-- Visual Architecture -->
+            <div class="architecture-visual">
+                <div class="arch-layer">
+                    <span class="arch-label">Host</span>
+                    <div class="arch-boxes">
+                        <span class="arch-box">Claude Desktop</span>
+                        <span class="arch-box">VS Code</span>
+                        <span class="arch-box">Custom App</span>
+                    </div>
+                </div>
+                <div class="arch-connector">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                    JSON-RPC 2.0
+                </div>
+                <div class="arch-layer">
+                    <span class="arch-label">Servers</span>
+                    <div class="arch-boxes">
+                        <span class="arch-box secondary">Database</span>
+                        <span class="arch-box secondary">Files</span>
+                        <span class="arch-box secondary">API</span>
+                    </div>
+                </div>
+            </div>
 
-            <h3>Architecture Overview</h3>
-
-            <pre><code>+-------------------------------------------------------------+
-|                      MCP Host                                |
-|  (Claude Desktop, VS Code, Custom Application)               |
-|                                                              |
-|  +-----------+  +-----------+  +-----------+                |
-|  | MCP Client|  | MCP Client|  | MCP Client|                |
-|  +-----+-----+  +-----+-----+  +-----+-----+                |
-+--------|--------------|--------------|-----------------------+
-         |              |              |
-    JSON-RPC 2.0   JSON-RPC 2.0   JSON-RPC 2.0
-         |              |              |
-         v              v              v
-  +----------+   +----------+   +----------+
-  |MCP Server|   |MCP Server|   |MCP Server|
-  |(Database)|   |(Files)   |   |(API)     |
-  +----------+   +----------+   +----------+</code></pre>
-
-            <p>An MCP <strong>host</strong> (like Claude Desktop or a custom application) runs one or more MCP <strong>clients</strong>. Each client connects to an MCP <strong>server</strong> that exposes specific capabilities. The host orchestrates which servers to connect to; the clients handle the protocol communication; the servers expose the actual functionality.</p>
+            <div class="callout">
+                <p><strong>Key roles:</strong> <strong>Host</strong> orchestrates connections • <strong>Clients</strong> handle protocol • <strong>Servers</strong> expose functionality</p>
+            </div>
 
             <h2 id="core-concepts">MCP Core Concepts</h2>
 
-            <p>MCP operates on three core primitives: <strong>Resources</strong>, <strong>Tools</strong>, and <strong>Prompts</strong>. Understanding when to use each is fundamental to effective MCP implementation.</p>
+            <p>MCP defines three core primitives, each designed for a different type of interaction between AI and external systems. Understanding when to use each primitive is key to building effective MCP servers.</p>
 
-            <h3>Primitive 1: Tools</h3>
+            <!-- Three Primitives as Visual Cards -->
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #27ae60, #1e8449);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Tools</span>
+                    </div>
+                    <ul>
+                        <li><strong>Model-controlled</strong>: AI decides when to call</li>
+                        <li>Perform actions: API calls, DB queries, calculations</li>
+                        <li>JSON Schema defines inputs/outputs</li>
+                        <li><code>@mcp.tool()</code> decorator</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Resources</span>
+                    </div>
+                    <ul>
+                        <li><strong>App-controlled</strong>: You decide what to provide</li>
+                        <li>Read-only context: files, configs, records</li>
+                        <li>URI-identified templates</li>
+                        <li><code>@mcp.resource()</code> decorator</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Prompts</span>
+                    </div>
+                    <ul>
+                        <li><strong>User-controlled</strong>: Invoked via slash commands</li>
+                        <li>Reusable templates for workflows</li>
+                        <li>Standardize repeatable interactions</li>
+                        <li><code>@mcp.prompt()</code> decorator</li>
+                    </ul>
+                </div>
+            </div>
 
-            <p>Tools are executable functions that perform actions. The AI model decides when and how to call them based on the user's request and the tool's description.</p>
+            <p><strong>Tools</strong> are the most commonly used primitive. They let the AI model perform actions—querying a database, calling an API, running calculations. The AI decides when to invoke a tool based on the user's request and the tool's description. Your code handles validation and execution.</p>
 
-            <p><strong>Characteristics</strong>:</p>
-            <ul>
-                <li>Model-controlled: The AI chooses when to invoke</li>
-                <li>Action-oriented: Perform computations, make API calls, modify state</li>
-                <li>Schema-defined: JSON Schema specifies inputs and outputs</li>
-            </ul>
+            <p><strong>Resources</strong> provide read-only context to the AI. Unlike tools, the application controls when resources are accessed. Use resources to expose configuration files, documentation, or database records that inform the AI's responses without requiring action.</p>
 
-            <p><strong>Use cases</strong>: Database queries, API calls, file operations, calculations, any action the AI should be able to take.</p>
+            <p><strong>Prompts</strong> are user-triggered templates—think slash commands like <code>/summarize</code> or <code>/code-review</code>. They standardize common workflows and can dynamically include resources or guide tool usage.</p>
 
-            <pre><code>from mcp.server.fastmcp import FastMCP
+            <div class="key-insight">
+                <div class="key-insight-title">How They Work Together</div>
+                <p><strong>1.</strong> User initiates with a <strong>Prompt</strong> (<code>/code-review</code>) → <strong>2.</strong> App provides context with <strong>Resources</strong> (source files) → <strong>3.</strong> AI takes action with <strong>Tools</strong> (linting, queries)</p>
+            </div>
 
-mcp = FastMCP("demo-server")
+            <h3>Quick Code Example</h3>
 
-@mcp.tool()
-def calculate_loan_payment(
-    principal: float,
-    annual_rate: float,
-    years: int
-) -&gt; dict:
-    """
-    Calculate monthly payment for a fixed-rate loan.
+            <p>Here's a minimal MCP server using Python's FastMCP library. The <code>@mcp.tool()</code> decorator automatically generates the JSON schema from type hints and uses the docstring as the tool description:</p>
 
-    Args:
-        principal: Loan amount in dollars
-        annual_rate: Annual interest rate as decimal (e.g., 0.05 for 5%)
-        years: Loan term in years
+            <pre data-lang="python"><code><span class="code-keyword">from</span> mcp.server.fastmcp <span class="code-keyword">import</span> FastMCP
 
-    Returns:
-        Monthly payment amount and total interest paid
-    """
-    monthly_rate = annual_rate / 12
-    num_payments = years * 12
+mcp = FastMCP(<span class="code-string">"demo-server"</span>)
 
-    if monthly_rate == 0:
-        monthly_payment = principal / num_payments
-    else:
-        monthly_payment = principal * (
-            monthly_rate * (1 + monthly_rate) ** num_payments
-        ) / ((1 + monthly_rate) ** num_payments - 1)
+<span class="code-decorator">@mcp.tool()</span>
+<span class="code-keyword">def</span> <span class="code-function">calculate_loan</span>(principal: <span class="code-class">float</span>, rate: <span class="code-class">float</span>, years: <span class="code-class">int</span>) -> <span class="code-class">dict</span>:
+    <span class="code-string">"""Calculate monthly payment for a fixed-rate loan."""</span>
+    monthly = rate / <span class="code-number">12</span>
+    payments = years * <span class="code-number">12</span>
+    payment = principal * (monthly * (<span class="code-number">1</span> + monthly) ** payments) / ((<span class="code-number">1</span> + monthly) ** payments - <span class="code-number">1</span>)
+    <span class="code-keyword">return</span> {<span class="code-string">"monthly_payment"</span>: round(payment, <span class="code-number">2</span>)}</code></pre>
 
-    total_paid = monthly_payment * num_payments
-    total_interest = total_paid - principal
-
-    return {
-        "monthly_payment": round(monthly_payment, 2),
-        "total_interest": round(total_interest, 2),
-        "total_paid": round(total_paid, 2)
-    }</code></pre>
-
-            <p>The <code>@mcp.tool()</code> decorator registers this function as an MCP tool. The docstring becomes the tool description that the AI uses to understand when to call it. Type hints define the schema.</p>
-
-            <h3>Primitive 2: Resources</h3>
-
-            <p>Resources provide read-only access to data. Unlike tools (which the AI calls), resources are consumed by the application to provide context.</p>
-
-            <p><strong>Characteristics</strong>:</p>
-            <ul>
-                <li>Application-controlled: The host application decides what resources to include</li>
-                <li>Read-only: Provide data, don't modify state</li>
-                <li>URI-identified: Each resource has a unique URI</li>
-            </ul>
-
-            <p><strong>Use cases</strong>: File contents, database records, configuration data, any information the AI should have access to without explicitly requesting it.</p>
-
-            <pre><code>@mcp.resource("file://config/{filename}")
-def get_config_file(filename: str) -&gt; str:
-    """
-    Provides access to configuration files.
-
-    The application can attach these resources to give
-    the AI context about system configuration.
-    """
-    config_path = Path("./config") / filename
-
-    if not config_path.exists():
-        raise FileNotFoundError(f"Config file {filename} not found")
-
-    if not config_path.suffix in [".json", ".yaml", ".toml"]:
-        raise ValueError("Only config files (.json, .yaml, .toml) allowed")
-
-    return config_path.read_text()</code></pre>
-
-            <p>Resources use URI templates to identify what data they provide. The application decides which resources to attach based on context--the AI doesn't request resources directly.</p>
-
-            <h3>Primitive 3: Prompts</h3>
-
-            <p>Prompts are reusable templates for AI interactions. They're user-driven, typically exposed through slash commands or menu options.</p>
-
-            <p><strong>Characteristics</strong>:</p>
-            <ul>
-                <li>User-controlled: The user explicitly invokes prompts</li>
-                <li>Templated: Accept arguments to customize the interaction</li>
-                <li>Workflow-oriented: Define structured interaction patterns</li>
-            </ul>
-
-            <p><strong>Use cases</strong>: Code review workflows, analysis templates, structured Q&A patterns, any repeatable interaction the user initiates.</p>
-
-            <pre><code>@mcp.prompt()
-def code_review(
-    language: str,
-    focus_areas: str = "security,performance,readability"
-) -&gt; str:
-    """
-    Structured code review prompt.
-
-    User invokes with: /code-review python security,performance
-    """
-    areas = [area.strip() for area in focus_areas.split(",")]
-
-    focus_instructions = "\n".join([
-        f"- {area.upper()}: Analyze for {area} issues"
-        for area in areas
-    ])
-
-    return f"""You are reviewing {language} code.
-
-Focus your review on these areas:
-{focus_instructions}
-
-For each issue found:
-1. Identify the location (file, line if possible)
-2. Describe the issue clearly
-3. Explain the potential impact
-4. Suggest a specific fix
-
-Format your response as a structured review with sections for each focus area.
-Start with a summary of critical issues, then provide detailed analysis."""</code></pre>
-
-            <p>Prompts are powerful for standardizing workflows. Instead of users trying to craft the right prompt each time, they invoke a predefined template that ensures consistent, thorough analysis.</p>
-
-            <h3>How Primitives Work Together</h3>
-
-            <p>The three primitives form a complete interaction model:</p>
-
-            <ol>
-                <li><strong>User initiates</strong> with a Prompt (e.g., <code>/code-review</code>)</li>
-                <li><strong>Application provides context</strong> with Resources (attaches relevant source files)</li>
-                <li><strong>AI takes action</strong> with Tools (calls linting tools, queries documentation)</li>
-            </ol>
+            <div class="callout">
+                <p><strong>Key pattern:</strong> Docstrings become tool descriptions the AI uses. Type hints define the schema. FastMCP handles the protocol.</p>
+            </div>
 
             <h2 id="implementation">Implementation Guide</h2>
 
-            <p>Let's build a complete MCP server with all three primitives. We'll create a customer support assistant server that provides customer data, support tools, and interaction templates.</p>
+            <p>Getting started with MCP is straightforward. The protocol supports multiple transports (stdio for local servers, HTTP with SSE for remote), but for most use cases, you'll start with a local stdio server connected to Claude Desktop or another MCP host.</p>
 
-            <h3>Step 1: Project Setup</h3>
+            <div class="visual-checklist">
+                <div class="visual-checklist-title">Quick Start Steps</div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">1</span>
+                    <div class="checklist-content">
+                        <h4>Install Dependencies</h4>
+                        <p><code>pip install mcp[cli] httpx python-dotenv</code> (Python 3.10+)</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">2</span>
+                    <div class="checklist-content">
+                        <h4>Configure Claude Desktop</h4>
+                        <p>Add server to <code>claude_desktop_config.json</code> with command and path</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">3</span>
+                    <div class="checklist-content">
+                        <h4>Test with MCP Inspector</h4>
+                        <p><code>mcp dev server.py</code> provides web UI to test tools/resources/prompts</p>
+                    </div>
+                </div>
+            </div>
 
-            <p><strong>Python Setup</strong> (Python 3.10+ required):</p>
-
-            <pre><code># Create project directory
-mkdir customer-support-mcp && cd customer-support-mcp
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install mcp[cli] httpx python-dotenv</code></pre>
-
-            <p><strong>Project Structure</strong>:</p>
-
-            <pre><code>customer-support-mcp/
-├── server.py           # Main MCP server
-├── config.json         # Claude Desktop config
-├── requirements.txt    # Dependencies
-└── .env               # Environment variables (not committed)</code></pre>
-
-            <h3>Step 2: Configure Claude Desktop</h3>
-
-            <p>Create the configuration file for Claude Desktop to connect to your server:</p>
-
-            <pre><code>// For macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
-// For Windows: %APPDATA%\Claude\claude_desktop_config.json
-
+            <pre data-lang="json"><code><span class="code-comment">// ~/Library/Application Support/Claude/claude_desktop_config.json</span>
 {
-  "mcpServers": {
-    "customer-support": {
-      "command": "python",
-      "args": ["/absolute/path/to/customer-support-mcp/server.py"],
-      "env": {
-        "PYTHONPATH": "/absolute/path/to/customer-support-mcp"
-      }
+  <span class="code-string">"mcpServers"</span>: {
+    <span class="code-string">"my-server"</span>: {
+      <span class="code-string">"command"</span>: <span class="code-string">"python"</span>,
+      <span class="code-string">"args"</span>: [<span class="code-string">"/path/to/server.py"</span>]
     }
   }
 }</code></pre>
 
-            <h3>Step 3: Test Your Server</h3>
-
-            <p>Test locally before connecting to Claude Desktop:</p>
-
-            <pre><code># Run the server directly to check for errors
-python server.py
-
-# Use MCP inspector for interactive testing
-mcp dev server.py</code></pre>
-
-            <p>The MCP inspector provides a web interface to test tools, view resources, and execute prompts without needing a full AI client.</p>
+            <p>Once configured, restart Claude Desktop. Your tools will appear in the tools menu, and you can test them by asking Claude to use your server's capabilities.</p>
 
             <h2 id="production">Production Considerations</h2>
 
-            <p>Deploying MCP servers in production requires careful attention to security, authentication, and operational concerns. The ecosystem is young, and security practices are still maturing.</p>
+            <p>While MCP makes integration easy, moving to production requires careful attention to security. The protocol itself doesn't mandate authentication, which means security is your responsibility.</p>
 
-            <h3>Security Challenges</h3>
+            <!-- Security Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">88%</span>
+                    <span class="stat-label">Servers need credentials</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">53%</span>
+                    <span class="stat-label">Use insecure static keys</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0%</span>
+                    <span class="stat-label">Auth by default</span>
+                </div>
+            </div>
 
-            <p>Research from security firms reveals concerning patterns in the MCP ecosystem:</p>
+            <div class="callout">
+                <p><strong>The reality:</strong> MCP protocol doesn't mandate authentication. An MCP server with database access and weak auth is a significant attack surface.</p>
+            </div>
 
-            <ul>
-                <li><strong>88% of MCP servers require credentials</strong>, but <strong>53% rely on insecure static secrets</strong> like long-lived API keys</li>
-                <li><strong>No authentication by default</strong>: The MCP protocol doesn't mandate authentication--it's left to implementers</li>
-                <li><strong>Prompt injection risks</strong>: Attackers can craft inputs that manipulate tool behavior</li>
-                <li><strong>Tool shadowing</strong>: Malicious servers can impersonate trusted tools</li>
-            </ul>
+            <p>Research shows that while most MCP servers require credentials to access backend systems, over half use insecure static API keys. This is particularly dangerous because AI agents can make many requests quickly, amplifying any security weaknesses.</p>
 
-            <p>These aren't theoretical concerns. In production, an MCP server with database access and weak authentication is a significant attack surface.</p>
-
-            <h3>Authentication Best Practices</h3>
-
-            <p><strong>Never use static API keys in production</strong>. They're difficult to rotate, impossible to audit per-request, and if leaked, provide unlimited access.</p>
-
-            <p>Instead, implement OAuth 2.0 / OIDC for secure authentication with token-based access, proper audit logging, and the ability to revoke access when needed.</p>
-
-            <h3>Rate Limiting</h3>
-
-            <p>Without rate limiting, AI agents can unintentionally overwhelm MCP servers. Implement request throttling to prevent abuse and ensure fair resource allocation across clients.</p>
-
-            <h3>API Gateway Pattern</h3>
-
-            <p>For enterprise deployments, front your MCP servers with an API gateway. This pattern provides:</p>
-            <ul>
-                <li>Centralized authentication (integrate with enterprise IdP)</li>
-                <li>Consistent rate limiting across all servers</li>
-                <li>Request/response logging for audit</li>
-                <li>DDoS protection</li>
-                <li>SSL termination</li>
-            </ul>
-
-            <h3>Input Validation</h3>
-
-            <p>Every tool input should be validated. Never trust data coming from the AI. Use validation libraries like Pydantic to ensure all inputs meet expected formats and constraints before processing.</p>
+            <!-- Production Checklist -->
+            <div class="visual-checklist">
+                <div class="visual-checklist-title">Production Security Checklist</div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">1</span>
+                    <div class="checklist-content">
+                        <h4>Never Use Static API Keys</h4>
+                        <p>Implement OAuth 2.0 / OIDC for token-based access with proper audit logging</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">2</span>
+                    <div class="checklist-content">
+                        <h4>Add Rate Limiting</h4>
+                        <p>AI agents can overwhelm servers. Throttle requests to prevent abuse</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">3</span>
+                    <div class="checklist-content">
+                        <h4>Use API Gateway</h4>
+                        <p>Centralized auth, consistent rate limiting, audit logging, DDoS protection</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">4</span>
+                    <div class="checklist-content">
+                        <h4>Validate All Inputs</h4>
+                        <p>Never trust data from AI. Use Pydantic for strict input validation</p>
+                    </div>
+                </div>
+            </div>
 
             <h2 id="alternatives">MCP vs. Alternatives</h2>
 
-            <p>Understanding when to use MCP versus alternatives helps you make the right architectural choices.</p>
+            <p>MCP isn't the only way to connect AI models to tools. Depending on your use case, other approaches might be more appropriate. Here's how to decide:</p>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Aspect</th>
-                        <th>OpenAI Function Calling</th>
-                        <th>LangChain Tools</th>
-                        <th>MCP</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Scope</strong></td>
-                        <td>Single provider</td>
-                        <td>Single framework</td>
-                        <td>Universal protocol</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Portability</strong></td>
-                        <td>OpenAI only</td>
-                        <td>LangChain ecosystem</td>
-                        <td>Any MCP client</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reusability</strong></td>
-                        <td>Per-application</td>
-                        <td>Within LangChain</td>
-                        <td>Across applications</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Complexity</strong></td>
-                        <td>Low</td>
-                        <td>Medium</td>
-                        <td>Medium-High</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Production features</strong></td>
-                        <td>Basic</td>
-                        <td>Good (with LangSmith)</td>
-                        <td>Developing</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Community</strong></td>
-                        <td>Large</td>
-                        <td>Very large</td>
-                        <td>Growing rapidly</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Comparison Cards -->
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #10a37f, #1a7f5a);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">OpenAI Functions</span>
+                    </div>
+                    <ul>
+                        <li><strong>When:</strong> Single-model, OpenAI only</li>
+                        <li>Fastest path to working tools</li>
+                        <li>Low complexity</li>
+                        <li><strong>Limit:</strong> No portability</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">LangChain Tools</span>
+                    </div>
+                    <ul>
+                        <li><strong>When:</strong> Complex orchestration needed</li>
+                        <li>Extensive integration library</li>
+                        <li>Good observability (LangSmith)</li>
+                        <li><strong>Limit:</strong> Ecosystem lock-in</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">MCP</span>
+                    </div>
+                    <ul>
+                        <li><strong>When:</strong> Multi-provider, enterprise</li>
+                        <li>Vendor-neutral, reusable tools</li>
+                        <li>Universal protocol standard</li>
+                        <li><strong>Limit:</strong> Higher initial complexity</li>
+                    </ul>
+                </div>
+            </div>
 
-            <h3>When to Use Each</h3>
+            <p>If you're building a quick prototype with a single model provider, OpenAI Functions or native tool calling is the fastest path. For complex agent orchestration with observability needs, LangChain offers a mature ecosystem. But if you're building for the long term—especially in enterprise contexts where model portability matters—MCP provides the standardization you need.</p>
 
-            <p><strong>Use OpenAI Function Calling when</strong>:</p>
-            <ul>
-                <li>You're building a simple, single-model application</li>
-                <li>You're only using OpenAI models</li>
-                <li>You need the fastest path to working tools</li>
-                <li>Production concerns are minimal (internal tools, prototypes)</li>
-            </ul>
-
-            <p><strong>Use LangChain Tools when</strong>:</p>
-            <ul>
-                <li>You need complex orchestration (chains, memory, agents)</li>
-                <li>You want access to LangChain's extensive integration library</li>
-                <li>You're using LangSmith for observability</li>
-                <li>You're willing to work within the LangChain ecosystem</li>
-            </ul>
-
-            <p><strong>Use MCP when</strong>:</p>
-            <ul>
-                <li>You need tools that work across multiple AI providers</li>
-                <li>You're building tools that should be reusable across applications</li>
-                <li>You want vendor-neutral infrastructure</li>
-                <li>You're building for enterprise with multiple AI consumers</li>
-                <li>You need the standardization that MCP provides</li>
-            </ul>
-
-            <h3>MCP + LangChain Integration</h3>
-
-            <p>MCP isn't replacing LangChain--they work together. LangChain added MCP support in early 2025, giving you the best of both worlds: MCP's standardization and portability with LangChain's orchestration and ecosystem.</p>
+            <div class="callout">
+                <p><strong>MCP + LangChain:</strong> They work together. LangChain added MCP support in early 2025—get MCP's standardization with LangChain's orchestration.</p>
+            </div>
 
             <h2 id="conclusion">Conclusion</h2>
 
-            <p>MCP represents a significant maturation in how we build AI agent systems. Instead of fragmented, vendor-specific integrations, we now have a universal protocol that lets tools work across any AI application.</p>
-
             <div class="key-insight">
-                <div class="key-insight-title">Key Concepts to Remember</div>
+                <div class="key-insight-title">Key Takeaways</div>
                 <p>
-                    <strong>Tools</strong> are model-controlled actions (the AI decides when to call them)<br><br>
-                    <strong>Resources</strong> are application-controlled context (you decide what to provide)<br><br>
-                    <strong>Prompts</strong> are user-controlled templates (users invoke them explicitly)
+                    <strong>Tools</strong> = Model-controlled • <strong>Resources</strong> = App-controlled • <strong>Prompts</strong> = User-controlled<br><br>
+                    <strong>Production:</strong> OAuth 2.0 (not API keys) • Rate limiting • Input validation • API gateway for enterprise
                 </p>
             </div>
 
-            <p>For production deployment:</p>
-            <ul>
-                <li>Never use static API keys--implement OAuth 2.0</li>
-                <li>Add rate limiting to prevent runaway agents</li>
-                <li>Validate all inputs--never trust data from the AI</li>
-                <li>Consider an API gateway for enterprise deployments</li>
-            </ul>
-
-            <p>MCP is still evolving. The November 2025 specification added significant features, and the donation to the Linux Foundation ensures continued development as a vendor-neutral standard. If you're building agent systems, now is the time to adopt MCP as your tool integration layer.</p>
+            <p>MCP is still evolving rapidly. The November 2025 spec added major features, and the Linux Foundation donation ensures vendor-neutral development. If you're building agent systems, now is the time to adopt MCP.</p>
 
             <div class="cta-section">
                 <h2>Need Help with MCP Integration?</h2>

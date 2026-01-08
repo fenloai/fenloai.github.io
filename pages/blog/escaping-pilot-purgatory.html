@@ -397,26 +397,24 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
-            color: white;
+            background: #5a6a35;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
             padding: 1rem 2rem;
-            border-radius: var(--radius-full);
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(107, 124, 63, 0.3);
+            font-weight: 700;
+            font-size: 16px;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(107, 124, 63, 0.4);
+            background: #4a5a2a;
         }
 
         .cta-button svg {
             width: 20px;
             height: 20px;
-            transition: transform 0.3s ease;
+            stroke: #ffffff !important;
         }
 
         .cta-button:hover svg {
@@ -618,6 +616,546 @@
             font-size: 0.85rem;
         }
 
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-normal);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--glass-border-hover);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Comparison Cards */
+        .comparison-table {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .comparison-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+        }
+
+        .comparison-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: var(--space-sm);
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .comparison-card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .comparison-card-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: white;
+        }
+
+        .comparison-card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .comparison-card li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .comparison-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-primary-light);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 600px) {
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Callout Box */
+        .callout {
+            background: linear-gradient(135deg, rgba(184, 160, 74, 0.1), rgba(184, 160, 74, 0.05));
+            border: 1px solid rgba(184, 160, 74, 0.2);
+            border-left: 4px solid var(--accent-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .callout p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: var(--accent-secondary-light);
+        }
+
+        /* Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: var(--space-lg) 0;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.25rem;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .flow-step-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+        }
+
+        .flow-step-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+        }
+
+        .flow-step-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .flow-step-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .flow-arrow {
+            color: var(--accent-primary-light);
+        }
+
+        .flow-arrow svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .flow-diagram {
+                flex-direction: column;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* Visual Checklist */
+        .visual-checklist {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin: var(--space-lg) 0;
+        }
+
+        .visual-checklist-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .visual-checklist-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 2px;
+        }
+
+        .visual-checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .visual-checklist-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .checklist-number {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .checklist-content h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .checklist-content p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Mid-article CTA */
+        .mid-cta {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .mid-cta::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -12px;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 24px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+        }
+
+        .mid-cta p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        /* Case Study Cards */
+        .case-study-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study-card.failure {
+            border-left: 4px solid #e74c3c;
+        }
+
+        .case-study-card.success {
+            border-left: 4px solid #27ae60;
+        }
+
+        .case-study-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .case-study-badge {
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-study-badge.failure {
+            background: rgba(231, 76, 60, 0.15);
+            color: #e74c3c;
+        }
+
+        .case-study-badge.success {
+            background: rgba(39, 174, 96, 0.15);
+            color: #27ae60;
+        }
+
+        .case-study-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .case-study-context {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--glass-border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: var(--space-md);
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.3rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            border: 3px solid var(--accent-primary);
+        }
+
+        .timeline-item.bad::before {
+            border-color: #e74c3c;
+        }
+
+        .timeline-item.good::before {
+            border-color: #27ae60;
+        }
+
+        .timeline-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-primary-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Results Grid */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px dashed var(--glass-border);
+        }
+
+        .result-item {
+            text-align: center;
+            padding: var(--space-sm);
+        }
+
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .result-value.good {
+            color: #27ae60;
+        }
+
+        .result-value.bad {
+            color: #e74c3c;
+        }
+
+        .result-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Kill Signals */
+        .kill-signals {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .kill-signal {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .kill-signal-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: rgba(231, 76, 60, 0.15);
+        }
+
+        .kill-signal-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: #e74c3c;
+        }
+
+        .kill-signal-content h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+
+        .kill-signal-content p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .kill-signals {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .blog-hero h1 {
@@ -709,11 +1247,11 @@
     <section class="blog-hero">
         <div class="article-meta">
             <span class="category-tag">AI Strategy</span>
-            <span class="reading-time" aria-label="Estimated reading time: 20 minutes">
+            <span class="reading-time" aria-label="Estimated reading time: 12 minutes">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                20 min read
+                12 min read
             </span>
         </div>
         <h1>Escaping Pilot Purgatory: Why 95% of AI Projects Fail to Scale (And How to Be in the 5%)</h1>
@@ -749,641 +1287,723 @@
                 </ol>
             </nav>
 
-            <p>You've built the demo. Leadership is impressed. The CEO mentioned it in the last all-hands meeting. The board is excited about AI transformation.</p>
+            <div class="key-insight">
+                <div class="key-insight-title">The Reality Check</div>
+                <p>You've built the demo. Leadership is impressed. Now comes "pilot purgatory"—that limbo where AI projects live indefinitely, never quite dying but never reaching production.</p>
+            </div>
 
-            <p>Now what?</p>
+            <!-- Key Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Pilots fail to scale</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">42%</span>
+                    <span class="stat-label">Abandoned in 2025</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">300%</span>
+                    <span class="stat-label">Underestimated complexity</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5%</span>
+                    <span class="stat-label">Achieve real P&L impact</span>
+                </div>
+            </div>
 
-            <p>For most organizations, what comes next is a slow descent into what we call "pilot purgatory"--that organizational limbo where AI projects live indefinitely, never quite dying but never reaching production. According to MIT's NANDA initiative report "The GenAI Divide: State of AI in Business 2025," approximately 95% of enterprise AI pilots fail to deliver measurable business impact. They stall, drift, and eventually fade into the budget line items that nobody wants to discuss.</p>
-
-            <p>This isn't a new problem, but it's getting worse. S&P Global's 2025 survey found that 42% of companies abandoned most of their AI initiatives this year--up dramatically from 17% in 2024. The average organization scrapped 46% of AI proof-of-concepts before they reached production.</p>
-
-            <p>The gap between a working demo and a production system isn't a small step. Research from the University of Pennsylvania's Wharton School found that organizations typically underestimate production deployment complexity by 300-500%. That impressive chatbot that wowed the steering committee? It's missing logging, security, identity management, data governance, compliance controls, and the dozens of integrations required to make it useful in the real world.</p>
-
-            <p>But here's the thing: some organizations do succeed. About 5% of AI pilots achieve rapid revenue acceleration and measurable P&L impact. Understanding what separates the 5% from the 95% isn't just academically interesting--it's the difference between competitive advantage and expensive experimentation.</p>
-
-            <p>This guide provides a practical framework for crossing the chasm from pilot to production, including honest analysis of why projects fail, actionable checklists, and the uncomfortable topic everyone avoids: when to kill a pilot that isn't working.</p>
+            <p>This guide examines why AI pilots fail, provides a battle-tested framework for escaping pilot purgatory, and perhaps most importantly, helps you recognize when to kill what isn't working before it drains more resources.</p>
 
             <h2 id="why-pilots-fail">Why Pilots Fail to Scale</h2>
 
-            <p>Before we discuss solutions, we need to understand the failure modes. Our analysis of industry research and client patterns reveals four primary reasons pilots never escape purgatory.</p>
+            <p>Understanding why pilots fail is the first step to avoiding the same fate. Through analyzing hundreds of AI initiatives across industries, four consistent patterns emerge. These aren't technical failures—they're systemic issues that compound over time.</p>
 
-            <h3>Reason 1: The Demo Trap</h3>
+            <!-- Failure Reasons Grid -->
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">1. The Demo Trap</span>
+                    </div>
+                    <ul>
+                        <li>Cherry-picked training data (only 20% of real scenarios)</li>
+                        <li>Happy-path testing avoiding failure modes</li>
+                        <li>Infrastructure shortcuts (runs on laptop)</li>
+                        <li>Stakeholder misalignment on expectations</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e67e22, #d35400);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">2. Technical Debt</span>
+                    </div>
+                    <ul>
+                        <li>Missing logging, monitoring, auth, compliance</li>
+                        <li>Integration complexity (62% cite as top obstacle)</li>
+                        <li>Scalability assumptions (50 → 50,000 requests)</li>
+                        <li>Fragile data pipelines</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">3. Organizational Barriers</span>
+                    </div>
+                    <ul>
+                        <li>Siloed AI teams isolated from business units</li>
+                        <li>MLOps immaturity (18 months to operationalize)</li>
+                        <li>Change management failures</li>
+                        <li>Skills gaps (35% cite as top obstacle)</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #27ae60, #1e8449);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">4. ROI Measurement Gap</span>
+                    </div>
+                    <ul>
+                        <li>No baseline established before deployment</li>
+                        <li>Unclear success criteria ("improve experience")</li>
+                        <li>Wrong metrics in wrong places</li>
+                        <li>ROI timeline mismatch</li>
+                    </ul>
+                </div>
+            </div>
 
-            <p>The first failure mode is the most insidious because it feels like success. You optimize for the demo--impressive visuals, cherry-picked data, happy-path scenarios that showcase AI's potential. The steering committee applauds. Budget gets approved.</p>
-
-            <p>But you've built a show car, not a production vehicle.</p>
-
-            <p>The demo trap manifests in predictable ways:</p>
-
-            <p><strong>Cherry-picked training data</strong>: The demo uses carefully curated examples that represent maybe 20% of real-world scenarios. Edge cases, messy data, and adversarial inputs aren't in the test set because they'd make the demo look bad.</p>
-
-            <p><strong>Happy-path testing</strong>: The demo script avoids scenarios where the model struggles. Questions are phrased in ways the model handles well. Failure modes are never shown.</p>
-
-            <p><strong>Infrastructure shortcuts</strong>: The demo runs on a data scientist's laptop or a single cloud instance. There's no consideration for concurrent users, latency requirements, or failure recovery.</p>
-
-            <p><strong>Stakeholder misalignment</strong>: Different stakeholders leave the demo with different expectations. Sales thinks it's ready for customer-facing deployment. IT thinks it's a proof of concept. The AI team thinks it's a research project.</p>
-
-            <p>As one industry analysis puts it: "GenAI doesn't fail in the lab. It fails in the enterprise--when it collides with vague goals, poor data, and organizational inertia."</p>
-
-            <h3>Reason 2: Technical Debt Accumulation</h3>
-
-            <p>Pilots are built quickly, often by small teams under pressure to show results. The shortcuts that seem reasonable during the POC phase become crippling technical debt when you try to scale.</p>
-
-            <p><strong>Missing enterprise requirements</strong>: Production systems need logging, monitoring, authentication, authorization, audit trails, encryption, and compliance controls. Most pilots have none of these. Adding them isn't a small task--it often requires architectural changes that invalidate the pilot's assumptions.</p>
-
-            <p><strong>Integration complexity</strong>: That pilot that worked beautifully with a CSV export doesn't integrate with your SAP system, your Salesforce instance, or your custom CRM. According to Deloitte's 2024 State of AI in the Enterprise report, 62% of leaders cite data access and integration challenges as their top obstacle.</p>
-
-            <p><strong>Scalability assumptions</strong>: The pilot handles 50 requests per day. Production needs 50,000. The architecture doesn't scale. The costs don't scale. The error rates don't scale.</p>
-
-            <p><strong>Data pipeline fragility</strong>: The pilot uses manually prepared data. Production needs automated pipelines that handle data quality issues, schema changes, missing values, and upstream failures gracefully.</p>
-
-            <p>IDC research found that for every 33 AI prototypes a company built, only 4 made it into production--an 88% failure rate. Most of those failures trace back to technical debt that accumulated during the pilot phase.</p>
-
-            <h3>Reason 3: Organizational Barriers</h3>
-
-            <p>Technical challenges are actually the easier problems to solve. Organizational barriers are what kill most pilots.</p>
-
-            <p><strong>Siloed AI teams</strong>: Many organizations build centralized AI labs that develop pilots in isolation from the business units that will use them. When it's time to deploy, the business unit doesn't have ownership, doesn't understand the system, and doesn't prioritize adoption.</p>
-
-            <p>MIT's research shows that empowering line managers--not just central AI labs--to drive adoption is a key success factor. Decentralizing authority with clear ownership produces better outcomes than centralized control.</p>
-
-            <p><strong>MLOps immaturity</strong>: According to Gartner, only 48% of AI projects make it from pilot to production, with the average enterprise spending 18 months attempting to operationalize a single model. Most organizations lack the MLOps practices--model versioning, automated testing, deployment pipelines, monitoring--that make production AI sustainable.</p>
-
-            <p><strong>Change management failures</strong>: AI changes workflows. It changes job responsibilities. It changes how decisions get made. Without deliberate change management, users resist, workaround the system, or simply ignore it.</p>
-
-            <p><strong>Skills gaps</strong>: Implementing AI at enterprise scale requires specialized skills--data scientists, ML engineers, AI product managers--that are in short supply globally. The CDO Insights 2025 survey found that 35% of organizations cite shortage of skills and data literacy as a top obstacle.</p>
-
-            <h3>Reason 4: The ROI Measurement Gap</h3>
-
-            <p>You can't scale what you can't measure. Yet most pilots launch without baseline metrics, clear success criteria, or mechanisms to track business impact.</p>
-
-            <p><strong>No baseline established</strong>: If you don't measure current performance before deploying AI, you can't prove improvement. Many pilots launch without documenting the baseline state they're trying to improve.</p>
-
-            <p><strong>Unclear success criteria</strong>: "Improve customer experience" isn't a success criterion. "Reduce average handle time by 15% while maintaining CSAT above 4.2" is a success criterion. Most pilots have the former, not the latter.</p>
-
-            <p><strong>Wrong metrics in wrong places</strong>: MIT's research reveals a counterintuitive finding--over half of enterprise AI budgets go to sales and marketing, but that's where returns are lowest. The biggest measurable ROI is actually in back-office automation: reducing reliance on business process outsourcing, slashing agency costs, and streamlining repetitive workflows.</p>
-
-            <p><strong>ROI timeline mismatch</strong>: AI benefits often compound over time, but organizations expect quarterly payback. The measurement framework doesn't match the value creation timeline.</p>
-
-            <p>For a comprehensive approach to measuring AI value, see our guide on <a href="ai-roi-framework.html">The AI ROI Framework: How to Measure What Actually Matters</a>.</p>
+            <div class="callout">
+                <p><strong>Key insight:</strong> "GenAI doesn't fail in the lab. It fails in the enterprise—when it collides with vague goals, poor data, and organizational inertia."</p>
+            </div>
 
             <h2 id="the-5-framework">The 5% Framework</h2>
 
-            <p>What do successful organizations do differently? Analysis of MIT, McKinsey, and Gartner research reveals four pillars that separate the 5% from the 95%.</p>
+            <p>The organizations that successfully scale AI share common practices that most failed pilots neglect. We've distilled these into four pillars—not because they're revolutionary ideas, but because they're consistently ignored under the pressure to ship demos and show progress.</p>
+
+            <!-- Four Pillars Flow Diagram -->
+            <div class="flow-diagram" role="img" aria-label="Four pillars: Production-First, Stakeholder Alignment, Incremental Scaling, Continuous Measurement">
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Production-First</div>
+                    <div class="flow-step-desc">Build for prod, demo well</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Alignment</div>
+                    <div class="flow-step-desc">Agree before coding</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Incremental</div>
+                    <div class="flow-step-desc">Scale with gates</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Measure</div>
+                    <div class="flow-step-desc">Track continuously</div>
+                </div>
+            </div>
 
             <h3>Pillar 1: Production-First Mindset</h3>
 
-            <p>The 5% don't build demos that they later try to harden for production. They build production systems that happen to demo well.</p>
+            <p>Build production systems that demo well—not demos you try to harden later.</p>
 
-            <p><strong>Design for edge cases from day one</strong>: If your training data doesn't include the messy, problematic cases that represent 30% of real-world inputs, you're building a demo, not a system. Successful teams deliberately include edge cases in their pilot scope.</p>
-
-            <p><strong>Build observability into the pilot</strong>: If you can't see what your model is doing in the pilot, you won't be able to debug it in production. Logging, tracing, and monitoring aren't "nice to haves" for later--they're requirements for the pilot itself.</p>
-
-            <p><strong>Include error handling in POC scope</strong>: What happens when the model fails? When the API times out? When the input is malformed? Production-first pilots answer these questions during the pilot phase, not after.</p>
-
-            <p><strong>Test with production-like data</strong>: Cherry-picked demos create cherry-picked expectations. Successful pilots use messy, representative data from day one--even if the metrics look worse.</p>
-
-            <div class="key-insight">
-                <div class="key-insight-title">Production-First Pilot Checklist</div>
-                <p>
-                    <strong>Edge cases explicitly included in test data (minimum 20% of test cases)</strong><br>
-                    <strong>Error handling defined for all failure modes</strong><br>
-                    <strong>Logging captures inputs, outputs, and model decisions</strong><br>
-                    <strong>Latency requirements defined and tested</strong><br>
-                    <strong>Concurrent user load tested (10x expected initial deployment)</strong><br>
-                    <strong>Security review completed (authentication, authorization, data protection)</strong><br>
-                    <strong>Rollback procedure documented and tested</strong><br>
-                    <strong>Cost projections calculated for 10x and 100x scale</strong><br>
-                    <strong>Data pipeline handles missing values and schema variations</strong><br>
-                    <strong>Monitoring dashboards operational before pilot deployment</strong>
-                </p>
+            <div class="visual-checklist">
+                <div class="visual-checklist-title">Production-First Checklist</div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">1</span>
+                    <div class="checklist-content">
+                        <h4>Edge Cases First</h4>
+                        <p>Include 20%+ messy, problematic cases in test data</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">2</span>
+                    <div class="checklist-content">
+                        <h4>Observability Built-In</h4>
+                        <p>Logging, tracing, monitoring operational before deployment</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">3</span>
+                    <div class="checklist-content">
+                        <h4>Scale-Tested</h4>
+                        <p>Load tested at 10x expected volume, cost projected at 100x</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">4</span>
+                    <div class="checklist-content">
+                        <h4>Rollback Ready</h4>
+                        <p>Documented procedure tested before going live</p>
+                    </div>
+                </div>
             </div>
 
             <h3>Pillar 2: Stakeholder Alignment</h3>
 
-            <p>Misaligned expectations kill more pilots than technical failures. The 5% invest heavily in alignment before writing code.</p>
+            <p>Misaligned expectations kill more pilots than technical failures.</p>
 
-            <p><strong>Define success criteria before coding starts</strong>: What specific, measurable outcomes will this pilot achieve? What won't it achieve? Document these explicitly and get sign-off from all stakeholders.</p>
-
-            <p><strong>The expectation-setting conversation</strong>: Before the pilot begins, have an explicit conversation with each stakeholder group about what they'll see, what they won't see, and what success looks like. This conversation prevents the demo trap.</p>
-
-            <h3>Template: AI Project Charter</h3>
-
-            <pre><code>PROJECT: [Name]
-PROBLEM STATEMENT: [Specific business problem being addressed]
-SUCCESS CRITERIA:
-  - Primary metric: [Specific, measurable outcome]
-  - Target: [Number] by [Date]
-  - Current baseline: [Number]
-SCOPE:
-  - In scope: [Specific capabilities]
-  - Out of scope: [Explicit exclusions]
-NOT GOALS:
-  - [Things stakeholders might expect but won't be delivered]
-TIMELINE:
-  - Pilot complete: [Date]
-  - Scale decision: [Date]
-  - Production target: [Date]
-RISKS:
-  - [Risk 1]: Mitigation: [Action]
-  - [Risk 2]: Mitigation: [Action]
-DECISION CRITERIA FOR SCALING:
-  - Technical: [Specific criteria]
-  - Business: [Specific criteria]
-  - Organizational: [Specific criteria]
-KILL CRITERIA:
-  - [Conditions under which pilot should be abandoned]</code></pre>
-
-            <p><strong>Regular demos with real data</strong>: Don't save the messy cases for production. Show stakeholders representative examples--including failures--throughout the pilot. This builds realistic expectations and surfaces concerns early.</p>
+            <div class="visual-checklist">
+                <div class="visual-checklist-title">Alignment Requirements</div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">1</span>
+                    <div class="checklist-content">
+                        <h4>Define Success Before Coding</h4>
+                        <p>Specific, measurable outcomes with documented sign-off</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">2</span>
+                    <div class="checklist-content">
+                        <h4>Document What's NOT in Scope</h4>
+                        <p>Explicit "not goals" prevent scope creep expectations</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">3</span>
+                    <div class="checklist-content">
+                        <h4>Set Kill Criteria Upfront</h4>
+                        <p>Conditions for abandonment—decided before emotional investment</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">4</span>
+                    <div class="checklist-content">
+                        <h4>Demo with Real Data</h4>
+                        <p>Show messy cases throughout—not just happy paths</p>
+                    </div>
+                </div>
+            </div>
 
             <h3>Pillar 3: Incremental Scaling</h3>
 
-            <p>The 5% don't flip a switch from pilot to production. They scale incrementally, with explicit gates at each stage.</p>
+            <p>Don't flip a switch—scale with explicit gates at each stage.</p>
 
-            <p><strong>Shadow mode deployment</strong>: Before taking any production traffic, run the AI system in shadow mode--processing real inputs but not affecting real outputs. Compare AI decisions to human decisions. Identify failure patterns before they impact users.</p>
+            <!-- Traffic Shifting Visual -->
+            <div class="flow-diagram" role="img" aria-label="Traffic shifting stages: Shadow, Canary, Limited, Expanded, Production">
+                <div class="flow-step">
+                    <div class="flow-step-icon" style="background: linear-gradient(135deg, #6b7c3f, #8fa355);">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Shadow</div>
+                    <div class="flow-step-desc">0% impact</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Canary</div>
+                    <div class="flow-step-desc">1% traffic</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Limited</div>
+                    <div class="flow-step-desc">10% traffic</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon" style="background: linear-gradient(135deg, #e67e22, #d35400);">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Full</div>
+                    <div class="flow-step-desc">100% traffic</div>
+                </div>
+            </div>
 
-            <p><strong>Gradual traffic shifting</strong>: Start with 1% of traffic. Monitor closely. If metrics hold, move to 5%. Then 25%. Then 50%. Each stage has explicit success criteria that must be met before proceeding.</p>
-
-            <pre><code>TRAFFIC SHIFTING SCHEDULE
-
-Stage 1: Shadow Mode (2 weeks)
-- Traffic: 100% duplicated, AI decisions logged not acted on
-- Gate: &lt;5% error rate, &lt;95th percentile latency within SLA
-- Rollback: N/A (no production impact)
-
-Stage 2: Canary (1 week)
-- Traffic: 1% routed to AI
-- Gate: Business metrics within 10% of baseline
-- Rollback: Automatic if error rate &gt;10%
-
-Stage 3: Limited (2 weeks)
-- Traffic: 10% routed to AI
-- Gate: Business metrics within 5% of baseline
-- Rollback: Manual approval required
-
-Stage 4: Expanded (2 weeks)
-- Traffic: 50% routed to AI
-- Gate: Business metrics meet or exceed baseline
-- Rollback: Change control process
-
-Stage 5: Full Production
-- Traffic: 100%
-- Gate: 2 weeks stable at 50%
-- Rollback: Emergency procedures</code></pre>
-
-            <p><strong>Rollback triggers</strong>: Define automatic rollback criteria before deployment. If error rates exceed X%, if latency exceeds Y, if business metrics drop by Z%--automatic rollback to the previous state. Don't rely on humans to catch problems at 3 AM.</p>
+            <div class="callout">
+                <p><strong>Gate Rule:</strong> Each stage has explicit success criteria. Define automatic rollback triggers before deployment—don't rely on humans at 3 AM.</p>
+            </div>
 
             <h3>Pillar 4: Continuous Measurement</h3>
 
-            <p>Measurement isn't a phase--it's a continuous discipline that starts before the pilot and never ends.</p>
+            <p>Without a solid baseline, you can't prove success. Period.</p>
 
-            <p><strong>Baseline establishment</strong>: Before the pilot begins, measure current state for at least 4 weeks. Document:</p>
-            <ul>
-                <li>Process metrics (time, volume, error rates)</li>
-                <li>Quality metrics (accuracy, completeness, customer satisfaction)</li>
-                <li>Cost metrics (labor, tools, rework)</li>
-                <li>Variance (daily, weekly, seasonal patterns)</li>
-            </ul>
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Leading Indicators</span>
+                    </div>
+                    <ul>
+                        <li>Model confidence scores</li>
+                        <li>Input distribution shift</li>
+                        <li>Predict problems before impact</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #27ae60, #1e8449);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Lagging Indicators</span>
+                    </div>
+                    <ul>
+                        <li>Task completion rate</li>
+                        <li>Customer satisfaction</li>
+                        <li>Measure actual business impact</li>
+                    </ul>
+                </div>
+            </div>
 
-            <p>Without a solid baseline, you cannot prove the pilot succeeded. Period.</p>
-
-            <p><strong>Leading vs. lagging indicators</strong>: Lagging indicators tell you what happened. Leading indicators tell you what will happen. Track both.</p>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Type</th>
-                        <th>Example</th>
-                        <th>Use</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Leading</td>
-                        <td>Model confidence scores</td>
-                        <td>Predict failures before they impact users</td>
-                    </tr>
-                    <tr>
-                        <td>Leading</td>
-                        <td>Input distribution shift</td>
-                        <td>Detect when real-world data diverges from training</td>
-                    </tr>
-                    <tr>
-                        <td>Lagging</td>
-                        <td>Task completion rate</td>
-                        <td>Measure actual business impact</td>
-                    </tr>
-                    <tr>
-                        <td>Lagging</td>
-                        <td>Customer satisfaction</td>
-                        <td>Validate user experience</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <p><strong>Dashboard metrics to track</strong>:</p>
-            <ul>
-                <li><strong>Reliability</strong>: Uptime, error rates, latency percentiles</li>
-                <li><strong>Quality</strong>: Accuracy, precision, recall for key decisions</li>
-                <li><strong>Business impact</strong>: Tasks completed, time saved, cost avoided</li>
-                <li><strong>User adoption</strong>: Active users, usage frequency, feature utilization</li>
-                <li><strong>Model health</strong>: Confidence distributions, input drift, output drift</li>
-            </ul>
+            <div class="key-insight">
+                <div class="key-insight-title">Dashboard Must-Haves</div>
+                <p><strong>Reliability:</strong> Uptime, error rates, latency • <strong>Quality:</strong> Accuracy, precision • <strong>Business:</strong> Tasks completed, time saved • <strong>Adoption:</strong> Active users, frequency • <strong>Health:</strong> Confidence drift, input drift</p>
+            </div>
 
             <h2 id="case-studies">Case Study Analysis</h2>
 
-            <p>Theory is useful. Patterns from real implementations are more useful. Here are two composite case studies based on common patterns we observe.</p>
+            <!-- Failed Pilot Case Study -->
+            <div class="case-study-card failure">
+                <div class="case-study-header">
+                    <span class="case-study-badge failure">Failed</span>
+                    <span class="case-study-title">Fortune 500 Retailer: Customer Service Chatbot</span>
+                </div>
+                <div class="case-study-context">$2M budget • 90-day pilot • Goal: Reduce call center volume</div>
 
-            <h3>Pattern A: The Failed Pilot</h3>
+                <div class="timeline">
+                    <div class="timeline-item bad">
+                        <div class="timeline-label">Month 1-2</div>
+                        <div class="timeline-content">Built impressive demo with 92% accuracy on cherry-picked test data. Internal hype builds.</div>
+                    </div>
+                    <div class="timeline-item bad">
+                        <div class="timeline-label">Month 3</div>
+                        <div class="timeline-content">Launched at 5% traffic. Accuracy dropped to 67%. Missing OMS integration. Edge cases not in training data.</div>
+                    </div>
+                    <div class="timeline-item bad">
+                        <div class="timeline-label">Month 4-12</div>
+                        <div class="timeline-content">Budget doubled. Timeline extended. 5% became ceiling. Sponsor left company.</div>
+                    </div>
+                    <div class="timeline-item bad">
+                        <div class="timeline-label">Month 13+</div>
+                        <div class="timeline-content">"Ongoing evaluation" status. $300K/year maintenance. Minimal value. Zombie pilot.</div>
+                    </div>
+                </div>
 
-            <p><strong>Context</strong>: A Fortune 500 retailer launched an AI-powered customer service chatbot to reduce call center volume. The pilot team had 90 days and a $2M budget.</p>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-value bad">92% → 67%</span>
+                        <span class="result-label">Accuracy Drop</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-value bad">$4M+</span>
+                        <span class="result-label">Total Cost</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-value bad">5%</span>
+                        <span class="result-label">Max Traffic</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-value bad">Zombie</span>
+                        <span class="result-label">Final Status</span>
+                    </div>
+                </div>
+            </div>
 
-            <p><strong>What happened</strong>:</p>
+            <!-- Successful Pilot Case Study -->
+            <div class="case-study-card success">
+                <div class="case-study-header">
+                    <span class="case-study-badge success">Scaled</span>
+                    <span class="case-study-title">Financial Services: Loan Document Processing</span>
+                </div>
+                <div class="case-study-context">3,000 employees • Goal: Reduce manual review time for standard applications</div>
 
-            <p><em>Month 1-2</em>: The team built an impressive demo. The chatbot handled common questions with 92% accuracy on the test set. Leadership was excited. The demo video went viral internally.</p>
+                <div class="timeline">
+                    <div class="timeline-item good">
+                        <div class="timeline-label">Month 1-2: Baseline</div>
+                        <div class="timeline-content">8 weeks measuring current state: 47 min/app, 12% error rate, 850 apps/week, $34/app cost. Explicit kill criteria set.</div>
+                    </div>
+                    <div class="timeline-item good">
+                        <div class="timeline-label">Month 3-5: Pilot</div>
+                        <div class="timeline-content">4 weeks shadow mode first. Found 3 problem document types. Fixed before production. Gradual traffic: 5% → 15% → 40%.</div>
+                    </div>
+                    <div class="timeline-item good">
+                        <div class="timeline-label">Month 6: Decision</div>
+                        <div class="timeline-content">At 40% traffic: 14 min processing, 91% accuracy. Clear business case: $1.2M annual savings.</div>
+                    </div>
+                    <div class="timeline-item good">
+                        <div class="timeline-label">Month 7-14: Production</div>
+                        <div class="timeline-content">Built integrations, monitoring, training. Longer than pilot, but sustainable.</div>
+                    </div>
+                </div>
 
-            <p><em>Month 3</em>: The pilot launched with 5% of customer inquiries. Accuracy dropped to 67%. The chatbot couldn't handle order-specific questions because it lacked integration with the order management system. Edge cases--returns, damaged items, partial shipments--weren't in the training data.</p>
-
-            <p><em>Month 4-6</em>: The team scrambled to add integrations and expand training data. Budget doubled. Timeline extended. The 5% traffic allocation became a ceiling, not a floor.</p>
-
-            <p><em>Month 7-12</em>: The pilot limped along. Some metrics improved slightly. Others didn't. Leadership attention moved to other priorities. The original sponsor left the company.</p>
-
-            <p><em>Month 13+</em>: The pilot officially became "ongoing evaluation." No one wanted to kill it, but no one was willing to fund production scaling. It consumed $300K annually in maintenance costs while delivering minimal value.</p>
-
-            <p><strong>Warning signs that were ignored</strong>:</p>
-            <ul>
-                <li>No baseline metrics before launch</li>
-                <li>Test data didn't include order-specific scenarios</li>
-                <li>Integration requirements discovered after demo, not before</li>
-                <li>Success criteria changed three times during the pilot</li>
-                <li>Original 90-day timeline extended without revisiting scope</li>
-            </ul>
-
-            <p><strong>Lessons</strong>:</p>
-            <ul>
-                <li>The demo trap created unrealistic expectations</li>
-                <li>Missing integrations weren't "enhancements"--they were requirements</li>
-                <li>Changing success criteria is a red flag for scope creep</li>
-                <li>Pilots without kill criteria become zombies</li>
-            </ul>
-
-            <h3>Pattern B: The Successful Scale</h3>
-
-            <p><strong>Context</strong>: A mid-size financial services firm (3,000 employees) launched an AI-powered document processing system for loan applications. The goal was reducing manual review time for standard applications.</p>
-
-            <p><strong>What they did differently</strong>:</p>
-
-            <p><em>Pre-pilot (Month 1-2)</em>: Before writing code, the team spent 8 weeks on alignment and baseline measurement. They documented:</p>
-            <ul>
-                <li>Current average processing time: 47 minutes per application</li>
-                <li>Error rate requiring rework: 12%</li>
-                <li>Volume: 850 applications per week</li>
-                <li>Cost per application: $34 (loaded labor cost)</li>
-            </ul>
-
-            <p>Success criteria were explicit: reduce average processing time to under 20 minutes for 60% of applications while maintaining or improving error rates.</p>
-
-            <p>Kill criteria were also explicit: if accuracy fell below 85% or processing time increased, the pilot would be paused.</p>
-
-            <p><em>Pilot (Month 3-5)</em>: The pilot processed applications in shadow mode for 4 weeks before taking any production load. During shadow mode, the team identified three document types that the model handled poorly and adjusted training data.</p>
-
-            <p>Traffic shifted gradually: 5% to 15% to 40% over 12 weeks. Each stage had explicit gates.</p>
-
-            <p><em>Scale decision (Month 6)</em>: With 40% of traffic, the system was processing standard applications in 14 minutes with a 91% accuracy rate. The business case for production was clear: $1.2M annual savings at full scale.</p>
-
-            <p><em>Production (Month 7-14)</em>: Full production rollout took 7 more months. The team built proper integrations, added monitoring, trained staff, and documented procedures. The timeline was longer than the pilot, but the outcome was sustainable.</p>
-
-            <p><strong>Key decisions that mattered</strong>:</p>
-            <ul>
-                <li>Baseline measurement before any AI work</li>
-                <li>Explicit kill criteria prevented sunk cost thinking</li>
-                <li>Shadow mode caught problems before they impacted customers</li>
-                <li>Gradual traffic shifting built confidence</li>
-                <li>Production timeline was realistic, not optimistic</li>
-            </ul>
-
-            <p><strong>Results at 24 months</strong>:</p>
-            <ul>
-                <li>78% of standard applications processed automatically</li>
-                <li>Average processing time: 11 minutes (from 47)</li>
-                <li>Error rate: 8% (from 12%)</li>
-                <li>Annual savings: $1.4M</li>
-                <li>Payback period: 14 months</li>
-            </ul>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-value good">47 → 11 min</span>
+                        <span class="result-label">Processing Time</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-value good">12% → 8%</span>
+                        <span class="result-label">Error Rate</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-value good">$1.4M</span>
+                        <span class="result-label">Annual Savings</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-value good">14 mo</span>
+                        <span class="result-label">Payback Period</span>
+                    </div>
+                </div>
+            </div>
 
             <h2 id="scaling-checklist">The Scaling Checklist</h2>
 
-            <p>Before scaling any pilot to production, work through this checklist. Gaps don't necessarily mean "don't scale"--they mean "address before scaling."</p>
+            <p>Gaps don't mean "don't scale"—they mean "address before scaling."</p>
 
-            <h3>Pre-Scale Assessment</h3>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Check</th>
-                        <th>Status</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Edge case coverage documented (&gt;30% of test cases)</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Error handling implemented for all known failure modes</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Monitoring and alerting operational and tested</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Rollback procedure documented and tested</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Cost projections calculated at 10x current scale</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Kill criteria still valid and measurable</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Original success criteria met or exceeded</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Stakeholder alignment confirmed for production scope</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Technical Readiness</h3>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Check</th>
-                        <th>Status</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Load testing completed at 10x expected production volume</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Security review passed (auth, data protection, compliance)</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Data pipeline handles schema changes gracefully</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Integration tests cover all connected systems</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Model versioning and rollback capability in place</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Latency requirements met at scale</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Disaster recovery procedure documented</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Logging captures data for debugging and audit</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Organizational Readiness</h3>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Check</th>
-                        <th>Status</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Production support team identified and trained</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Documentation complete for operators</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Escalation paths defined for AI-specific issues</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Change management plan approved</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>User training completed or scheduled</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Communication plan for go-live approved</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Ongoing ownership assigned (not pilot team)</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Feedback mechanism for users implemented</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Business Readiness</h3>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Check</th>
-                        <th>Status</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Success metrics defined with baseline</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Measurement infrastructure operational</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Stakeholder sign-off on production scope</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Budget approved for production operation</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>ROI model validated with pilot data</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Ongoing optimization plan defined</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Technical</span>
+                    </div>
+                    <ul>
+                        <li>Load tested at 10x volume</li>
+                        <li>Security review passed</li>
+                        <li>Rollback procedure tested</li>
+                        <li>Logging for debugging & audit</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Organizational</span>
+                    </div>
+                    <ul>
+                        <li>Support team trained</li>
+                        <li>Escalation paths defined</li>
+                        <li>Ownership assigned (not pilot team)</li>
+                        <li>User feedback mechanism live</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #27ae60, #1e8449);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Business</span>
+                    </div>
+                    <ul>
+                        <li>Success metrics with baseline</li>
+                        <li>Stakeholder sign-off</li>
+                        <li>Budget approved</li>
+                        <li>ROI validated with pilot data</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e67e22, #d35400);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Pre-Scale</span>
+                    </div>
+                    <ul>
+                        <li>Edge cases documented (30%+)</li>
+                        <li>Error handling complete</li>
+                        <li>Kill criteria still valid</li>
+                        <li>Original success criteria met</li>
+                    </ul>
+                </div>
+            </div>
 
             <h2 id="when-to-kill">When to Kill a Pilot</h2>
 
-            <p>Here's the uncomfortable topic that nobody writes about: sometimes the right decision is to kill the pilot.</p>
+            <p>Not pivot. Not "extend for more data." <strong>Kill.</strong></p>
 
-            <p>Not pivot. Not "extend for more data." Kill.</p>
+            <div class="callout">
+                <p><strong>The Sunk Cost Trap:</strong> After 6 months, a team of 5, and $500K spent, nobody wants to admit failure. But continuing to invest in a failing pilot isn't perseverance—it's waste.</p>
+            </div>
 
-            <p>The sunk cost fallacy is powerful. After six months of work, a team of five, and $500K spent, nobody wants to admit failure. But continuing to invest in a failing pilot isn't perseverance--it's waste.</p>
+            <!-- Kill Signals Grid -->
+            <div class="kill-signals">
+                <div class="kill-signal">
+                    <div class="kill-signal-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <div class="kill-signal-content">
+                        <h4>Problem Changed</h4>
+                        <p>Business priority shifted. The problem isn't worth solving anymore.</p>
+                    </div>
+                </div>
+                <div class="kill-signal">
+                    <div class="kill-signal-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="kill-signal-content">
+                        <h4>Approach Failed</h4>
+                        <p>Fundamental approach—not implementation—is flawed. Accuracy won't improve.</p>
+                    </div>
+                </div>
+                <div class="kill-signal">
+                    <div class="kill-signal-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                        </svg>
+                    </div>
+                    <div class="kill-signal-content">
+                        <h4>Data Doesn't Exist</h4>
+                        <p>Required data is unavailable, too poor quality, or locked in inaccessible systems.</p>
+                    </div>
+                </div>
+                <div class="kill-signal">
+                    <div class="kill-signal-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="kill-signal-content">
+                        <h4>ROI Doesn't Work</h4>
+                        <p>With real pilot data, costs are higher and benefits lower. Math doesn't work.</p>
+                    </div>
+                </div>
+                <div class="kill-signal">
+                    <div class="kill-signal-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <div class="kill-signal-content">
+                        <h4>Support Evaporated</h4>
+                        <p>Sponsor left. Priorities changed. Business unit lost interest.</p>
+                    </div>
+                </div>
+                <div class="kill-signal">
+                    <div class="kill-signal-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <div class="kill-signal-content">
+                        <h4>Market Solved It</h4>
+                        <p>A vendor released something better and cheaper. Build vs buy changed.</p>
+                    </div>
+                </div>
+            </div>
 
-            <h3>Signs the Pilot Should Be Abandoned</h3>
+            <!-- Pivot vs Kill Visual -->
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Kill</span>
+                    </div>
+                    <ul>
+                        <li>Fundamental approach doesn't work</li>
+                        <li>Problem no longer worth solving</li>
+                        <li>Data will never exist</li>
+                        <li>No organizational appetite</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Pivot</span>
+                    </div>
+                    <ul>
+                        <li>Implementation issues, approach valid</li>
+                        <li>Problem valid, scope needs adjustment</li>
+                        <li>Data exists, needs different processing</li>
+                        <li>Champion exists, different stakeholders</li>
+                    </ul>
+                </div>
+            </div>
 
-            <p><strong>1. The problem changed</strong>: The business problem you started solving is no longer a priority. Markets shift, strategies change, competitors move. If the problem isn't worth solving anymore, stop trying to solve it.</p>
-
-            <p><strong>2. The technical approach failed</strong>: After reasonable iteration, the approach isn't working. Accuracy isn't improving. Costs aren't decreasing. The fundamental approach--not the implementation--is flawed.</p>
-
-            <p><strong>3. The data doesn't exist</strong>: You assumed data would be available. It isn't. Or it exists but quality is too poor. Or it's locked in systems you can't access. If you can't get the data you need, you can't build the system.</p>
-
-            <p><strong>4. The ROI doesn't work</strong>: With real pilot data, the business case no longer holds. Costs are higher than projected. Benefits are lower. The math doesn't work.</p>
-
-            <p><strong>5. Organizational support evaporated</strong>: The sponsor left. Priorities changed. The business unit is no longer interested. Without organizational support, even technically successful pilots fail.</p>
-
-            <p><strong>6. The market solved it</strong>: A vendor released a product that does what you're building, better and cheaper. Build vs. buy calculus changed.</p>
-
-            <h3>The Sunk Cost Trap</h3>
-
-            <p>Industry experts warn about the danger zone: "Six- to nine-month AI pilot projects can be dangerous. If you're going to dump it, you don't want to dump it in nine months, because then you get into some sunk cost fallacy where people are going to try to really make it work."</p>
-
-            <p>The antidote is predefined kill criteria. Before the pilot starts, document the conditions under which you'll abandon it. When those conditions occur, execute the decision--don't renegotiate.</p>
-
-            <h3>Pivot vs. Kill</h3>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Kill</th>
-                        <th>Pivot</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Fundamental approach doesn't work</td>
-                        <td>Implementation issues, approach valid</td>
-                    </tr>
-                    <tr>
-                        <td>Problem is no longer worth solving</td>
-                        <td>Problem valid, scope needs adjustment</td>
-                    </tr>
-                    <tr>
-                        <td>Data doesn't and won't exist</td>
-                        <td>Data exists, needs different processing</td>
-                    </tr>
-                    <tr>
-                        <td>Organization has no appetite</td>
-                        <td>Champion exists, needs different stakeholders</td>
-                    </tr>
-                    <tr>
-                        <td>Better market solution available</td>
-                        <td>Competitive advantage still possible</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Communicating Failure Productively</h3>
-
-            <p>Killing a pilot isn't the same as admitting failure. Frame it correctly:</p>
-
-            <p><strong>What we learned</strong>: Document the insights gained. Failed pilots often reveal important information about data quality, integration complexity, or organizational readiness that benefits future projects.</p>
-
-            <p><strong>What we'd do differently</strong>: Capture lessons for the next initiative. Failed pilots build organizational AI maturity even when they don't build production systems.</p>
-
-            <p><strong>What we're doing next</strong>: Don't end with cancellation. End with redirection. Where is the investment going instead?</p>
-
-            <p><strong>Consider pausing, not killing</strong>: As one expert notes, "It's important to note that failure is a necessary part of innovation. Progress in the field of AI is rapid. This is why it's better to pause projects, rather than abandon them entirely, as new capabilities and techniques are emerging all the time."</p>
-
-            <p>A pilot paused with good documentation can be restarted when conditions change. A pilot killed in frustration is rarely revived.</p>
+            <div class="key-insight">
+                <div class="key-insight-title">When Killing, Document</div>
+                <p><strong>What we learned</strong> • <strong>What we'd do differently</strong> • <strong>What we're doing next</strong><br><br>A pilot paused with good documentation can be restarted. A pilot killed in frustration is rarely revived.</p>
+            </div>
 
             <h2 id="conclusion">Conclusion: The 5% Mindset</h2>
 
-            <p>Escaping pilot purgatory isn't about better technology. It's about better execution.</p>
+            <p>Escaping pilot purgatory isn't about better technology—it's about better execution.</p>
 
-            <p>The 5% of organizations that successfully scale AI pilots share a mindset:</p>
-
-            <p><strong>Production-first</strong>: They build systems that happen to demo well, not demos they hope to productionize. Edge cases, error handling, and observability are day-one requirements.</p>
-
-            <p><strong>Aligned</strong>: They invest in stakeholder alignment before writing code. Success criteria are specific and measurable. Expectations are realistic and documented.</p>
-
-            <p><strong>Incremental</strong>: They scale gradually with explicit gates. Shadow mode, canary deployments, gradual traffic shifting. Each stage proves readiness for the next.</p>
-
-            <p><strong>Measured</strong>: They establish baselines before starting and track continuously throughout. They can prove impact because they designed for measurement.</p>
-
-            <p><strong>Honest</strong>: They define kill criteria upfront and execute them when triggered. They don't let sunk costs drive decisions. They communicate failures as learning, not defeat.</p>
-
-            <div class="key-insight">
-                <div class="key-insight-title">Your Monday Morning Action Items</div>
-                <p>
-                    <strong>1. Audit your current pilots:</strong> Which are in purgatory? Which have clear paths to production?<br><br>
-                    <strong>2. Add kill criteria:</strong> For any pilot without explicit kill criteria, define them now. What conditions would cause you to abandon the project?<br><br>
-                    <strong>3. Measure your baselines:</strong> For pilots approaching scale decisions, do you have solid baseline data? If not, pause scaling until you do.<br><br>
-                    <strong>4. Have the alignment conversation:</strong> Gather your stakeholders. Confirm everyone agrees on success criteria, scope, and timeline. Document disagreements.<br><br>
-                    <strong>5. Build your scaling checklist:</strong> Use the template in this guide. Identify gaps before they become production incidents.
-                </p>
+            <!-- 5% Mindset Visual -->
+            <div class="flow-diagram" role="img" aria-label="The 5% Mindset: Production-First, Aligned, Incremental, Measured, Honest">
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Prod-First</div>
+                    <div class="flow-step-desc">Build for scale, day 1</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Aligned</div>
+                    <div class="flow-step-desc">Agree before coding</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Incremental</div>
+                    <div class="flow-step-desc">Scale with gates</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Measured</div>
+                    <div class="flow-step-desc">Prove impact</div>
+                </div>
             </div>
 
-            <p>The 95% of pilots that fail aren't failures of AI technology. They're failures of execution discipline. With the right framework, the right mindset, and the honesty to kill what isn't working, you can be in the 5%.</p>
+            <div class="visual-checklist">
+                <div class="visual-checklist-title">Monday Morning Action Items</div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">1</span>
+                    <div class="checklist-content">
+                        <h4>Audit Current Pilots</h4>
+                        <p>Which are in purgatory? Which have clear paths to production?</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">2</span>
+                    <div class="checklist-content">
+                        <h4>Add Kill Criteria</h4>
+                        <p>Define conditions that would cause abandonment—before emotional investment</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">3</span>
+                    <div class="checklist-content">
+                        <h4>Measure Baselines</h4>
+                        <p>No solid baseline data? Pause scaling until you do</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">4</span>
+                    <div class="checklist-content">
+                        <h4>Have the Alignment Conversation</h4>
+                        <p>Gather stakeholders. Confirm success criteria. Document disagreements</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>The 95% that fail aren't failures of AI technology—they're failures of execution discipline. With the right framework and the honesty to kill what isn't working, you can be in the 5%.</p>
 
             <div class="cta-section">
                 <h2>Need Help Escaping Pilot Purgatory?</h2>

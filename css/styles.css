@@ -581,6 +581,12 @@ a {
     text-decoration: none;
     position: relative;
     overflow: hidden;
+    /* Fix text blurriness */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 /* Button shine effect */
@@ -608,43 +614,42 @@ a {
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px) scale(1.02);
+    transform: translateY(-3px) translateZ(0);
     box-shadow: 0 8px 25px rgba(107, 124, 63, 0.4), 0 0 30px rgba(107, 124, 63, 0.3);
     background-position: 100% 0;
 }
 
 .btn-primary:active {
-    transform: translateY(-1px) scale(0.98);
+    transform: translateY(-1px) translateZ(0);
 }
 
 /* Animated CTA button */
 .btn-cta {
-    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-light) 50%, var(--accent-primary) 100%);
-    background-size: 200% 200%;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-light) 100%);
+    background-size: 100% 100%;
     color: #ffffff;
     font-weight: 700;
     box-shadow: 0 4px 15px rgba(107, 124, 63, 0.3);
-    animation: gradientFlow 3s ease infinite;
 }
 
 .btn-cta:hover {
-    transform: translateY(-3px) scale(1.02);
+    transform: translateY(-3px) translateZ(0);
     box-shadow: 0 8px 30px rgba(107, 124, 63, 0.5);
-    animation-play-state: paused;
+    filter: brightness(1.1);
 }
 
 .btn-secondary {
     background: rgba(107, 124, 63, 0.1);
     color: var(--text-primary);
     border: 1px solid var(--glass-border-hover);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
 }
 
 .btn-secondary:hover {
     background: var(--glass-bg-hover);
     border-color: var(--accent-primary);
     color: var(--accent-primary-light);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
     box-shadow: 0 5px 20px rgba(107, 124, 63, 0.2);
 }
 
@@ -657,7 +662,7 @@ a {
 .btn-ghost:hover {
     background: var(--glass-bg-hover);
     border-color: var(--glass-border-hover);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
 }
 
 /* Button with icon */

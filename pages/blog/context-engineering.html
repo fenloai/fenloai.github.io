@@ -277,17 +277,33 @@
             transform: scale(1.3);
         }
 
-        /* Code Blocks */
+        /* Code Blocks with Syntax Highlighting */
         .article-content pre {
-            background: var(--bg-tertiary);
+            background: #1e1e2e;
             border: 1px solid var(--glass-border);
             border-radius: var(--radius-md);
             padding: var(--space-md);
             overflow-x: auto;
             margin: var(--space-md) 0;
             font-family: 'Fira Code', 'Consolas', monospace;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             line-height: 1.6;
+            position: relative;
+        }
+
+        .article-content pre::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            background: rgba(107, 124, 63, 0.3);
+            color: var(--accent-primary-light);
+            border-radius: 0 var(--radius-md) 0 var(--radius-sm);
+            letter-spacing: 0.5px;
         }
 
         .article-content code {
@@ -296,12 +312,25 @@
             border-radius: var(--radius-sm);
             font-family: 'Fira Code', 'Consolas', monospace;
             font-size: 0.9em;
+            color: #f8f8f2;
         }
 
         .article-content pre code {
             background: transparent;
             padding: 0;
+            color: #cdd6f4;
         }
+
+        /* Syntax highlighting colors */
+        .code-keyword { color: #cba6f7; }
+        .code-string { color: #a6e3a1; }
+        .code-comment { color: #6c7086; font-style: italic; }
+        .code-function { color: #89b4fa; }
+        .code-class { color: #f9e2af; }
+        .code-number { color: #fab387; }
+        .code-operator { color: #89dceb; }
+        .code-property { color: #f38ba8; }
+        .code-type { color: #94e2d5; }
 
         /* Tables */
         .article-content table {
@@ -369,6 +398,411 @@
             line-height: 1.7;
         }
 
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-normal);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--glass-border-hover);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Callout Box */
+        .callout {
+            background: linear-gradient(135deg, rgba(184, 160, 74, 0.1), rgba(184, 160, 74, 0.05));
+            border: 1px solid rgba(184, 160, 74, 0.2);
+            border-left: 4px solid var(--accent-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .callout p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: var(--accent-secondary-light);
+        }
+
+        /* Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: var(--space-lg) 0;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.25rem;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .flow-step-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+        }
+
+        .flow-step-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+        }
+
+        .flow-step-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .flow-step-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .flow-arrow {
+            color: var(--accent-primary-light);
+        }
+
+        .flow-arrow svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .flow-diagram {
+                flex-direction: column;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .comparison-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+        }
+
+        .comparison-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: var(--space-sm);
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .comparison-card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .comparison-card-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: white;
+        }
+
+        .comparison-card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .comparison-card li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .comparison-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-primary-light);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 600px) {
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        @media (max-width: 768px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .metric-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
+        }
+
+        .metric-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .metric-card-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .metric-card-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: white;
+        }
+
+        .metric-card-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .metric-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-sm);
+            line-height: 1.5;
+        }
+
+        .metric-card-formula {
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-sm);
+            padding: 0.5rem 0.75rem;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-primary-light);
+        }
+
+        /* Checklist */
+        .checklist {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin: var(--space-lg) 0;
+        }
+
+        .checklist-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .checklist-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 2px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .checklist-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .checklist-number {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .checklist-content h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .checklist-content p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Mid-article CTA */
+        .mid-cta {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .mid-cta::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -12px;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 24px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+        }
+
+        .mid-cta p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(143, 163, 85, 0.05));
@@ -397,26 +831,24 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
-            color: white;
+            background: #5a6a35;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
             padding: 1rem 2rem;
-            border-radius: var(--radius-full);
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(107, 124, 63, 0.3);
+            font-weight: 700;
+            font-size: 16px;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(107, 124, 63, 0.4);
+            background: #4a5a2a;
         }
 
         .cta-button svg {
             width: 20px;
             height: 20px;
-            transition: transform 0.3s ease;
+            stroke: #ffffff !important;
         }
 
         .cta-button:hover svg {
@@ -533,6 +965,120 @@
             .related-grid {
                 grid-template-columns: 1fr;
             }
+        }
+
+        /* Visual Checklist */
+        .visual-checklist {
+            display: grid;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .visual-checklist-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            transition: var(--transition-normal);
+        }
+
+        .visual-checklist-item:hover {
+            transform: translateX(4px);
+            border-color: var(--glass-border-hover);
+        }
+
+        .visual-checklist-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .visual-checklist-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+
+        .visual-checklist-icon.red { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .visual-checklist-icon.orange { background: linear-gradient(135deg, #e67e22, #d35400); }
+        .visual-checklist-icon.purple { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .visual-checklist-icon.green { background: linear-gradient(135deg, #27ae60, #1e8449); }
+        .visual-checklist-icon.blue { background: linear-gradient(135deg, #3498db, #2980b9); }
+
+        .visual-checklist-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+
+        .visual-checklist-content p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Mistake Cards */
+        .mistake-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .mistake-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mistake-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+        }
+
+        .mistake-card-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+
+        .mistake-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .mistake-card p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
         /* References */
@@ -687,11 +1233,11 @@
     <section class="blog-hero">
         <div class="article-meta">
             <span class="category-tag">AI Engineering</span>
-            <span class="reading-time" aria-label="Estimated reading time: 18 minutes">
+            <span class="reading-time" aria-label="Estimated reading time: 14 minutes">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                18 min read
+                14 min read
             </span>
         </div>
         <h1>Context Engineering for AI Agents: Managing the Finite Resource That Determines Success</h1>
@@ -727,39 +1273,91 @@
                 </ol>
             </nav>
 
-            <p>Your agent isn't failing because of the model. It's failing because of context.</p>
+            <div class="key-insight">
+                <div class="key-insight-title">The Real Problem</div>
+                <p>73% of agent failures trace back to poor context engineering--not model limitations, not prompt wording, not insufficient training data. Your agent isn't failing because of the model. It's failing because of context.</p>
+            </div>
 
-            <p>This isn't speculation. Recent analysis from production AI systems reveals that 73% of agent failures trace back to poor context engineering--not model limitations, not prompt wording, not insufficient training data. The context window, that finite space where your agent's entire understanding lives, is where most projects silently break.</p>
+            <p>Andrej Karpathy described LLMs as "a new kind of operating system," with context functioning as RAM. Poorly managed context causes hallucinations and forgotten instructions--just like a computer thrashing with insufficient memory.</p>
 
-            <p>Andrej Karpathy crystallized this reality when he described LLMs as "a new kind of operating system," with the context window functioning as RAM--the model's working memory. Just like a computer with insufficient RAM starts thrashing, an agent with poorly managed context starts hallucinating, forgetting instructions, and producing inconsistent outputs.</p>
-
-            <p>Anthropic's engineering team puts it directly: "Context is a critical but finite resource." They continue: "Given that LLMs are constrained by a finite attention budget, good context engineering means finding the smallest possible set of high-signal tokens that maximize the likelihood of some desired outcome."</p>
-
-            <p>This shift--from prompt engineering to context engineering--represents the maturation of our field. Building production AI agents is no longer about crafting the perfect prompt. It's about designing dynamic systems that curate, prioritize, and manage the right information at the right time.</p>
-
-            <p>In this guide, we'll cover the four battle-tested patterns for context engineering, provide real cost analysis with current pricing, show working code examples, and give you a metrics framework to measure context effectiveness. This is what production teams actually implement--not what tutorials suggest you might try.</p>
+            <p>This guide covers <strong>four battle-tested patterns</strong>, real cost analysis, working code, and metrics frameworks.</p>
 
             <h2 id="understanding-context">Understanding Context as a Resource</h2>
 
-            <p>Before optimizing context, we need to understand what we're actually managing. Context in an agent system isn't a single thing--it's a complex allocation problem across multiple competing demands.</p>
+            <p>Context isn't a single thing--it's a complex allocation problem. Every agent juggles four distinct types, each competing for the same finite token budget:</p>
 
-            <h3>The Four Types of Context</h3>
-
-            <p>Every agent juggles four distinct types of context, each competing for the same finite token budget:</p>
-
-            <p><strong>Conversation Context</strong>: The history of user interactions. In a customer service agent, this might include the user's initial question, clarifications, and your agent's previous responses. This grows linearly with conversation length, which is why long conversations degrade.</p>
-
-            <p><strong>System Context</strong>: Your agent's instructions, persona, and behavioral guidelines. This is relatively stable but often underestimated. A comprehensive system prompt can easily consume 2,000-4,000 tokens before the conversation even begins.</p>
-
-            <p><strong>Tool Context</strong>: Function definitions, tool descriptions, and the results of tool calls. If your agent has access to 20 tools, their schemas alone might consume 3,000+ tokens. Every tool call result adds more.</p>
-
-            <p><strong>Retrieved Context</strong>: Information pulled from RAG systems, memory stores, or external knowledge bases. This is the most variable--a single retrieval might return 500 tokens or 5,000.</p>
+            <!-- Context Types Comparison -->
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Conversation Context</span>
+                    </div>
+                    <ul>
+                        <li>History of user interactions</li>
+                        <li>Questions, clarifications, responses</li>
+                        <li>Grows linearly with conversation</li>
+                        <li>Why long conversations degrade</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">System Context</span>
+                    </div>
+                    <ul>
+                        <li>Instructions, persona, guidelines</li>
+                        <li>Relatively stable but underestimated</li>
+                        <li>2,000-4,000 tokens typical</li>
+                        <li>Consumed before conversation starts</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Tool Context</span>
+                    </div>
+                    <ul>
+                        <li>Function definitions and schemas</li>
+                        <li>Tool descriptions and results</li>
+                        <li>20 tools = 3,000+ tokens</li>
+                        <li>Each call adds more</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Retrieved Context</span>
+                    </div>
+                    <ul>
+                        <li>RAG systems, memory stores</li>
+                        <li>External knowledge bases</li>
+                        <li>Most variable (500-5,000 tokens)</li>
+                        <li>Single retrieval can dominate</li>
+                    </ul>
+                </div>
+            </div>
 
             <h3>The Context Budget Mental Model</h3>
 
-            <p>Think of your context window as a budget, not a container. Every token you add has a cost--both literal (API pricing) and functional (attention dilution). The question isn't "does this fit?" but "is this worth its cost?"</p>
-
-            <p>Here's what that cost looks like in real numbers:</p>
+            <p>Think of context as a <strong>budget, not a container</strong>. Every token has a cost--both literal (API pricing) and functional (attention dilution). The question isn't "does this fit?" but "is this worth its cost?"</p>
 
             <table>
                 <thead>
@@ -816,21 +1414,104 @@
 
             <h3>Context Rot: The Hidden Performance Killer</h3>
 
-            <p>Here's the counterintuitive finding that tutorials don't mention: larger context windows don't automatically mean better performance. Research from Chroma's technical report on "Context Rot" demonstrates that LLM performance degrades significantly as input length increases--even on simple tasks.</p>
+            <p>Contrary to what tutorials suggest, larger context windows don't mean better performance. Chroma's research on "Context Rot" shows LLM accuracy <strong>degrades significantly</strong> as input length increases.</p>
 
-            <p>Their experiments across 18 state-of-the-art models, including GPT-4.1, Claude 4, and Gemini 2.5, revealed:</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">20-50%</span>
+                    <span class="stat-label">Accuracy drops from 10K to 100K tokens</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label">Models tested including GPT-4.1, Claude 4</span>
+                </div>
+            </div>
 
-            <ul>
-                <li><strong>20-50% accuracy drops</strong> on needle-in-haystack retrieval tasks when moving from 10K to 100K tokens</li>
-                <li><strong>Non-uniform degradation</strong>: Performance doesn't decrease smoothly--models often hit sudden accuracy cliffs</li>
-                <li><strong>"Lost in the middle" effect</strong>: Information placed in the middle of long contexts is retrieved less reliably than information at the beginning or end</li>
-            </ul>
+            <div class="visual-checklist">
+                <div class="visual-checklist-item">
+                    <div class="visual-checklist-icon red">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                    </div>
+                    <div class="visual-checklist-content">
+                        <h4>"Lost in the Middle" Effect</h4>
+                        <p>Information in the middle of long contexts is retrieved less reliably than at the beginning or end.</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <div class="visual-checklist-icon orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+                        </svg>
+                    </div>
+                    <div class="visual-checklist-content">
+                        <h4>Sudden Accuracy Cliffs</h4>
+                        <p>Performance doesn't decrease smoothly--models often hit sharp drop-offs at certain context lengths.</p>
+                    </div>
+                </div>
+            </div>
 
-            <p>The implication is clear: blindly stuffing more context into your prompts isn't a strategy. It's a liability.</p>
+            <p><strong>Bottom line:</strong> Stuffing more context into prompts isn't a strategy--it's a liability.</p>
 
             <h2 id="context-patterns">Context Engineering Patterns</h2>
 
-            <p>After years of production deployments, four patterns have emerged as essential for effective context engineering. Each addresses a specific challenge in managing context as a finite resource.</p>
+            <p>Four essential patterns have emerged from production deployments:</p>
+
+            <!-- Four Patterns Flow Diagram -->
+            <div class="flow-diagram" role="img" aria-label="Four context engineering patterns: Compression, Prioritization, Externalization, Segmentation">
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Compression</div>
+                    <div class="flow-step-desc">Reduce size, keep signal</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Prioritization</div>
+                    <div class="flow-step-desc">Rank by relevance</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Externalization</div>
+                    <div class="flow-step-desc">Store outside context</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                        </svg>
+                    </div>
+                    <div class="flow-step-label">Segmentation</div>
+                    <div class="flow-step-desc">Break into subtasks</div>
+                </div>
+            </div>
 
             <h3>Pattern 1: Context Compression</h3>
 
@@ -842,248 +1523,329 @@
 
             <p>The most practical implementation combines a buffer for recent messages with summarization for older history:</p>
 
-            <pre><code>from langchain.memory import ConversationSummaryBufferMemory
-from langchain_anthropic import ChatAnthropic
+            <pre data-lang="python"><code><span class="code-keyword">from</span> langchain.memory <span class="code-keyword">import</span> ConversationSummaryBufferMemory
+<span class="code-keyword">from</span> langchain_anthropic <span class="code-keyword">import</span> ChatAnthropic
 
-def create_compressed_memory(max_recent_tokens: int = 4000):
-    """
-    Production pattern: Keep recent messages verbatim,
-    summarize older messages to preserve context without token bloat.
-    """
-    llm = ChatAnthropic(
-        model="claude-sonnet-4-20250514",
-        max_tokens=500  # Limit summary length
+<span class="code-keyword">def</span> <span class="code-function">create_compressed_memory</span>(max_recent_tokens: <span class="code-type">int</span> = <span class="code-number">4000</span>):
+    <span class="code-comment"># Keep recent messages verbatim, summarize older ones</span>
+    llm = <span class="code-class">ChatAnthropic</span>(
+        model=<span class="code-string">"claude-sonnet-4-20250514"</span>,
+        max_tokens=<span class="code-number">500</span>
     )
 
-    memory = ConversationSummaryBufferMemory(
+    memory = <span class="code-class">ConversationSummaryBufferMemory</span>(
         llm=llm,
         max_token_limit=max_recent_tokens,
-        return_messages=True,
-        human_prefix="User",
-        ai_prefix="Assistant"
+        return_messages=<span class="code-keyword">True</span>,
+        human_prefix=<span class="code-string">"User"</span>,
+        ai_prefix=<span class="code-string">"Assistant"</span>
     )
+    <span class="code-keyword">return</span> memory
 
-    return memory
-
-# Usage in production
-memory = create_compressed_memory(max_recent_tokens=4000)
-
-# After many turns, older messages are summarized automatically
-# Recent messages remain verbatim for accuracy
-# Total context stays bounded regardless of conversation length</code></pre>
+<span class="code-comment"># Usage</span>
+memory = <span class="code-function">create_compressed_memory</span>(max_recent_tokens=<span class="code-number">4000</span>)</code></pre>
 
             <p><strong>Production tip</strong>: Use a cheaper, faster model for summarization. Summarizing with Haiku at $1/million tokens instead of Opus at $5/million tokens reduces compression overhead by 80% with minimal quality loss.</p>
 
             <h3>Pattern 2: Context Prioritization</h3>
 
-            <p>Not all context is equally valuable. Prioritization ensures the most relevant information gets included when space is limited.</p>
+            <p>Not all context is equally valuable. Context value is dynamic--what's relevant changes based on the current query.</p>
 
             <p><strong>When to use</strong>: Multi-turn conversations, multiple retrieved documents, competing context sources.</p>
 
-            <p>The key insight is that context value is dynamic--what's relevant changes based on the current query. A robust priority system scores context items on multiple dimensions:</p>
+            <p>A robust priority system scores items on multiple dimensions:</p>
 
-            <pre><code>from dataclasses import dataclass, field
-from typing import List, Optional
-from heapq import heappush, heappop
-import time
+            <pre data-lang="python"><code><span class="code-keyword">from</span> dataclasses <span class="code-keyword">import</span> dataclass, field
+<span class="code-keyword">import</span> time
 
-@dataclass
-class ContextItem:
-    content: str
-    source: str  # "conversation", "tool", "retrieval", "system"
-    token_count: int
-    created_at: float = field(default_factory=time.time)
-    relevance_score: float = 0.5  # 0-1, updated per query
-    importance: float = 0.5  # Static importance weight
+<span class="code-keyword">@dataclass</span>
+<span class="code-keyword">class</span> <span class="code-class">ContextItem</span>:
+    content: <span class="code-type">str</span>
+    source: <span class="code-type">str</span>   <span class="code-comment"># "conversation", "tool", "retrieval", "system"</span>
+    token_count: <span class="code-type">int</span>
+    created_at: <span class="code-type">float</span> = field(default_factory=time.time)
+    relevance_score: <span class="code-type">float</span> = <span class="code-number">0.5</span>
+    importance: <span class="code-type">float</span> = <span class="code-number">0.5</span>
 
-    @property
-    def recency_score(self) -> float:
-        """Decay score based on age. Recent items score higher."""
-        age_minutes = (time.time() - self.created_at) / 60
-        return max(0.1, 1.0 - (age_minutes / 60))  # Decay over 1 hour
+    <span class="code-keyword">@property</span>
+    <span class="code-keyword">def</span> <span class="code-function">recency_score</span>(<span class="code-keyword">self</span>) -> <span class="code-type">float</span>:
+        age_minutes = (time.time() - <span class="code-keyword">self</span>.created_at) / <span class="code-number">60</span>
+        <span class="code-keyword">return</span> <span class="code-function">max</span>(<span class="code-number">0.1</span>, <span class="code-number">1.0</span> - (age_minutes / <span class="code-number">60</span>))
 
-    @property
-    def priority(self) -> float:
-        """Combined priority score for budget allocation."""
-        return (
-            self.relevance_score * 0.5 +
-            self.recency_score * 0.3 +
-            self.importance * 0.2
-        )</code></pre>
+    <span class="code-keyword">@property</span>
+    <span class="code-keyword">def</span> <span class="code-function">priority</span>(<span class="code-keyword">self</span>) -> <span class="code-type">float</span>:
+        <span class="code-keyword">return</span> (<span class="code-keyword">self</span>.relevance_score * <span class="code-number">0.5</span> +
+                <span class="code-keyword">self</span>.recency_score * <span class="code-number">0.3</span> +
+                <span class="code-keyword">self</span>.importance * <span class="code-number">0.2</span>)</code></pre>
 
             <p><strong>Production tip</strong>: Track which context items are excluded and why. This data reveals patterns--if conversation history is consistently dropped, your system prompt might be too long. If retrieved documents are excluded, your retrieval is returning too much.</p>
 
             <h3>Pattern 3: Context Externalization</h3>
 
-            <p>Externalization moves information outside the context window while keeping it accessible. This is the architectural foundation of RAG systems, but the pattern extends beyond document retrieval.</p>
+            <p>Move information outside the context window while keeping it accessible--the foundation of RAG systems, but extends beyond document retrieval.</p>
 
-            <p><strong>When to use</strong>: Information that's occasionally needed but not required every turn, historical data, reference material.</p>
+            <p><strong>When to use</strong>: Information occasionally needed but not required every turn, historical data, reference material.</p>
 
-            <p>The decision framework for externalization:</p>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Keep In Context</th>
-                        <th>Externalize</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Current task instructions</td>
-                        <td>Historical task results</td>
-                    </tr>
-                    <tr>
-                        <td>Active conversation (last 5-10 turns)</td>
-                        <td>Older conversation history</td>
-                    </tr>
-                    <tr>
-                        <td>Tool definitions for likely actions</td>
-                        <td>Tool definitions for rare actions</td>
-                    </tr>
-                    <tr>
-                        <td>Critical user preferences</td>
-                        <td>General user profile data</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Keep vs Externalize Comparison -->
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Keep In Context</span>
+                    </div>
+                    <ul>
+                        <li>Current task instructions</li>
+                        <li>Active conversation (last 5-10 turns)</li>
+                        <li>Tool definitions for likely actions</li>
+                        <li>Critical user preferences</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Externalize</span>
+                    </div>
+                    <ul>
+                        <li>Historical task results</li>
+                        <li>Older conversation history</li>
+                        <li>Tool definitions for rare actions</li>
+                        <li>General user profile data</li>
+                    </ul>
+                </div>
+            </div>
 
             <h3>Pattern 4: Context Segmentation</h3>
 
-            <p>Segmentation breaks complex tasks into context-bounded subtasks, each handled by a specialized agent with a clean context window. This prevents context accumulation from degrading performance.</p>
+            <p>Break complex tasks into context-bounded subtasks, each handled by a specialized agent with a clean context window.</p>
 
             <p><strong>When to use</strong>: Multi-step workflows, tasks requiring different expertise, long-running agents.</p>
 
-            <p>The key challenge is transferring relevant context between segments without transferring everything.</p>
-
-            <p><strong>Production tip</strong>: Each segment should be able to complete its task with minimal context from previous segments. If a segment needs extensive context from earlier segments, you've drawn the boundaries wrong.</p>
+            <p><strong>Key principle</strong>: Each segment should complete its task with minimal context from previous segments. If extensive prior context is needed, you've drawn boundaries wrong.</p>
 
             <h2 id="production-challenges">Production Challenges and Solutions</h2>
 
-            <p>Theory is clean; production is messy. Here are the challenges that emerge when context engineering meets real users.</p>
+            <p>Theory is clean; production is messy. Here are common challenges:</p>
 
-            <h3>Challenge 1: Context Drift in Long Conversations</h3>
-
-            <p><strong>The problem</strong>: Over extended conversations, early context gets summarized or dropped, causing the agent to forget important information established at the start.</p>
-
-            <p><strong>The solution</strong>: Implement periodic context anchoring. Every N turns, explicitly refresh critical information.</p>
-
-            <h3>Challenge 2: Tool Result Explosion</h3>
-
-            <p><strong>The problem</strong>: A single tool call might return 10,000 tokens of results (think database queries, API responses, file contents). This crowds out everything else.</p>
-
-            <p><strong>The solution</strong>: Implement tool result policies. Define maximum token budgets per tool and compression strategies.</p>
-
-            <h3>Challenge 3: Position-Dependent Performance</h3>
-
-            <p><strong>The problem</strong>: The "lost in the middle" effect means critical information buried in the middle of context is often missed.</p>
-
-            <p><strong>The solution</strong>: Use position-aware context assembly. Place the most important information at the start and end.</p>
-
-            <h3>Challenge 4: Cost Explosion at Scale</h3>
-
-            <p><strong>The problem</strong>: Context costs grow linearly with conversation length. A 50-turn conversation with full history costs 10x more than a 5-turn conversation.</p>
-
-            <p><strong>The solution</strong>: Implement tiered context strategies based on query complexity.</p>
+            <!-- Challenges Grid -->
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Context Drift</span>
+                    </div>
+                    <ul>
+                        <li><strong>Problem:</strong> Early context gets summarized/dropped in long conversations</li>
+                        <li><strong>Fix:</strong> Periodic context anchoring - refresh critical info every N turns</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #e67e22, #d35400);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Tool Result Explosion</span>
+                    </div>
+                    <ul>
+                        <li><strong>Problem:</strong> Single tool call returns 10K+ tokens, crowds out everything</li>
+                        <li><strong>Fix:</strong> Tool result policies with max token budgets per tool</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Lost in the Middle</span>
+                    </div>
+                    <ul>
+                        <li><strong>Problem:</strong> Critical info buried in middle of context gets missed</li>
+                        <li><strong>Fix:</strong> Position-aware assembly - important info at start and end</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #27ae60, #1e8449);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Cost Explosion</span>
+                    </div>
+                    <ul>
+                        <li><strong>Problem:</strong> 50-turn conversation costs 10x more than 5-turn</li>
+                        <li><strong>Fix:</strong> Tiered context strategies based on query complexity</li>
+                    </ul>
+                </div>
+            </div>
 
             <h2 id="measuring-effectiveness">Measuring Context Effectiveness</h2>
 
-            <p>What gets measured gets managed. For context engineering, the right metrics reveal optimization opportunities that intuition misses.</p>
+            <p>What gets measured gets managed. Here are the core metrics:</p>
 
-            <h3>Core Metrics</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">60-80%</span>
+                    <span class="stat-label">Context Utilization Target</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">&gt;40%</span>
+                    <span class="stat-label">Relevant Context Ratio Target</span>
+                </div>
+            </div>
 
-            <p><strong>Context Utilization Rate</strong>: What percentage of your context budget is actually used? Too low suggests over-conservative limits; too high suggests no headroom for complex queries.</p>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-card-header">
+                        <div class="metric-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <span class="metric-card-title">Utilization Rate</span>
+                    </div>
+                    <p class="metric-card-desc">% of context budget used. Too low = over-conservative. Too high = no headroom.</p>
+                    <div class="metric-card-formula">tokens_used / context_window_size</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card-header">
+                        <div class="metric-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="metric-card-title">Relevant Context Ratio</span>
+                    </div>
+                    <p class="metric-card-desc">% of context actually referenced in response. Below 40% = wasted tokens.</p>
+                    <div class="metric-card-formula">tokens_referenced / total_context</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card-header">
+                        <div class="metric-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="metric-card-title">Cost per Success</span>
+                    </div>
+                    <p class="metric-card-desc">True efficiency metric. Total tokens for successful completions only.</p>
+                    <div class="metric-card-formula">total_tokens / successful_tasks</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card-header">
+                        <div class="metric-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                        </div>
+                        <span class="metric-card-title">Context Failure Rate</span>
+                    </div>
+                    <p class="metric-card-desc">% of failures from truncation, missing info, or outdated data.</p>
+                    <div class="metric-card-formula">context_failures / total_failures</div>
+                </div>
+            </div>
 
-            <pre><code>utilization = tokens_used / context_window_size
-# Target: 60-80% for most applications</code></pre>
-
-            <p><strong>Relevant Context Ratio</strong>: What percentage of included context is actually used in the response? This requires analyzing model attention patterns or response citations.</p>
-
-            <pre><code>relevant_ratio = tokens_referenced_in_response / total_context_tokens
-# Target: >40% for well-optimized systems</code></pre>
-
-            <p><strong>Cost per Successful Completion</strong>: The true efficiency metric. Measures total token cost for successfully completed tasks, excluding failures.</p>
-
-            <pre><code>cost_per_success = total_token_cost / successful_completions</code></pre>
-
-            <p><strong>Context-Related Failure Rate</strong>: What percentage of failures trace to context issues (truncation, missing information, outdated context)?</p>
+            <!-- Mid-article CTA -->
+            <div class="mid-cta">
+                <p>Struggling with context management in your AI agents? Fenlo AI can help you implement these patterns in production. Book a free discovery call to discuss your specific challenges.</p>
+            </div>
 
             <h2 id="implementation-guide">Implementation Guide</h2>
 
-            <p>Here's a practical path from "context problems everywhere" to "context engineering implemented."</p>
+            <p>A practical 5-step path to implementing context engineering:</p>
 
-            <h3>Step 1: Audit Current Context Usage</h3>
+            <div class="checklist">
+                <div class="checklist-title">5-Step Implementation Checklist</div>
 
-            <p>Before optimizing, understand your baseline:</p>
+                <div class="checklist-item">
+                    <span class="checklist-number">1</span>
+                    <div class="checklist-content">
+                        <h4>Audit Current Context Usage</h4>
+                        <p>Log complete context payloads for 100+ conversations. Calculate average context size per turn. Identify largest consumers (usually tool results or retrieved documents). Track failure correlations with context state.</p>
+                    </div>
+                </div>
 
-            <ol>
-                <li>Log complete context payloads for 100+ representative conversations</li>
-                <li>Calculate average context size at each conversation turn</li>
-                <li>Identify the largest context consumers (usually tool results or retrieved documents)</li>
-                <li>Track where conversations fail and correlate with context state</li>
-            </ol>
+                <div class="checklist-item">
+                    <span class="checklist-number">2</span>
+                    <div class="checklist-content">
+                        <h4>Implement Context Budgeting</h4>
+                        <p>Set initial budget based on model limits (leave 20% headroom). Reserve tokens for system prompts. Allocate remaining budget across context types. Log utilization metrics from day one.</p>
+                    </div>
+                </div>
 
-            <h3>Step 2: Implement Context Budgeting</h3>
+                <div class="checklist-item">
+                    <span class="checklist-number">3</span>
+                    <div class="checklist-content">
+                        <h4>Add Compression Layer</h4>
+                        <p>Implement ConversationSummaryBufferMemory or equivalent. Set buffer size based on average useful history length. Monitor for compression that loses critical information. Tune aggressiveness based on observed issues.</p>
+                    </div>
+                </div>
 
-            <p>Add the <code>ContextBudget</code> class (from Pattern 2) to your agent:</p>
+                <div class="checklist-item">
+                    <span class="checklist-number">4</span>
+                    <div class="checklist-content">
+                        <h4>Build Context Observability</h4>
+                        <p>Implement the ContextObserver pattern. Create dashboards for utilization, exclusion rates, and costs. Set alerts for anomalies. Review weekly to identify optimization opportunities.</p>
+                    </div>
+                </div>
 
-            <ol>
-                <li>Set initial budget based on model limits (leave 20% headroom)</li>
-                <li>Reserve tokens for system prompts (measure these precisely)</li>
-                <li>Allocate remaining budget across context types</li>
-                <li>Log utilization metrics from day one</li>
-            </ol>
-
-            <h3>Step 3: Add Compression Layer</h3>
-
-            <p>Start with conversation compression:</p>
-
-            <ol>
-                <li>Implement <code>ConversationSummaryBufferMemory</code> or equivalent</li>
-                <li>Set buffer size based on your average useful history length</li>
-                <li>Monitor for cases where compression loses critical information</li>
-                <li>Tune compression aggressiveness based on observed issues</li>
-            </ol>
-
-            <h3>Step 4: Build Context Observability</h3>
-
-            <p>You can't improve what you can't see:</p>
-
-            <ol>
-                <li>Implement the <code>ContextObserver</code> pattern</li>
-                <li>Create dashboards for utilization, exclusion rates, and costs</li>
-                <li>Set alerts for anomalies (sudden utilization spikes, high exclusion rates)</li>
-                <li>Review weekly to identify optimization opportunities</li>
-            </ol>
-
-            <h3>Step 5: Iterate Based on Metrics</h3>
-
-            <p>Context engineering is ongoing:</p>
-
-            <ol>
-                <li>Run A/B tests on strategy changes</li>
-                <li>Analyze failure cases for context-related root causes</li>
-                <li>Adjust budgets and priorities based on production data</li>
-                <li>Document what works for your specific use case</li>
-            </ol>
+                <div class="checklist-item">
+                    <span class="checklist-number">5</span>
+                    <div class="checklist-content">
+                        <h4>Iterate Based on Metrics</h4>
+                        <p>Run A/B tests on strategy changes. Analyze failure cases for context-related root causes. Adjust budgets and priorities based on production data. Document what works for your specific use case.</p>
+                    </div>
+                </div>
+            </div>
 
             <h3>Common Implementation Mistakes</h3>
 
-            <p><strong>Mistake 1</strong>: Setting context limits too conservatively. If you're only using 40% of available context, you're leaving capability on the table.</p>
-
-            <p><strong>Mistake 2</strong>: Treating all context types equally. Tool results and retrieved documents should have different budgets than conversation history.</p>
-
-            <p><strong>Mistake 3</strong>: Compressing too aggressively. If users frequently say "I already told you that," your compression is losing critical information.</p>
-
-            <p><strong>Mistake 4</strong>: Ignoring position effects. Don't bury critical instructions in the middle of long contexts.</p>
-
-            <p><strong>Mistake 5</strong>: Not measuring. Without metrics, context engineering becomes guesswork.</p>
+            <div class="mistake-grid">
+                <div class="mistake-card">
+                    <span class="mistake-card-number">1</span>
+                    <h4>Too Conservative Limits</h4>
+                    <p>Using only 40% of available context = leaving capability on the table.</p>
+                </div>
+                <div class="mistake-card">
+                    <span class="mistake-card-number">2</span>
+                    <h4>Equal Treatment</h4>
+                    <p>Tool results and documents need different budgets than conversation history.</p>
+                </div>
+                <div class="mistake-card">
+                    <span class="mistake-card-number">3</span>
+                    <h4>Over-Compression</h4>
+                    <p>If users say "I already told you that," compression is losing critical info.</p>
+                </div>
+                <div class="mistake-card">
+                    <span class="mistake-card-number">4</span>
+                    <h4>Ignoring Position</h4>
+                    <p>Burying critical instructions in the middle of long contexts reduces recall.</p>
+                </div>
+                <div class="mistake-card">
+                    <span class="mistake-card-number">5</span>
+                    <h4>No Measurement</h4>
+                    <p>Without metrics, context engineering becomes pure guesswork.</p>
+                </div>
+            </div>
 
             <h2 id="conclusion">Conclusion</h2>
 
-            <p>The shift from prompt engineering to context engineering represents a fundamental maturation in how we build AI agents. Context isn't an afterthought or an infrastructure detail--it's the primary determinant of whether your agent succeeds or fails in production.</p>
-
-            <p>The four patterns--compression, prioritization, externalization, and segmentation--provide a framework for managing context as the finite resource it is. Combined with proper metrics and observability, these patterns transform context from a source of mysterious failures into a well-understood, optimizable system.</p>
+            <p>Context engineering is the primary determinant of whether your agent succeeds or fails in production. The four patterns--<strong>compression, prioritization, externalization, and segmentation</strong>--transform context from a source of mysterious failures into a well-understood, optimizable system.</p>
 
             <div class="key-insight">
                 <div class="key-insight-title">Your Monday morning action items</div>
@@ -1094,7 +1856,7 @@ class ContextItem:
                 <strong>5. Track:</strong> Set up a dashboard for context metrics</p>
             </div>
 
-            <p>Context engineering isn't a one-time implementation--it's an ongoing discipline. But the payoff is substantial: agents that maintain coherence over long conversations, costs that scale predictably, and failures that trace to understandable causes rather than mysterious model behavior.</p>
+            <p>Context engineering is an ongoing discipline with substantial payoffs: agents that maintain coherence, costs that scale predictably, and failures that trace to understandable causes.</p>
 
             <div class="cta-section">
                 <h2>Need Help with Context Engineering?</h2>

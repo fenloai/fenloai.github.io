@@ -397,26 +397,24 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
-            color: white;
+            background: #5a6a35;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
             padding: 1rem 2rem;
-            border-radius: var(--radius-full);
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(107, 124, 63, 0.3);
+            font-weight: 700;
+            font-size: 16px;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(107, 124, 63, 0.4);
+            background: #4a5a2a;
         }
 
         .cta-button svg {
             width: 20px;
             height: 20px;
-            transition: transform 0.3s ease;
+            stroke: #ffffff !important;
         }
 
         .cta-button:hover svg {
@@ -596,6 +594,451 @@
             top: 0;
         }
 
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Comparison Cards */
+        .comparison-table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .comparison-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+        }
+
+        .comparison-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: var(--space-sm);
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .comparison-card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .comparison-card-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: white;
+        }
+
+        .comparison-card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .comparison-card li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .comparison-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-primary-light);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Callout Box */
+        .callout {
+            background: linear-gradient(135deg, rgba(184, 160, 74, 0.1), rgba(184, 160, 74, 0.05));
+            border: 1px solid rgba(184, 160, 74, 0.2);
+            border-left: 4px solid var(--accent-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .callout p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: var(--accent-secondary-light);
+        }
+
+        /* Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: var(--space-lg) 0;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.25rem;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .flow-step-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+        }
+
+        .flow-step-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+        }
+
+        .flow-step-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .flow-step-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .flow-arrow {
+            color: var(--accent-primary-light);
+        }
+
+        .flow-arrow svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .flow-diagram {
+                flex-direction: column;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* Visual Checklist */
+        .visual-checklist {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin: var(--space-lg) 0;
+        }
+
+        .visual-checklist-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .visual-checklist-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 2px;
+        }
+
+        .visual-checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .visual-checklist-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .checklist-number {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .checklist-content h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .checklist-content p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Key Insight Box */
+        .key-insight {
+            background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(107, 124, 63, 0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            position: relative;
+        }
+
+        .key-insight-title {
+            font-weight: 700;
+            color: var(--accent-primary-light);
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .key-insight-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary-light);
+            border-radius: 50%;
+        }
+
+        .key-insight p {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        /* Case Study Cards */
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        @media (max-width: 768px) {
+            .case-study-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .case-study-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .case-study-card.rpa::before {
+            background: linear-gradient(90deg, #3498db, #2980b9);
+        }
+
+        .case-study-card.ai-enhanced::before {
+            background: linear-gradient(90deg, #9b59b6, #8e44ad);
+        }
+
+        .case-study-card.agent::before {
+            background: linear-gradient(90deg, #27ae60, #1e8449);
+        }
+
+        .case-study-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--space-sm);
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .case-study-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .case-study-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-study-badge.rpa {
+            background: rgba(52, 152, 219, 0.15);
+            color: #3498db;
+        }
+
+        .case-study-badge.ai-enhanced {
+            background: rgba(155, 89, 182, 0.15);
+            color: #9b59b6;
+        }
+
+        .case-study-badge.agent {
+            background: rgba(39, 174, 96, 0.15);
+            color: #27ae60;
+        }
+
+        .case-study-context {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px dashed var(--glass-border);
+        }
+
+        .case-study-score {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .score-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .score-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .case-study-insight {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .case-study-insight strong {
+            color: var(--text-primary);
+        }
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .blog-hero h1 {
@@ -687,11 +1130,11 @@
     <section class="blog-hero">
         <div class="article-meta">
             <span class="category-tag">AI Strategy</span>
-            <span class="reading-time" aria-label="Estimated reading time: 18 minutes">
+            <span class="reading-time" aria-label="Estimated reading time: 12 minutes">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                18 min read
+                12 min read
             </span>
         </div>
         <h1>Agents or Automation? A Decision Framework for Choosing the Right Approach</h1>
@@ -727,67 +1170,92 @@
                 </ol>
             </nav>
 
-            <p>Not every problem needs an AI agent--but some absolutely do.</p>
+            <div class="key-insight">
+                <div class="key-insight-title">The Core Question</div>
+                <p>Not every problem needs an AI agent--but some absolutely do. Choosing wrong is expensive.</p>
+            </div>
 
-            <p>The automation landscape in 2026 is more confusing than ever. Vendors throw around terms like "agentic AI," "intelligent automation," "hyperautomation," and "AI-powered RPA" as if they're interchangeable. They're not. And choosing wrong is expensive.</p>
+            <!-- Key Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">42%</span>
+                    <span class="stat-label">Made only "conservative investments" in agentic AI</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">31%</span>
+                    <span class="stat-label">Still in "wait and see" mode</span>
+                </div>
+            </div>
 
-            <p>Deploy an AI agent where simple automation would suffice, and you'll spend 10x more for marginal improvement. Deploy rule-based automation where you need adaptability, and you'll bury your team in exception handling. According to a January 2025 Gartner poll, 42% of organizations have made only "conservative investments" in agentic AI, with 31% still in "wait and see" mode--suggesting widespread uncertainty about when AI agents are actually the right choice.</p>
+            <p>The cost of choosing wrong is significant. Deploy an AI agent where simple automation would suffice, and you'll spend 10x more for marginal improvement. Deploy rule-based automation where you need adaptability, and you'll bury your team in exception handling and maintenance.</p>
 
-            <p>This guide provides a clear framework for making the automation vs. agent decision. We'll define three tiers of automation capability, present a 5-factor decision framework, analyze real use cases, and explain why the most effective approach is often a hybrid--not a binary choice.</p>
+            <p>This guide provides a practical framework for making this decision: three clearly defined tiers of automation, a 5-factor scoring system to evaluate your processes, real use case analysis, and why hybrid approaches usually win in complex operations.</p>
 
             <h2 id="definitions">Definitions That Actually Help</h2>
 
-            <p>Before we can decide between approaches, we need definitions that clarify rather than confuse. The industry conflates multiple distinct concepts, so let's separate them.</p>
+            <p>The AI and automation industry suffers from terminology confusion. "AI agent," "intelligent automation," "cognitive RPA," and "AI-enhanced workflows" often get used interchangeably despite meaning very different things. This confusion leads to mismatched expectations and failed implementations. Let's separate the concepts into three distinct tiers based on their actual capabilities:</p>
 
-            <h3>Tier 1: Traditional Automation (RPA)</h3>
+            <!-- Three Tiers Visual -->
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Tier 1: RPA</span>
+                    </div>
+                    <ul>
+                        <li>Rule-based, deterministic</li>
+                        <li>Follows explicit scripts</li>
+                        <li>Data transfer & form filling</li>
+                        <li>Structured inputs only</li>
+                        <li><strong>Cost:</strong> $0.001-$0.05/task</li>
+                        <li><strong>Limit:</strong> Brittle, no learning</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Tier 2: AI-Enhanced</span>
+                    </div>
+                    <ul>
+                        <li>ML models for specific steps</li>
+                        <li>Classification & extraction</li>
+                        <li>Semi-structured documents</li>
+                        <li>Rule-based orchestration</li>
+                        <li><strong>Cost:</strong> $0.05-$0.50/task</li>
+                        <li><strong>Limit:</strong> No reasoning, needs training</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #27ae60, #1e8449);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Tier 3: AI Agent</span>
+                    </div>
+                    <ul>
+                        <li>Autonomous, goal-directed</li>
+                        <li>Reasons, plans, adapts</li>
+                        <li>Unstructured inputs OK</li>
+                        <li>Handles novel situations</li>
+                        <li><strong>Cost:</strong> $0.10-$2.00+/task</li>
+                        <li><strong>Limit:</strong> Less predictable, guardrails needed</li>
+                    </ul>
+                </div>
+            </div>
 
-            <p><strong>What it is</strong>: Rule-based, deterministic process automation. Software robots that follow explicit instructions to interact with applications, move data, and execute predefined workflows.</p>
-
-            <p><strong>How it works</strong>: An RPA bot follows a script: "If you see field X, copy its value to field Y. If button Z is visible, click it. If error message W appears, retry three times then escalate." Every action is predetermined. There's no interpretation, no judgment, no adaptation.</p>
-
-            <p><strong>What it's good at</strong>:</p>
-            <ul>
-                <li>High-volume, repetitive tasks with structured inputs</li>
-                <li>Data transfer between systems</li>
-                <li>Report generation and distribution</li>
-                <li>Form filling and data entry</li>
-                <li>Processes that rarely change and have few exceptions</li>
-            </ul>
-
-            <p><strong>Limitations</strong>: Brittle (breaks when processes change), rule explosion for complex exceptions, no learning capability, structured data only.</p>
-
-            <h3>Tier 2: AI-Enhanced Automation</h3>
-
-            <p><strong>What it is</strong>: Traditional automation augmented with machine learning models for specific capabilities--classification, extraction, prediction--while maintaining rule-based orchestration.</p>
-
-            <p><strong>How it works</strong>: The workflow remains deterministic, but specific steps use ML models. An email arrives, an ML classifier categorizes it, and rule-based automation routes it to the appropriate queue.</p>
-
-            <p><strong>What it's good at</strong>:</p>
-            <ul>
-                <li>Document classification and routing</li>
-                <li>Data extraction from semi-structured documents</li>
-                <li>Sentiment classification for routing</li>
-                <li>Image and text recognition in workflows</li>
-                <li>Prediction models for approval/rejection</li>
-            </ul>
-
-            <p><strong>Limitations</strong>: Still workflow-bound, no reasoning capability, requires training data, and models can drift.</p>
-
-            <h3>Tier 3: AI Agents</h3>
-
-            <p><strong>What it is</strong>: Autonomous, goal-directed systems that can reason, plan, and take action to achieve objectives. AI agents don't just execute predefined workflows--they figure out what to do.</p>
-
-            <p><strong>How it works</strong>: Given a goal ("resolve this customer's issue"), the agent plans an approach, takes actions, observes results, and adapts. It uses tools as needed and can handle novel situations.</p>
-
-            <p><strong>What it's good at</strong>:</p>
-            <ul>
-                <li>Complex, multi-step tasks requiring judgment</li>
-                <li>Handling unstructured inputs (natural language, ambiguous requests)</li>
-                <li>Tasks with high variability and many exceptions</li>
-                <li>Situations requiring reasoning and context understanding</li>
-            </ul>
-
-            <p><strong>Limitations</strong>: Higher cost per task, less predictable outputs, requires guardrails, and "hallucination" risk.</p>
+            <div class="callout">
+                <p><strong>Key distinction:</strong> RPA follows scripts. AI-Enhanced classifies. Agents reason and adapt.</p>
+            </div>
 
             <h3>Side-by-Side Comparison</h3>
 
@@ -842,56 +1310,47 @@
 
             <h2 id="decision-framework">The Decision Framework</h2>
 
-            <p>Evaluate your process against these five factors.</p>
+            <p>Rather than relying on intuition or vendor promises, evaluate your process systematically against five factors. Each factor maps to a specific technical capability that distinguishes between the tiers. Score your process on each dimension, and the right approach becomes clear.</p>
 
-            <h3>Factor 1: Task Complexity</h3>
-
-            <p><strong>Low complexity</strong>: Single-purpose, linear workflow with few decision points. <strong>Recommendation</strong>: RPA</p>
-            <p><strong>Medium complexity</strong>: Multi-step workflow with classification decisions and defined exception handling. <strong>Recommendation</strong>: AI-Enhanced</p>
-            <p><strong>High complexity</strong>: Open-ended task requiring multi-step planning, judgment, and adaptation. <strong>Recommendation</strong>: AI Agent</p>
-
-            <h3>Factor 2: Input Variability</h3>
-
-            <p><strong>Structured inputs</strong>: Fixed formats, predictable fields. <strong>Recommendation</strong>: RPA</p>
-            <p><strong>Semi-structured inputs</strong>: Consistent general structure but variable formats. <strong>Recommendation</strong>: AI-Enhanced</p>
-            <p><strong>Unstructured inputs</strong>: Free-form text, natural language, highly variable. <strong>Recommendation</strong>: AI Agent</p>
-
-            <h3>Factor 3: Decision Requirements</h3>
-
-            <p><strong>No decisions</strong>: Pure data transformation. <strong>Recommendation</strong>: RPA</p>
-            <p><strong>Classification decisions</strong>: Categorizing into predefined buckets. <strong>Recommendation</strong>: AI-Enhanced</p>
-            <p><strong>Reasoning decisions</strong>: Decisions requiring context and judgment. <strong>Recommendation</strong>: AI Agent</p>
-
-            <h3>Factor 4: Error Tolerance</h3>
-
-            <p><strong>Zero tolerance</strong>: Errors have significant consequences. <strong>Recommendation</strong>: RPA with human review</p>
-            <p><strong>Some tolerance</strong>: Errors are recoverable. <strong>Recommendation</strong>: AI-Enhanced with exception handling</p>
-            <p><strong>Learning acceptable</strong>: Errors are improvement opportunities. <strong>Recommendation</strong>: AI Agent with human-in-the-loop</p>
-
-            <h3>Factor 5: Cost Sensitivity</h3>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Approach</th>
-                        <th>Approximate Per-Transaction Cost</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>RPA</td>
-                        <td>$0.001 - $0.05</td>
-                    </tr>
-                    <tr>
-                        <td>AI-Enhanced</td>
-                        <td>$0.05 - $0.50</td>
-                    </tr>
-                    <tr>
-                        <td>AI Agent</td>
-                        <td>$0.10 - $2.00+</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Five Factors Visual Checklist -->
+            <div class="visual-checklist">
+                <div class="visual-checklist-title">The 5-Factor Scoring System</div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">1</span>
+                    <div class="checklist-content">
+                        <h4>Task Complexity</h4>
+                        <p><strong>Low</strong> (linear workflow) → RPA • <strong>Medium</strong> (classification decisions) → AI-Enhanced • <strong>High</strong> (planning, judgment) → Agent</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">2</span>
+                    <div class="checklist-content">
+                        <h4>Input Variability</h4>
+                        <p><strong>Structured</strong> (fixed formats) → RPA • <strong>Semi-structured</strong> (variable formats) → AI-Enhanced • <strong>Unstructured</strong> (free-form) → Agent</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">3</span>
+                    <div class="checklist-content">
+                        <h4>Decision Requirements</h4>
+                        <p><strong>None</strong> (data transformation) → RPA • <strong>Classification</strong> (predefined buckets) → AI-Enhanced • <strong>Reasoning</strong> (context, judgment) → Agent</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">4</span>
+                    <div class="checklist-content">
+                        <h4>Error Tolerance</h4>
+                        <p><strong>Zero</strong> (significant consequences) → RPA + human review • <strong>Some</strong> (recoverable) → AI-Enhanced • <strong>Learning OK</strong> → Agent + human-in-loop</p>
+                    </div>
+                </div>
+                <div class="visual-checklist-item">
+                    <span class="checklist-number">5</span>
+                    <div class="checklist-content">
+                        <h4>Cost Sensitivity</h4>
+                        <p>RPA: <strong>$0.001-$0.05</strong>/task • AI-Enhanced: <strong>$0.05-$0.50</strong>/task • Agent: <strong>$0.10-$2.00+</strong>/task</p>
+                    </div>
+                </div>
+            </div>
 
             <h3>The Decision Matrix</h3>
 
@@ -949,21 +1408,62 @@
 
             <h2 id="use-cases">Use Case Analysis</h2>
 
-            <h3>Use Case 1: Invoice Processing (Score: 10 - AI-Enhanced)</h3>
+            <p>The framework becomes concrete when applied to real scenarios. Here are four common use cases, scored against the five factors:</p>
 
-            <p>A company processing 5,000 invoices per month from 200 vendors with varied formats but consistent structure. The task is well-defined extraction and entry--while an agent could do it, you'd pay significantly more for reasoning capability you don't need.</p>
+            <!-- Case Study Cards Grid -->
+            <div class="case-study-grid">
+                <div class="case-study-card ai-enhanced">
+                    <div class="case-study-header">
+                        <span class="case-study-title">Invoice Processing</span>
+                        <span class="case-study-badge ai-enhanced">AI-Enhanced</span>
+                    </div>
+                    <div class="case-study-context">5,000 invoices/month • 200 vendors • Varied formats</div>
+                    <div class="case-study-score">
+                        <span class="score-value">10</span>
+                        <span class="score-label">/ 15 points</span>
+                    </div>
+                    <p class="case-study-insight">Well-defined extraction and entry. An agent <strong>could</strong> do it, but you'd pay significantly more for reasoning you don't need.</p>
+                </div>
 
-            <h3>Use Case 2: Customer Support Triage (Score: 11 - AI-Enhanced, borderline Agent)</h3>
+                <div class="case-study-card ai-enhanced">
+                    <div class="case-study-header">
+                        <span class="case-study-title">Customer Support Triage</span>
+                        <span class="case-study-badge ai-enhanced">AI-Enhanced</span>
+                    </div>
+                    <div class="case-study-context">500 tickets/day • Simple to complex • Unstructured inputs</div>
+                    <div class="case-study-score">
+                        <span class="score-value">11</span>
+                        <span class="score-label">/ 15 points (borderline)</span>
+                    </div>
+                    <p class="case-study-insight">Primarily classification despite unstructured inputs. Consider <strong>tiered</strong>: AI-enhanced routing + agents for auto-resolution.</p>
+                </div>
 
-            <p>500 support tickets per day ranging from simple questions to complex issues. This is primarily a classification task despite unstructured inputs. Consider a tiered approach: AI-enhanced for routing, with agents handling detected simple questions automatically.</p>
+                <div class="case-study-card rpa">
+                    <div class="case-study-header">
+                        <span class="case-study-title">Form Data Entry</span>
+                        <span class="case-study-badge rpa">RPA</span>
+                    </div>
+                    <div class="case-study-context">2,000 forms/week • Standardized • Healthcare intake</div>
+                    <div class="case-study-score">
+                        <span class="score-value">5</span>
+                        <span class="score-label">/ 15 points</span>
+                    </div>
+                    <p class="case-study-insight">Controlled forms, pure transcription. <strong>Deterministic accuracy</strong> outweighs any AI flexibility benefit.</p>
+                </div>
 
-            <h3>Use Case 3: Structured Form Data Entry (Score: 5 - RPA)</h3>
-
-            <p>2,000 standardized patient intake forms per week. The forms are controlled, the task is transcription, and deterministic accuracy outweighs any AI flexibility benefit.</p>
-
-            <h3>Use Case 4: Complex Issue Resolution (Score: 15 - AI Agent)</h3>
-
-            <p>Escalated customer issues requiring research, diagnosis, and resolution that take senior engineers 30-60 minutes. Each issue is different--the agent needs to reason about specific situations, not just classify.</p>
+                <div class="case-study-card agent">
+                    <div class="case-study-header">
+                        <span class="case-study-title">Complex Issue Resolution</span>
+                        <span class="case-study-badge agent">AI Agent</span>
+                    </div>
+                    <div class="case-study-context">Escalations • 30-60 min each • Senior engineer work</div>
+                    <div class="case-study-score">
+                        <span class="score-value">15</span>
+                        <span class="score-label">/ 15 points</span>
+                    </div>
+                    <p class="case-study-insight">Research, diagnosis, resolution. Each issue is different—needs <strong>reasoning</strong>, not just classification.</p>
+                </div>
+            </div>
 
             <h2 id="hybrid-approach">The Hybrid Approach</h2>
 
@@ -1023,23 +1523,58 @@
 
             <h2 id="implementation">Implementation Path</h2>
 
-            <h3>Starting Point Recommendations</h3>
+            <!-- Starting Points Visual -->
+            <div class="comparison-table">
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">No Automation Yet</span>
+                    </div>
+                    <ul>
+                        <li>Start with RPA for structured, high-volume processes</li>
+                        <li>Build infrastructure, prove value</li>
+                        <li>Layer in AI-enhanced next</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">RPA Working Well</span>
+                    </div>
+                    <ul>
+                        <li>Identify high exception rates</li>
+                        <li>Find maintenance bottlenecks</li>
+                        <li>These → AI-enhanced or agents</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-card-header">
+                        <div class="comparison-card-icon" style="background: linear-gradient(135deg, #27ae60, #1e8449);">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <span class="comparison-card-title">Evaluating Agents</span>
+                    </div>
+                    <ul>
+                        <li>Start with hybrid mindset</li>
+                        <li>Identify tasks needing reasoning</li>
+                        <li>Plan integration with existing automation</li>
+                    </ul>
+                </div>
+            </div>
 
-            <p><strong>If you have no automation today</strong>: Start with RPA for your most structured, highest-volume processes. Build infrastructure, prove value, then layer in AI-enhanced capabilities.</p>
-
-            <p><strong>If you have RPA and it's working</strong>: Identify where RPA struggles--high exception rates, maintenance burden. These are candidates for AI-enhanced or agents.</p>
-
-            <p><strong>If you're evaluating AI agents</strong>: Start with a hybrid mindset. Identify specific tasks that need agent-level reasoning, plan integration with existing automation.</p>
-
-            <h3>Common Mistakes to Avoid</h3>
-
-            <ul>
-                <li><strong>Agent for everything</strong>: Expensive and often less reliable for simple tasks</li>
-                <li><strong>RPA for everything</strong>: Rule explosions and brittle bots</li>
-                <li><strong>Ignoring the hybrid</strong>: The answer is usually "both, for different parts"</li>
-                <li><strong>Underestimating integration</strong>: All tiers need to work together</li>
-                <li><strong>Forgetting humans</strong>: Design for human escalation from the start</li>
-            </ul>
+            <div class="callout">
+                <p><strong>Common Mistakes:</strong> Agent for everything (expensive) • RPA for everything (brittle) • Ignoring hybrid options • Underestimating integration • Forgetting human escalation paths</p>
+            </div>
 
             <h2 id="conclusion">Conclusion</h2>
 
