@@ -91,6 +91,36 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://fenloai.com/pages/blog/context-engineering/</loc>
+        <lastmod>2026-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fenloai.com/pages/blog/escaping-pilot-purgatory/</loc>
+        <lastmod>2026-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fenloai.com/pages/blog/mcp-protocol-guide/</loc>
+        <lastmod>2026-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fenloai.com/pages/blog/agents-vs-automation/</loc>
+        <lastmod>2026-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fenloai.com/pages/blog/ai-roi-framework/</loc>
+        <lastmod>2026-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://fenloai.com/pages/contact.html</loc>
         <lastmod>2025-12-27</lastmod>
         <changefreq>monthly</changefreq>

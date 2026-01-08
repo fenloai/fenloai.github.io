@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MBJVZS7Z');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A practical 5-factor framework for deciding between RPA, AI-enhanced automation, and AI agents. Includes use case analysis, cost considerations, and hybrid patterns.">
+    <title>Agents or Automation? A Decision Framework for Choosing the Right Approach | Fenlo AI</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- SEO -->
+    <meta name="author" content="Fenlo AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://fenloai.com/pages/blog/agents-vs-automation/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../../assets/fenloai-icon.svg">
+
+    <!-- Preload Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://fenloai.com/pages/blog/agents-vs-automation.html">
+    <meta property="og:title" content="Agents or Automation? A Decision Framework for Choosing the Right Approach">
+    <meta property="og:description" content="A practical 5-factor framework for deciding between RPA, AI-enhanced automation, and AI agents. Includes use case analysis, cost considerations, and hybrid patterns.">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agents or Automation? A Decision Framework for Choosing the Right Approach">
+    <meta name="twitter:description" content="A practical 5-factor framework for deciding between RPA, AI-enhanced automation, and AI agents. Includes use case analysis, cost considerations, and hybrid patterns.">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../../css/styles.css">
+
+    <!-- Blog-specific styles -->
+    <style>
+        /* Reading Progress Bar */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-light));
+            z-index: 9999;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Blog Hero */
+        .blog-hero {
+            padding: var(--space-2xl) var(--container-padding) var(--space-xl);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: var(--space-md);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .category-tag {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            color: white;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .reading-time {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .reading-time svg {
+            width: 16px;
+            height: 16px;
+            opacity: 0.6;
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.5px;
+        }
+
+        .article-intro {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .author-byline {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .author-role {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .publish-date {
+            margin-left: auto;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding) var(--space-3xl);
+        }
+
+        /* Article Content */
+        .article-content h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: var(--space-xl) 0 var(--space-md);
+            color: var(--text-primary);
+        }
+
+        .article-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: var(--space-lg) 0 var(--space-sm);
+            color: var(--text-primary);
+        }
+
+        .article-content p {
+            margin-bottom: var(--space-md);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: var(--space-md) 0;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .article-content a {
+            color: var(--accent-primary-light);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: var(--accent-primary-light);
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+
+        .toc-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toc-title svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent-primary-light);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.6rem;
+        }
+
+        .toc-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .toc-list a::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent-primary-light);
+        }
+
+        .toc-list a:hover::before {
+            transform: scale(1.3);
+        }
+
+        /* Code Blocks */
+        .article-content pre {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            overflow-x: auto;
+            margin: var(--space-md) 0;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .article-content code {
+            background: var(--bg-tertiary);
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--radius-sm);
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+
+        .article-content pre code {
+            background: transparent;
+            padding: 0;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-lg) 0;
+            font-size: 0.95rem;
+        }
+
+        .article-content th,
+        .article-content td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .article-content th {
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .article-content td {
+            color: var(--text-secondary);
+        }
+
+        .article-content tr:hover td {
+            background: var(--glass-bg);
+        }
+
+        /* Key Insight Box */
+        .key-insight {
+            background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(107, 124, 63, 0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            position: relative;
+        }
+
+        .key-insight-title {
+            font-weight: 700;
+            color: var(--accent-primary-light);
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .key-insight-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary-light);
+            border-radius: 50%;
+        }
+
+        .key-insight p {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(107, 124, 63, 0.1), rgba(143, 163, 85, 0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section h2 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 1.75rem;
+        }
+
+        .cta-section p {
+            max-width: 520px;
+            margin: 0 auto var(--space-lg);
+            font-size: 1.05rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(107, 124, 63, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(107, 124, 63, 0.4);
+        }
+
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Social Share */
+        .social-share {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: var(--space-xl) 0;
+            padding: var(--space-md);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+        }
+
+        .social-share-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .social-share-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .social-share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: var(--bg-primary);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-share-btn:hover {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .social-share-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .related-articles h2 {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+        }
+
+        .related-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .related-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--glass-border-hover);
+            box-shadow: var(--shadow-md);
+        }
+
+        .related-card-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--accent-primary-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-card-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-card-excerpt {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* References */
+        .references {
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .references h2 {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .reference-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .reference-list li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .reference-list li::before {
+            content: attr(data-ref);
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary-light);
+            font-weight: 600;
+        }
+
+        .reference-list a {
+            color: var(--text-muted);
+            word-break: break-all;
+        }
+
+        .reference-list a:hover {
+            color: var(--accent-primary-light);
+        }
+
+        /* Skip to content */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--accent-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            z-index: 1000;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 0 0 var(--radius-sm) 0;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 1.85rem;
+            }
+
+            .article-intro {
+                font-size: 1.05rem;
+            }
+
+            .cta-section {
+                padding: var(--space-lg);
+            }
+
+            .cta-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .publish-date {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBJVZS7Z"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="reading-progress" id="reading-progress"></div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo" aria-label="Fenlo AI Home">
+                <svg class="logo-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 80" width="250" height="80">
+                    <g class="logo-icon" transform="translate(0, 5)">
+                        <rect x="20" y="20" width="28" height="28" class="logo-green"></rect>
+                        <rect x="20" y="20" width="28" height="28" class="logo-green" transform="rotate(45 34 34)" stroke="#0a0a0f" stroke-width="3"></rect>
+                    </g>
+                    <g transform="translate(70, 0)">
+                        <g class="logo-white">
+                            <path d="M4.45 57.25L4.45 36.65L0 36.65L0 31.75L4.45 31.75L4.45 28Q4.45 24.60 6.38 22.67Q8.30 20.75 11.70 20.75L18.50 20.75L18.50 25.65L12.75 25.65Q11.60 25.65 10.90 26.35Q10.20 27.05 10.20 28.25L10.20 31.75L17.45 31.75L17.45 36.65L10.20 36.65L10.20 57.25L4.45 57.25Z"></path>
+                            <path d="M33.80 57.25Q29.50 57.25 26.27 55.63Q23.05 54 21.25 51.13Q19.45 48.25 19.45 44.50Q19.45 40.55 21.05 37.55Q22.65 34.55 25.45 32.85Q28.25 31.15 31.90 31.15Q36 31.15 38.65 32.90Q41.30 34.65 42.58 37.60Q43.85 40.55 43.85 44.20Q43.85 44.70 43.80 45.35Q43.75 46 43.65 46.35L25.55 46.35Q25.85 48.35 27 49.67Q28.15 51 29.90 51.67Q31.65 52.35 33.80 52.35L40.65 52.35L40.65 57.25L33.80 57.25M25.50 42.45L38.10 42.45Q38.05 41.50 37.83 40.55Q37.60 39.60 37.13 38.75Q36.65 37.90 35.92 37.27Q35.20 36.65 34.20 36.27Q33.20 35.90 31.90 35.90Q30.40 35.90 29.25 36.47Q28.10 37.05 27.30 37.97Q26.50 38.90 26.07 40.08Q25.65 41.25 25.50 42.45Z"></path>
+                            <path d="M49.20 57.25L49.20 42.55Q49.20 39.25 50.70 36.67Q52.20 34.10 54.95 32.63Q57.70 31.15 61.40 31.15Q65.10 31.15 67.83 32.63Q70.55 34.10 72.05 36.67Q73.55 39.25 73.55 42.55L73.55 57.25L67.85 57.25L67.85 42.60Q67.85 40.65 66.95 39.17Q66.05 37.70 64.58 36.88Q63.10 36.05 61.35 36.05Q59.65 36.05 58.17 36.88Q56.70 37.70 55.83 39.17Q54.95 40.65 54.95 42.60L54.95 57.25L49.20 57.25Z"></path>
+                            <path d="M80.45 57.25L80.45 20.75L86.20 20.75L86.20 57.25L80.45 57.25Z"></path>
+                            <path d="M105.25 57.85Q101.30 57.85 98.25 56.08Q95.20 54.30 93.43 51.27Q91.65 48.25 91.65 44.50Q91.65 40.75 93.43 37.72Q95.20 34.70 98.25 32.92Q101.30 31.15 105.25 31.15Q109.15 31.15 112.20 32.92Q115.25 34.70 117.03 37.70Q118.80 40.70 118.80 44.50Q118.80 48.25 117.03 51.27Q115.25 54.30 112.20 56.08Q109.15 57.85 105.25 57.85M105.25 52.95Q107.60 52.95 109.35 51.83Q111.10 50.70 112.05 48.80Q113 46.90 113 44.50Q113 42.15 112.05 40.22Q111.10 38.30 109.35 37.17Q107.60 36.05 105.25 36.05Q102.85 36.05 101.13 37.17Q99.40 38.30 98.43 40.20Q97.45 42.10 97.45 44.50Q97.45 46.85 98.43 48.77Q99.40 50.70 101.13 51.83Q102.85 52.95 105.25 52.95Z"></path>
+                        </g>
+                        <g class="logo-green">
+                            <path d="M134.60 57.85Q130.95 57.85 128.30 56.05Q125.65 54.25 124.23 51.23Q122.80 48.20 122.80 44.55Q122.80 40.75 124.43 37.72Q126.05 34.70 129.08 32.92Q132.10 31.15 136.30 31.15Q140.45 31.15 143.38 32.92Q146.30 34.70 147.88 37.72Q149.45 40.75 149.45 44.45L149.45 57.25L143.70 57.25L143.70 52.50L143.60 52.50Q142.85 53.90 141.65 55.13Q140.45 56.35 138.70 57.10Q136.95 57.85 134.60 57.85M136.15 52.95Q138.40 52.95 140.08 51.83Q141.75 50.70 142.68 48.77Q143.60 46.85 143.60 44.45Q143.60 42.05 142.70 40.17Q141.80 38.30 140.15 37.17Q138.50 36.05 136.20 36.05Q133.80 36.05 132.10 37.17Q130.40 38.30 129.50 40.20Q128.60 42.10 128.60 44.50Q128.60 46.85 129.50 48.77Q130.40 50.70 132.08 51.83Q133.75 52.95 136.15 52.95Z"></path>
+                            <path d="M156.35 57.25L156.35 31.75L162.10 31.75L162.10 57.25L156.35 57.25M159.20 28.20Q157.70 28.20 156.60 27.10Q155.50 26 155.50 24.50Q155.50 23 156.60 21.90Q157.70 20.80 159.20 20.80Q160.75 20.80 161.83 21.90Q162.90 23 162.90 24.50Q162.90 26 161.83 27.10Q160.75 28.20 159.20 28.20Z"></path>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+            </button>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" aria-hidden="true">
+        <a href="../../index.html">Home</a>
+        <a href="../services.html">Services</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
+    </div>
+
+    <section class="blog-hero">
+        <div class="article-meta">
+            <span class="category-tag">AI Strategy</span>
+            <span class="reading-time" aria-label="Estimated reading time: 18 minutes">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                18 min read
+            </span>
+        </div>
+        <h1>Agents or Automation? A Decision Framework for Choosing the Right Approach</h1>
+        <p class="article-intro">A practical 5-factor framework for deciding between RPA, AI-enhanced automation, and AI agents. Includes use case analysis, cost considerations, and hybrid patterns.</p>
+
+        <div class="author-byline">
+            <div class="author-avatar">FA</div>
+            <div class="author-info">
+                <span class="author-name">Fenlo AI Team</span>
+                <span class="author-role">AI Solutions Experts</span>
+            </div>
+            <span class="publish-date">January 2026</span>
+        </div>
+    </section>
+
+    <article class="article-container" id="main-content">
+        <div class="article-content">
+            <!-- Table of Contents -->
+            <nav class="toc" aria-label="Table of contents">
+                <div class="toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                    </svg>
+                    In This Article
+                </div>
+                <ol class="toc-list">
+                    <li><a href="#definitions">Definitions That Actually Help</a></li>
+                    <li><a href="#decision-framework">The Decision Framework</a></li>
+                    <li><a href="#use-cases">Use Case Analysis</a></li>
+                    <li><a href="#hybrid-approach">The Hybrid Approach</a></li>
+                    <li><a href="#implementation">Implementation Path</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ol>
+            </nav>
+
+            <p>Not every problem needs an AI agent--but some absolutely do.</p>
+
+            <p>The automation landscape in 2026 is more confusing than ever. Vendors throw around terms like "agentic AI," "intelligent automation," "hyperautomation," and "AI-powered RPA" as if they're interchangeable. They're not. And choosing wrong is expensive.</p>
+
+            <p>Deploy an AI agent where simple automation would suffice, and you'll spend 10x more for marginal improvement. Deploy rule-based automation where you need adaptability, and you'll bury your team in exception handling. According to a January 2025 Gartner poll, 42% of organizations have made only "conservative investments" in agentic AI, with 31% still in "wait and see" mode--suggesting widespread uncertainty about when AI agents are actually the right choice.</p>
+
+            <p>This guide provides a clear framework for making the automation vs. agent decision. We'll define three tiers of automation capability, present a 5-factor decision framework, analyze real use cases, and explain why the most effective approach is often a hybrid--not a binary choice.</p>
+
+            <h2 id="definitions">Definitions That Actually Help</h2>
+
+            <p>Before we can decide between approaches, we need definitions that clarify rather than confuse. The industry conflates multiple distinct concepts, so let's separate them.</p>
+
+            <h3>Tier 1: Traditional Automation (RPA)</h3>
+
+            <p><strong>What it is</strong>: Rule-based, deterministic process automation. Software robots that follow explicit instructions to interact with applications, move data, and execute predefined workflows.</p>
+
+            <p><strong>How it works</strong>: An RPA bot follows a script: "If you see field X, copy its value to field Y. If button Z is visible, click it. If error message W appears, retry three times then escalate." Every action is predetermined. There's no interpretation, no judgment, no adaptation.</p>
+
+            <p><strong>What it's good at</strong>:</p>
+            <ul>
+                <li>High-volume, repetitive tasks with structured inputs</li>
+                <li>Data transfer between systems</li>
+                <li>Report generation and distribution</li>
+                <li>Form filling and data entry</li>
+                <li>Processes that rarely change and have few exceptions</li>
+            </ul>
+
+            <p><strong>Limitations</strong>: Brittle (breaks when processes change), rule explosion for complex exceptions, no learning capability, structured data only.</p>
+
+            <h3>Tier 2: AI-Enhanced Automation</h3>
+
+            <p><strong>What it is</strong>: Traditional automation augmented with machine learning models for specific capabilities--classification, extraction, prediction--while maintaining rule-based orchestration.</p>
+
+            <p><strong>How it works</strong>: The workflow remains deterministic, but specific steps use ML models. An email arrives, an ML classifier categorizes it, and rule-based automation routes it to the appropriate queue.</p>
+
+            <p><strong>What it's good at</strong>:</p>
+            <ul>
+                <li>Document classification and routing</li>
+                <li>Data extraction from semi-structured documents</li>
+                <li>Sentiment classification for routing</li>
+                <li>Image and text recognition in workflows</li>
+                <li>Prediction models for approval/rejection</li>
+            </ul>
+
+            <p><strong>Limitations</strong>: Still workflow-bound, no reasoning capability, requires training data, and models can drift.</p>
+
+            <h3>Tier 3: AI Agents</h3>
+
+            <p><strong>What it is</strong>: Autonomous, goal-directed systems that can reason, plan, and take action to achieve objectives. AI agents don't just execute predefined workflows--they figure out what to do.</p>
+
+            <p><strong>How it works</strong>: Given a goal ("resolve this customer's issue"), the agent plans an approach, takes actions, observes results, and adapts. It uses tools as needed and can handle novel situations.</p>
+
+            <p><strong>What it's good at</strong>:</p>
+            <ul>
+                <li>Complex, multi-step tasks requiring judgment</li>
+                <li>Handling unstructured inputs (natural language, ambiguous requests)</li>
+                <li>Tasks with high variability and many exceptions</li>
+                <li>Situations requiring reasoning and context understanding</li>
+            </ul>
+
+            <p><strong>Limitations</strong>: Higher cost per task, less predictable outputs, requires guardrails, and "hallucination" risk.</p>
+
+            <h3>Side-by-Side Comparison</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>RPA</th>
+                        <th>AI-Enhanced</th>
+                        <th>AI Agent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Input handling</strong></td>
+                        <td>Structured only</td>
+                        <td>Semi-structured</td>
+                        <td>Unstructured</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Decision making</strong></td>
+                        <td>None (rules)</td>
+                        <td>Classification</td>
+                        <td>Reasoning</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Adaptability</strong></td>
+                        <td>None</td>
+                        <td>Limited</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Predictability</strong></td>
+                        <td>Deterministic</td>
+                        <td>Mostly deterministic</td>
+                        <td>Probabilistic</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Per-transaction cost</strong></td>
+                        <td>Low</td>
+                        <td>Medium</td>
+                        <td>Higher</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Maintenance</strong></td>
+                        <td>High (brittle)</td>
+                        <td>Medium</td>
+                        <td>Lower (adaptive)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="decision-framework">The Decision Framework</h2>
+
+            <p>Evaluate your process against these five factors.</p>
+
+            <h3>Factor 1: Task Complexity</h3>
+
+            <p><strong>Low complexity</strong>: Single-purpose, linear workflow with few decision points. <strong>Recommendation</strong>: RPA</p>
+            <p><strong>Medium complexity</strong>: Multi-step workflow with classification decisions and defined exception handling. <strong>Recommendation</strong>: AI-Enhanced</p>
+            <p><strong>High complexity</strong>: Open-ended task requiring multi-step planning, judgment, and adaptation. <strong>Recommendation</strong>: AI Agent</p>
+
+            <h3>Factor 2: Input Variability</h3>
+
+            <p><strong>Structured inputs</strong>: Fixed formats, predictable fields. <strong>Recommendation</strong>: RPA</p>
+            <p><strong>Semi-structured inputs</strong>: Consistent general structure but variable formats. <strong>Recommendation</strong>: AI-Enhanced</p>
+            <p><strong>Unstructured inputs</strong>: Free-form text, natural language, highly variable. <strong>Recommendation</strong>: AI Agent</p>
+
+            <h3>Factor 3: Decision Requirements</h3>
+
+            <p><strong>No decisions</strong>: Pure data transformation. <strong>Recommendation</strong>: RPA</p>
+            <p><strong>Classification decisions</strong>: Categorizing into predefined buckets. <strong>Recommendation</strong>: AI-Enhanced</p>
+            <p><strong>Reasoning decisions</strong>: Decisions requiring context and judgment. <strong>Recommendation</strong>: AI Agent</p>
+
+            <h3>Factor 4: Error Tolerance</h3>
+
+            <p><strong>Zero tolerance</strong>: Errors have significant consequences. <strong>Recommendation</strong>: RPA with human review</p>
+            <p><strong>Some tolerance</strong>: Errors are recoverable. <strong>Recommendation</strong>: AI-Enhanced with exception handling</p>
+            <p><strong>Learning acceptable</strong>: Errors are improvement opportunities. <strong>Recommendation</strong>: AI Agent with human-in-the-loop</p>
+
+            <h3>Factor 5: Cost Sensitivity</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Approach</th>
+                        <th>Approximate Per-Transaction Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>RPA</td>
+                        <td>$0.001 - $0.05</td>
+                    </tr>
+                    <tr>
+                        <td>AI-Enhanced</td>
+                        <td>$0.05 - $0.50</td>
+                    </tr>
+                    <tr>
+                        <td>AI Agent</td>
+                        <td>$0.10 - $2.00+</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>The Decision Matrix</h3>
+
+            <p>Plot your process on each factor and sum the scores:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Factor</th>
+                        <th>RPA (1 point)</th>
+                        <th>AI-Enhanced (2 points)</th>
+                        <th>AI Agent (3 points)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Task Complexity</td>
+                        <td>Low</td>
+                        <td>Medium</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Input Variability</td>
+                        <td>Structured</td>
+                        <td>Semi-structured</td>
+                        <td>Unstructured</td>
+                    </tr>
+                    <tr>
+                        <td>Decision Requirements</td>
+                        <td>None</td>
+                        <td>Classification</td>
+                        <td>Reasoning</td>
+                    </tr>
+                    <tr>
+                        <td>Error Tolerance</td>
+                        <td>Zero</td>
+                        <td>Some</td>
+                        <td>Learning OK</td>
+                    </tr>
+                    <tr>
+                        <td>Cost Sensitivity</td>
+                        <td>High vol/low value</td>
+                        <td>Medium</td>
+                        <td>Low vol/high value</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Scoring interpretation</strong>:</p>
+            <ul>
+                <li><strong>5-7 points</strong>: RPA is likely the right choice</li>
+                <li><strong>8-11 points</strong>: AI-Enhanced Automation fits best</li>
+                <li><strong>12-15 points</strong>: AI Agent is appropriate</li>
+            </ul>
+
+            <h2 id="use-cases">Use Case Analysis</h2>
+
+            <h3>Use Case 1: Invoice Processing (Score: 10 - AI-Enhanced)</h3>
+
+            <p>A company processing 5,000 invoices per month from 200 vendors with varied formats but consistent structure. The task is well-defined extraction and entry--while an agent could do it, you'd pay significantly more for reasoning capability you don't need.</p>
+
+            <h3>Use Case 2: Customer Support Triage (Score: 11 - AI-Enhanced, borderline Agent)</h3>
+
+            <p>500 support tickets per day ranging from simple questions to complex issues. This is primarily a classification task despite unstructured inputs. Consider a tiered approach: AI-enhanced for routing, with agents handling detected simple questions automatically.</p>
+
+            <h3>Use Case 3: Structured Form Data Entry (Score: 5 - RPA)</h3>
+
+            <p>2,000 standardized patient intake forms per week. The forms are controlled, the task is transcription, and deterministic accuracy outweighs any AI flexibility benefit.</p>
+
+            <h3>Use Case 4: Complex Issue Resolution (Score: 15 - AI Agent)</h3>
+
+            <p>Escalated customer issues requiring research, diagnosis, and resolution that take senior engineers 30-60 minutes. Each issue is different--the agent needs to reason about specific situations, not just classify.</p>
+
+            <h2 id="hybrid-approach">The Hybrid Approach</h2>
+
+            <p>Here's what most "agents vs. automation" articles miss: the most effective approach for complex operations is often a hybrid that combines all three tiers.</p>
+
+            <h3>Why Hybrid Wins</h3>
+
+            <p>Real business processes aren't monolithic. A customer service operation has:</p>
+            <ul>
+                <li>High-volume, structured tasks (password resets) -- RPA</li>
+                <li>Classification decisions (ticket routing) -- AI-Enhanced</li>
+                <li>Complex resolution (escalations) -- AI Agent</li>
+            </ul>
+
+            <h3>Cost Optimization Through Routing</h3>
+
+            <p>If 60% of inquiries are simple enough for RPA, 30% need AI-enhanced handling, and 10% require full agent reasoning:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tier</th>
+                        <th>Volume</th>
+                        <th>Cost/Transaction</th>
+                        <th>Daily Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>RPA</td>
+                        <td>600</td>
+                        <td>$0.02</td>
+                        <td>$12</td>
+                    </tr>
+                    <tr>
+                        <td>AI-Enhanced</td>
+                        <td>300</td>
+                        <td>$0.20</td>
+                        <td>$60</td>
+                    </tr>
+                    <tr>
+                        <td>AI Agent</td>
+                        <td>100</td>
+                        <td>$1.00</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td>1000</td>
+                        <td>-</td>
+                        <td><strong>$172</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Compare to all-agent approach: 1000 x $1.00 = <strong>$1,000/day</strong>. Hybrid is 83% cheaper while maintaining quality where it matters.</p>
+
+            <h2 id="implementation">Implementation Path</h2>
+
+            <h3>Starting Point Recommendations</h3>
+
+            <p><strong>If you have no automation today</strong>: Start with RPA for your most structured, highest-volume processes. Build infrastructure, prove value, then layer in AI-enhanced capabilities.</p>
+
+            <p><strong>If you have RPA and it's working</strong>: Identify where RPA struggles--high exception rates, maintenance burden. These are candidates for AI-enhanced or agents.</p>
+
+            <p><strong>If you're evaluating AI agents</strong>: Start with a hybrid mindset. Identify specific tasks that need agent-level reasoning, plan integration with existing automation.</p>
+
+            <h3>Common Mistakes to Avoid</h3>
+
+            <ul>
+                <li><strong>Agent for everything</strong>: Expensive and often less reliable for simple tasks</li>
+                <li><strong>RPA for everything</strong>: Rule explosions and brittle bots</li>
+                <li><strong>Ignoring the hybrid</strong>: The answer is usually "both, for different parts"</li>
+                <li><strong>Underestimating integration</strong>: All tiers need to work together</li>
+                <li><strong>Forgetting humans</strong>: Design for human escalation from the start</li>
+            </ul>
+
+            <h2 id="conclusion">Conclusion</h2>
+
+            <p>The question isn't "agents or automation?" It's "which combination, for which tasks, with what handoffs?"</p>
+
+            <div class="key-insight">
+                <div class="key-insight-title">Key Takeaways</div>
+                <p>
+                    <strong>RPA</strong> isn't outdated. For structured, high-volume, rule-based tasks, it's still the most cost-effective option.<br><br>
+                    <strong>AI-Enhanced automation</strong> handles the middle ground--structured workflows with classification or extraction needs.<br><br>
+                    <strong>AI Agents</strong> are appropriate for complex, judgment-heavy tasks--but overkill for simple processes.<br><br>
+                    <strong>Hybrid architectures</strong> usually outperform single-tier approaches for any non-trivial operation.
+                </p>
+            </div>
+
+            <p>The organizations seeing the best results aren't the ones who bet everything on agents or cling to RPA. They're the ones who choose deliberately, task by task, and build systems where each tier handles what it does best.</p>
+
+            <div class="cta-section">
+                <h2>Need Help Choosing the Right Approach?</h2>
+                <p>FenloAI helps organizations navigate the automation landscape. Whether you're evaluating AI agents, optimizing existing RPA, or designing hybrid architectures, we can help you choose correctly.</p>
+                <a href="../contact.html" class="cta-button">
+                    Get in Touch
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Social Share -->
+            <div class="social-share">
+                <span class="social-share-label">Share this article:</span>
+                <div class="social-share-buttons">
+                    <a href="https://twitter.com/intent/tweet?url=https://fenloai.com/blog/agents-vs-automation&text=Agents%20or%20Automation%3F%20A%20Decision%20Framework" target="_blank" rel="noopener" class="social-share-btn" aria-label="Share on Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://fenloai.com/blog/agents-vs-automation" target="_blank" rel="noopener" class="social-share-btn" aria-label="Share on LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                        </svg>
+                    </a>
+                    <a href="mailto:?subject=Article%20on%20AI%20Agents%20vs%20Automation&body=Check%20out%20this%20article%3A%20https://fenloai.com/blog/agents-vs-automation" class="social-share-btn" aria-label="Share via Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <a href="ai-roi-framework.html" class="related-card">
+                        <span class="related-card-tag">AI Strategy</span>
+                        <h3 class="related-card-title">The AI ROI Framework: How to Measure What Actually Matters</h3>
+                        <p class="related-card-excerpt">A CFO-friendly framework for measuring AI value across multiple dimensions.</p>
+                    </a>
+                    <a href="escaping-pilot-purgatory.html" class="related-card">
+                        <span class="related-card-tag">AI Strategy</span>
+                        <h3 class="related-card-title">Escaping Pilot Purgatory: Why 95% of AI Projects Fail to Scale</h3>
+                        <p class="related-card-excerpt">The proven framework for scaling AI pilots to production.</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="references">
+                <h2>References and Further Reading</h2>
+                <ol class="reference-list">
+                    <li data-ref="[1]">TechTarget. "Compare AI Agents vs. RPA: Key differences and overlap." <a href="https://www.techtarget.com/searchenterpriseai/tip/Compare-AI-agents-vs-RPA-Key-differences-and-overlap" target="_blank" rel="noopener">techtarget.com</a></li>
+                    <li data-ref="[2]">CIO. "The Future of RPA Ties to AI Agents." <a href="https://www.cio.com/article/4001371/the-future-of-rpa-ties-to-ai-agents.html" target="_blank" rel="noopener">cio.com</a></li>
+                    <li data-ref="[3]">IBM. "AI Agents in 2025: Expectations vs Reality." <a href="https://www.ibm.com/think/insights/ai-agents-2025-expectations-vs-reality" target="_blank" rel="noopener">ibm.com</a></li>
+                    <li data-ref="[4]">Atomicwork. "Moving Past RPA: How Enterprise AI Agents Transform Workflows." <a href="https://www.atomicwork.com/blog/rpa-vs-enterprise-ai-agents" target="_blank" rel="noopener">atomicwork.com</a></li>
+                    <li data-ref="[5]">Crossfuze. "AI Agents vs Traditional Automation." <a href="https://www.crossfuze.com/post/ai-agents-vs-traditional-automation" target="_blank" rel="noopener">crossfuze.com</a></li>
+                </ol>
+            </div>
+        </div>
+    </article>
+
+    <footer role="contentinfo">
+        <div class="footer-links">
+            <a href="../legal/privacy.html">Privacy Policy</a>
+            <a href="../legal/terms.html">Terms of Service</a>
+        </div>
+        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookie-consent" role="dialog" aria-label="Cookie consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <p>We use cookies to analyze site traffic and improve your experience. By continuing to use our site, you consent to our use of cookies. <a href="../legal/privacy.html">Learn more</a></p>
+            </div>
+            <div class="cookie-consent-buttons">
+                <button class="btn btn-secondary" id="cookie-decline">Decline</button>
+                <button class="btn btn-primary" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isActive = mobileMenuToggle.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileMenuToggle.setAttribute('aria-expanded', isActive);
+                mobileNav.setAttribute('aria-hidden', !isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
+
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileNav.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // Reading progress indicator
+        const progressBar = document.getElementById('reading-progress');
+        const article = document.getElementById('main-content');
+
+        function updateProgress() {
+            const articleRect = article.getBoundingClientRect();
+            const articleTop = articleRect.top + window.scrollY;
+            const articleHeight = articleRect.height;
+            const windowHeight = window.innerHeight;
+            const scrollY = window.scrollY;
+
+            const start = articleTop - windowHeight;
+            const end = articleTop + articleHeight - windowHeight;
+            const progress = Math.min(Math.max((scrollY - start) / (end - start) * 100, 0), 100);
+
+            progressBar.style.width = progress + '%';
+        }
+
+        window.addEventListener('scroll', updateProgress);
+        updateProgress();
+
+        // Cookie Consent Banner
+        (function() {
+            const consentBanner = document.getElementById('cookie-consent');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            const CONSENT_KEY = 'fenloai_cookie_consent';
+
+            const consent = localStorage.getItem(CONSENT_KEY);
+            if (!consent) {
+                setTimeout(() => {
+                    consentBanner.classList.add('visible');
+                }, 1000);
+            }
+
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem(CONSENT_KEY, 'accepted');
+                consentBanner.classList.remove('visible');
+            });
+
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem(CONSENT_KEY, 'declined');
+                consentBanner.classList.remove('visible');
+            });
+        })();
+
+        // Theme Toggle
+        (function() {
+            const THEME_KEY = 'fenloai_theme';
+            const themeToggle = document.querySelector('.theme-toggle');
+
+            const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem(THEME_KEY, newTheme);
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
