@@ -364,14 +364,14 @@
                     <p>Eliminate repetitive tasks that eat up your team's time.</p>
                     <div class="learn-more">Learn more <span class="arrow">→</span></div>
                 </a>
+                <a href="pages/services/service1.html" class="service-card">
+                    <h3>Executive AI Briefing</h3>
+                    <p>Free 2-hour strategy session. We'll tell you honestly if AI makes sense for you.</p>
+                    <div class="learn-more">Learn more <span class="arrow">→</span></div>
+                </a>
                 <a href="pages/services/service7.html" class="service-card">
                     <h3>Business Dashboards</h3>
                     <p>See how your business is actually doing — without spreadsheet gymnastics.</p>
-                    <div class="learn-more">Learn more <span class="arrow">→</span></div>
-                </a>
-                <a href="pages/services/service2.html" class="service-card">
-                    <h3>Custom Solutions</h3>
-                    <p>For problems off-the-shelf tools can't solve.</p>
                     <div class="learn-more">Learn more <span class="arrow">→</span></div>
                 </a>
                 <a href="pages/services.html" class="service-card" style="border-style: dashed;">
@@ -418,6 +418,44 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Insights -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: var(--space-lg);">
+                <h2 class="gradient-text">Recent Insights</h2>
+                <p style="color: var(--text-secondary);">Practical guides to help you understand AI and make informed decisions</p>
+            </div>
+            <div class="grid grid-3">
+                <a href="pages/blog/faq-bots-complete-guide.html" class="service-card">
+                    <span style="display: inline-block; padding: 0.25rem 0.75rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--accent-primary); margin-bottom: var(--space-sm);">Customer Support</span>
+                    <h3 style="font-size: 1.1rem; margin-bottom: var(--space-sm);">Stop Answering the Same Questions Over and Over</h3>
+                    <p style="font-size: 0.9rem;">Learn how FAQ bots work, what they really cost, and whether one makes sense for your business.</p>
+                    <div class="learn-more">Read article <span class="arrow">→</span></div>
+                </a>
+                <a href="pages/blog/document-qa-guide-sme-roi.html" class="service-card">
+                    <span style="display: inline-block; padding: 0.25rem 0.75rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--accent-primary); margin-bottom: var(--space-sm);">Document Intelligence</span>
+                    <h3 style="font-size: 1.1rem; margin-bottom: var(--space-sm);">The Small Business Guide to Document Q&A</h3>
+                    <p style="font-size: 0.9rem;">How SMEs are cutting document search time by 91% with AI-powered Q&A systems.</p>
+                    <div class="learn-more">Read article <span class="arrow">→</span></div>
+                </a>
+                <a href="pages/blog/ai-agents-guide-sme.html" class="service-card">
+                    <span style="display: inline-block; padding: 0.25rem 0.75rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--accent-primary); margin-bottom: var(--space-sm);">AI Strategy</span>
+                    <h3 style="font-size: 1.1rem; margin-bottom: var(--space-sm);">The Small Business Guide to AI Agents</h3>
+                    <p style="font-size: 0.9rem;">Real results from companies using autonomous digital workers. Honest expectations included.</p>
+                    <div class="learn-more">Read article <span class="arrow">→</span></div>
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-lg);">
+                <a href="pages/blog.html" style="color: var(--accent-primary); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem;">
+                    View all articles
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -641,8 +679,8 @@
             const THEME_KEY = 'fenloai_theme';
             const themeToggle = document.querySelector('.theme-toggle');
 
-            // Get saved theme or default to dark
-            const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+            // Get saved theme or default to light
+            const savedTheme = localStorage.getItem(THEME_KEY) || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
 
             if (themeToggle) {
