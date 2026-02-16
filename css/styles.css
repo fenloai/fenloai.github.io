@@ -217,11 +217,15 @@ html {
 body {
     font-family: var(--font-family);
     font-weight: var(--font-weight-normal);
-    line-height: 1.65;
+    line-height: 1.7;
     color: var(--text-primary);
     background: var(--bg-primary);
     overflow-x: hidden;
     min-height: 100vh;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 /* ===== ANIMATED BACKGROUND ===== */
@@ -513,9 +517,11 @@ a {
 
 .hero-description {
     font-size: 1.15rem;
-    line-height: 1.7;
+    line-height: 1.8;
     margin-top: var(--space-lg);
     max-width: 560px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .hero-cta {
@@ -814,6 +820,134 @@ a {
 /* ===== CTA GRADIENT ===== */
 .cta-gradient {
     background: linear-gradient(135deg, rgba(93, 110, 52, 0.05) 0%, rgba(196, 148, 74, 0.05) 100%);
+}
+
+/* ===== DROP CAPS ===== */
+.drop-cap::first-letter {
+    float: left;
+    font-family: var(--font-display);
+    font-size: 4.5rem;
+    line-height: 0.85;
+    margin-top: 0.1em;
+    margin-right: 0.15em;
+    color: var(--accent-primary);
+    font-weight: 400;
+}
+
+/* ===== SOPHISTICATED LINK UNDERLINES ===== */
+.editorial-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.editorial-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.editorial-link:hover {
+    color: var(--accent-primary);
+}
+
+.editorial-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Animated underline for inline links */
+.text-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--accent-primary);
+    background-image: linear-gradient(90deg, var(--accent-primary), var(--accent-primary));
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-bottom: 2px;
+}
+
+.text-link:hover {
+    background-size: 100% 1px;
+}
+
+/* ===== 3D CARD TILT EFFECTS ===== */
+.card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
+}
+
+.card-3d:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-3deg) translateZ(10px);
+}
+
+/* Enhanced glass cards with tilt */
+.glass-card.card-tilt {
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.glass-card.card-tilt:hover {
+    transform: perspective(1000px) rotateX(1deg) rotateY(-2deg) translateY(-8px) scale(1.01);
+}
+
+/* ===== GRADIENT MESH BACKGROUNDS ===== */
+.mesh-gradient {
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(93, 110, 52, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(196, 148, 74, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(93, 110, 52, 0.08) 0%, transparent 50%);
+}
+
+.mesh-gradient-subtle {
+    background:
+        radial-gradient(ellipse at 10% 20%, rgba(93, 110, 52, 0.08) 0%, transparent 40%),
+        radial-gradient(ellipse at 90% 80%, rgba(196, 148, 74, 0.06) 0%, transparent 40%);
+}
+
+/* ===== ENHANCED TYPOGRAPHY ===== */
+h1, h2 {
+    letter-spacing: -0.02em;
+    font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
+}
+
+h3, h4, h5, h6 {
+    letter-spacing: -0.01em;
+    font-feature-settings: "kern" 1, "liga" 1;
+}
+
+p {
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+/* Pull numbers - large stats that break layout */
+.pull-number {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 8vw, 7rem);
+    line-height: 0.9;
+    color: var(--accent-primary);
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.03em;
+}
+
+.pull-number-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-top: var(--space-sm);
 }
 
 /* ===== EDITORIAL DIVIDER ===== */
@@ -1161,6 +1295,38 @@ a {
 
 .btn-primary:active {
     transform: translateY(-1px) translateZ(0);
+}
+
+/* Ripple effect on click */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+    opacity: 0;
+}
+
+.btn-ripple:active::after {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+    transition: 0s;
+}
+
+/* Magnetic button effect */
+.btn-magnetic {
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 /* Animated CTA button */
