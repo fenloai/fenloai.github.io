@@ -7,6 +7,25 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+        // Reading Progress Indicator
+        (function() {
+            const progressBar = document.getElementById('reading-progress-bar');
+            if (!progressBar) return;
+
+            function updateReadingProgress() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const trackLength = documentHeight - windowHeight;
+                const percentScrolled = Math.min((scrollTop / trackLength) * 100, 100);
+
+                progressBar.style.width = percentScrolled + '%';
+            }
+
+            window.addEventListener('scroll', updateReadingProgress, { passive: true });
+            updateReadingProgress();
+        })();
     })(window,document,'script','dataLayer','GTM-MBJVZS7Z');</script>
     <!-- End Google Tag Manager -->
 
@@ -903,6 +922,11 @@
 </head>
 
 <body>
+    <!-- Reading Progress Indicator -->
+    <div class="reading-progress">
+        <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBJVZS7Z"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -1426,7 +1450,7 @@
             </div>
             <div class="cookie-consent-buttons">
                 <button class="btn btn-secondary" id="cookie-decline">Decline</button>
-                <button class="btn btn-primary" id="cookie-accept">Accept</button>
+                <button class="btn btn-primary btn-ripple" id="cookie-accept">Accept</button>
             </div>
         </div>
     </div>
@@ -1508,7 +1532,7 @@
             const themeToggle = document.querySelector('.theme-toggle');
 
             // Get saved theme or default to dark
-            const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+            const savedTheme = localStorage.getItem(THEME_KEY) || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
 
             if (themeToggle) {
@@ -1520,6 +1544,25 @@
                     localStorage.setItem(THEME_KEY, newTheme);
                 });
             }
+        })();
+
+        // Reading Progress Indicator
+        (function() {
+            const progressBar = document.getElementById('reading-progress-bar');
+            if (!progressBar) return;
+
+            function updateReadingProgress() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const trackLength = documentHeight - windowHeight;
+                const percentScrolled = Math.min((scrollTop / trackLength) * 100, 100);
+
+                progressBar.style.width = percentScrolled + '%';
+            }
+
+            window.addEventListener('scroll', updateReadingProgress, { passive: true });
+            updateReadingProgress();
         })();
     </script>
 </body>
