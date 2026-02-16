@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive AI Briefing | Fenlo AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Professional Light Theme */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --accent-primary: #7c3aed;
+            --accent-secondary: #6d28d9;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #0891b2;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+
+            /* Fenlo Brand Accents */
+            --fenlo-olive: #6b7c3f;
+            --fenlo-light: #8fa355;
+            --fenlo-gold: #b8a04a;
+
+            /* Status colors */
+            --color-emerald: #059669;
+            --color-amber: #d97706;
+            --color-red: #dc2626;
+
+            /* Functional */
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --glass-border: rgba(124, 58, 237, 0.15);
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            --gradient-accent: linear-gradient(135deg, #0891b2 0%, #7c3aed 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Slide Container */
+        .slides-container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 60px 80px;
+            display: none;
+            flex-direction: column;
+            background: var(--bg-primary);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Background Effects */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .slide::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Typography */
+        .slide-number {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-primary);
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+            color: var(--text-primary);
+        }
+
+        h1.gradient {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 44px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 800px;
+        }
+
+        .lead {
+            font-size: 22px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .highlight {
+            color: var(--accent-primary);
+            font-weight: 500;
+        }
+
+        .highlight-cyan {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        /* Cards */
+        .glass-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 1;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(124, 58, 237, 0.3);
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .glass-card-sm {
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 16px 20px;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--accent-primary);
+        }
+
+        .data-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--bg-tertiary);
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .data-table tr:hover td {
+            background: var(--bg-secondary);
+        }
+
+        .data-table td strong {
+            color: var(--text-primary);
+        }
+
+        /* Stats */
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 56px;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .stat-value-alt {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+
+        /* Lists */
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 18px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+        }
+
+        .feature-list li strong {
+            color: var(--text-primary);
+        }
+
+        /* Iceberg Visual */
+        .iceberg-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .iceberg {
+            position: relative;
+            width: 350px;
+            height: 450px;
+        }
+
+        .iceberg-above {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 70px;
+            background: linear-gradient(180deg, var(--accent-primary) 0%, var(--accent-primary) 100%);
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        }
+
+        .iceberg-below {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 280px;
+            height: 360px;
+            background: linear-gradient(180deg, var(--bg-tertiary) 0%, #e2e8f0 50%, #cbd5e1 100%);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 30%, 90% 70%, 60% 100%, 40% 100%, 10% 70%, 0% 30%);
+            border: 1px solid var(--glass-border);
+        }
+
+        .waterline {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent-primary);
+        }
+
+        .waterline::before {
+            content: 'Waterline';
+            position: absolute;
+            right: -80px;
+            top: -10px;
+            font-size: 11px;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .iceberg-label {
+            position: absolute;
+            font-size: 13px;
+            color: var(--text-secondary);
+            max-width: 140px;
+            line-height: 1.4;
+        }
+
+        .iceberg-label.above {
+            top: 15px;
+            right: -170px;
+        }
+
+        .iceberg-label.below {
+            top: 180px;
+            left: -190px;
+        }
+
+        .iceberg-label strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* AI Type Cards */
+        .ai-type-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ai-type-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .ai-type-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .ai-type-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        .ai-type-tagline {
+            font-size: 13px;
+            color: var(--accent-primary);
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .ai-type-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .maturity-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 12px;
+        }
+
+        .maturity-high {
+            background: rgba(5, 150, 105, 0.1);
+            color: var(--color-emerald);
+        }
+
+        .maturity-medium {
+            background: rgba(217, 119, 6, 0.1);
+            color: var(--color-amber);
+        }
+
+        /* Quote Block */
+        .quote-block {
+            font-size: 26px;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text-primary);
+            padding: 32px 40px;
+            border-left: 3px solid var(--accent-primary);
+            background: var(--bg-secondary);
+            margin: 32px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .quote-block.centered {
+            text-align: center;
+            border-left: none;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+        }
+
+        /* Case Study Cards */
+        .case-result {
+            color: var(--color-emerald) !important;
+            font-weight: 600;
+        }
+
+        .case-industry {
+            font-size: 11px;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .case-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            margin-top: 16px;
+        }
+
+        /* Calculator */
+        .calculator {
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 550px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--bg-tertiary);
+        }
+
+        .calc-row:last-child {
+            border-bottom: none;
+            padding-top: 20px;
+            margin-top: 8px;
+            border-top: 2px solid var(--accent-primary);
+        }
+
+        .calc-label {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .calc-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-family: 'SF Mono', 'Fira Code', monospace;
+        }
+
+        .calc-row:last-child .calc-value {
+            font-size: 24px;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Framework Box */
+        .framework-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .framework-box:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .framework-box h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .framework-box p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Value Pill */
+        .value-pill {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(124, 58, 237, 0.08);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--accent-primary);
+            font-weight: 500;
+            margin: 3px;
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .comparison-col h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bg-tertiary);
+        }
+
+        .comparison-col.ai h3 {
+            border-color: var(--accent-primary);
+        }
+
+        .comparison-col.human h3 {
+            border-color: var(--accent-primary);
+        }
+
+        /* Takeaway Cards */
+        .takeaway-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .takeaway-card:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .takeaway-number {
+            font-size: 48px;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+
+        .takeaway-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .takeaway-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Navigation */
+        .nav-controls {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid var(--glass-border);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .nav-btn:disabled:hover {
+            background: var(--bg-primary);
+            border-color: var(--glass-border);
+            color: var(--text-primary);
+            box-shadow: var(--card-shadow);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        /* Fenlo Logo */
+        .logo {
+            position: absolute;
+            bottom: 30px;
+            left: 40px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--fenlo-olive);
+        }
+
+        /* Keyboard hint */
+        .keyboard-hint {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        .keyboard-hint kbd {
+            background: var(--bg-secondary);
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--bg-tertiary);
+            margin: 0 3px;
+            font-family: inherit;
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            flex: 1;
+        }
+
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Title Slide Specific */
+        .title-slide {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .title-slide h1 {
+            font-size: 68px;
+            margin-bottom: 16px;
+        }
+
+        .title-slide .lead {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .section-divider h2 {
+            font-size: 56px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Value card accents */
+        .accent-amber { border-top: 3px solid var(--color-amber); }
+        .accent-emerald { border-top: 3px solid var(--color-emerald); }
+        .accent-blue { border-top: 3px solid var(--accent-blue); }
+        .accent-purple { border-top: 3px solid var(--accent-primary); }
+        .accent-cyan { border-top: 3px solid var(--accent-primary); }
+
+        /* FIT cards */
+        .fit-letter {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .fit-f { color: var(--color-emerald); }
+        .fit-i { color: var(--accent-blue); }
+        .fit-t { color: var(--color-amber); }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide.active .glass-card,
+        .slide.active .ai-type-card,
+        .slide.active .takeaway-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .slide.active .grid-2 > *:nth-child(2),
+        .slide.active .grid-3 > *:nth-child(2),
+        .slide.active .grid-4 > *:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .slide.active .grid-3 > *:nth-child(3),
+        .slide.active .grid-4 > *:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .slide.active .grid-4 > *:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="slides-container" id="slidesContainer">
+
+        <!-- Slide 1: Title -->
+        <div class="slide title-slide active" data-section="Opening">
+            <span class="slide-number">1 / 25</span>
+            <h1 class="gradient">Executive AI Briefing</h1>
+            <p class="lead">A framework for understanding AI — beyond the hype</p>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 2: The Hook -->
+        <div class="slide" data-section="Opening">
+            <span class="slide-number">2 / 25</span>
+            <div class="section-label">The Reality</div>
+            <h2>Monday Morning, Two Companies</h2>
+            <div class="content-area">
+                <p style="margin-bottom: 24px; text-align: center;">Same size. Same industry. Different results.</p>
+                <table class="data-table" style="max-width: 1000px; margin: 0 auto;">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">The Challenge</th>
+                            <th style="width: 37%;">Company A <span style="opacity: 0.5; font-weight: 400;">(without AI)</span></th>
+                            <th style="width: 38%;">Company B <span style="opacity: 0.5; font-weight: 400;">(with AI)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Customer Emails</strong></td>
+                            <td>200+ emails to sort manually each morning</td>
+                            <td class="case-result">Auto-categorized, prioritized, drafts ready</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sales Forecasting</strong></td>
+                            <td>Spreadsheets updated weekly, often wrong</td>
+                            <td class="case-result">Real-time forecast updates itself daily</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quote Turnaround</strong></td>
+                            <td>Customers wait 48 hours for quotes</td>
+                            <td class="case-result">Quotes generated in 4 hours</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Document Processing</strong></td>
+                            <td>15 hours/week on manual data entry</td>
+                            <td class="case-result">Extracted automatically, 3 hours to review</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Customer Questions</strong></td>
+                            <td>Team overwhelmed, slow response times</td>
+                            <td class="case-result">70% handled instantly by AI</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="quote-block centered" style="margin-top: 28px; font-size: 20px;">
+                    "The difference isn't budget or headcount. It's knowing which AI to use where."
+                </div>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 3: Three Shifts -->
+        <div class="slide" data-section="Opening">
+            <span class="slide-number">3 / 25</span>
+            <div class="section-label">Why Now</div>
+            <h2>Three Shifts That Changed Everything</h2>
+            <div class="content-area">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Shift</th>
+                            <th>What Changed</th>
+                            <th>Business Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong class="highlight">Cost</strong></td>
+                            <td>AI is 10x cheaper than 5 years ago</td>
+                            <td>Accessible to SMBs, not just Fortune 500</td>
+                        </tr>
+                        <tr>
+                            <td><strong class="highlight">Accessibility</strong></td>
+                            <td>No-code tools, APIs, plug-and-play</td>
+                            <td>No PhD required to implement</td>
+                        </tr>
+                        <tr>
+                            <td><strong class="highlight">Expectation</strong></td>
+                            <td>Customers and employees expect AI</td>
+                            <td>Table stakes, not competitive advantage</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="quote-block" style="margin-top: 36px; font-size: 22px;">
+                    "This isn't about being first. It's about not being last."
+                </div>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 4: The AI Iceberg -->
+        <div class="slide" data-section="Opening">
+            <span class="slide-number">4 / 25</span>
+            <div class="section-label">The Complete Picture</div>
+            <h2>The AI Iceberg</h2>
+            <div class="two-col">
+                <div class="iceberg-container">
+                    <div class="iceberg">
+                        <div class="iceberg-above"></div>
+                        <div class="waterline"></div>
+                        <div class="iceberg-below"></div>
+                        <div class="iceberg-label above">
+                            <strong>Above the waterline:</strong>
+                            ChatGPT, DALL-E, Copilot
+                        </div>
+                        <div class="iceberg-label below">
+                            <strong>Below the waterline:</strong>
+                            ML, Computer Vision, NLP, Robotics, Optimization
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>What everyone talks about</h3>
+                    <ul class="feature-list">
+                        <li>ChatGPT and chatbots</li>
+                        <li>Image generators</li>
+                        <li>AI writing tools</li>
+                    </ul>
+                    <h3 style="margin-top: 28px;">What's been driving value for years</h3>
+                    <ul class="feature-list">
+                        <li>Machine Learning & Predictive Analytics</li>
+                        <li>Computer Vision</li>
+                        <li>Speech Recognition & NLP</li>
+                        <li>Robotics & Automation</li>
+                        <li>Optimization & Decision Systems</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 5: Section Divider - AI Landscape -->
+        <div class="slide section-divider" data-section="Block 1">
+            <span class="slide-number">5 / 25</span>
+            <div class="section-label">Block 1</div>
+            <h2>The AI Landscape</h2>
+            <p class="lead">Understanding AI as a family of technologies</p>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 6: What AI Actually Is -->
+        <div class="slide" data-section="Block 1">
+            <span class="slide-number">6 / 25</span>
+            <div class="section-label">The Basics</div>
+            <h2>AI = Machines That Learn From Data</h2>
+            <div class="two-col" style="margin-top: 20px;">
+                <div class="glass-card">
+                    <h3>Traditional Software</h3>
+                    <p style="font-size: 22px; margin-top: 16px; color: var(--text-primary);">IF this THEN that</p>
+                    <p style="font-size: 14px; margin-top: 12px;">Humans write every rule. Software follows instructions exactly.</p>
+                </div>
+                <div class="glass-card" style="border-color: var(--accent-primary); border-width: 2px;">
+                    <h3>Artificial Intelligence</h3>
+                    <p style="font-size: 22px; margin-top: 16px; color: var(--text-primary);">Learn → Find Patterns → Apply</p>
+                    <p style="font-size: 14px; margin-top: 12px;">Machines learn from examples and apply to new situations.</p>
+                </div>
+            </div>
+            <div class="quote-block centered" style="margin-top: 36px; font-size: 18px;">
+                Different types of AI learn different things from different types of data.
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 7: Four AI Types -->
+        <div class="slide" data-section="Block 1">
+            <span class="slide-number">7 / 25</span>
+            <div class="section-label">The AI Family</div>
+            <h2>Four Types of AI That Drive Business Value</h2>
+            <div class="grid-4" style="margin-top: 28px;">
+                <div class="ai-type-card">
+                    <div class="ai-type-icon">📈</div>
+                    <div class="ai-type-name">Predictive AI</div>
+                    <div class="ai-type-tagline">"AI that sees the future"</div>
+                    <div class="ai-type-desc">Forecasts outcomes, scores probability, optimizes decisions</div>
+                    <span class="maturity-badge maturity-high">Very High Maturity</span>
+                </div>
+                <div class="ai-type-card">
+                    <div class="ai-type-icon">👁️</div>
+                    <div class="ai-type-name">Perception AI</div>
+                    <div class="ai-type-tagline">"AI that sees, hears, reads"</div>
+                    <div class="ai-type-desc">Interprets images, transcribes speech, understands text</div>
+                    <span class="maturity-badge maturity-high">High Maturity</span>
+                </div>
+                <div class="ai-type-card">
+                    <div class="ai-type-icon">✨</div>
+                    <div class="ai-type-name">Generative AI</div>
+                    <div class="ai-type-tagline">"AI that creates"</div>
+                    <div class="ai-type-desc">Writes text, creates images, generates code</div>
+                    <span class="maturity-badge maturity-medium">Medium Maturity</span>
+                </div>
+                <div class="ai-type-card">
+                    <div class="ai-type-icon">🤖</div>
+                    <div class="ai-type-name">Physical AI</div>
+                    <div class="ai-type-tagline">"AI that moves and acts"</div>
+                    <div class="ai-type-desc">Controls machines, navigates space, automates processes</div>
+                    <span class="maturity-badge maturity-medium">Medium Maturity</span>
+                </div>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 8: How They Work Together -->
+        <div class="slide" data-section="Block 1">
+            <span class="slide-number">8 / 25</span>
+            <div class="section-label">Integration</div>
+            <h2>AI Systems Combine Multiple Types</h2>
+            <div class="two-col" style="margin-top: 24px;">
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 20px;">Modern Customer Service</h3>
+                    <div style="display: flex; flex-direction: column; gap: 14px;">
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <span class="ai-type-icon" style="width: 36px; height: 36px; font-size: 16px; flex-shrink: 0;">👁️</span>
+                            <div>
+                                <strong style="color: var(--text-primary);">Perception AI</strong>
+                                <p style="font-size: 13px; margin: 0;">Transcribes the call, understands intent</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <span class="ai-type-icon" style="width: 36px; height: 36px; font-size: 16px; flex-shrink: 0;">📈</span>
+                            <div>
+                                <strong style="color: var(--text-primary);">Predictive AI</strong>
+                                <p style="font-size: 13px; margin: 0;">Identifies best resolution, routes appropriately</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <span class="ai-type-icon" style="width: 36px; height: 36px; font-size: 16px; flex-shrink: 0;">✨</span>
+                            <div>
+                                <strong style="color: var(--text-primary);">Generative AI</strong>
+                                <p style="font-size: 13px; margin: 0;">Drafts the response or surfaces knowledge</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 20px;">Intelligent Document Workflow</h3>
+                    <div style="display: flex; flex-direction: column; gap: 14px;">
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <span class="ai-type-icon" style="width: 36px; height: 36px; font-size: 16px; flex-shrink: 0;">👁️</span>
+                            <div>
+                                <strong style="color: var(--text-primary);">Perception AI</strong>
+                                <p style="font-size: 13px; margin: 0;">Reads and extracts data from documents</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <span class="ai-type-icon" style="width: 36px; height: 36px; font-size: 16px; flex-shrink: 0;">📈</span>
+                            <div>
+                                <strong style="color: var(--text-primary);">Predictive AI</strong>
+                                <p style="font-size: 13px; margin: 0;">Categorizes, flags exceptions, routes</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <span class="ai-type-icon" style="width: 36px; height: 36px; font-size: 16px; flex-shrink: 0;">✨</span>
+                            <div>
+                                <strong style="color: var(--text-primary);">Generative AI</strong>
+                                <p style="font-size: 13px; margin: 0;">Summarizes key points, answers questions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 9: Section Divider - Capabilities -->
+        <div class="slide section-divider" data-section="Block 2">
+            <span class="slide-number">9 / 25</span>
+            <div class="section-label">Block 2</div>
+            <h2>AI Capabilities</h2>
+            <p class="lead">Matching AI to your business problems</p>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 10: Capability Framework -->
+        <div class="slide" data-section="Block 2">
+            <span class="slide-number">10 / 25</span>
+            <div class="section-label">Framework</div>
+            <h2>What AI Does for Business</h2>
+            <div class="grid-3" style="margin-top: 28px;">
+                <div class="framework-box">
+                    <h4>👁️ SEE</h4>
+                    <p>Interpret visual information</p>
+                    <div class="value-pill" style="margin-top: 10px;">Perception AI</div>
+                </div>
+                <div class="framework-box">
+                    <h4>👂 HEAR</h4>
+                    <p>Process audio and speech</p>
+                    <div class="value-pill" style="margin-top: 10px;">Perception AI</div>
+                </div>
+                <div class="framework-box">
+                    <h4>📄 READ</h4>
+                    <p>Understand text and documents</p>
+                    <div class="value-pill" style="margin-top: 10px;">Perception AI</div>
+                </div>
+                <div class="framework-box">
+                    <h4>🔮 PREDICT</h4>
+                    <p>Forecast future outcomes</p>
+                    <div class="value-pill" style="margin-top: 10px;">Predictive AI</div>
+                </div>
+                <div class="framework-box">
+                    <h4>✨ CREATE</h4>
+                    <p>Generate new content</p>
+                    <div class="value-pill" style="margin-top: 10px;">Generative AI</div>
+                </div>
+                <div class="framework-box">
+                    <h4>⚡ ACT</h4>
+                    <p>Take physical or digital action</p>
+                    <div class="value-pill" style="margin-top: 10px;">Physical AI</div>
+                </div>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 11: Matching Problems to AI -->
+        <div class="slide" data-section="Block 2">
+            <span class="slide-number">11 / 25</span>
+            <div class="section-label">Application</div>
+            <h2>Matching Problems to AI</h2>
+            <div class="content-area">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Your Problem</th>
+                            <th>Capability</th>
+                            <th>AI Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"We can't process invoices fast enough"</td>
+                            <td>SEE + READ</td>
+                            <td><span class="highlight">Document AI</span></td>
+                        </tr>
+                        <tr>
+                            <td>"We don't know which customers will churn"</td>
+                            <td>PREDICT</td>
+                            <td><span class="highlight">Predictive ML</span></td>
+                        </tr>
+                        <tr>
+                            <td>"Our call center is overwhelmed"</td>
+                            <td>HEAR + CREATE</td>
+                            <td><span class="highlight">Conversational AI</span></td>
+                        </tr>
+                        <tr>
+                            <td>"Quality control is inconsistent"</td>
+                            <td>SEE</td>
+                            <td><span class="highlight">Computer Vision</span></td>
+                        </tr>
+                        <tr>
+                            <td>"Content creation is a bottleneck"</td>
+                            <td>CREATE</td>
+                            <td><span class="highlight">Generative AI</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 12: Limitations -->
+        <div class="slide" data-section="Block 2">
+            <span class="slide-number">12 / 25</span>
+            <div class="section-label">Honest Truths</div>
+            <h2>What AI Cannot Do</h2>
+            <div class="grid-2" style="margin-top: 24px;">
+                <div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>AI Type</th>
+                                <th>Key Limitation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Predictive</strong></td>
+                                <td>Only as good as historical data</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Perception</strong></td>
+                                <td>Struggles with edge cases</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Generative</strong></td>
+                                <td>Hallucinations — confidently wrong</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Physical</strong></td>
+                                <td>Expensive, inflexible</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="glass-card">
+                    <h3>Universal Truths</h3>
+                    <ul class="feature-list" style="margin-top: 12px;">
+                        <li><strong>Garbage in = garbage out</strong> — Data quality determines AI quality</li>
+                        <li><strong>AI has no judgment</strong> — Can't weigh ethical tradeoffs</li>
+                        <li><strong>AI doesn't understand</strong> — Pattern matching, not comprehension</li>
+                        <li><strong>Security matters</strong> — AI needs governance and oversight</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="quote-block centered" style="margin-top: 24px; font-size: 18px;">
+                "Knowing limitations makes you a smarter buyer and user."
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 13: Section Divider - Business Impact -->
+        <div class="slide section-divider" data-section="Block 3">
+            <span class="slide-number">13 / 25</span>
+            <div class="section-label">Block 3</div>
+            <h2>Business Impact</h2>
+            <p class="lead">Connecting AI to real business outcomes</p>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 14: Interactive Anchor -->
+        <div class="slide" data-section="Block 3">
+            <span class="slide-number">14 / 25</span>
+            <div class="section-label">Your Business</div>
+            <h2>Let's Make This About You</h2>
+            <div class="two-col">
+                <div>
+                    <p class="lead" style="margin-bottom: 20px;">What's the one process that eats the most time for the least value?</p>
+                    <p style="font-size: 15px; margin-bottom: 28px;">The thing your best people complain about. The task everyone dreads.</p>
+                    <div class="glass-card glass-card-sm">
+                        <h4 style="margin-bottom: 14px; font-size: 15px;">If you're stuck, consider:</h4>
+                        <ul class="feature-list">
+                            <li>Where does your team spend time on repetitive data entry?</li>
+                            <li>What information takes too long to find?</li>
+                            <li>Where do things slow down waiting for approvals?</li>
+                            <li>What do you wish updated itself automatically?</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="calculator">
+                    <h3 style="margin-bottom: 20px;">Calculate the Cost</h3>
+                    <div class="calc-row">
+                        <span class="calc-label">Hours per week on this task</span>
+                        <span class="calc-value">___ hrs</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">People involved</span>
+                        <span class="calc-value">× ___</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Hourly cost (~$50-75)</span>
+                        <span class="calc-value">× $___</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Weeks per year</span>
+                        <span class="calc-value">× 52</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label"><strong>Annual cost of this problem</strong></span>
+                        <span class="calc-value">= $___</span>
+                    </div>
+                </div>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 15: Value Framework -->
+        <div class="slide" data-section="Block 3">
+            <span class="slide-number">15 / 25</span>
+            <div class="section-label">Value Creation</div>
+            <h2>Five Ways AI Creates Business Value</h2>
+            <div class="grid-5" style="margin-top: 28px;">
+                <div class="glass-card glass-card-sm accent-amber" style="text-align: center;">
+                    <div style="font-size: 28px; margin-bottom: 10px;">💰</div>
+                    <h4 style="font-size: 14px; margin-bottom: 6px;">Cost Reduction</h4>
+                    <p style="font-size: 12px; margin: 0;">Do more with less</p>
+                </div>
+                <div class="glass-card glass-card-sm accent-emerald" style="text-align: center;">
+                    <div style="font-size: 28px; margin-bottom: 10px;">📈</div>
+                    <h4 style="font-size: 14px; margin-bottom: 6px;">Revenue Growth</h4>
+                    <p style="font-size: 12px; margin: 0;">Sell more, better</p>
+                </div>
+                <div class="glass-card glass-card-sm accent-blue" style="text-align: center;">
+                    <div style="font-size: 28px; margin-bottom: 10px;">🛡️</div>
+                    <h4 style="font-size: 14px; margin-bottom: 6px;">Risk Mitigation</h4>
+                    <p style="font-size: 12px; margin: 0;">Prevent bad outcomes</p>
+                </div>
+                <div class="glass-card glass-card-sm accent-purple" style="text-align: center;">
+                    <div style="font-size: 28px; margin-bottom: 10px;">⚡</div>
+                    <h4 style="font-size: 14px; margin-bottom: 6px;">Speed</h4>
+                    <p style="font-size: 12px; margin: 0;">Faster decisions</p>
+                </div>
+                <div class="glass-card glass-card-sm accent-cyan" style="text-align: center;">
+                    <div style="font-size: 28px; margin-bottom: 10px;">😊</div>
+                    <h4 style="font-size: 14px; margin-bottom: 6px;">Experience</h4>
+                    <p style="font-size: 12px; margin: 0;">Delight customers</p>
+                </div>
+            </div>
+            <table class="data-table" style="margin-top: 32px;">
+                <thead>
+                    <tr>
+                        <th>AI Type</th>
+                        <th>Primary Value Drivers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Predictive AI</td>
+                        <td><span class="value-pill">Revenue</span> <span class="value-pill">Risk</span></td>
+                    </tr>
+                    <tr>
+                        <td>Perception AI</td>
+                        <td><span class="value-pill">Cost</span> <span class="value-pill">Risk</span> <span class="value-pill">Speed</span></td>
+                    </tr>
+                    <tr>
+                        <td>Generative AI</td>
+                        <td><span class="value-pill">Speed</span> <span class="value-pill">Cost</span></td>
+                    </tr>
+                    <tr>
+                        <td>Physical AI</td>
+                        <td><span class="value-pill">Cost</span> <span class="value-pill">Speed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 16: Case Study - Stitch Fix -->
+        <div class="slide" data-section="Block 3">
+            <span class="slide-number">16 / 25</span>
+            <div class="section-label">Case Study</div>
+            <h2>Stitch Fix — Predictive + Perception AI</h2>
+            <div class="two-col" style="margin-top: 16px;">
+                <div>
+                    <div class="case-industry">Online Personal Styling • Public Company (SFIX)</div>
+                    <div class="case-label">The Problem</div>
+                    <p style="font-size: 16px;">Scaling personalized fashion recommendations to millions of customers</p>
+                    <div class="case-label">The Solution</div>
+                    <p style="font-size: 16px;">Predictive AI analyzes style preferences, purchase history, and fit data. Perception AI processes clothing images to match aesthetics.</p>
+                </div>
+                <div class="glass-card" style="text-align: center;">
+                    <h3 style="margin-bottom: 20px;">Results</h3>
+                    <div class="stat">
+                        <div class="stat-value">80%+</div>
+                        <div class="stat-label">of revenue driven by algorithmic recommendations</div>
+                    </div>
+                    <div class="stat" style="margin-top: 20px;">
+                        <div class="stat-value">30%</div>
+                        <div class="stat-label">more efficient stylists</div>
+                    </div>
+                    <p style="font-size: 11px; margin-top: 20px; color: var(--text-muted);">Source: Company earnings reports</p>
+                </div>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 17: Case Study - Klarna -->
+        <div class="slide" data-section="Block 3">
+            <span class="slide-number">17 / 25</span>
+            <div class="section-label">Case Study</div>
+            <h2>Klarna — Conversational AI</h2>
+            <div class="two-col" style="margin-top: 16px;">
+                <div>
+                    <div class="case-industry">Global Payments Provider • $6.7B Valuation</div>
+                    <div class="case-label">The Problem</div>
+                    <p style="font-size: 16px;">2.3 million customer service chats monthly overwhelming human agents</p>
+                    <div class="case-label">The Solution</div>
+                    <p style="font-size: 16px;">AI assistant handling full customer conversations, integrated with their systems</p>
+                </div>
+                <div class="glass-card" style="text-align: center;">
+                    <h3 style="margin-bottom: 20px;">Results</h3>
+                    <div class="stat">
+                        <div class="stat-value stat-value-alt">⅔</div>
+                        <div class="stat-label">of all customer chats handled by AI</div>
+                    </div>
+                    <div class="grid-2" style="margin-top: 20px; gap: 12px;">
+                        <div class="stat">
+                            <div class="stat-value" style="font-size: 32px;">700</div>
+                            <div class="stat-label">agent equivalent</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" style="font-size: 32px;">2 min</div>
+                            <div class="stat-label">vs 11 min resolution</div>
+                        </div>
+                    </div>
+                    <p style="font-size: 11px; margin-top: 20px; color: var(--text-muted);">Source: Klarna press release, Feb 2024</p>
+                </div>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 18: Case Study - JPMorgan -->
+        <div class="slide" data-section="Block 3">
+            <span class="slide-number">18 / 25</span>
+            <div class="section-label">Case Study</div>
+            <h2>JPMorgan COIN — Document AI</h2>
+            <div class="two-col" style="margin-top: 16px;">
+                <div>
+                    <div class="case-industry">Largest US Bank • Financial Services</div>
+                    <div class="case-label">The Problem</div>
+                    <p style="font-size: 16px;">Lawyers spending 360,000 hours annually reviewing commercial loan agreements</p>
+                    <div class="case-label">The Solution</div>
+                    <p style="font-size: 16px;">Contract Intelligence (COIN) platform reads and extracts data from legal documents</p>
+                </div>
+                <div class="glass-card" style="text-align: center;">
+                    <h3 style="margin-bottom: 20px;">Results</h3>
+                    <div class="stat">
+                        <div class="stat-value" style="font-size: 40px;">360,000 hrs</div>
+                        <div class="stat-label">of human work</div>
+                    </div>
+                    <div style="font-size: 40px; margin: 12px 0; color: var(--accent-primary);">↓</div>
+                    <div class="stat">
+                        <div class="stat-value" style="font-size: 40px;">Seconds</div>
+                        <div class="stat-label">with fewer errors</div>
+                    </div>
+                    <p style="font-size: 11px; margin-top: 20px; color: var(--text-muted);">Source: Bloomberg</p>
+                </div>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 19: Human Element -->
+        <div class="slide" data-section="Block 3">
+            <span class="slide-number">19 / 25</span>
+            <div class="section-label">The Balance</div>
+            <h2>AI + Humans = Better Than Either Alone</h2>
+            <div class="comparison-grid">
+                <div class="comparison-col ai">
+                    <h3>🤖 AI Does</h3>
+                    <ul class="feature-list">
+                        <li>Process at scale</li>
+                        <li>Find patterns in data</li>
+                        <li>Execute consistently</li>
+                        <li>Work 24/7</li>
+                        <li>Generate options</li>
+                    </ul>
+                </div>
+                <div class="comparison-col human">
+                    <h3>👤 Humans Do</h3>
+                    <ul class="feature-list">
+                        <li>Set strategy and priorities</li>
+                        <li>Interpret meaning and context</li>
+                        <li>Handle exceptions and edge cases</li>
+                        <li>Build relationships</li>
+                        <li>Make final decisions</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="quote-block centered" style="margin-top: 32px; font-size: 20px;">
+                "The question isn't 'AI or humans?' It's 'How do we combine them effectively?'"
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 20: Section Divider - Getting Started -->
+        <div class="slide section-divider" data-section="Block 4">
+            <span class="slide-number">20 / 25</span>
+            <div class="section-label">Block 4</div>
+            <h2>Getting Started</h2>
+            <p class="lead">Practical frameworks for action</p>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 21: Investment Framework -->
+        <div class="slide" data-section="Block 4">
+            <span class="slide-number">21 / 25</span>
+            <div class="section-label">Investment</div>
+            <h2>What Does AI Actually Cost?</h2>
+            <p style="margin-bottom: 20px;">AI is more accessible than most people think.</p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Stage</th>
+                        <th>Investment</th>
+                        <th>What You Get</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Learn</strong></td>
+                        <td class="highlight-cyan">Free</td>
+                        <td>Understand what's possible for your business</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Experiment</strong></td>
+                        <td class="highlight-cyan">$0–500/mo</td>
+                        <td>Try existing tools, validate the concept</td>
+                    </tr>
+                    <tr>
+                        <td><strong>First Win</strong></td>
+                        <td class="highlight-cyan">Under $1K</td>
+                        <td>Ready-to-deploy solution for a common need</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Custom Build</strong></td>
+                        <td class="highlight-cyan">$2K–10K</td>
+                        <td>Solution built for your specific workflow</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scale</strong></td>
+                        <td class="highlight-cyan">$10K+</td>
+                        <td>Multiple workflows, integrations, AI agents</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 22: FIT Assessment -->
+        <div class="slide" data-section="Block 4">
+            <span class="slide-number">22 / 25</span>
+            <div class="section-label">Decision Framework</div>
+            <h2>The FIT Assessment</h2>
+            <div class="grid-3" style="margin-top: 36px;">
+                <div class="glass-card accent-emerald" style="text-align: center;">
+                    <div class="fit-letter fit-f">F</div>
+                    <h3>Feasibility</h3>
+                    <p style="font-size: 14px; margin-top: 10px;">Do we have the data?<br>Is the tech mature?</p>
+                </div>
+                <div class="glass-card accent-blue" style="text-align: center;">
+                    <div class="fit-letter fit-i">I</div>
+                    <h3>Impact</h3>
+                    <p style="font-size: 14px; margin-top: 10px;">Will this meaningfully move<br>a business metric?</p>
+                </div>
+                <div class="glass-card accent-amber" style="text-align: center;">
+                    <div class="fit-letter fit-t">T</div>
+                    <h3>Timeframe</h3>
+                    <p style="font-size: 14px; margin-top: 10px;">Can we see results in<br>a reasonable period?</p>
+                </div>
+            </div>
+            <div class="grid-2" style="margin-top: 32px;">
+                <div class="glass-card glass-card-sm">
+                    <h4>Quick Wins</h4>
+                    <p style="font-size: 13px; margin-top: 8px;">Proven AI + Clear data + Measurable impact + &lt;6 months</p>
+                </div>
+                <div class="glass-card glass-card-sm">
+                    <h4>Strategic Bets</h4>
+                    <p style="font-size: 13px; margin-top: 8px;">Newer AI + Transformative potential + Longer horizon</p>
+                </div>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 23: Next Steps -->
+        <div class="slide" data-section="Block 4">
+            <span class="slide-number">23 / 25</span>
+            <div class="section-label">Action</div>
+            <h2>Start Monday</h2>
+            <div class="grid-2" style="margin-top: 28px;">
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 16px;">📅 This Week</h3>
+                    <ul class="feature-list">
+                        <li>Try a free AI tool on that specific task</li>
+                        <li>Note what works and what doesn't</li>
+                        <li>Estimate: how much is this problem costing you?</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 16px;">📆 This Month</h3>
+                    <ul class="feature-list">
+                        <li>Audit your data — what do you have? What's missing?</li>
+                        <li>Talk to team members who do this task daily</li>
+                        <li>Consider: existing tools vs custom solution?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="glass-card" style="margin-top: 28px; text-align: center;">
+                <h3>When You're Ready to Go Further</h3>
+                <p style="margin-top: 10px;">The key is having clarity on: <strong style="color: var(--text-primary);">What problem you're solving</strong> • <strong style="color: var(--text-primary);">What data you have</strong> • <strong style="color: var(--text-primary);">What success looks like</strong></p>
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 24: Three Takeaways -->
+        <div class="slide" data-section="Closing">
+            <span class="slide-number">24 / 25</span>
+            <div class="section-label">Key Takeaways</div>
+            <h2>If You Remember Nothing Else</h2>
+            <div class="grid-3" style="margin-top: 36px;">
+                <div class="takeaway-card">
+                    <div class="takeaway-number">1</div>
+                    <div class="takeaway-title">AI is a family, not a single tool</div>
+                    <div class="takeaway-desc">Predictive, Perception, Generative, Physical — each solves different problems.</div>
+                </div>
+                <div class="takeaway-card">
+                    <div class="takeaway-number">2</div>
+                    <div class="takeaway-title">Most valuable AI is boring and proven</div>
+                    <div class="takeaway-desc">The hype is new; the value is established. Start with proven AI for quick wins.</div>
+                </div>
+                <div class="takeaway-card">
+                    <div class="takeaway-number">3</div>
+                    <div class="takeaway-title">Start with the problem, not the technology</div>
+                    <div class="takeaway-desc">"What hurts?" before "What's cool?" Match the AI type to your challenge.</div>
+                </div>
+            </div>
+            <div class="quote-block centered" style="margin-top: 36px; font-size: 24px;">
+                "What would your team do with 10 extra hours per week?"
+            </div>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+        <!-- Slide 25: Closing -->
+        <div class="slide section-divider" data-section="Closing">
+            <span class="slide-number">25 / 25</span>
+            <h2 style="font-size: 44px; -webkit-text-fill-color: var(--text-primary);">Where Do You Go From Here?</h2>
+            <div class="grid-3" style="margin-top: 36px; max-width: 900px;">
+                <div class="glass-card" style="text-align: center;">
+                    <div style="font-size: 28px; margin-bottom: 14px;">🔍</div>
+                    <h4>Explore on your own</h4>
+                    <p style="font-size: 13px; margin-top: 8px;">You have the framework. Try the tools, see what clicks.</p>
+                </div>
+                <div class="glass-card" style="text-align: center;">
+                    <div style="font-size: 28px; margin-bottom: 14px;">📚</div>
+                    <h4>Go deeper on a topic</h4>
+                    <p style="font-size: 13px; margin-top: 8px;">More resources, case studies, and connections.</p>
+                </div>
+                <div class="glass-card" style="text-align: center;">
+                    <div style="font-size: 28px; margin-bottom: 14px;">💬</div>
+                    <h4>Talk through a challenge</h4>
+                    <p style="font-size: 13px; margin-top: 8px;">Clarify whether it's worth pursuing.</p>
+                </div>
+            </div>
+            <div class="quote-block centered" style="margin-top: 36px; font-size: 18px; max-width: 700px;">
+                "The goal today wasn't to sell you on AI. It was to give you a framework for thinking clearly about it."
+            </div>
+            <p style="margin-top: 32px; font-size: 13px; color: var(--text-muted);">Resources: <span class="highlight">[your-resource-url]</span></p>
+            <div class="logo"><span>fenlo</span>ai</div>
+        </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-controls">
+        <button class="nav-btn" id="prevBtn" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button class="nav-btn" id="nextBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <div class="keyboard-hint">
+        Press <kbd>←</kbd> <kbd>→</kbd> or <kbd>Space</kbd> to navigate
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressBar = document.getElementById('progressBar');
+        let currentSlide = 0;
+
+        function updateSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === slides.length - 1;
+
+            const progress = ((index + 1) / slides.length) * 100;
+            progressBar.style.width = progress + '%';
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                updateSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                updateSlide(currentSlide - 1);
+            }
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                nextSlide();
+            } else if (touchEndX - touchStartX > 50) {
+                prevSlide();
+            }
+        });
+
+        updateSlide(0);
+    </script>
+</body>
+</html>

@@ -8,54 +8,45 @@
 
 /* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
-    /* Background Colors */
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #0f1510;
-    --bg-tertiary: #1a2418;
-    --bg-card: rgba(15, 25, 18, 0.6);
+    /* Background Colors - Warmer dark tones */
+    --bg-primary: #0d0f0a;
+    --bg-secondary: #141a10;
+    --bg-tertiary: #1e2a1a;
+    --bg-card: rgba(20, 26, 16, 0.6);
 
-    /* Primary Accent - Dark Olive */
-    --accent-primary: #6b7c3f;
+    /* Primary Accent - Deeper Olive */
+    --accent-primary: #5d6e34;
     --accent-primary-light: #8fa355;
-    --accent-primary-dark: #4a5a2a;
+    --accent-primary-dark: #3d4a22;
 
-    /* Secondary Accent - Warm Gold (for CTAs) */
-    --accent-secondary: #b8a04a;
-    --accent-secondary-light: #d4bc5a;
-    --accent-secondary-dark: #8a7838;
+    /* Secondary Accent - Richer Gold (for CTAs) */
+    --accent-secondary: #c4944a;
+    --accent-secondary-light: #dbb066;
+    --accent-secondary-dark: #9a7238;
 
-    /* Legacy accent aliases for compatibility */
-    --accent-cyan: var(--accent-primary);
-    --accent-purple: var(--accent-primary-light);
-    --accent-blue: var(--accent-primary);
-    --accent-green: var(--accent-primary);
-    --accent-orange: var(--accent-secondary);
-    --accent-pink: var(--accent-primary-light);
-    --accent-sky: var(--accent-primary);
-    --accent-violet: var(--accent-primary-light);
-    --accent-red: #8b4a4a;
-    --accent-gold: var(--accent-secondary);
+    /* Highlight Accent - Terracotta */
+    --accent-highlight: #c4704b;
 
-    /* Text Colors */
-    --text-primary: #f5f5f0;
-    --text-secondary: #a8a898;
-    --text-muted: #6b6b5a;
+    /* Text Colors - Warmer tones */
+    --text-primary: #f0ede6;
+    --text-secondary: #a8a28a;
+    --text-muted: #6b6658;
 
-    /* Glass Effects */
-    --glass-border: rgba(107, 124, 63, 0.15);
-    --glass-border-hover: rgba(107, 124, 63, 0.3);
-    --glass-bg: rgba(107, 124, 63, 0.05);
-    --glass-bg-hover: rgba(107, 124, 63, 0.1);
+    /* Glass Effects - Updated for new olive */
+    --glass-border: rgba(93, 110, 52, 0.15);
+    --glass-border-hover: rgba(93, 110, 52, 0.3);
+    --glass-bg: rgba(93, 110, 52, 0.05);
+    --glass-bg-hover: rgba(93, 110, 52, 0.1);
 
     /* Shadows */
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 20px 50px -15px rgba(0, 0, 0, 0.6);
-    --shadow-glow: 0 0 30px rgba(107, 124, 63, 0.3);
-    
-    /* Typography */
-    --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-weight-light: 300;
+    --shadow-glow: 0 0 30px rgba(93, 110, 52, 0.3);
+
+    /* Typography - Editorial Naturalism */
+    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -90,52 +81,45 @@
 
 /* ===== LIGHT THEME ===== */
 [data-theme="light"] {
-    /* Background Colors */
-    --bg-primary: #f8f9f5;
-    --bg-secondary: #f0f2eb;
-    --bg-tertiary: #e8ebe2;
-    --bg-card: rgba(255, 255, 255, 0.8);
+    /* Background Colors - Warm Cream Palette */
+    --bg-primary: #faf7f2;
+    --bg-secondary: #f3efe7;
+    --bg-tertiary: #ebe6db;
+    --bg-card: rgba(255, 253, 247, 0.8);
 
-    /* Text Colors */
-    --text-primary: #1a1f16;
+    /* Text Colors - Forest Dark */
+    --text-primary: #1a2418;
     --text-secondary: #4a5240;
     --text-muted: #6b7560;
 
     /* Glass Effects */
-    --glass-border: rgba(107, 124, 63, 0.2);
-    --glass-border-hover: rgba(107, 124, 63, 0.4);
-    --glass-bg: rgba(107, 124, 63, 0.08);
-    --glass-bg-hover: rgba(107, 124, 63, 0.15);
+    --glass-border: rgba(93, 110, 52, 0.2);
+    --glass-border-hover: rgba(93, 110, 52, 0.4);
+    --glass-bg: rgba(93, 110, 52, 0.08);
+    --glass-bg-hover: rgba(93, 110, 52, 0.15);
 
     /* Shadows */
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 10px 30px -10px rgba(0, 0, 0, 0.12);
     --shadow-lg: 0 20px 50px -15px rgba(0, 0, 0, 0.15);
-    --shadow-glow: 0 0 30px rgba(107, 124, 63, 0.2);
+    --shadow-glow: 0 0 30px rgba(93, 110, 52, 0.2);
 }
 
 /* Light theme background adjustments */
 [data-theme="light"] .bg-glow {
     background:
-        radial-gradient(circle at 15% 50%, rgba(107, 124, 63, 0.12), transparent 30%),
-        radial-gradient(circle at 85% 30%, rgba(143, 163, 85, 0.12), transparent 30%),
-        radial-gradient(circle at 50% 80%, rgba(74, 90, 42, 0.08), transparent 30%);
-}
-
-[data-theme="light"] .bg-grid {
-    background-image:
-        linear-gradient(rgba(107, 124, 63, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(107, 124, 63, 0.05) 1px, transparent 1px);
-    background-size: 60px 60px;
+        radial-gradient(ellipse at 15% 50%, rgba(93, 110, 52, 0.12), transparent 40%),
+        radial-gradient(ellipse at 85% 30%, rgba(143, 163, 85, 0.08), transparent 35%),
+        radial-gradient(ellipse at 50% 90%, rgba(196, 148, 74, 0.06), transparent 30%);
 }
 
 /* Light theme navbar */
 [data-theme="light"] .navbar {
-    background: rgba(248, 249, 245, 0.9);
+    background: rgba(250, 247, 242, 0.9);
 }
 
 [data-theme="light"] .mobile-nav {
-    background: rgba(248, 249, 245, 0.98);
+    background: rgba(250, 247, 242, 0.98);
 }
 
 /* Light theme logo colors */
@@ -161,18 +145,18 @@
 
 /* Light theme cards */
 [data-theme="light"] .glass-card {
-    background: rgba(255, 255, 255, 0.7);
-    border-color: rgba(107, 124, 63, 0.15);
+    background: rgba(255, 253, 247, 0.75);
+    border-color: rgba(93, 110, 52, 0.15);
 }
 
 [data-theme="light"] .glass-card:hover {
-    background: rgba(255, 255, 255, 0.85);
-    border-color: rgba(107, 124, 63, 0.3);
+    background: rgba(255, 253, 247, 0.9);
+    border-color: rgba(93, 110, 52, 0.3);
 }
 
 /* Light theme footer */
 [data-theme="light"] footer {
-    background: rgba(240, 242, 235, 0.9);
+    background: rgba(243, 239, 231, 0.9);
 }
 
 /* ===== THEME TOGGLE ===== */
@@ -233,7 +217,7 @@ html {
 body {
     font-family: var(--font-family);
     font-weight: var(--font-weight-normal);
-    line-height: 1.6;
+    line-height: 1.65;
     color: var(--text-primary);
     background: var(--bg-primary);
     overflow-x: hidden;
@@ -250,23 +234,28 @@ body {
     z-index: -1;
     pointer-events: none;
     background:
-        radial-gradient(circle at 15% 50%, rgba(107, 124, 63, 0.08), transparent 30%),
-        radial-gradient(circle at 85% 30%, rgba(143, 163, 85, 0.08), transparent 30%),
-        radial-gradient(circle at 50% 80%, rgba(74, 90, 42, 0.05), transparent 30%);
+        radial-gradient(ellipse at 15% 50%, rgba(93, 110, 52, 0.08), transparent 40%),
+        radial-gradient(ellipse at 85% 30%, rgba(143, 163, 85, 0.06), transparent 35%),
+        radial-gradient(ellipse at 50% 90%, rgba(196, 148, 74, 0.04), transparent 30%);
 }
 
-.bg-grid {
+/* Organic grain texture overlay */
+.bg-grain {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 60px 60px;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+}
+
+[data-theme="light"] .bg-grain {
+    opacity: 0.025;
 }
 
 /* ===== CONTAINER ===== */
@@ -277,19 +266,28 @@ body {
 }
 
 /* ===== TYPOGRAPHY ===== */
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
+    font-family: var(--font-display);
     font-weight: var(--font-weight-bold);
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
     color: var(--text-primary);
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3, h4, h5, h6 {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.3;
+    color: var(--text-primary);
+}
+
+h1 { font-size: clamp(2.75rem, 5.5vw, 5rem); letter-spacing: -0.03em; }
+h2 { font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -0.01em; }
 h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 
 p {
     color: var(--text-secondary);
-    font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-normal);
 }
 
 a {

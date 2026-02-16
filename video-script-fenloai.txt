@@ -1,0 +1,386 @@
+================================================================================
+FENLO AI - VIDEO PRODUCTION PLAN
+Tools: Google Whisk + Veo3
+================================================================================
+
+VIDEO OVERVIEW
+--------------
+Title: Fenlo AI Brand Introduction
+Duration: 60-75 seconds
+Format: Promotional/Explainer
+Tone: Conversational, honest, approachable
+Target Audience: Small-medium business owners
+
+BRAND GUIDELINES
+----------------
+- Primary Color: Olive/sage green (#6b7c3f)
+- Secondary Color: Warm gold (#b8a04a)
+- Aesthetic: Light, clean, modern, approachable
+- Voice: Honest, no jargon, plain English
+- Key Message: "Not every business needs AI yet" - honesty over sales
+
+================================================================================
+FULL VIDEO SCRIPT WITH TIMESTAMPS
+================================================================================
+
+[0:00 - 0:05]
+VISUAL: Small business owner at desk, looking overwhelmed by paperwork/screens.
+        Soft, natural lighting. Modern office setting.
+AUDIO:  "You've heard the AI hype. Everyone says you need it."
+
+[0:05 - 0:10]
+VISUAL: Same person looking skeptical, perhaps crossing arms or raising eyebrow.
+AUDIO:  "But here's what most AI companies won't tell you..."
+
+[0:10 - 0:15]
+VISUAL: Clean text on screen: "Not every business needs AI yet."
+        Minimal olive/sage green accent. White background.
+AUDIO:  "Not every business needs AI. At least, not yet."
+
+[0:15 - 0:22]
+VISUAL: Split screen - Left shows chaotic process (papers flying, stressed).
+        Right shows same process but smooth and organized.
+AUDIO:  "AI makes good processes faster — and bad ones worse. That's why we
+        start with an honest question: Does this actually make sense for you?"
+
+[0:22 - 0:30]
+VISUAL: Friendly consultant having conversation with business owner.
+        Coffee shop or clean office. Genuine, not staged.
+AUDIO:  "At Fenlo AI, we'd rather say 'not yet' than sell you something
+        you don't need."
+
+[0:30 - 0:38]
+VISUAL: Quick montage - chatbot interface answering questions, documents
+        being searched instantly, dashboard with real-time data.
+AUDIO:  "But when the fit is right? We help small businesses automate
+        customer support, find answers in documents instantly, and actually
+        understand their data."
+
+[0:38 - 0:45]
+VISUAL: Calendar flipping pages quickly (showing speed).
+        Text overlay: "Weeks, not months."
+AUDIO:  "And we move fast. Your first pilot goes live in weeks — not months."
+
+[0:45 - 0:52]
+VISUAL: Business owner smiling, relaxed, looking at laptop showing results.
+AUDIO:  "No jargon. Fixed pricing. Real results before you commit to
+        anything bigger."
+
+[0:52 - 0:60]
+VISUAL: Fenlo AI logo (olive green diamond + wordmark) fades in on clean
+        white/light background. Text: "Free Executive AI Briefing" + URL.
+AUDIO:  "Book a free 2-hour Executive Briefing. We'll tell you honestly
+        if AI makes sense — or what to do instead."
+
+[0:60 - 0:65]
+VISUAL: Logo holds with subtle animation. URL: fenloai.com
+AUDIO:  (Music resolves, no voiceover)
+
+================================================================================
+WHISK INSTRUCTIONS - IMAGE GENERATION
+================================================================================
+
+PURPOSE: Create consistent style references and character images for Veo3
+
+STEP 1: CREATE MAIN CHARACTER REFERENCE
+---------------------------------------
+Generate a reference image of your protagonist (business owner) to maintain
+consistency across all video scenes.
+
+Prompt:
+"Portrait of a small business owner in their 40s, friendly and approachable
+expression, wearing smart casual clothing (no suit), natural lighting,
+clean modern office background slightly blurred, photorealistic, warm tones,
+professional headshot style"
+
+STEP 2: CREATE STYLE REFERENCE IMAGES
+-------------------------------------
+Generate 2-3 images to establish the visual tone for all scenes.
+
+Prompt A - Office Environment:
+"Modern minimalist office interior, natural daylight streaming through
+large windows, clean white desk with laptop and coffee cup, green plant
+accent, warm and inviting atmosphere, soft shadows, photorealistic,
+architectural photography style"
+
+Prompt B - Consultation Scene:
+"Two professionals having a friendly conversation at a small round table,
+coffee shop or modern office lounge, natural candid body language, warm
+lighting, clean background, photorealistic, documentary style"
+
+Prompt C - Success/Relief:
+"Business professional looking relaxed and satisfied while viewing laptop
+screen, genuine smile, leaning back in modern office chair, natural daylight,
+clean workspace, warm color tones, candid photography style"
+
+STYLE KEYWORDS TO USE CONSISTENTLY:
+- Natural lighting, soft shadows
+- Modern minimalist
+- Warm tones, clean aesthetic
+- Photorealistic
+- Candid, not staged
+- Light and airy
+- Olive green accents (#6b7c3f) where appropriate
+
+STYLE KEYWORDS TO AVOID:
+- Dark, moody, dramatic lighting
+- Neon colors, cyan, purple
+- Futuristic, sci-fi aesthetic
+- Corporate stock photo style
+- Overly polished/artificial
+- Heavy shadows or contrast
+
+================================================================================
+VEO3 INSTRUCTIONS - VIDEO GENERATION
+================================================================================
+
+GENERAL SETTINGS:
+- Aspect Ratio: 16:9 (landscape)
+- Style: Photorealistic
+- Reference your Whisk character/style images for consistency
+
+SCENE-BY-SCENE PROMPTS:
+
+--------------------------------------------------------------------------------
+SCENE 1: Overwhelmed Business Owner (0:00-0:05)
+--------------------------------------------------------------------------------
+Prompt:
+"A small business owner in their 40s sits at a modern white desk, looking
+slightly overwhelmed. They glance between a laptop screen and scattered
+papers. Natural daylight streams from a window on the left. Subtle camera
+push-in toward their face. Photorealistic, warm color tones, clean modern
+office, soft shadows. The mood is relatable frustration, not despair."
+
+Camera: Slow push-in
+Duration: 5 seconds
+Reference: Use Whisk character image
+
+--------------------------------------------------------------------------------
+SCENE 2: Skeptical Expression (0:05-0:10)
+--------------------------------------------------------------------------------
+Prompt:
+"Same business owner now looking directly at camera with a skeptical but
+curious expression. They raise one eyebrow slightly, maybe tilt their head.
+Clean blurred background, soft natural lighting on face. Conversational and
+genuine, not staged or acting. Photorealistic, medium close-up shot."
+
+Camera: Static or very subtle movement
+Duration: 5 seconds
+Reference: Use Whisk character image
+
+--------------------------------------------------------------------------------
+SCENE 3: Text Screen (0:10-0:15)
+--------------------------------------------------------------------------------
+Note: Create this in post-production for best results, OR use Veo3:
+
+Prompt:
+"Clean white background with subtle texture. Soft olive green gradient
+accent in corner. Minimalist, modern, professional. Slight camera movement
+or subtle particles floating. Corporate but warm aesthetic."
+
+Add text overlay in editing: "Not every business needs AI yet."
+
+--------------------------------------------------------------------------------
+SCENE 4: Split Screen Comparison (0:15-0:22)
+--------------------------------------------------------------------------------
+Option A - Generate as two separate clips and composite:
+
+Left Side Prompt:
+"Office worker looking stressed, papers flying around chaotically, messy
+desk, harsh overhead lighting, rushed movements. Documentary style,
+photorealistic, slight motion blur on papers."
+
+Right Side Prompt:
+"Same office setup but organized and calm. Worker moving smoothly and
+confidently, clean desk, natural lighting, documents neatly stacked.
+Peaceful, efficient atmosphere. Photorealistic."
+
+--------------------------------------------------------------------------------
+SCENE 5: Consultation Conversation (0:22-0:30)
+--------------------------------------------------------------------------------
+Prompt:
+"Two people having a genuine friendly conversation at a small round table
+in a modern office or coffee shop. One person (consultant, casual professional
+clothing) is explaining something with open hand gestures. The other (business
+owner) is listening attentively and nodding. Coffee cups on table. Natural
+lighting, candid body language, warm atmosphere. Camera slowly orbits or
+cuts between medium shots. Photorealistic, documentary style."
+
+Camera: Gentle movement or subtle cuts
+Duration: 8 seconds
+Reference: Use Whisk consultation scene image
+
+--------------------------------------------------------------------------------
+SCENE 6: Solution Montage (0:30-0:38)
+--------------------------------------------------------------------------------
+Generate 3 short clips (2-3 seconds each):
+
+Clip A - Chatbot:
+"Close-up of hands typing on a modern laptop. Screen shows a friendly
+chatbot interface with conversation bubbles appearing. Clean minimal UI
+design, soft glow from screen. Smooth camera movement. Modern office desk."
+
+Clip B - Document Search:
+"Person scrolling through a document management interface on screen.
+Search results appearing instantly. Clean modern UI, professional setting.
+Over-the-shoulder shot, natural lighting."
+
+Clip C - Dashboard:
+"Computer screen displaying a business dashboard with charts and graphs.
+Data updating in real-time, numbers changing. Clean data visualization,
+modern design. Slight camera push toward screen."
+
+--------------------------------------------------------------------------------
+SCENE 7: Speed/Calendar (0:38-0:45)
+--------------------------------------------------------------------------------
+Prompt:
+"Calendar pages flipping rapidly forward, showing days passing quickly.
+Clean white calendar with minimal design. Pages flip from left to right.
+Bright, optimistic lighting. Stop on a page marked with a green checkmark
+or highlight."
+
+Add text overlay in post: "Weeks, not months."
+
+Alternative Prompt:
+"Time-lapse style shot of an office workspace. Day turns to night turns
+to day quickly (2-3 cycles). Clean modern office, natural lighting changing.
+Laptop on desk remains constant. Energetic but not frantic pace."
+
+--------------------------------------------------------------------------------
+SCENE 8: Happy Result (0:45-0:52)
+--------------------------------------------------------------------------------
+Prompt:
+"Business owner leaning back in a modern office chair, genuine relaxed
+smile on their face. They're looking at a laptop screen (screen facing
+away from camera) showing positive results. Natural daylight, clean
+workspace, relieved and satisfied expression. Subtle nod of approval.
+Photorealistic, warm tones, candid moment."
+
+Camera: Medium shot, static or gentle movement
+Duration: 7 seconds
+Reference: Use Whisk character and success scene images
+
+--------------------------------------------------------------------------------
+SCENE 9: Logo Reveal (0:52-0:65)
+--------------------------------------------------------------------------------
+Prompt:
+"Clean white/cream background with very subtle texture or gradient.
+Soft olive green light accents appearing gently. Minimal, elegant,
+professional. Slight particle effects or soft light rays. Calm and
+confident atmosphere."
+
+Add in post-production:
+- Fenlo AI logo (fade in)
+- Text: "Free Executive AI Briefing"
+- URL: fenloai.com
+
+================================================================================
+30-SECOND SHORT VERSION
+================================================================================
+
+[0:00 - 0:08]
+VISUAL: Overwhelmed business owner -> skeptical expression
+AUDIO:  "Everyone says you need AI. Here's what they won't tell you:
+        not every business does."
+
+[0:08 - 0:18]
+VISUAL: Consultant conversation -> quick solution montage (chatbot, docs, data)
+AUDIO:  "At Fenlo AI, we start with honesty. When AI fits? We move fast —
+        weeks, not months."
+
+[0:18 - 0:30]
+VISUAL: Happy business owner -> Logo + CTA
+AUDIO:  "Fixed pricing. No jargon. Book your free briefing at fenloai.com"
+
+================================================================================
+POST-PRODUCTION NOTES
+================================================================================
+
+TEXT OVERLAYS TO ADD:
+- [0:10-0:15] "Not every business needs AI yet."
+- [0:38-0:45] "Weeks, not months."
+- [0:52-0:60] "Free Executive AI Briefing"
+- [0:52-0:65] "fenloai.com"
+
+COLOR GRADING:
+- Apply subtle warm grade
+- Lift shadows slightly (not crushed blacks)
+- Keep highlights clean and bright
+- Desaturate slightly for sophisticated look
+- Add subtle olive/sage tint to midtones
+
+MUSIC RECOMMENDATIONS:
+- Style: Calm, confident, modern
+- Instruments: Light piano, soft synth pads, gentle acoustic guitar
+- Avoid: Upbeat tech startup music, EDM, dramatic orchestral
+- Mood: Thoughtful, reassuring, professional
+- Sources: Epidemic Sound, Artlist, Musicbed
+
+SOUND DESIGN:
+- Subtle ambient office sounds in background scenes
+- Soft whoosh for transitions
+- Gentle "success" tone for positive moments
+- Keep minimal - let voiceover be primary
+
+TRANSITIONS:
+- Simple cuts or cross-dissolves
+- Avoid flashy or trendy transitions
+- Match the calm, professional tone
+
+================================================================================
+VOICEOVER NOTES
+================================================================================
+
+FULL SCRIPT FOR RECORDING:
+
+"You've heard the AI hype. Everyone says you need it.
+
+But here's what most AI companies won't tell you...
+
+Not every business needs AI. At least, not yet.
+
+AI makes good processes faster — and bad ones worse. That's why we start
+with an honest question: Does this actually make sense for you?
+
+At Fenlo AI, we'd rather say 'not yet' than sell you something you don't need.
+
+But when the fit is right? We help small businesses automate customer support,
+find answers in documents instantly, and actually understand their data.
+
+And we move fast. Your first pilot goes live in weeks — not months.
+
+No jargon. Fixed pricing. Real results before you commit to anything bigger.
+
+Book a free 2-hour Executive Briefing. We'll tell you honestly if AI makes
+sense — or what to do instead."
+
+VOICE TALENT DIRECTION:
+- Conversational, like talking to a friend
+- Confident but not arrogant
+- Warm and genuine
+- Measured pace - not rushed
+- Slight emphasis on "honest," "not yet," "weeks not months"
+- Avoid: Sales-y tone, over-enthusiasm, dramatic pauses
+
+================================================================================
+FILE CHECKLIST
+================================================================================
+
+ASSETS NEEDED:
+[ ] Fenlo AI logo (SVG or high-res PNG)
+[ ] Brand color codes (#6b7c3f, #b8a04a)
+[ ] Font files (Outfit family)
+[ ] Whisk-generated reference images (3-5)
+[ ] Veo3-generated video clips (8-10)
+[ ] Voiceover recording (WAV/AIFF)
+[ ] Background music track (licensed)
+[ ] Sound effects (whoosh, ambient)
+
+FINAL DELIVERABLES:
+[ ] Full 60-75 second video (1080p minimum, 4K preferred)
+[ ] 30-second short cut
+[ ] Square format version for social (1:1)
+[ ] Vertical format for Stories/Reels (9:16)
+[ ] Thumbnail image for video hosting
+
+================================================================================
