@@ -1,10 +1,23 @@
 /* ========================================
-   FENLO TECH - Design System
-   A premium dark theme with glassmorphism
+   FENLO AI - Editorial Naturalism Design System
+
+   A distinctive editorial aesthetic combining:
+   - Bloomberg Businessweek typography sophistication
+   - Botanical garden warmth (olive + cream palette)
+   - Magazine-quality micro-interactions
+
+   Typography: Instrument Serif (display) + DM Sans (body)
+   Palette: Warm cream (#faf7f2), Deeper olive (#5d6e34), Rich gold (#c4944a)
+   Philosophy: Refined, credible, honest - not every business needs AI yet
+
+   Version: 2.0 - Editorial Naturalism Redesign
+   Last Updated: February 2026
    ======================================== */
 
 /* ===== GOOGLE FONTS ===== */
-/* Font is now loaded via <link rel="preload"> in HTML for better performance */
+/* Fonts loaded via <link rel="preload"> in HTML for optimal performance
+   - Instrument Serif: Editorial display font with authority
+   - DM Sans: Geometric sans-serif with warmth for body text */
 
 /* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
@@ -896,10 +909,16 @@ a {
 .glass-card.card-tilt {
     transform-style: preserve-3d;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
 }
 
 .glass-card.card-tilt:hover {
     transform: perspective(1000px) rotateX(1deg) rotateY(-2deg) translateY(-8px) scale(1.01);
+}
+
+/* Service cards also benefit from will-change */
+.service-card {
+    will-change: transform;
 }
 
 /* ===== GRADIENT MESH BACKGROUNDS ===== */
