@@ -33,7 +33,7 @@
     <!-- Preload Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -91,8 +91,14 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Reading Progress Indicator -->
+    <div class="reading-progress">
+        <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
+
     <div class="bg-glow"></div>
-    <div class="bg-grid"></div>
+    <div class="bg-grain"></div>
 
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
@@ -146,22 +152,22 @@
         <a href="contact.html">Contact</a>
     </div>
 
-    <section class="page-header">
+    <section class="page-header mesh-gradient-subtle">
         <!-- Breadcrumbs -->
         <nav class="breadcrumbs" aria-label="Breadcrumb">
             <a href="../index.html">Home</a>
             <span class="separator">/</span>
             <span class="current">Services</span>
         </nav>
-        <h1 class="gradient-text">Our AI Services</h1>
-        <p class="intro-text">Transforming businesses with strategic intelligence and automated solutions.</p>
+        <h1 class="gradient-text animate-fade-in-up">Our AI Services</h1>
+        <p class="intro-text drop-cap animate-fade-in-up animate-delay-1">Transforming businesses with strategic intelligence and automated solutions.</p>
     </section>
 
     <main id="main-content">
     <section class="section">
         <div class="container">
             <!-- Category Filter -->
-            <div class="service-filters">
+            <div class="service-filters scroll-reveal">
                 <button class="filter-btn active" data-filter="all">All Services</button>
                 <button class="filter-btn" data-filter="getting-started">Getting Started</button>
                 <button class="filter-btn" data-filter="automation">Automation</button>
@@ -172,7 +178,7 @@
             <div class="grid grid-3">
 
                 <!-- Service 1 -->
-                <a href="services/service1.html" class="service-card animate-on-scroll stagger-1" data-category="getting-started">
+                <a href="services/service1.html" class="service-card card-tilt animate-on-scroll stagger-1" data-category="getting-started">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" /></svg>
                     </div>
@@ -203,7 +209,7 @@
                 </a>
 
                 <!-- Service 4 -->
-                <a href="services/service4.html" class="service-card animate-on-scroll stagger-4" data-category="intelligence">
+                <a href="services/service4.html" class="service-card card-tilt animate-on-scroll stagger-4" data-category="intelligence">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Zm3.75 11.625a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" /></svg>
                     </div>
@@ -233,7 +239,7 @@
                 </a>
 
                 <!-- Service 7 -->
-                <a href="services/service7.html" class="service-card animate-on-scroll stagger-1" data-category="intelligence">
+                <a href="services/service7.html" class="service-card card-tilt animate-on-scroll stagger-1" data-category="intelligence">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" /></svg>
                     </div>
@@ -267,11 +273,11 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section scroll-reveal">
         <h2>Not Sure Which Service Is Right for You?</h2>
         <p>Start with a free Executive AI Briefing. We'll help you understand the AI landscape and identify the best opportunities for your business.</p>
         <div class="cta-buttons">
-            <a href="services/service1.html" class="btn btn-primary">Get Your Free Briefing</a>
+            <a href="services/service1.html" class="btn btn-primary btn-ripple">Get Your Free Briefing</a>
             <a href="contact.html" class="btn btn-secondary">Talk to Our Team</a>
         </div>
     </section>
@@ -282,7 +288,7 @@
             <a href="legal/privacy.html">Privacy Policy</a>
             <a href="legal/terms.html">Terms of Service</a>
         </div>
-        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <p>&copy; 2025 Fenlo AIcopy; 2026 Fenlo AIcopy; 2026 Fenlo AI. All rights reserved.</p>
         <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
 
@@ -407,8 +413,8 @@
             const THEME_KEY = 'fenloai_theme';
             const themeToggle = document.querySelector('.theme-toggle');
 
-            // Get saved theme or default to dark
-            const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+            // Get saved theme or default to light
+            const savedTheme = localStorage.getItem(THEME_KEY) || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
 
             if (themeToggle) {
@@ -421,6 +427,30 @@
                 });
             }
         })();
+
+        // Reading Progress Indicator
+        (function() {
+            const progressBar = document.getElementById('reading-progress-bar');
+            if (!progressBar) return;
+
+            function updateReadingProgress() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const trackLength = documentHeight - windowHeight;
+                const percentScrolled = Math.min((scrollTop / trackLength) * 100, 100);
+
+                progressBar.style.width = percentScrolled + '%';
+            }
+
+            window.addEventListener('scroll', updateReadingProgress, { passive: true });
+            updateReadingProgress();
+        })();
+
+        // Enhanced Scroll Reveals
+        document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right').forEach(el => {
+            observer.observe(el);
+        });
     </script>
 </body>
 

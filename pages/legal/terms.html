@@ -7,6 +7,25 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+        // Reading Progress Indicator
+        (function() {
+            const progressBar = document.getElementById('reading-progress-bar');
+            if (!progressBar) return;
+
+            function updateReadingProgress() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const trackLength = documentHeight - windowHeight;
+                const percentScrolled = Math.min((scrollTop / trackLength) * 100, 100);
+
+                progressBar.style.width = percentScrolled + '%';
+            }
+
+            window.addEventListener('scroll', updateReadingProgress, { passive: true });
+            updateReadingProgress();
+        })();
     })(window,document,'script','dataLayer','GTM-MBJVZS7Z');</script>
     <!-- End Google Tag Manager -->
 
@@ -29,7 +48,7 @@
     <!-- Preload Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -60,10 +79,34 @@
             "url": "https://fenloai.com"
         }
     }
+
+        // Reading Progress Indicator
+        (function() {
+            const progressBar = document.getElementById('reading-progress-bar');
+            if (!progressBar) return;
+
+            function updateReadingProgress() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const trackLength = documentHeight - windowHeight;
+                const percentScrolled = Math.min((scrollTop / trackLength) * 100, 100);
+
+                progressBar.style.width = percentScrolled + '%';
+            }
+
+            window.addEventListener('scroll', updateReadingProgress, { passive: true });
+            updateReadingProgress();
+        })();
     </script>
 </head>
 
 <body>
+    <!-- Reading Progress Indicator -->
+    <div class="reading-progress">
+        <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBJVZS7Z"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -71,7 +114,7 @@
 
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div class="bg-glow"></div>
-    <div class="bg-grid"></div>
+    <div class="bg-grain"></div>
 
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
@@ -125,7 +168,7 @@
         <a href="../contact.html">Contact</a>
     </div>
 
-    <section class="page-header">
+    <section class="page-header mesh-gradient-subtle">
         <h1 class="gradient-text">Terms of Service</h1>
         <p class="intro-text">Last updated: December 22, 2025</p>
     </section>
@@ -231,7 +274,7 @@
             <a href="privacy.html">Privacy Policy</a>
             <a href="terms.html">Terms of Service</a>
         </div>
-        <p>&copy; 2025 Fenlo AI. All rights reserved.</p>
+        <p>&copy; 2025 Fenlo AIcopy; 2026 Fenlo AIcopy; 2026 Fenlo AI. All rights reserved.</p>
         <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
 
@@ -259,6 +302,25 @@
                 });
             });
         }
+
+        // Reading Progress Indicator
+        (function() {
+            const progressBar = document.getElementById('reading-progress-bar');
+            if (!progressBar) return;
+
+            function updateReadingProgress() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const trackLength = documentHeight - windowHeight;
+                const percentScrolled = Math.min((scrollTop / trackLength) * 100, 100);
+
+                progressBar.style.width = percentScrolled + '%';
+            }
+
+            window.addEventListener('scroll', updateReadingProgress, { passive: true });
+            updateReadingProgress();
+        })();
     </script>
 </body>
 
