@@ -27,9 +27,7 @@ Hi [First Name],
 
 I run a small implementation team called Fenlo AI. We help businesses like [Company Name] automate repetitive work — not with hype, but with systems that actually run.
 
-I don't have client case studies yet (we're new). But I do have a page showing what we build, and a blog where I break down real automation costs and ROI:
-- Work: https://fenloai.com/pages/work.html
-- Blog: https://fenloai.com/pages/blog.html
+I don't have client case studies yet. We're new, and I won't pretend otherwise.
 
 The honest truth: most professional services firms I talk to don't need AI. They need someone to connect their CRM, their forms, and their invoicing so the same 10 tasks stop eating their afternoon.
 
@@ -62,27 +60,28 @@ P.S. — If that number turns out to be bigger than expected, I'm happy to audit
 
 ---
 
-### Email 3 — What We Built (Day 8)
+### Email 3 — The Self-Audit (Day 8)
 
-**Subject:** What we built for a [similar firm type]
+**Subject:** Most firms automate the wrong thing first
 
 Hi [First Name],
 
-Last month my team built an intake automation for a [similar firm type]. Here's what it does:
+Most [industry] firms that reach out to us already know they have a bottleneck. The problem is they usually pick the wrong one to fix first.
 
-1. Prospects fill a form on their website
-2. Info gets enriched (company size, industry)
-3. Lead gets scored and routed to the right team member
-4. CRM updates automatically
-5. Slack notifies the assigned person with full context
+Here's the 3-question audit I use in discovery calls:
 
-Before: someone manually copied form submissions into a spreadsheet, then into the CRM, then messaged the team. 30–45 minutes per lead.
+1. How many times per week does this task happen?
+   (Under 5x/week = probably not worth it yet)
 
-After: zero manual work. Leads are qualified and assigned before the prospect finishes their coffee.
+2. Does it follow the same steps every time?
+   (If the answer is "it depends," you need a process first)
 
-Full write-up: https://fenloai.com/pages/work.html
+3. What's the cost of getting it wrong?
+   (Data entry errors = low. Missed proposal deadline = high.)
 
-Worth 10 minutes to see if something similar works for [Company Name]? I won't sell you anything you don't need.
+If a task scores high on all three, it's usually a quick automation win. If it doesn't, I tell people to wait.
+
+Worth running this against one of your workflows? Takes 10 minutes. I'll be honest about whether it makes sense for [Company Name].
 
 [Your Name]
 https://fenloai.com/pages/book-discovery.html
@@ -125,9 +124,7 @@ Hi [First Name],
 
 I run Fenlo AI — a small implementation team that helps e-commerce brands automate the operational work that scales slower than sales.
 
-No client logos to show yet (we're new). But here's what we build, and here's how we think about ROI:
-- Work: https://fenloai.com/pages/work.html
-- Blog: https://fenloai.com/pages/blog.html
+I don't have client logos to show yet. We're new, and I won't pretend otherwise.
 
 The honest truth: most e-commerce teams I talk to don't need AI chatbots. They need someone to connect their Shopify, their email, their inventory alerts, and their supplier notifications so the same 15 tasks stop bottlenecking their growth.
 
@@ -160,27 +157,31 @@ P.S. — If you run through the checklist and something scores high, I'm happy t
 
 ---
 
-### Email 3 — What We Built (Day 8)
+### Email 3 — The Self-Audit (Day 8)
 
-**Subject:** How one store cut 12 hours/week of manual work
+**Subject:** The "manual work" audit most stores skip
 
 Hi [First Name],
 
-My team built a content distribution pipeline for a DTC brand. Here's the flow:
+Most e-commerce operators know they're doing too much manually. The hard part is knowing which task to fix first.
 
-1. New product gets added to their CMS
-2. System auto-generates social snippets for Instagram, TikTok, and email
-3. Posts get scheduled across channels
-4. Performance data feeds back to a single dashboard
-5. Low-performing posts get flagged for review
+Here's the framework I use:
 
-Before: one person spent 12+ hours/week copying product info into different platforms, scheduling manually, pulling reports from three tools.
+1. Volume: How many times per day does it happen?
+   (50+ times/day = high priority)
 
-After: they review and approve. The system does the rest.
+2. Error rate: How often does manual entry cause a problem?
+   (Inventory mismatches, wrong shipping addresses, duplicate orders)
 
-Details: https://fenloai.com/pages/work.html
+3. Blocking: Does it stop other work until it's done?
+   (If yes, it's costing you more than the task itself)
 
-Want me to look at [Company Name]'s workflow and see if something similar applies? 10 minutes. No pitch.
+4. Tool gap: Are you already paying for software that should handle this?
+   (Most stores are — it's just not connected)
+
+If something scores 3+ out of 4, it's usually a quick win. If it scores 1-2, fix your process first, then automate.
+
+Worth running this against [Company Name]'s biggest bottleneck? 10 minutes. I'll tell you honestly if it's the right time.
 
 [Your Name]
 https://fenloai.com/pages/book-discovery.html
@@ -223,9 +224,7 @@ Hi [First Name],
 
 I run Fenlo AI — a small team that helps healthcare practices automate the administrative work that pulls staff away from patients.
 
-No client case studies yet (we're new). But here's what we build, and here's how we think about it:
-- Work: https://fenloai.com/pages/work.html
-- Blog: https://fenloai.com/pages/blog.html
+I don't have client case studies yet. We're new, and I won't pretend otherwise.
 
 The honest truth: most practices I talk to don't need AI. They need someone to connect their scheduling system, their intake forms, and their notification tools so the same 20 tasks stop eating your front desk's day.
 
@@ -258,27 +257,31 @@ P.S. — If the math looks painful, I'm happy to audit one workflow for free: ht
 
 ---
 
-### Email 3 — What We Built (Day 8)
+### Email 3 — The Self-Audit (Day 8)
 
-**Subject:** What we built for a [similar practice type]
+**Subject:** Which admin task should you automate first?
 
 Hi [First Name],
 
-My team built an intake automation for a [similar practice type]. Here's what it does:
+Most practice managers I talk to have 5-10 admin tasks they'd love to hand off. The mistake is trying to fix all of them at once.
 
-1. Patient books online
-2. Automated confirmation + reminder texts
-3. Intake form sent automatically, responses go straight to their system
-4. Insurance info gets verified via API
-5. Staff gets a single notification with everything ready
+Here's how I prioritize:
 
-Before: front desk called every patient, sent forms manually, verified insurance one by one, then entered everything into the system.
+1. Frequency: How many times per day?
+   (Reminders = 20x/day. Insurance verification = 8x/day.)
 
-After: patients self-serve. Staff reviews, doesn't chase.
+2. Predictability: Are the steps always the same?
+   (If staff has to "figure it out" each time, you need a process first)
 
-Details: https://fenloai.com/pages/work.html
+3. Patient impact: Does the delay hurt the patient experience?
+   (Long hold times, missed callbacks, form errors)
 
-Worth 10 minutes to see if something similar works for [Practice Name]? I'll tell you honestly if your volume or setup makes it not worth it.
+4. Staff cost: What's the hourly rate of the person doing it?
+   (Front desk at $18/hr × 10 hours/week = $720/month for one task)
+
+Rank your top 3 bottlenecks by these four criteria. The one with the highest total score is usually your best first automation.
+
+Want me to run this with you? 10 minutes. I'll tell you honestly if [Practice Name]'s volume and setup make it worth it.
 
 [Your Name]
 https://fenloai.com/pages/book-discovery.html
@@ -321,9 +324,7 @@ Hi [First Name],
 
 I run Fenlo AI — a small team that helps real estate operations automate the repetitive work that happens between the listing and the closing.
 
-No client logos yet (we're new). But here's what we build, and here's how we think about ROI:
-- Work: https://fenloai.com/pages/work.html
-- Blog: https://fenloai.com/pages/blog.html
+I don't have client logos to show yet. We're new, and I won't pretend otherwise.
 
 The honest truth: most brokerages I talk to don't need AI. They need someone to connect their CRM, their listing feeds, and their client communication so the same 15 tasks stop falling through the cracks.
 
@@ -354,27 +355,31 @@ P.S. — If you want to see what an instant lead response flow looks like, I'm h
 
 ---
 
-### Email 3 — What We Built (Day 8)
+### Email 3 — The Self-Audit (Day 8)
 
-**Subject:** How one team cut lead response from 45 minutes to instant
+**Subject:** The 60-second lead response audit
 
 Hi [First Name],
 
-My team built a lead intake automation for a real estate team. Here's the flow:
+Most brokerages I talk to think their lead response is "pretty fast." Then we measure it.
 
-1. Lead fills a form on Zillow/Realtor.com
-2. Info gets enriched (property search history, budget range)
-3. Lead gets scored and routed to the right agent
-4. CRM updates, agent gets a notification with full context
-5. Auto-response goes out in under 60 seconds with next steps
+Here's the 4-point audit:
 
-Before: leads sat in an inbox until someone checked it. Average response: 45 minutes. Some never got followed up.
+1. What hours do leads come in?
+   (If 30% arrive outside business hours, you're losing 30% to competitors)
 
-After: every lead gets acknowledged immediately. Agents get context before they call.
+2. How long from form fill to first human touch?
+   (Industry average: 42 minutes. Top performers: under 2 minutes)
 
-Details: https://fenloai.com/pages/work.html
+3. Does the agent know the lead's context before calling?
+   (Property viewed, budget range, timeline — or are they flying blind?)
 
-Worth 10 minutes to see if something similar works for [Company/Team Name]? I'll tell you honestly if your lead volume or CRM setup makes it not worth it.
+4. What happens to leads that don't respond to the first contact?
+   (Most teams have no systematic follow-up after day 3)
+
+If you score below 3 out of 4, there's a measurable revenue leak. The fix is usually a simple automation, not a $10K CRM overhaul.
+
+Worth running this against [Company/Team Name]'s current flow? 10 minutes. I'll tell you honestly if your lead volume justifies it.
 
 [Your Name]
 https://fenloai.com/pages/book-discovery.html
@@ -430,9 +435,9 @@ Use these alternate subjects for the same email body:
 - "Something useful for [Company Name]"
 
 **Email 3 alternates:**
-- "Saved [X] hours/week"
-- "What we built — [industry]"
-- "Re: [Company Name]'s [process]"
+- "Most [industry] businesses automate the wrong thing first"
+- "The self-audit for [process]"
+- "Re: [Company Name]'s bottleneck"
 
 **Email 4 alternates:**
 - "Closing your file"
