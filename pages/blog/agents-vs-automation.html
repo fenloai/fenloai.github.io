@@ -6,25 +6,6 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-
-        // Reading Progress Indicator
-        (function() {
-            const progressBar = document.getElementById('reading-progress-bar');
-            if (!progressBar) return;
-
-            function updateReadingProgress() {
-                const windowHeight = window.innerHeight;
-                const documentHeight = document.documentElement.scrollHeight;
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const trackLength = documentHeight - windowHeight;
-                const percentScrolled = Math.min((scrollTop / trackLength) * 100, 100);
-
-                progressBar.style.width = percentScrolled + '%';
-            }
-
-            window.addEventListener('scroll', updateReadingProgress, { passive: true });
-            updateReadingProgress();
-        })();
     })(window,document,'script','dataLayer','GTM-MBJVZS7Z');</script>
     <!-- End Google Tag Manager -->
 
@@ -45,7 +26,8 @@
     <link rel="canonical" href="https://fenloai.com/pages/blog/agents-vs-automation.html">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/fenloai-icon.svg">
+    <link rel="icon" type="image/svg+xml" href="../../assets/fenloai-icon.svg"
+    <link rel="icon" type="image/png" href="/favicon.png">>
 
     <!-- Preload Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

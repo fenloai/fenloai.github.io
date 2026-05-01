@@ -7,25 +7,6 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-
-        // Reading Progress Indicator
-        (function() {
-            const progressBar = document.getElementById('reading-progress-bar');
-            if (!progressBar) return;
-
-            function updateReadingProgress() {
-                const windowHeight = window.innerHeight;
-                const documentHeight = document.documentElement.scrollHeight;
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const trackLength = documentHeight - windowHeight;
-                const percentScrolled = Math.min((scrollTop / trackLength) * 100, 100);
-
-                progressBar.style.width = percentScrolled + '%';
-            }
-
-            window.addEventListener('scroll', updateReadingProgress, { passive: true });
-            updateReadingProgress();
-        })();
     })(window,document,'script','dataLayer','GTM-MBJVZS7Z');</script>
     <!-- End Google Tag Manager -->
 
@@ -44,7 +25,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../assets/fenloai-icon.svg">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <!-- Preload Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -183,7 +164,7 @@
             <a href="legal/privacy.html">Privacy Policy</a>
             <a href="legal/terms.html">Terms of Service</a>
         </div>
-        <p>&copy; 2025 Fenlo AIcopy; 2026 Fenlo AIcopy; 2026 Fenlo AI. All rights reserved.</p>
+        <p>&copy; 2026 Fenlo AI. All rights reserved.</p>
         <a href="mailto:contact@fenloai.com" class="email">contact@fenloai.com</a>
     </footer>
 
