@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenlo AI — What We Do</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: #1a1a1a;
+            background: #fff;
+            line-height: 1.6;
+            padding: 0;
+        }
+        .page {
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 48px 56px;
+            background: #fff;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid #6b7c3f;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: #6b7c3f; }
+        .contact-top {
+            text-align: right;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.8;
+        }
+        .contact-top a { color: #6b7c3f; text-decoration: none; }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 32px;
+        }
+
+        .honest-banner {
+            background: #f8f7f4;
+            border-left: 4px solid #6b7c3f;
+            padding: 20px 24px;
+            margin-bottom: 36px;
+            font-size: 15px;
+            color: #444;
+        }
+        .honest-banner strong { color: #1a1a1a; }
+
+        .tiers { margin-bottom: 36px; }
+        .tier {
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        .tier-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .tier-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .tier-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #6b7c3f;
+        }
+        .tier-desc {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 16px;
+        }
+        .tier-features {
+            list-style: none;
+            font-size: 14px;
+            color: #444;
+        }
+        .tier-features li {
+            padding: 4px 0 4px 20px;
+            position: relative;
+        }
+        .tier-features li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #6b7c3f;
+            font-weight: 600;
+        }
+        .tier-meta {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+            color: #777;
+        }
+        .tier-meta strong { color: #555; }
+
+        .how-it-works {
+            background: #f8f7f4;
+            border-radius: 8px;
+            padding: 28px;
+            margin-bottom: 36px;
+        }
+        .how-it-works h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        .steps {
+            display: flex;
+            gap: 24px;
+        }
+        .step {
+            flex: 1;
+        }
+        .step-num {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: #6b7c3f;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .step-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .step-desc {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .team-section {
+            margin-bottom: 36px;
+        }
+        .team-section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        .team-section p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .cta-box {
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 8px;
+            padding: 32px;
+            text-align: center;
+        }
+        .cta-box h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .cta-box p {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+        .cta-url {
+            font-size: 15px;
+            color: #b8a04a;
+            word-break: break-all;
+        }
+
+        .footer {
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+
+        @media print {
+            body { background: #fff; }
+            .page { padding: 32px 40px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="logo">Fenlo <span>AI</span></div>
+            <div class="contact-top">
+                fenloai.com<br>
+                <a href="mailto:contact@fenloai.com">contact@fenloai.com</a>
+            </div>
+        </div>
+
+        <h1>What We Do</h1>
+        <p class="subtitle">Automation, custom software, and AI agents — built by a senior team, priced upfront, no hourly billing.</p>
+
+        <div class="honest-banner">
+            <strong>Honest disclaimer:</strong> We're a new company. We don't have client case studies yet. What you see below are real capabilities we've built as demo projects and internal tools. When we ship work for clients, it will appear here first. We'll tell you honestly if your project is outside our scope.
+        </div>
+
+        <div class="tiers">
+            <div class="tier">
+                <div class="tier-header">
+                    <div class="tier-name">1. Automation Pipelines</div>
+                    <div class="tier-price">From $1,500</div>
+                </div>
+                <div class="tier-desc">Connect your existing tools so repetitive tasks run themselves. No new software to learn.</div>
+                <ul class="tier-features">
+                    <li>Lead capture → CRM → notification routing</li>
+                    <li>Invoice reconciliation and approval workflows</li>
+                    <li>Multi-channel content distribution</li>
+                    <li>Appointment reminders and confirmations</li>
+                    <li>Data syncing between platforms</li>
+                </ul>
+                <div class="tier-meta">
+                    <strong>Tools:</strong> n8n, Make, Zapier &nbsp;|&nbsp; <strong>Timeline:</strong> 3–7 days &nbsp;|&nbsp; <strong>Best for:</strong> Manual tasks eating 5+ hours/week
+                </div>
+            </div>
+
+            <div class="tier">
+                <div class="tier-header">
+                    <div class="tier-name">2. Custom Software</div>
+                    <div class="tier-price">From $3,000</div>
+                </div>
+                <div class="tier-desc">Software built for your exact workflow, using AI-assisted development to ship faster and cheaper.</div>
+                <ul class="tier-features">
+                    <li>Internal knowledge bases with AI search</li>
+                    <li>Customer portals with auth and file management</li>
+                    <li>Dashboards connecting multiple data sources</li>
+                    <li>Workflow tools tailored to your process</li>
+                    <li>APIs and integrations for your existing stack</li>
+                </ul>
+                <div class="tier-meta">
+                    <strong>Stack:</strong> React, Next.js, Node.js, Python, PostgreSQL &nbsp;|&nbsp; <strong>Timeline:</strong> 2–6 weeks &nbsp;|&nbsp; <strong>Best for:</strong> Off-the-shelf software doesn't fit
+                </div>
+            </div>
+
+            <div class="tier">
+                <div class="tier-header">
+                    <div class="tier-name">3. AI Agents</div>
+                    <div class="tier-price">From $5,000</div>
+                </div>
+                <div class="tier-desc">Autonomous systems that handle complex, judgment-based workflows with minimal human oversight.</div>
+                <ul class="tier-features">
+                    <li>Research assistants that search, synthesize, and cite</li>
+                    <li>Document review agents with risk scoring</li>
+                    <li>Support routing with context-aware drafting</li>
+                    <li>Multi-step decision workflows</li>
+                    <li>Learning systems that improve from feedback</li>
+                </ul>
+                <div class="tier-meta">
+                    <strong>Stack:</strong> LangChain, LangGraph, Relevance AI, OpenAI &nbsp;|&nbsp; <strong>Timeline:</strong> 3–8 weeks &nbsp;|&nbsp; <strong>Best for:</strong> Complex decisions at scale
+                </div>
+            </div>
+        </div>
+
+        <div class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-title">Discovery Call</div>
+                    <div class="step-desc">10-minute call. I audit one workflow and tell you honestly if automation makes sense.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-title">Fixed Proposal</div>
+                    <div class="step-desc">Clear scope, fixed price, fixed timeline. No hourly surprises. No scope creep.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-title">Build & Handoff</div>
+                    <div class="step-desc">Weekly updates. Full documentation. Training included. You own everything.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h2>Who We Are</h2>
+            <p>Small team. Senior work. No junior developers experimenting on your budget. We use AI-assisted development (Cursor, Claude Code) to build faster, but the architecture and quality are senior-level. Fixed pricing means we have incentive to ship efficiently, not bill more hours.</p>
+        </div>
+
+        <div class="cta-box">
+            <h2>Worth 10 Minutes?</h2>
+            <p>I'll tell you honestly whether we can help — or if you should wait.</p>
+            <div class="cta-url">https://fenloai.com/pages/book-discovery.html</div>
+        </div>
+
+        <div class="footer">
+            © 2026 Fenlo AI. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

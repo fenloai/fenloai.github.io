@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenlo AI — LinkedIn Outreach Templates</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: #1a1a1a;
+            background: #f5f5f0;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 2px solid #6b7c3f;
+        }
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        .header h1 span { color: #6b7c3f; }
+        .header p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .rules {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .rules h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .rules ul {
+            padding-left: 20px;
+            font-size: 14px;
+            color: #444;
+        }
+        .rules li { margin-bottom: 8px; }
+        .rules li strong { color: #1a1a1a; }
+
+        .section-nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+            position: sticky;
+            top: 0;
+            background: #f5f5f0;
+            padding: 16px 0;
+            z-index: 10;
+        }
+        .section-nav a {
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: #fff;
+            color: #444;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid #ddd;
+            transition: all 0.2s;
+        }
+        .section-nav a:hover,
+        .section-nav a.active {
+            background: #6b7c3f;
+            color: #fff;
+            border-color: #6b7c3f;
+        }
+
+        .template-section {
+            margin-bottom: 48px;
+        }
+        .section-header {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 20px 28px;
+            border-radius: 12px 12px 0 0;
+        }
+        .section-header h2 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .section-header p {
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 4px;
+        }
+
+        .template-card {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        .template-card:last-child {
+            border-bottom: none;
+            border-radius: 0 0 12px 12px;
+        }
+        .template-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 28px;
+            background: #fafaf8;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .template-header:hover { background: #f5f5f0; }
+        .template-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .template-tag {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: #e8e8e0;
+            color: #666;
+        }
+        .toggle-icon {
+            font-size: 18px;
+            color: #999;
+            transition: transform 0.2s;
+        }
+        .template-card.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .template-body {
+            display: none;
+            padding: 24px 28px;
+        }
+        .template-card.open .template-body {
+            display: block;
+        }
+
+        .template-content {
+            font-size: 15px;
+            color: #333;
+            white-space: pre-wrap;
+            line-height: 1.8;
+            background: #f8f7f4;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid #6b7c3f;
+        }
+
+        .copy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover { background: #333; }
+        .copy-btn.copied {
+            background: #6b7c3f;
+        }
+
+        .calendar-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .calendar-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .week {
+            margin-bottom: 20px;
+            padding: 16px;
+            background: #f8f7f4;
+            border-radius: 8px;
+        }
+        .week-header {
+            font-size: 14px;
+            font-weight: 600;
+            color: #6b7c3f;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .week-posts {
+            font-size: 14px;
+            color: #444;
+        }
+        .week-posts div {
+            padding: 6px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+        .week-posts div:last-child {
+            border-bottom: none;
+        }
+        .week-posts .day {
+            font-weight: 600;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 70px;
+        }
+        .week-posts .format {
+            font-size: 12px;
+            color: #888;
+            margin-left: 8px;
+        }
+
+        .checklist {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .checklist h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .checklist ul {
+            list-style: none;
+            font-size: 14px;
+            color: #444;
+        }
+        .checklist li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #6b7c3f;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Fenlo <span>AI</span></h1>
+            <p>LinkedIn Outreach Templates — Connection Requests, DMs, Comments</p>
+        </div>
+
+        <div class="rules">
+            <h2>Rules Before You Connect</h2>
+            <ul>
+                <li><strong>Send 10–15 connection requests per week max.</strong></li>
+                <li><strong>Never pitch in the connection request.</strong></li>
+                <li><strong>Engage with their content for 1–2 weeks</strong> before any ask.</li>
+                <li><strong>If they don't accept within 7 days, move on.</strong></li>
+                <li><strong>Track in a spreadsheet.</strong></li>
+                <li><strong>Click any template to expand/collapse.</strong> Use the Copy button to grab the full text.</li>
+            </ul>
+        </div>
+
+        <div class="section-nav">
+            <a href="#connection" class="active">Connection Requests</a>
+            <a href="#dms">Direct Messages</a>
+            <a href="#comments">Comments</a>
+            <a href="#calendar">Content Calendar</a>
+            <a href="#profile">Profile Checklist</a>
+        </div>
+
+        <!-- Connection Requests -->
+        <div class="template-section" id="connection">
+            <div class="section-header">
+                <h2>Connection Request Templates</h2>
+                <p>5 variants — never pitch in the request</p>
+            </div>
+
+            <div class="template-card open">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">The Industry Peer</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">Generic</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="conn-1">Hi [First Name], I work with [industry] businesses on operational automation and came across your profile. Would be great to connect and learn more about what you're building at [Company Name].</div>
+                    <button class="copy-btn" onclick="copyTemplate('conn-1', this)">Copy Template</button>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">The Content Engager</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">Engagement</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="conn-2">Hi [First Name], I enjoyed your recent post on [topic]. I'm working on similar challenges in the [industry] space. Would love to connect.</div>
+                    <button class="copy-btn" onclick="copyTemplate('conn-2', this)">Copy Template</button>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">The Mutual Interest</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">Generic</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="conn-3">Hi [First Name], I noticed we both work in the [industry] space and share an interest in [topic: operations, automation, scaling]. Would be good to connect.</div>
+                    <button class="copy-btn" onclick="copyTemplate('conn-3', this)">Copy Template</button>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">The Local Connection</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">Local</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="conn-4">Hi [First Name], I run a small implementation team here in [city/region] and came across your work at [Company Name]. Always good to connect with fellow [industry] operators in the area.</div>
+                    <button class="copy-btn" onclick="copyTemplate('conn-4', this)">Copy Template</button>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">The Straightforward</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">Direct</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="conn-5">Hi [First Name], I help [industry] businesses automate repetitive workflows. Your profile at [Company Name] caught my eye. Would love to connect.</div>
+                    <button class="copy-btn" onclick="copyTemplate('conn-5', this)">Copy Template</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Direct Messages -->
+        <div class="template-section" id="dms">
+            <div class="section-header">
+                <h2>Direct Message Templates</h2>
+                <p>4 stages: Value Share → Soft Ask → Direct Ask → Breakup</p>
+            </div>
+
+            <div class="template-card open">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">DM 1: The Value Share</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">Day 3</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="dm-1">Hey [First Name], thanks for connecting.
+
+No pitch here — I just wrote something that might be relevant given your work at [Company Name]: [link to relevant blog post].
+
+It's a breakdown of [specific topic from the post]. Thought you'd find it useful.
+
+[Your Name]</div>
+                    <button class="copy-btn" onclick="copyTemplate('dm-1', this)">Copy Template</button>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">DM 2: The Soft Ask</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">Day 7</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="dm-2">Hey [First Name],
+
+Quick question: what's the most repetitive administrative task your team deals with right now?
+
+I'm not fishing for a sales call — genuinely curious about what [industry] operators are dealing with. I'm building a resource around common workflow bottlenecks and your perspective would be valuable.
+
+[Your Name]</div>
+                    <button class="copy-btn" onclick="copyTemplate('dm-2', this)">Copy Template</button>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">DM 3: The Direct Ask</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">Day 10+</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="dm-3">Hey [First Name],
+
+That [specific task they mentioned] is exactly the kind of thing my team builds automations for.
+
+I don't know if it makes sense for [Company Name] specifically — depends on volume, tools, and whether the time savings justify the build. But I'd be happy to do a free 10-minute audit and tell you honestly either way.
+
+Worth a quick call? https://fenloai.com/pages/book-discovery.html
+
+[Your Name]</div>
+                    <button class="copy-btn" onclick="copyTemplate('dm-3', this)">Copy Template</button>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">DM 3b: The Breakup</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">No reply</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="dm-4">Hey [First Name],
+
+I won't keep following up — I know LinkedIn DMs can pile up.
+
+If [Company Name] ever hits a point where repetitive workflows are slowing the team down, I'm happy to audit one process for free. Takes 10 minutes. I'll tell you honestly if automation makes sense or if you should wait.
+
+https://fenloai.com/pages/book-discovery.html
+
+[Your Name]</div>
+                    <button class="copy-btn" onclick="copyTemplate('dm-4', this)">Copy Template</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments -->
+        <div class="template-section" id="comments">
+            <div class="section-header">
+                <h2>Comment Templates</h2>
+                <p>Use these to engage on prospects' posts before sending a connection request</p>
+            </div>
+
+            <div class="template-card open">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">On a growth/scale post</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">Growth</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="comment-1">This resonates. We're seeing the same thing with [industry] clients — the processes that worked at 10 people start breaking at 30. What's been the hardest operational shift for your team?</div>
+                    <button class="copy-btn" onclick="copyTemplate('comment-1', this)">Copy Template</button>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">On a hiring post</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">Hiring</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="comment-2">Congrats on the growth. Quick question — are you hiring for [role] because the current process is breaking, or because you're expanding into new areas? We see both, and the fix is usually different.</div>
+                    <button class="copy-btn" onclick="copyTemplate('comment-2', this)">Copy Template</button>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">On a customer service post</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">Operations</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="comment-3">This is exactly why we started building automations for [industry] businesses. The 5-minute response rule is great in theory, but impossible manually at scale. What tools are you using to manage [specific process]?</div>
+                    <button class="copy-btn" onclick="copyTemplate('comment-3', this)">Copy Template</button>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-header" onclick="toggleTemplate(this)">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-name">On a general business post</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="template-tag">General</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="template-body">
+                    <div class="template-content" id="comment-4">Solid perspective. We're working with similar challenges — specifically around [topic: time management, client onboarding, scaling ops]. Would love to hear what's working for your team.</div>
+                    <button class="copy-btn" onclick="copyTemplate('comment-4', this)">Copy Template</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Calendar -->
+        <div class="calendar-section" id="calendar">
+            <h2>4-Week Content Calendar</h2>
+            <p style="font-size:14px;color:#666;margin-bottom:20px;">Post 2x per week. Mix formats. Tag: #automation #n8n #smallbusiness</p>
+
+            <div class="week">
+                <div class="week-header">Week 1</div>
+                <div class="week-posts">
+                    <div><span class="day">Monday</span> What we built this week — show a demo project screenshot <span class="format">(Format A)</span></div>
+                    <div><span class="day">Thursday</span> What repetitive task eats the most time in your business? <span class="format">(Format D)</span></div>
+                </div>
+            </div>
+
+            <div class="week">
+                <div class="week-header">Week 2</div>
+                <div class="week-posts">
+                    <div><span class="day">Tuesday</span> Honest take — "A prospect asked if they needed AI. I told them no." <span class="format">(Format B)</span></div>
+                    <div><span class="day">Friday</span> Another build showcase with before/after numbers <span class="format">(Format A)</span></div>
+                </div>
+            </div>
+
+            <div class="week">
+                <div class="week-header">Week 3</div>
+                <div class="week-posts">
+                    <div><span class="day">Monday</span> Pricing breakdown — what our 3 tiers actually cost <span class="format">(Format C)</span></div>
+                    <div><span class="day">Thursday</span> Behind the scenes — "3 hours debugging a webhook today" <span class="format">(Format E)</span></div>
+                </div>
+            </div>
+
+            <div class="week">
+                <div class="week-header">Week 4</div>
+                <div class="week-posts">
+                    <div><span class="day">Tuesday</span> Honest take on a recent conversation or decision <span class="format">(Format B)</span></div>
+                    <div><span class="day">Friday</span> Build showcase with real numbers and tool stack <span class="format">(Format A)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Checklist -->
+        <div class="checklist" id="profile">
+            <h2>Profile Optimization Checklist</h2>
+            <p style="font-size:14px;color:#666;margin-bottom:16px;">Update your LinkedIn profile before starting outreach:</p>
+            <ul>
+                <li><strong>Headline:</strong> "Helping [industry] businesses automate repetitive work | Fenlo AI"</li>
+                <li><strong>About section:</strong> 2-3 paragraphs. Mention honest approach, fixed pricing, team size. Link to work page and blog.</li>
+                <li><strong>Featured section:</strong> Pin 2-3 blog posts or the Work page</li>
+                <li><strong>Banner image:</strong> Simple text — "Automation for [industry] | Fixed pricing | fenloai.com"</li>
+                <li><strong>Activity:</strong> Turn ON "Share profile updates with your network"</li>
+                <li><strong>Creator mode:</strong> Enable (shows "Follow" instead of "Connect" for non-1st degree)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleTemplate(header) {
+            const card = header.closest('.template-card');
+            card.classList.toggle('open');
+        }
+
+        function copyTemplate(id, btn) {
+            const text = document.getElementById(id).textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const original = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = original;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        document.querySelectorAll('.section-nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.querySelectorAll('.section-nav a').forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

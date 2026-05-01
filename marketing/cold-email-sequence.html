@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenlo AI — Cold Email Templates</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: #1a1a1a;
+            background: #f5f5f0;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 2px solid #6b7c3f;
+        }
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        .header h1 span { color: #6b7c3f; }
+        .header p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .rules {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .rules h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+        .rules ul {
+            padding-left: 20px;
+            font-size: 14px;
+            color: #444;
+        }
+        .rules li { margin-bottom: 8px; }
+        .rules li strong { color: #1a1a1a; }
+
+        .industry-nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+            position: sticky;
+            top: 0;
+            background: #f5f5f0;
+            padding: 16px 0;
+            z-index: 10;
+        }
+        .industry-nav a {
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: #fff;
+            color: #444;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid #ddd;
+            transition: all 0.2s;
+        }
+        .industry-nav a:hover,
+        .industry-nav a.active {
+            background: #6b7c3f;
+            color: #fff;
+            border-color: #6b7c3f;
+        }
+
+        .industry-section {
+            margin-bottom: 56px;
+        }
+        .industry-header {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 24px 28px;
+            border-radius: 12px 12px 0 0;
+        }
+        .industry-header h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .industry-header p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .pain-points {
+            background: #fff;
+            padding: 20px 28px;
+            border-bottom: 1px solid #eee;
+        }
+        .pain-points h3 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #888;
+            margin-bottom: 12px;
+        }
+        .pain-points ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 24px;
+            list-style: none;
+            font-size: 14px;
+            color: #444;
+        }
+        .pain-points li {
+            padding-left: 16px;
+            position: relative;
+        }
+        .pain-points li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #6b7c3f;
+        }
+
+        .email-card {
+            background: #fff;
+            border-radius: 0;
+            margin-bottom: 0;
+            border-bottom: 1px solid #eee;
+        }
+        .email-card:last-child {
+            border-bottom: none;
+            border-radius: 0 0 12px 12px;
+        }
+        .email-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 28px;
+            background: #fafaf8;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .email-header:hover { background: #f5f5f0; }
+        .email-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .email-num {
+            width: 32px;
+            height: 32px;
+            background: #6b7c3f;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .email-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .email-day {
+            font-size: 12px;
+            color: #888;
+            font-weight: 500;
+        }
+        .toggle-icon {
+            font-size: 18px;
+            color: #999;
+            transition: transform 0.2s;
+        }
+        .email-card.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .email-body {
+            display: none;
+            padding: 24px 28px;
+        }
+        .email-card.open .email-body {
+            display: block;
+        }
+
+        .subject-line {
+            background: #f8f7f4;
+            border-left: 3px solid #b8a04a;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            border-radius: 0 6px 6px 0;
+        }
+        .subject-line label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #888;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .subject-line .subject {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .email-content {
+            font-size: 15px;
+            color: #333;
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+        .email-content a {
+            color: #6b7c3f;
+            text-decoration: none;
+            border-bottom: 1px dotted #6b7c3f;
+        }
+
+        .copy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover { background: #333; }
+        .copy-btn.copied {
+            background: #6b7c3f;
+        }
+
+        .cheat-sheet {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .cheat-sheet h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .cheat-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .cheat-table th {
+            text-align: left;
+            padding: 12px 16px;
+            background: #f8f7f4;
+            font-weight: 600;
+            color: #1a1a1a;
+            border-bottom: 2px solid #ddd;
+        }
+        .cheat-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            color: #444;
+            vertical-align: top;
+        }
+        .cheat-table tr:hover td {
+            background: #fafaf8;
+        }
+
+        .subject-variants {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .subject-variants h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .variant-group {
+            margin-bottom: 20px;
+        }
+        .variant-group h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #6b7c3f;
+            margin-bottom: 8px;
+        }
+        .variant-group ul {
+            padding-left: 20px;
+            font-size: 14px;
+            color: #444;
+        }
+        .variant-group li { margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Fenlo <span>AI</span></h1>
+            <p>Cold Email Templates — 4 Industries × 4 Emails</p>
+        </div>
+
+        <div class="rules">
+            <h2>Rules Before You Send</h2>
+            <ul>
+                <li><strong>Personalize every email.</strong> Mention something specific about their business (website, recent post, job listing).</li>
+                <li><strong>Use your real name and email.</strong> No "noreply."</li>
+                <li><strong>If they reply "not interested,"</strong> reply once with "Fair enough — mind if I check back in 6 months?" Then stop.</li>
+                <li><strong>Track in a spreadsheet.</strong> Don't blast. Max 20–50/week.</li>
+                <li><strong>Send Tuesday–Thursday, 8–10 AM</strong> in their timezone.</li>
+                <li><strong>Click any email to expand/collapse.</strong> Use the Copy button to grab the full text.</li>
+            </ul>
+        </div>
+
+        <div class="industry-nav">
+            <a href="#professional-services" class="active">Professional Services</a>
+            <a href="#ecommerce">E-commerce</a>
+            <a href="#healthcare">Healthcare Admin</a>
+            <a href="#realestate">Real Estate</a>
+        </div>
+
+        <!-- Industry 1: Professional Services -->
+        <div class="industry-section" id="professional-services">
+            <div class="industry-header">
+                <h2>Industry 1: Professional Services</h2>
+                <p>Consultants, agencies, law firms, accountants</p>
+            </div>
+            <div class="pain-points">
+                <h3>Common Pain Points</h3>
+                <ul>
+                    <li>Manually creating proposals/SOWs from scratch</li>
+                    <li>Chasing clients for documents and signatures</li>
+                    <li>Answering the same onboarding questions repeatedly</li>
+                    <li>Tracking time across projects and invoicing</li>
+                    <li>Searching through past projects for reusable content</li>
+                    <li>Referral tracking and follow-up</li>
+                </ul>
+            </div>
+
+            <div class="email-card open">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">1</div>
+                        <div>
+                            <div class="email-title">The Honest Intro</div>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 1</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">Not an AI pitch</div>
+                    </div>
+                    <div class="email-content" id="email-1-1">Hi [First Name],
+
+I run a small implementation team called Fenlo AI. We help businesses like [Company Name] automate repetitive work — not with hype, but with systems that actually run.
+
+I don't have client case studies yet (we're new). But I do have a page showing what we build, and a blog where I break down real automation costs and ROI:
+• Work: https://fenloai.com/pages/work.html
+• Blog: https://fenloai.com/pages/blog.html
+
+The honest truth: most professional services firms I talk to don't need AI. They need someone to connect their CRM, their forms, and their invoicing so the same 10 tasks stop eating their afternoon.
+
+Worth a 10-minute call to see if one of your workflows is automatable? I'll tell you if it's not.
+
+[Your Name]
+Fenlo AI
+https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-1-1', this)">Copy Email</button>
+                </div>
+            </div>
+
+            <div class="email-card">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">2</div>
+                        <div>
+                            <div class="email-title">Value First</div>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 4</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">The $X/hour task most [industry] firms don't track</div>
+                    </div>
+                    <div class="email-content" id="email-1-2">Hi [First Name],
+
+Quick thought: if you added up every hour your team spends on [specific task: proposal writing / client onboarding / document chasing], what would it cost you per month?
+
+Most [industry] firms I speak with underestimate it by half.
+
+I wrote a breakdown on how to measure automation ROI properly — not with vague promises, but with actual numbers:
+https://fenloai.com/pages/blog/ai-roi-framework.html
+
+No pitch here. Just thought you'd find the framework useful.
+
+[Your Name]
+
+P.S. — If that number turns out to be bigger than expected, I'm happy to audit one workflow for free: https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-1-2', this)">Copy Email</button>
+                </div>
+            </div>
+
+            <div class="email-card">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">3</div>
+                        <div>
+                            <div class="email-title">What We Built</div>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 8</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">What we built for a [similar firm type]</div>
+                    </div>
+                    <div class="email-content" id="email-1-3">Hi [First Name],
+
+Last month my team built an intake automation for a [similar firm type]. Here's what it does:
+
+1. Prospects fill a form on their website
+2. Info gets enriched (company size, industry)
+3. Lead gets scored and routed to the right team member
+4. CRM updates automatically
+5. Slack notifies the assigned person with full context
+
+Before: someone manually copied form submissions into a spreadsheet, then into the CRM, then messaged the team. 30–45 minutes per lead.
+
+After: zero manual work. Leads are qualified and assigned before the prospect finishes their coffee.
+
+Full write-up: https://fenloai.com/pages/work.html
+
+Worth 10 minutes to see if something similar works for [Company Name]? I won't sell you anything you don't need.
+
+[Your Name]
+https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-1-3', this)">Copy Email</button>
+                </div>
+            </div>
+
+            <div class="email-card">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">4</div>
+                        <div>
+                            <div class="email-title">The Breakup</div>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 14</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">Permission to close your file?</div>
+                    </div>
+                    <div class="email-content" id="email-1-4">Hi [First Name],
+
+I won't follow up again — I know inboxes are full.
+
+If [Company Name] ever hits a point where [specific pain point: onboarding, proposals, document chasing] is eating more time than it should, I'm happy to do a free workflow audit. Takes 10 minutes. I'll tell you honestly if it's worth automating.
+
+No obligation either way.
+
+[Your Name]
+Fenlo AI
+https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-1-4', this)">Copy Email</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Industry 2: E-commerce -->
+        <div class="industry-section" id="ecommerce">
+            <div class="industry-header">
+                <h2>Industry 2: E-commerce / Retail</h2>
+                <p>Online stores, DTC brands, multi-channel retailers</p>
+            </div>
+            <div class="pain-points">
+                <h3>Common Pain Points</h3>
+                <ul>
+                    <li>Manually updating inventory across platforms</li>
+                    <li>Responding to repetitive customer service questions</li>
+                    <li>Processing returns and refunds</li>
+                    <li>Supplier communication and order tracking</li>
+                    <li>Price monitoring and competitor alerts</li>
+                    <li>Multi-channel listing management</li>
+                </ul>
+            </div>
+
+            <div class="email-card open">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">1</div>
+                        <div><div class="email-title">The Honest Intro</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 1</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">Not an AI pitch</div>
+                    </div>
+                    <div class="email-content" id="email-2-1">Hi [First Name],
+
+I run Fenlo AI — a small implementation team that helps e-commerce brands automate the operational work that scales slower than sales.
+
+No client logos to show yet (we're new). But here's what we build, and here's how we think about ROI:
+• Work: https://fenloai.com/pages/work.html
+• Blog: https://fenloai.com/pages/blog.html
+
+The honest truth: most e-commerce teams I talk to don't need AI chatbots. They need someone to connect their Shopify, their email, their inventory alerts, and their supplier notifications so the same 15 tasks stop bottlenecking their growth.
+
+Worth a 10-minute call to see if one of your workflows is automatable? I'll tell you if it's not.
+
+[Your Name]
+Fenlo AI
+https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-2-1', this)">Copy Email</button>
+                </div>
+            </div>
+
+            <div class="email-card">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">2</div>
+                        <div><div class="email-title">Value First</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 4</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">The hidden cost of "we'll handle it manually for now"</div>
+                    </div>
+                    <div class="email-content" id="email-2-2">Hi [First Name],
+
+"We'll handle it manually for now" is how most e-commerce operations teams end up drowning by Q3.
+
+I wrote a practical framework for deciding when to automate vs. when to wait:
+https://fenloai.com/pages/blog/agents-vs-automation.html
+
+It's not pro-automation propaganda. It's a 5-factor checklist for knowing when manual work becomes a liability.
+
+Thought you'd find it useful.
+
+[Your Name]
+
+P.S. — If you run through the checklist and something scores high, I'm happy to audit it for free: https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-2-2', this)">Copy Email</button>
+                </div>
+            </div>
+
+            <div class="email-card">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">3</div>
+                        <div><div class="email-title">What We Built</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 8</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">How one store cut 12 hours/week of manual work</div>
+                    </div>
+                    <div class="email-content" id="email-2-3">Hi [First Name],
+
+My team built a content distribution pipeline for a DTC brand. Here's the flow:
+
+1. New product gets added to their CMS
+2. System auto-generates social snippets for Instagram, TikTok, and email
+3. Posts get scheduled across channels
+4. Performance data feeds back to a single dashboard
+5. Low-performing posts get flagged for review
+
+Before: one person spent 12+ hours/week copying product info into different platforms, scheduling manually, pulling reports from three tools.
+
+After: they review and approve. The system does the rest.
+
+Details: https://fenloai.com/pages/work.html
+
+Want me to look at [Company Name]'s workflow and see if something similar applies? 10 minutes. No pitch.
+
+[Your Name]
+https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-2-3', this)">Copy Email</button>
+                </div>
+            </div>
+
+            <div class="email-card">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">4</div>
+                        <div><div class="email-title">The Breakup</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 14</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">Permission to close your file?</div>
+                    </div>
+                    <div class="email-content" id="email-2-4">Hi [First Name],
+
+I won't follow up again.
+
+If [Company Name] ever hits a point where [specific pain point: inventory sync, customer service backlog, supplier chasing] is slowing you down, I'm happy to do a free workflow audit. Takes 10 minutes. I'll tell you honestly if it's worth automating.
+
+No obligation either way.
+
+[Your Name]
+Fenlo AI
+https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-2-4', this)">Copy Email</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Industry 3: Healthcare Admin -->
+        <div class="industry-section" id="healthcare">
+            <div class="industry-header">
+                <h2>Industry 3: Healthcare Admin</h2>
+                <p>Small clinics, dental practices, therapy practices, specialty practices</p>
+            </div>
+            <div class="pain-points">
+                <h3>Common Pain Points</h3>
+                <ul>
+                    <li>Manual appointment reminders and confirmations</li>
+                    <li>Patient intake forms on paper or disjointed emails</li>
+                    <li>Insurance verification taking 15+ minutes per patient</li>
+                    <li>Referral tracking falling through cracks</li>
+                    <li>Document processing and filing</li>
+                    <li>No-show management and rescheduling</li>
+                </ul>
+            </div>
+
+            <div class="email-card open">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">1</div>
+                        <div><div class="email-title">The Honest Intro</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 1</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">Not an AI pitch</div>
+                    </div>
+                    <div class="email-content" id="email-3-1">Hi [First Name],
+
+I run Fenlo AI — a small team that helps healthcare practices automate the administrative work that pulls staff away from patients.
+
+No client case studies yet (we're new). But here's what we build, and here's how we think about it:
+• Work: https://fenloai.com/pages/work.html
+• Blog: https://fenloai.com/pages/blog.html
+
+The honest truth: most practices I talk to don't need AI. They need someone to connect their scheduling system, their intake forms, and their notification tools so the same 20 tasks stop eating your front desk's day.
+
+Worth a 10-minute call to see if one of your workflows is automatable? I'll tell you if it's not.
+
+[Your Name]
+Fenlo AI
+https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-3-1', this)">Copy Email</button>
+                </div>
+            </div>
+
+            <div class="email-card">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">2</div>
+                        <div><div class="email-title">Value First</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 4</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">The 15-minute task that happens 40 times a week</div>
+                    </div>
+                    <div class="email-content" id="email-3-2">Hi [First Name],
+
+If your front desk spends 15 minutes on insurance verification per patient, and you see 40 patients a week, that's 10 hours. Every week. Same task, same steps.
+
+I wrote about how to think about automation ROI honestly — including when it doesn't make sense:
+https://fenloai.com/pages/blog/ai-roi-framework.html
+
+The framework is built for skeptical practice managers. No hype, just math.
+
+Thought you'd find it useful.
+
+[Your Name]
+
+P.S. — If the math looks painful, I'm happy to audit one workflow for free: https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-3-2', this)">Copy Email</button>
+                </div>
+            </div>
+
+            <div class="email-card">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">3</div>
+                        <div><div class="email-title">What We Built</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 8</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">What we built for a [similar practice type]</div>
+                    </div>
+                    <div class="email-content" id="email-3-3">Hi [First Name],
+
+My team built an intake automation for a [similar practice type]. Here's what it does:
+
+1. Patient books online
+2. Automated confirmation + reminder texts
+3. Intake form sent automatically, responses go straight to their system
+4. Insurance info gets verified via API
+5. Staff gets a single notification with everything ready
+
+Before: front desk called every patient, sent forms manually, verified insurance one by one, then entered everything into the system.
+
+After: patients self-serve. Staff reviews, doesn't chase.
+
+Details: https://fenloai.com/pages/work.html
+
+Worth 10 minutes to see if something similar works for [Practice Name]? I'll tell you honestly if your volume or setup makes it not worth it.
+
+[Your Name]
+https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-3-3', this)">Copy Email</button>
+                </div>
+            </div>
+
+            <div class="email-card">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">4</div>
+                        <div><div class="email-title">The Breakup</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 14</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">Permission to close your file?</div>
+                    </div>
+                    <div class="email-content" id="email-3-4">Hi [First Name],
+
+I won't follow up again.
+
+If [Practice Name] ever hits a point where [specific pain point: intake, reminders, insurance verification] is taking more time than it should, I'm happy to do a free workflow audit. Takes 10 minutes. I'll tell you honestly if it's worth automating.
+
+No obligation either way.
+
+[Your Name]
+Fenlo AI
+https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-3-4', this)">Copy Email</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Industry 4: Real Estate -->
+        <div class="industry-section" id="realestate">
+            <div class="industry-header">
+                <h2>Industry 4: Real Estate</h2>
+                <p>Brokerages, property management, real estate teams, agents</p>
+            </div>
+            <div class="pain-points">
+                <h3>Common Pain Points</h3>
+                <ul>
+                    <li>Lead response time (5-minute rule, manually impossible)</li>
+                    <li>Property listing distribution across portals</li>
+                    <li>Client communication and follow-up sequences</li>
+                    <li>Document management (contracts, disclosures, inspections)</li>
+                    <li>Showing scheduling and coordination</li>
+                    <li>Referral tracking and nurturing</li>
+                </ul>
+            </div>
+
+            <div class="email-card open">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">1</div>
+                        <div><div class="email-title">The Honest Intro</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 1</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">Not an AI pitch</div>
+                    </div>
+                    <div class="email-content" id="email-4-1">Hi [First Name],
+
+I run Fenlo AI — a small team that helps real estate operations automate the repetitive work that happens between the listing and the closing.
+
+No client logos yet (we're new). But here's what we build, and here's how we think about ROI:
+• Work: https://fenloai.com/pages/work.html
+• Blog: https://fenloai.com/pages/blog.html
+
+The honest truth: most brokerages I talk to don't need AI. They need someone to connect their CRM, their listing feeds, and their client communication so the same 15 tasks stop falling through the cracks.
+
+Worth a 10-minute call to see if one of your workflows is automatable? I'll tell you if it's not.
+
+[Your Name]
+Fenlo AI
+https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-4-1', this)">Copy Email</button>
+                </div>
+            </div>
+
+            <div class="email-card">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">2</div>
+                        <div><div class="email-title">Value First</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 4</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">The 5-minute rule is a myth (unless you automate it)</div>
+                    </div>
+                    <div class="email-content" id="email-4-2">Hi [First Name],
+
+Everyone knows leads go cold after 5 minutes. But when a lead comes in at 7 PM while you're showing a property, that response isn't happening manually.
+
+I wrote about the difference between automation and AI agents — and when each actually makes sense:
+https://fenloai.com/pages/blog/agents-vs-automation.html
+
+It's a practical framework, not a sales piece. Thought you'd find it useful.
+
+[Your Name]
+
+P.S. — If you want to see what an instant lead response flow looks like, I'm happy to audit your current setup for free: https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-4-2', this)">Copy Email</button>
+                </div>
+            </div>
+
+            <div class="email-card">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">3</div>
+                        <div><div class="email-title">What We Built</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 8</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">How one team cut lead response from 45 minutes to instant</div>
+                    </div>
+                    <div class="email-content" id="email-4-3">Hi [First Name],
+
+My team built a lead intake automation for a real estate team. Here's the flow:
+
+1. Lead fills a form on Zillow/Realtor.com
+2. Info gets enriched (property search history, budget range)
+3. Lead gets scored and routed to the right agent
+4. CRM updates, agent gets a notification with full context
+5. Auto-response goes out in under 60 seconds with next steps
+
+Before: leads sat in an inbox until someone checked it. Average response: 45 minutes. Some never got followed up.
+
+After: every lead gets acknowledged immediately. Agents get context before they call.
+
+Details: https://fenloai.com/pages/work.html
+
+Worth 10 minutes to see if something similar works for [Company/Team Name]? I'll tell you honestly if your lead volume or CRM setup makes it not worth it.
+
+[Your Name]
+https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-4-3', this)">Copy Email</button>
+                </div>
+            </div>
+
+            <div class="email-card">
+                <div class="email-header" onclick="toggleEmail(this)">
+                    <div class="email-meta">
+                        <div class="email-num">4</div>
+                        <div><div class="email-title">The Breakup</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <span class="email-day">Day 14</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="subject-line">
+                        <label>Subject Line</label>
+                        <div class="subject">Permission to close your file?</div>
+                    </div>
+                    <div class="email-content" id="email-4-4">Hi [First Name],
+
+I won't follow up again.
+
+If [Company/Team Name] ever hits a point where [specific pain point: lead response, listing distribution, showing coordination] is costing you deals, I'm happy to do a free workflow audit. Takes 10 minutes. I'll tell you honestly if it's worth automating.
+
+No obligation either way.
+
+[Your Name]
+Fenlo AI
+https://fenloai.com/pages/book-discovery.html</div>
+                    <button class="copy-btn" onclick="copyEmail('email-4-4', this)">Copy Email</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personalization Cheat Sheet -->
+        <div class="cheat-sheet">
+            <h2>Personalization Cheat Sheet</h2>
+            <p style="font-size:14px;color:#666;margin-bottom:20px;">Before sending Email 1, research and include ONE of these signals:</p>
+            <table class="cheat-table">
+                <thead>
+                    <tr>
+                        <th style="width:30%">Signal</th>
+                        <th>What to Mention</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Job posting for admin/ops</td>
+                        <td>"I saw you're hiring for [role] — that tells me [specific pain point] is already taking more time than it should."</td>
+                    </tr>
+                    <tr>
+                        <td>Recent expansion/new location</td>
+                        <td>"Congrats on the [expansion]. That usually means [process] starts breaking."</td>
+                    </tr>
+                    <tr>
+                        <td>Website has manual contact form</td>
+                        <td>"I filled out your contact form and noticed [specific thing] — worth 2 minutes to see if that could be smoother?"</td>
+                    </tr>
+                    <tr>
+                        <td>Active on LinkedIn about growth</td>
+                        <td>"Saw your post about [topic]. Growth usually surfaces the workflows that were fine at half the scale."</td>
+                    </tr>
+                    <tr>
+                        <td>Old/outdated website sections</td>
+                        <td>"Your [section] looks like it hasn't been updated — usually a sign that someone's too busy with ops to get to it."</td>
+                    </tr>
+                    <tr>
+                        <td>Reviews mention slow response</td>
+                        <td>"I noticed a few reviews mentioning response time — worth a 10-min look at whether that bottleneck is fixable?"</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Subject Line Variants -->
+        <div class="subject-variants">
+            <h2>A/B Subject Line Variants</h2>
+            <div class="variant-group">
+                <h4>Email 1 Alternates</h4>
+                <ul>
+                    <li>[Company Name] + automation</li>
+                    <li>Worth 10 minutes?</li>
+                    <li>Quick question about [Company Name]</li>
+                    <li>Not an AI pitch — [Company Name]</li>
+                </ul>
+            </div>
+            <div class="variant-group">
+                <h4>Email 2 Alternates</h4>
+                <ul>
+                    <li>[Industry] + the hidden cost</li>
+                    <li>The math on [task]</li>
+                    <li>Something useful for [Company Name]</li>
+                </ul>
+            </div>
+            <div class="variant-group">
+                <h4>Email 3 Alternates</h4>
+                <ul>
+                    <li>Saved [X] hours/week</li>
+                    <li>What we built — [industry]</li>
+                    <li>Re: [Company Name]'s [process]</li>
+                </ul>
+            </div>
+            <div class="variant-group">
+                <h4>Email 4 Alternates</h4>
+                <ul>
+                    <li>Closing your file</li>
+                    <li>One last thing — [Company Name]</li>
+                    <li>Should I stop following up?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleEmail(header) {
+            const card = header.closest('.email-card');
+            card.classList.toggle('open');
+        }
+
+        function copyEmail(id, btn) {
+            const text = document.getElementById(id).textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const original = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = original;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('.industry-nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.querySelectorAll('.industry-nav a').forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
