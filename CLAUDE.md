@@ -15,31 +15,43 @@ This is a static website for Fenlo AI, an AI consulting and implementation servi
 ```
 /
 ├── index.html              # Homepage (primary entry point)
+├── favicon.png             # Site favicon
+├── og-image.png            # Social sharing image (1200x630)
 ├── css/
 │   └── styles.css         # Global styles with dark/light theme support
 ├── pages/
 │   ├── blog.html          # Blog listing page
-│   ├── blog/              # Individual blog post HTML files
-│   ├── services.html      # Services overview
-│   ├── services/          # Individual service detail pages (service1-9.html)
-│   ├── contact.html
-│   ├── book-discovery.html
-│   ├── apply-briefing.html
-│   └── legal/             # Terms and privacy pages
-├── blogposts/             # Blog source content (markdown + HTML)
+│   ├── blog/              # 8 individual blog post HTML files
+│   ├── services.html      # Services overview (3-tier structure)
+│   ├── services/          # 9 redirect pages (service1-9.html → services.html)
+│   ├── work.html          # Capabilities showcase (demo projects, no client work yet)
+│   ├── contact.html       # Contact form (Formspree) + discovery call CTA
+│   ├── book-discovery.html # Cal.com booking embed for discovery calls
+│   ├── apply-briefing.html # Redirects to book-discovery.html
+│   └── legal/             # Privacy and terms pages
+├── marketing/             # Cold outreach materials
+│   ├── cold-email-sequence.html  # Interactive email templates (4 industries)
+│   ├── cold-email-sequence.md    # Markdown version
+│   ├── linkedin-templates.html   # Interactive LinkedIn templates
+│   ├── linkedin-templates.md     # Markdown version
+│   ├── sales-sheet.html          # Print-ready A4 one-pager
+│   └── poster.html               # 4-format social media posters
+├── blogposts/             # Blog source content (templates + guidelines)
 │   ├── CLAUDE_INSTRUCTIONS.md  # Blog writing guidelines (READ THIS for blog work)
 │   ├── blog-template.html      # Template for new blog posts
-│   └── [topic-folders]/        # Individual blog posts
+│   └── [topic-folders]/        # Individual blog post drafts
 └── assets/
-    └── fenloai-*.svg      # Logo files
+    └── fenloai-*.svg      # Logo files (icon + full logo)
 ```
 
 ### Technology Stack
 
 - **Pure HTML/CSS/JavaScript** - No build system, frameworks, or package.json
-- **Static hosting** - Designed for GitHub Pages or similar
+- **Static hosting** - GitHub Pages with custom domain (fenloai.com)
 - **Google Tag Manager** (GTM-MBJVZS7Z) for analytics
-- **Google Fonts** - Outfit font family
+- **Google Fonts** - DM Sans (body), Instrument Serif (display)
+- **Formspree** - Contact form handling
+- **Cal.com** - Discovery call booking embed
 
 ### Theme System
 
@@ -59,9 +71,11 @@ The site has a comprehensive light/dark theme system:
 
 All pages include:
 - Fenlo AI logo SVG (inline in HTML)
-- Nav links: Home, Services, Blog, Contact
+- Nav links: Home, Services, Work, Blog, Contact
 - Theme toggle button (sun/moon icons)
 - Mobile hamburger menu
+- Reading progress indicator (top bar)
+- Skip-to-content link (accessibility)
 
 Navigation is consistent across all pages with appropriate relative paths.
 
@@ -82,6 +96,7 @@ Navigation is consistent across all pages with appropriate relative paths.
 </head>
 <body>
     <!-- Google Tag Manager noscript -->
+    <!-- Reading Progress Indicator -->
     <nav class="navbar">...</nav>
     <div class="mobile-nav">...</div>
     <main id="main-content">
@@ -148,24 +163,24 @@ Available components (from template):
 
 ## Services Architecture
 
-The site offers 9 services split into individual pages:
-1. Executive AI Briefing (Free)
-2. Custom Solutions
-3. Smart Chatbots & Virtual Assistants
-4. Document Q&A System
-5. Workflow Automation
-6. AI Workforce & Autonomous Agents
-7. Business Intelligence & Automated Reporting
-8. Generative AI Solutions
-9. AI Security & Governance
+The site offers **3 service tiers** on a single page (`/pages/services.html`):
 
-Each service page follows a consistent structure:
-- Hero with service name
-- Problem statement
-- Solution explanation
-- Benefits/features
-- Pricing/timeline info
-- CTA to book discovery call
+1. **Automation Pipelines** (Tier 1) — From $1,500
+   - n8n/Make workflows connecting apps
+   - Eliminates manual data entry
+   - Timeline: 1-2 weeks
+
+2. **Custom Software** (Tier 2) — From $3,000
+   - Internal tools, dashboards, client portals
+   - Built with AI-assisted coding (Cursor, Claude Code)
+   - Timeline: 2-4 weeks
+
+3. **AI Agents** (Tier 3) — From $5,000
+   - Autonomous decision-making systems
+   - Customer service agents, document processors
+   - Timeline: 3-6 weeks
+
+**Old service pages** (`/pages/services/service1-9.html`) are redirect pages pointing to the main services overview.
 
 ## SEO & Metadata
 
@@ -176,6 +191,8 @@ Every page requires:
 - Open Graph tags (og:title, og:description, og:image, og:url)
 - Twitter Card tags
 - JSON-LD structured data (Organization, WebSite, FAQPage, Blog, etc.)
+
+**Important:** Use absolute paths for shared assets: `/favicon.png`, `/og-image.png`
 
 Structured data appears in:
 - Homepage: Organization + WebSite + FAQPage
@@ -198,11 +215,11 @@ Structured data appears in:
 
 ### Updating Services
 
-Service pages are in `/pages/services/service[1-9].html`. When editing:
-- Maintain consistent structure with other service pages
-- Keep pricing transparent (if mentioned)
-- Focus CTAs on discovery call: https://fenloai.com/book-discovery.html
-- Update `/pages/services.html` overview if adding/removing services
+The main services page is `/pages/services.html`. When editing:
+- Maintain the 3-tier structure
+- Keep pricing transparent
+- Focus CTAs on discovery call: https://fenloai.com/pages/book-discovery.html
+- The 9 old service pages are redirects — do not edit their content
 
 ### Theme Changes
 
@@ -220,6 +237,16 @@ Theme variables are in `/css/styles.css`:
 4. Include theme toggle + mobile menu scripts
 5. Update footer
 6. Add to sitemap if using one
+
+## Marketing Materials
+
+The `/marketing/` folder contains outreach assets:
+- **cold-email-sequence** — 4-email sequences for 4 industries (professional services, e-commerce, healthcare, real estate)
+- **linkedin-templates** — Connection requests, DMs, comment templates, content calendar
+- **sales-sheet** — Print-ready A4 one-pager with 3 tiers
+- **poster** — 4 social media formats (square, story, landscape, A4 flyer)
+
+All materials emphasize honest positioning: no fake case studies, transparent about being new.
 
 ## Brand Voice Guidelines
 
@@ -267,12 +294,13 @@ Theme variables are in `/css/styles.css`:
 4. **Relative paths** - Carefully manage `../` for nested pages
 5. **Manual updates** - Blog listing page must be manually updated when adding posts
 6. **No emojis** - Brand guideline (unless user explicitly requests)
+7. **Never inject JavaScript inside GTM or JSON-LD blocks** - These must remain pure
 
 ## Contact & Business Info
 
 - **Email:** contact@fenloai.com
-- **Primary CTA:** Free discovery call at /book-discovery.html
-- **Secondary CTA:** Executive AI Briefing at /apply-briefing.html
+- **Primary CTA:** Free discovery call at /pages/book-discovery.html
+- **Secondary CTA:** Executive AI Briefing at /pages/apply-briefing.html (redirects to book-discovery)
 - **Target audience:** Small-medium business owners/decision-makers
 - **Value proposition:** Honest AI assessment - will say "no" when AI isn't right
 
@@ -280,4 +308,10 @@ Theme variables are in `/css/styles.css`:
 
 This site is designed for GitHub Pages or similar static hosting. There is no build step - simply push HTML/CSS/JS files to production.
 
-A deployment workflow exists at `.agent/workflows/deploy_to_github_pages.md` if GitHub Pages deployment is configured.
+```bash
+git add .
+git commit -m "Description of changes"
+git push origin main
+```
+
+GitHub Pages auto-deploys from the `main` branch.
